@@ -22,11 +22,11 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class IbexaBehatExtension extends Extension implements PrependExtensionInterface, CompilerPassInterface
 {
-    private const OVERRIDE_CONFIGURATION = 'ibexa.testing.override_configuration';
+    private const OVERRIDE_CONFIGURATION = 'ibexa.behat.override_configuration';
 
-    private const BROWSER_TESTING_ENABLED = 'ibexa.testing.browser.enabled';
+    private const BROWSER_TESTING_ENABLED = 'ibexa.behat.browser.enabled';
 
-    public const BROWSER_DEBUG_INTERACTIVE_ENABLED = 'ibexa.testing.behat.browser.debug.interactive.enabled';
+    public const BROWSER_DEBUG_INTERACTIVE_ENABLED = 'ibexa.behat.browser.debug.interactive.enabled';
 
     public function process(ContainerBuilder $container)
     {
