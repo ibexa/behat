@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use Ibexa\Behat\API\ContentData\RandomDataGenerator;
 use Faker\Generator;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
 
 abstract class AbstractFieldTypeDataProvider implements FieldTypeDataProviderInterface
 {

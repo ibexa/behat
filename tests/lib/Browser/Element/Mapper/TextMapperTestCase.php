@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Behat\Browser\Element\Mapper;
 
-use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use Ibexa\Behat\Browser\Element\Mapper\ElementTextMapper;
+use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\Assert;
 
 class TextMapperTestCase extends BaseTestCase

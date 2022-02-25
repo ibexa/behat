@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\Behat\DependencyInjection\Compiler;
 
 use Ibexa\Behat\API\ContentData\ContentDataProvider;
-use Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;

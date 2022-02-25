@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\Behat\DependencyInjection\Compiler;
 
-use Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface;
 use Ibexa\Behat\API\Context\LimitationParser\LimitationParsersCollector;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

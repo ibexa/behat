@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\API\Facade;
 
-use Ibexa\Behat\API\ContentData\ContentDataProvider;
 use FOS\HttpCacheBundle\CacheManager;
+use Ibexa\Behat\API\ContentData\ContentDataProvider;
 use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\Contracts\Core\Repository\Repository;

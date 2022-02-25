@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Behat\Browser\Element\Criterion;
 
-use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use Ibexa\Behat\Browser\Element\Criterion\ElementTextCriterion;
 use Ibexa\Behat\Browser\Element\Criterion\LogicalOrCriterion;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
+use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\Assert;
 
 class LogicalOrCriterionTest extends BaseTestCase

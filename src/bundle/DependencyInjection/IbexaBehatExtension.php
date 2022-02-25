@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\Behat\DependencyInjection;
 
+use Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface;
+use Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface;
 use Ibexa\Behat\Browser\Component\Component;
 use Ibexa\Behat\Browser\Page\PageInterface;
 use Ibexa\Behat\Browser\Page\Preview\PagePreviewInterface;
@@ -16,8 +18,6 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader;
-use Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface;
-use Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class IbexaBehatExtension extends Extension implements PrependExtensionInterface, CompilerPassInterface

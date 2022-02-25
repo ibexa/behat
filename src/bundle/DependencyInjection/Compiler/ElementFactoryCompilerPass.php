@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\Behat\DependencyInjection\Compiler;
 
-use Ibexa\Bundle\Behat\DependencyInjection\IbexaBehatExtension;
 use Ibexa\Behat\Browser\Element\Factory\Debug\Interactive\ElementFactory;
+use Ibexa\Bundle\Behat\DependencyInjection\IbexaBehatExtension;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

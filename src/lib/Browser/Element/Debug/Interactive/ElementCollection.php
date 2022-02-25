@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\Element\Debug\Interactive;
 
-use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
 use Ibexa\Behat\Browser\Assert\CollectionAssertInterface;
 use Ibexa\Behat\Browser\Assert\Debug\Interactive\CollectionAssert as InteractiveElementCollectionAssert;
 use Ibexa\Behat\Browser\Element\Criterion\CriterionInterface;
@@ -16,6 +15,7 @@ use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Element\Mapper\MapperInterface;
 use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
+use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
 use PHPUnit\Framework\ExpectationFailedException;
 use Traversable;
 

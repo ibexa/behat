@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Behat\Core\Behat;
 
 use Ibexa\Behat\API\Facade\RoleFacade;
-use Ibexa\Behat\Core\Behat\ArgumentParser;
 use Ibexa\Behat\Browser\Environment\ParameterProvider;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 

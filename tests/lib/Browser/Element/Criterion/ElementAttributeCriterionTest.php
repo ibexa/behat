@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Behat\Browser\Element\Criterion;
 
-use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use Ibexa\Behat\Browser\Element\Criterion\ElementAttributeCriterion;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
+use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\Assert;
 
 class ElementAttributeCriterionTest extends BaseTestCase

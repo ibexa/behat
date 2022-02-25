@@ -9,13 +9,13 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Core\Debug;
 
 use Exception;
+use Ibexa\Behat\Browser\Component\Component;
 use Ibexa\Behat\Core\Debug\Command\GoBackCommand;
 use Ibexa\Behat\Core\Debug\Command\RefreshPageCommand;
 use Ibexa\Behat\Core\Debug\Command\ShowHTMLCommand;
 use Ibexa\Behat\Core\Debug\Command\ShowURLCommand;
 use Ibexa\Behat\Core\Debug\Command\TakeScreenshotCommand;
 use Ibexa\Behat\Core\Debug\Shell\Shell;
-use Ibexa\Behat\Browser\Component\Component;
 use RuntimeException;
 
 trait InteractiveDebuggerTrait

@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\Assert\Debug\Interactive;
 
-use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
 use Ibexa\Behat\Browser\Assert\CollectionAssertInterface;
 use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
+use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
 use PHPUnit\Framework\ExpectationFailedException;
 
 class CollectionAssert implements CollectionAssertInterface
