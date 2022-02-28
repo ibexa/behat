@@ -1,13 +1,9 @@
 {
     "name": "ibexa/behat",
-    "description": "Behat bundle for help testing eZ Bundles and projects",
     "license": "GPL-2.0",
-    "authors": [
-        {
-            "name": "eZ Publish dev-team & eZ Community",
-            "homepage": "https://github.com/ibexa/behat"
-        }
-    ],
+    "replace": {
+        "ezsystems/behatbundle": "*"
+    },
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
