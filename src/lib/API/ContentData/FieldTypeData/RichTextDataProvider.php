@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use EzSystems\Behat\API\ContentData\RandomDataGenerator;
-use EzSystems\Behat\API\Facade\SearchFacade;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Behat\API\Facade\SearchFacade;
 
 class RichTextDataProvider extends AbstractFieldTypeDataProvider
 {
@@ -25,7 +25,7 @@ class RichTextDataProvider extends AbstractFieldTypeDataProvider
 </section>';
 
     /**
-     * @var \EzSystems\Behat\API\Facade\SearchFacade
+     * @var \Ibexa\Behat\API\Facade\SearchFacade
      */
     private $searchFacade;
 
@@ -62,3 +62,5 @@ class RichTextDataProvider extends AbstractFieldTypeDataProvider
         return sprintf(self::SIMPLE_RICHTEXT_XML, $value);
     }
 }
+
+class_alias(RichTextDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\RichTextDataProvider');

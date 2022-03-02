@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Facade;
+namespace Ibexa\Behat\API\Facade;
 
-use EzSystems\Behat\API\Context\LimitationParser\LimitationParsersCollector;
+use Ibexa\Behat\API\Context\LimitationParser\LimitationParsersCollector;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 use Ibexa\Contracts\Core\Repository\RoleService;
 
@@ -17,7 +17,7 @@ class RoleFacade
     /** @var \Ibexa\Contracts\Core\Repository\RoleService */
     private $roleService;
 
-    /** @var \EzSystems\Behat\API\Context\LimitationParser\LimitationParsersCollector */
+    /** @var \Ibexa\Behat\API\Context\LimitationParser\LimitationParsersCollector */
     private $limitationParsersCollector;
 
     public function __construct(RoleService $roleService, LimitationParsersCollector $limitationParsersCollector)
@@ -62,10 +62,12 @@ class RoleFacade
     }
 
     /**
-     * @return \EzSystems\Behat\API\Context\LimitationParser\LimitationParserInterface[]
+     * @return \Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface[]
      */
     public function getLimitationParsers(): array
     {
         return $this->limitationParsersCollector->getLimitationParsers();
     }
 }
+
+class_alias(RoleFacade::class, 'EzSystems\Behat\API\Facade\RoleFacade');

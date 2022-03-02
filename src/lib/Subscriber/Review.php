@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Subscriber;
+namespace Ibexa\Behat\Subscriber;
 
-use EzSystems\Behat\API\ContentData\ContentDataProvider;
-use EzSystems\Behat\API\ContentData\RandomDataGenerator;
-use EzSystems\Behat\Event\Events;
-use EzSystems\Behat\Event\TransitionEvent;
+use Ibexa\Behat\API\ContentData\ContentDataProvider;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Behat\Event\Events;
+use Ibexa\Behat\Event\TransitionEvent;
 use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Core\Repository\PermissionResolver;
 use Ibexa\Contracts\Core\Repository\UserService;
@@ -22,7 +22,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class Review extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \EzSystems\Behat\API\ContentData\ContentDataProvider */
+    /** @var \Ibexa\Behat\API\ContentData\ContentDataProvider */
     private $contentDataProvider;
 
     /** @var \Ibexa\Contracts\Core\Repository\ContentService */
@@ -77,3 +77,5 @@ class Review extends AbstractProcessStage implements EventSubscriberInterface
         $this->workflowFacade->transition($event->content, $transitionName, $this->randomDataGenerator->getRandomTextLine());
     }
 }
+
+class_alias(Review::class, 'EzSystems\Behat\Subscriber\Review');

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\BehatBundle\Command;
+namespace Ibexa\Bundle\Behat\Command;
 
-use EzSystems\Behat\Event\InitialEvent;
+use Ibexa\Behat\Event\InitialEvent;
 use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -118,7 +118,7 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
 
     private function getData()
     {
-        $data = Yaml::parseFile(sprintf('%s/vendor/ezsystems/behatbundle/features/setup/volume/data.yaml', $this->projectDir));
+        $data = Yaml::parseFile(sprintf('%s/vendor/ibexa/behat/features/setup/volume/data.yaml', $this->projectDir));
 
         return $data['countries'];
     }
@@ -167,3 +167,5 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         return ['ezplatform:tools:generate-items'];
     }
 }
+
+class_alias(CreateExampleDataManagerCommand::class, 'EzSystems\BehatBundle\Command\CreateExampleDataManagerCommand');

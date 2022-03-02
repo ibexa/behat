@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Facade;
+namespace Ibexa\Behat\API\Facade;
 
-use EzSystems\Behat\API\ContentData\ContentDataProvider;
 use FOS\HttpCacheBundle\CacheManager;
+use Ibexa\Behat\API\ContentData\ContentDataProvider;
 use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\Contracts\Core\Repository\Repository;
@@ -30,7 +30,7 @@ class ContentFacade
     /** @var \Ibexa\Contracts\Core\Repository\URLAliasService */
     private $urlAliasService;
 
-    /** @var \EzSystems\Behat\API\ContentData\ContentDataProvider */
+    /** @var \Ibexa\Behat\API\ContentData\ContentDataProvider */
     private $contentDataProvider;
 
     /** @var \FOS\HttpCacheBundle\CacheManager */
@@ -129,3 +129,5 @@ class ContentFacade
         $this->cacheManager->flush();
     }
 }
+
+class_alias(ContentFacade::class, 'EzSystems\Behat\API\Facade\ContentFacade');
