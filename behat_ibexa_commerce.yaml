@@ -23,11 +23,11 @@ regression:
                 - Ibexa\Behat\Core\Context\FileContext
         commerce:
             paths:
-                - '%paths.base%/vendor/ibexa/scheduler/features'
-                - '%paths.base%/vendor/ibexa/commerce-admin-ui/features/standard'
-                - '%paths.base%/vendor/ibexa/commerce-shop/features'
-                - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
-                - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
+                # - '%paths.base%/vendor/ibexa/scheduler/features'
+                # - '%paths.base%/vendor/ibexa/commerce-admin-ui/features/standard'
+                # - '%paths.base%/vendor/ibexa/commerce-shop/features'
+                # - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
+                # - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
                 - '%paths.base%/vendor/ibexa/form-builder/features'
                 - '%paths.base%/vendor/ibexa/page-builder/features/DynamicLandingPage'
                 - '%paths.base%/vendor/ibexa/page-builder/features/personas'
