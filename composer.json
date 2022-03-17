@@ -71,10 +71,7 @@
             "dev-main": "4.0.x-dev"
         }
     },
-    "bin": [
-        "bin/ezbehat",
-        "bin/ezreport"
-    ],
+    "bin": ["bin/ibexabehat", "bin/ibexareport"],
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true
