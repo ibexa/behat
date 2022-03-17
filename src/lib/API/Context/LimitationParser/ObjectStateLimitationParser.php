@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\ObjectStateLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\ObjectStateLimitation;
 
 class ObjectStateLimitationParser extends NewStateLimitationParser implements LimitationParserInterface
 {
@@ -27,3 +27,5 @@ class ObjectStateLimitationParser extends NewStateLimitationParser implements Li
         );
     }
 }
+
+class_alias(ObjectStateLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ObjectStateLimitationParser');
