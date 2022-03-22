@@ -17,8 +17,8 @@
         "ezsystems/allure-behat": "^3.3@dev",
         "ezsystems/allure-php-api": "^3.3@dev",
         "ezsystems/behat-screenshot-image-driver-cloudinary": "^1.1@dev",
-        "ibexa/http-cache": "~4.0.0@dev",
-        "ibexa/core": "~4.0.0@dev",
+        "ibexa/http-cache": "~4.1.0@dev",
+        "ibexa/core": "~4.1.0@dev",
         "friends-of-behat/mink": "^1.8",
         "friends-of-behat/mink-browserkit-driver": "^1.4",
         "friends-of-behat/mink-extension": "^2.4",
@@ -42,8 +42,8 @@
         "ibexa/code-style": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.0",
         "ibexa/ci-scripts": "^0.2@dev",
-        "ibexa/doctrine-schema": "~4.0.0@dev",
-        "ibexa/rest": "~4.0.0@dev",
+        "ibexa/doctrine-schema": "~4.1.0@dev",
+        "ibexa/rest": "~4.1.0@dev",
         "mikey179/vfsstream": "^1.6"
     },
     "autoload": {
@@ -69,7 +69,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "4.0.x-dev"
+            "dev-main": "4.1.x-dev"
         }
     },
     "bin": ["bin/ibexabehat", "bin/ibexareport"],
