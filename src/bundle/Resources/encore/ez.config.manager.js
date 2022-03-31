@@ -1,54 +1,27 @@
 const path = require('path');
 
-module.exports = (eZConfig, eZConfigManager) => {
+module.exports = (ibexaConfig, ibexaConfigManager) => {
+    const addEntry = ([entryName, newItems]) => {
+        if (ibexaConfig.entry[entryName]) {
+            ibexaConfigManager.add({
+                ibexaConfig,
+                entryName,
+                newItems,
+            });
+        }
+    };
+    const seleniumDebugStylePath = path.resolve(__dirname, '../public/css/selenium-debug.css');
+    const dragMockScriptPath = path.resolve(__dirname, '../public/js/scripts/drag-mock.js');
+    const transitionListenerScriptPath = path.resolve(__dirname, '../public/js/scripts/transition-listener.js');
+    const scriptsMap = {
+        'ibexa-commerce-shop-pagelayout-css': [seleniumDebugStylePath],
+        'ibexa-admin-ui-content-type-edit-js': [dragMockScriptPath],
+        'ibexa-admin-ui-layout-css': [seleniumDebugStylePath],
+        'ibexa-admin-ui-layout-js': [transitionListenerScriptPath],
+        'ibexa-admin-ui-security-base-css': [seleniumDebugStylePath],
+        'ibexa-form-builder-common-js': [dragMockScriptPath],
+        'ibexa-page-builder-edit-js': [dragMockScriptPath],
+    };
 
-    const dragMockScriptPath = '../public/js/scripts/drag-mock.js';
-    const seleniumDebugStylePath = '../public/css/selenium-debug.css';
-
-    eZConfigManager.add({
-        eZConfig,
-        entryName: 'ezplatform-admin-ui-layout-css',
-        newItems: [
-            path.resolve(__dirname, seleniumDebugStylePath)
-        ]
-    });
-
-    eZConfigManager.add({
-        eZConfig,
-        entryName: 'ezplatform-admin-ui-security-base-css',
-        newItems: [
-            path.resolve(__dirname, seleniumDebugStylePath)
-        ]
-    });
-
-    if (eZConfig.entry['ezplatform-page-builder-edit-js']) {
-        const dragMockScriptPath = '../public/js/scripts/drag-mock.js';
-        eZConfigManager.add({
-            eZConfig,
-            entryName: 'ezplatform-page-builder-edit-js',
-            newItems: [
-                path.resolve(__dirname, dragMockScriptPath),
-            ],
-        });
-    }
-    
-    if (eZConfig.entry['ezplatform-form-builder-common-js']) {
-        eZConfigManager.add({
-            eZConfig,
-            entryName: 'ezplatform-form-builder-common-js',
-            newItems: [
-                path.resolve(__dirname, dragMockScriptPath),
-            ],
-        });
-    }
-
-    if (eZConfig.entry['ezcommerce-shop-pagelayout-css']) {
-        eZConfigManager.add({
-            eZConfig,
-            entryName: 'ezcommerce-shop-pagelayout-css',
-            newItems: [
-                path.resolve(__dirname, seleniumDebugStylePath)
-            ]
-        });
-    }
+    Object.entries(scriptsMap).forEach(addEntry);
 };
