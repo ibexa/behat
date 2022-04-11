@@ -12,6 +12,8 @@ services:
         autoconfigure: true
         public: false
 
+    Ibexa\Bundle\Behat\Cache\JsRoutingDirectoryCacheDirectoryCreator: ~
+
     Ibexa\Behat\API\ContentData\ContentDataProvider:
          arguments:
             - '@ibexa.api.service.content_type'
