@@ -45,6 +45,7 @@ regression:
                 - Ibexa\Behat\API\Context\TrashContext
                 - Ibexa\Behat\API\Context\UserContext
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentPreviewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentTypeContext
