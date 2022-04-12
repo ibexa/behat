@@ -8,11 +8,12 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\Element\Debug\Interactive;
 
+use Behat\Mink\Session;
 use Exception;
-use EzSystems\Behat\Core\Debug\InteractiveDebuggerTrait;
 use Ibexa\Behat\Browser\Assert\Debug\Interactive\ElementAssert as InteractiveElementAssert;
 use Ibexa\Behat\Browser\Assert\ElementAssertInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
+use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
 
 final class Element extends BaseElement implements ElementInterface
 {
@@ -105,5 +106,10 @@ final class Element extends BaseElement implements ElementInterface
     public function getXPath(): string
     {
         return $this->element->getXPath();
+    }
+
+    public function scrollToBottom(Session $session): void
+    {
+        $this->element->scrollToBottom($session);
     }
 }

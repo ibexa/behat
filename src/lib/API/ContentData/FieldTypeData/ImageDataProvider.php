@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\Core\FieldType\Image\Value;
-use EzSystems\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Core\FieldType\Image\Value;
 
 class ImageDataProvider extends AbstractFieldTypeDataProvider
 {
@@ -70,3 +70,5 @@ class ImageDataProvider extends AbstractFieldTypeDataProvider
         );
     }
 }
+
+class_alias(ImageDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ImageDataProvider');
