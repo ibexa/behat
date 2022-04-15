@@ -6,19 +6,19 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use EzSystems\Behat\API\Facade\ContentFacade;
-use EzSystems\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Behat\API\Facade\ContentFacade;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
 
 class ContentContext implements Context
 {
-    /** @var \EzSystems\Behat\API\Facade\ContentFacade */
+    /** @var \Ibexa\Behat\API\Facade\ContentFacade */
     private $contentFacade;
 
-    /** @var \EzSystems\Behat\Core\Behat\ArgumentParser */
+    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
     private $argumentParser;
 
     public function __construct(ContentFacade $contentFacade, ArgumentParser $argumentParser)
@@ -131,3 +131,5 @@ class ContentContext implements Context
         return $contentItemData->getHash();
     }
 }
+
+class_alias(ContentContext::class, 'EzSystems\Behat\API\Context\ContentContext');

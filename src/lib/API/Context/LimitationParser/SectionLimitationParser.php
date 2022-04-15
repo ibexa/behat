@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\SectionService;
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation;
+use Ibexa\Contracts\Core\Repository\SectionService;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\SectionLimitation;
 
 class SectionLimitationParser implements LimitationParserInterface
 {
@@ -43,3 +43,5 @@ class SectionLimitationParser implements LimitationParserInterface
         );
     }
 }
+
+class_alias(SectionLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\SectionLimitationParser');

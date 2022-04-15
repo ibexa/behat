@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Behat;
+namespace Ibexa\Behat\Core\Behat;
 
 use Behat\Gherkin\Node\TableNode;
-use EzSystems\Behat\API\Facade\RoleFacade;
+use Ibexa\Behat\API\Facade\RoleFacade;
 use Ibexa\Behat\Browser\Environment\ParameterProviderInterface;
 
 class ArgumentParser
@@ -35,9 +35,17 @@ class ArgumentParser
      */
     public function parseUrl(string $url)
     {
-        $url = str_replace([' ', '@', ',', ':', $this->parameterProvider->getParameter('root_content_name'), 'root'], ['-', '-', '', '-', '', ''], $url);
+        $url = str_replace([' ', '@', ',', ':', $this->parameterProvider->getParameter('root_content_name')], ['-', '-', '', '-', ''], $url);
 
-        return 0 === strpos($url, '/') ? $url : sprintf('/%s', $url);
+        if (strpos($url, '/') === 0) {
+            $url = substr($url, 1, strlen($url) - 1);
+        }
+
+        if (strpos($url, 'root') === 0) {
+            $url = str_replace('root', '', $url);
+        }
+
+        return strpos($url, '/') === 0 ? $url : sprintf('/%s', $url);
     }
 
     public function parseLimitations(TableNode $limitations)
@@ -68,3 +76,5 @@ class ArgumentParser
         return str_replace(self::ROOT_KEYWORD, $this->parameterProvider->getParameter('root_content_name'), $path);
     }
 }
+
+class_alias(ArgumentParser::class, 'EzSystems\Behat\Core\Behat\ArgumentParser');
