@@ -6,16 +6,17 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\API\Repository\UserService;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Contracts\Core\Repository\UserService;
 
 class TestContext implements Context
 {
     private $permissionResolver;
+
     private $userService;
 
     public function __construct(UserService $userService, PermissionResolver $permissionResolver)
@@ -56,3 +57,5 @@ class TestContext implements Context
         }
     }
 }
+
+class_alias(TestContext::class, 'EzSystems\Behat\API\Context\TestContext');

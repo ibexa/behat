@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Log;
+namespace Ibexa\Behat\Core\Log;
 
 use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
@@ -17,7 +17,6 @@ class TestLogProvider
 {
     private const CONSOLE_LOGS_LIMIT = 10;
     private const APPLICATION_LOGS_LIMIT = 25;
-    private const OLD_LOG_FILE_NAME = 'travis_test.log';
     private const LOG_FILE_NAME = 'behat.log';
 
     private static $LOGS;
@@ -108,3 +107,5 @@ class TestLogProvider
         self::$LOGS = $logs;
     }
 }
+
+class_alias(TestLogProvider::class, 'EzSystems\Behat\Core\Log\TestLogProvider');

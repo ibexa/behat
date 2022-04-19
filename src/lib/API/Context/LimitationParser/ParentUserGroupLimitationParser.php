@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\ParentUserGroupLimitation;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\ParentUserGroupLimitation;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentException;
 
 class ParentUserGroupLimitationParser implements LimitationParserInterface
 {
@@ -31,3 +31,5 @@ class ParentUserGroupLimitationParser implements LimitationParserInterface
         );
     }
 }
+
+class_alias(ParentUserGroupLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ParentUserGroupLimitationParser');
