@@ -51,7 +51,6 @@ class ContentDataProvider
     {
         $contentType = $this->contentTypeService->loadContentTypeByIdentifier($this->contentTypeIdentifier);
         $contentCreateStruct = $this->contentService->newContentCreateStruct($contentType, $language);
-        $contentCreateStruct->modificationDate = $this->randomDataGenerator->getRandomDateFromThePast();
 
         return $this->fillContentStructWithData($contentType, $language, $language, $contentCreateStruct);
     }
