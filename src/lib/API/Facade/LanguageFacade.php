@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Facade;
+namespace Ibexa\Behat\API\Facade;
 
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\API\Repository\LanguageService;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\LanguageService;
 
 class LanguageFacade
 {
-    /** @var \eZ\Publish\API\Repository\LanguageService */
+    /** @var \Ibexa\Contracts\Core\Repository\LanguageService */
     private $languageService;
 
     public function __construct(LanguageService $languageService)
@@ -39,3 +39,5 @@ class LanguageFacade
         $this->languageService->createLanguage($languageCreateStruct);
     }
 }
+
+class_alias(LanguageFacade::class, 'EzSystems\Behat\API\Facade\LanguageFacade');

@@ -6,22 +6,22 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Subscriber;
+namespace Ibexa\Behat\Subscriber;
 
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\API\Repository\UserService;
-use EzSystems\Behat\API\ContentData\RandomDataGenerator;
-use EzSystems\Behat\API\Facade\SearchFacade;
-use EzSystems\Behat\Event\Events;
-use EzSystems\Behat\Event\InitialEvent;
-use EzSystems\Behat\Event\TransitionEvent;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Behat\API\Facade\SearchFacade;
+use Ibexa\Behat\Event\Events;
+use Ibexa\Behat\Event\InitialEvent;
+use Ibexa\Behat\Event\TransitionEvent;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Contracts\Core\Repository\UserService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class InitialStage extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \EzSystems\Behat\API\Facade\SearchFacade */
+    /** @var \Ibexa\Behat\API\Facade\SearchFacade */
     private $searchFacade;
 
     protected function getTransitions(): array
@@ -86,3 +86,5 @@ class InitialStage extends AbstractProcessStage implements EventSubscriberInterf
     {
     }
 }
+
+class_alias(InitialStage::class, 'EzSystems\Behat\Subscriber\InitialStage');

@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData;
+namespace Ibexa\Behat\API\ContentData;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\Values\Content\ContentCreateStruct;
-use eZ\Publish\API\Repository\Values\Content\ContentStruct;
-use eZ\Publish\API\Repository\Values\Content\ContentUpdateStruct;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use EzSystems\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface;
+use Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentCreateStruct;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentStruct;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 
 class ContentDataProvider
 {
@@ -24,10 +24,10 @@ class ContentDataProvider
 
     private $contentService;
 
-    /** @var \EzSystems\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface[] */
+    /** @var \Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface[] */
     private $fieldTypeDataProviders;
 
-    /** @var \EzSystems\Behat\API\ContentData\RandomDataGenerator */
+    /** @var \Ibexa\Behat\API\ContentData\RandomDataGenerator */
     private $randomDataGenerator;
 
     public function __construct(ContentTypeService $contentTypeService, ContentService $contentService, RandomDataGenerator $randomDataGenerator)
@@ -51,7 +51,6 @@ class ContentDataProvider
     {
         $contentType = $this->contentTypeService->loadContentTypeByIdentifier($this->contentTypeIdentifier);
         $contentCreateStruct = $this->contentService->newContentCreateStruct($contentType, $language);
-        $contentCreateStruct->modificationDate = $this->randomDataGenerator->getRandomDateFromThePast();
 
         return $this->fillContentStructWithData($contentType, $language, $language, $contentCreateStruct);
     }
@@ -116,3 +115,5 @@ class ContentDataProvider
         return $contentStruct;
     }
 }
+
+class_alias(ContentDataProvider::class, 'EzSystems\Behat\API\ContentData\ContentDataProvider');

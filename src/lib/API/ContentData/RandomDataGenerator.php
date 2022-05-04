@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData;
+namespace Ibexa\Behat\API\ContentData;
 
 use DateTime;
-use eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface;
 use Faker;
 use Faker\Generator;
+use Ibexa\Core\MVC\Symfony\Locale\LocaleConverterInterface;
 
 class RandomDataGenerator
 {
@@ -69,3 +69,5 @@ class RandomDataGenerator
         return random_int(0, 999) / 1000;
     }
 }
+
+class_alias(RandomDataGenerator::class, 'EzSystems\Behat\API\ContentData\RandomDataGenerator');
