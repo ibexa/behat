@@ -31,7 +31,7 @@ final class RootElement extends BaseElement implements RootElementInterface
             throw new RuntimeException('drag-mock library has to be added to the page in order to use this method. Refer to README in BehatBundle for more information.');
         }
 
-        $movingScript = sprintf('{ const dragMockTmp = dragMock.dragStart(%s).dragOver(%s); setTimeout(() => dragMockTmp.drop(%s), 100); }', $from, $hover, $to);
+        $movingScript = sprintf('{ const dragMockTmp = dragMock.dragStart(%s).delay(50).dragOver(%s).delay(50); setTimeout(() => dragMockTmp.drop(%s), 100); }', $from, $hover, $to);
         $this->session->getDriver()->executeScript($movingScript);
     }
 
