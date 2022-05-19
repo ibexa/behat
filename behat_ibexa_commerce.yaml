@@ -31,6 +31,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/form-builder/features'
                 - '%paths.base%/vendor/ibexa/page-builder/features/DynamicLandingPage'
                 - '%paths.base%/vendor/ibexa/page-builder/features/personas'
+                - '%paths.base%/vendor/ibexa/product-catalog/features'
                 - '%paths.base%/vendor/ibexa/fieldtype-page/features/eventSource'
                 - '%paths.base%/vendor/ibexa/user/features/browser'
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
@@ -79,6 +80,7 @@ regression:
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormFieldConfigurationContext
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormFrontContext
                 - Ibexa\PageBuilder\Behat\Context\PageBuilderContext
+                - Ibexa\ProductCatalog\Behat\Context\AttributeGroupsContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\User\Behat\Context\UserSetupContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
