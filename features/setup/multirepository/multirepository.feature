@@ -13,12 +13,14 @@ Feature: Multirepository setup for testing
     """
     And I set configuration to "ibexa.repositories.new_repository"
         """
-                storage:
-                    engine: 'legacy'
-                    connection: second_connection
-                    config: {}
-                search:
-                    connection: second_connection
+            storage:
+                engine: 'legacy'
+                connection: second_connection
+                config: {}
+            search:
+                connection: second_connection
+            product_catalog:
+                engine: default
         """
     And I set configuration to "admin_group" siteaccess
       | key                          | value          |
