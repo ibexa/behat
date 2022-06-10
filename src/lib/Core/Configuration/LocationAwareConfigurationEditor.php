@@ -75,6 +75,13 @@ class LocationAwareConfigurationEditor implements ConfigurationEditorInterface
             $value = $this->contentFacade->getLocationByLocationURL($matches[1])->id;
         }
     }
+
+    public function copyKey($config, string $keyName, string $newKeyName)
+    {
+        $config = $this->innerConfigurationEditor->copyKey($config, $keyName, $newKeyName);
+
+        return $this->resolveLocationReference($config);
+    }
 }
 
 class_alias(LocationAwareConfigurationEditor::class, 'EzSystems\Behat\Core\Configuration\LocationAwareConfigurationEditor');

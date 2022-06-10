@@ -22,8 +22,6 @@ class ConfigurationContext implements Context
 
     private $ezplatformConfigFilePath;
 
-    private $configFilePath;
-
     private $projectDir;
 
     /**
@@ -153,6 +151,18 @@ class ConfigurationContext implements Context
         }
 
         return 'append' === $value;
+    }
+
+    /**
+     * @Given I copy the configuration from :keyName to :newKeyName
+     * @Given I copy the configuration from :keyName to :newKeyName in :configFilePath
+     */
+    public function iCopyTheConfigurationFromTo(string $keyName, string $newKeyName, string $configFilePath = null)
+    {
+        $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->ezplatformConfigFilePath;
+        $config = $this->configurationEditor->getConfigFromFile($configFilePath);
+        $config = $this->configurationEditor->copyKey($config, $keyName, $newKeyName);
+        $this->configurationEditor->saveConfigToFile($configFilePath, $config);
     }
 }
 
