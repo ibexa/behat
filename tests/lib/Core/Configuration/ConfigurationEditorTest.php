@@ -283,6 +283,16 @@ class ConfigurationEditorTest extends TestCase
 
         Assert::assertEquals(['initialValue1', 'initialValue2'], $value);
     }
+
+    public function testCopiesKey(): void
+    {
+        $configurationEditor = new ConfigurationEditor();
+        $initialConfig = ['baseKey' => ['initialValue1' => 'nestedValue1', 'initialValue2']];
+
+        $changedConfig = $configurationEditor->copyKey($initialConfig, 'baseKey.initialValue1', 'baseKey.copiedKey');
+
+        Assert::assertEquals(['baseKey' => ['initialValue1' => 'nestedValue1', 'initialValue2', 'copiedKey' => 'nestedValue1']], $changedConfig);
+    }
 }
 
 class_alias(ConfigurationEditorTest::class, 'EzSystems\Behat\Test\Core\Configuration\ConfigurationEditorTest');
