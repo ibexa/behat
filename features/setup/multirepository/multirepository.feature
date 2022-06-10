@@ -11,16 +11,14 @@ Feature: Multirepository setup for testing
             second_connection:
                 url: '%env(resolve:DATABASE_URL)%'
     """
-    And I set configuration to "ibexa.repositories.new_repository"
+      Given I copy the configuration from "ibexa.repositories.default" to "ibexa.repositories.new_repository"
+      And I append configuration to "ibexa.repositories.new_repository.storage"
         """
-            storage:
-                engine: 'legacy'
                 connection: second_connection
-                config: {}
-            search:
+        """
+      And I append configuration to "ibexa.repositories.new_repository.search"
+        """
                 connection: second_connection
-            product_catalog:
-                engine: default
         """
     And I set configuration to "admin_group" siteaccess
       | key                          | value          |
