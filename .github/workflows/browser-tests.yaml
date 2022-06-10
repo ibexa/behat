@@ -16,6 +16,7 @@ jobs:
             project-version: '4.1.x-dev'
             test-suite:  '--profile=browser --suite=admin-ui-full'
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
+            multirepository: true
         secrets:
             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     examples:
