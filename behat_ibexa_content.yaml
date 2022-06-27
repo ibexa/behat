@@ -62,6 +62,7 @@ regression:
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
                 - Ibexa\Behat\Browser\Context\DebuggingContext
                 - Ibexa\ProductCatalog\Behat\Context\AttributeGroupsContext
+                - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
