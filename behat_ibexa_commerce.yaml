@@ -79,7 +79,9 @@ regression:
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormBuilderContext
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormFieldConfigurationContext
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormFrontContext
+                - Ibexa\Migration\Behat\Context\MigrationContext
                 - Ibexa\PageBuilder\Behat\Context\PageBuilderContext
+                - Ibexa\ProductCatalog\Behat\Context\AttributesContext
                 - Ibexa\ProductCatalog\Behat\Context\AttributeGroupsContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
