@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Browser\Context;
 
 use Behat\MinkExtension\Context\RawMinkContext;
-use EzSystems\Behat\API\ContentData\FieldTypeData\PasswordProvider;
+use Ibexa\Behat\API\ContentData\FieldTypeData\PasswordProvider;
 use Ibexa\Behat\Browser\Page\LoginPage;
 use Ibexa\Behat\Browser\Page\RedirectLoginPage;
 
@@ -19,6 +19,7 @@ class AuthenticationContext extends RawMinkContext
      * @var \Ibexa\Behat\Browser\Page\LoginPage
      */
     private $loginPage;
+
     /**
      * @var \Ibexa\Behat\Browser\Page\RedirectLoginPage
      */

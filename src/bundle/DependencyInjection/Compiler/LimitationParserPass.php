@@ -6,10 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\BehatBundle\DependencyInjection\Compiler;
+namespace Ibexa\Bundle\Behat\DependencyInjection\Compiler;
 
-use EzSystems\Behat\API\Context\LimitationParser\LimitationParserInterface;
-use EzSystems\Behat\API\Context\LimitationParser\LimitationParsersCollector;
+use Ibexa\Behat\API\Context\LimitationParser\LimitationParsersCollector;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -19,7 +18,7 @@ class LimitationParserPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $parserCollector = $container->findDefinition(LimitationParsersCollector::class);
-        $strategyServiceIds = array_keys($container->findTaggedServiceIds(LimitationParserInterface::SERVICE_TAG));
+        $strategyServiceIds = array_keys($container->findTaggedServiceIds('ibexa.behat.limitation_parser'));
 
         foreach ($strategyServiceIds as $strategyServiceId) {
             $parserCollector->addMethodCall(
@@ -29,3 +28,5 @@ class LimitationParserPass implements CompilerPassInterface
         }
     }
 }
+
+class_alias(LimitationParserPass::class, 'EzSystems\BehatBundle\DependencyInjection\Compiler\LimitationParserPass');
