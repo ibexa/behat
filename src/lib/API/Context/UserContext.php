@@ -6,19 +6,19 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use EzSystems\Behat\API\Facade\UserFacade;
-use EzSystems\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Behat\API\Facade\UserFacade;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
 
 class UserContext implements Context
 {
-    /** @var \EzSystems\Behat\API\Facade\UserFacade */
+    /** @var \Ibexa\Behat\API\Facade\UserFacade */
     private $userFacade;
 
-    /** @var \EzSystems\Behat\Core\Behat\ArgumentParser */
+    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
     private $argumentParser;
 
     public function __construct(UserFacade $userFacade, ArgumentParser $argumentParser)
@@ -71,3 +71,5 @@ class UserContext implements Context
         $this->userFacade->assignUserGroupToRole($userGroupName, $roleName, $roleLimitation);
     }
 }
+
+class_alias(UserContext::class, 'EzSystems\Behat\API\Context\UserContext');
