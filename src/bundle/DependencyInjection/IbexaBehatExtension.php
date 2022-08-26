@@ -13,6 +13,7 @@ use Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface;
 use Ibexa\Behat\Browser\Component\Component;
 use Ibexa\Behat\Browser\Page\PageInterface;
 use Ibexa\Behat\Browser\Page\Preview\PagePreviewInterface;
+use Ibexa\Behat\Core\Log\Failure\KnownIssues\KnownIssueInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -64,6 +65,9 @@ class IbexaBehatExtension extends Extension implements PrependExtensionInterface
 
         $container->registerForAutoconfiguration(PagePreviewInterface::class)
             ->addTag('ibexa.behat.browser.page_preview');
+
+        $container->registerForAutoconfiguration(KnownIssueInterface::class)
+            ->addTag('ibexa.testing.browser.known_issue');
 
         $container->registerForAutoconfiguration(FieldTypeDataProviderInterface::class)
             ->addTag('ibexa.behat.fieldtype_data_provider');
