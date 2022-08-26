@@ -13,7 +13,7 @@ use Behat\Mink\Session;
 use Ibexa\Behat\Browser\Filter\BrowserLogFilter;
 use WebDriver\LogType;
 
-class TestLogProvider
+final class TestLogProvider
 {
     private const CONSOLE_LOGS_LIMIT = 10;
     private const APPLICATION_LOGS_LIMIT = 25;
@@ -41,15 +41,12 @@ class TestLogProvider
     {
         $driver = $this->session->getDriver();
 
-        if (!$this->session->isStarted() || !($driver instanceof Selenium2Driver)) {
+        if (!($driver instanceof Selenium2Driver) || !$this->session->isStarted()) {
             return [];
         }
 
         if ($this->hasCachedLogs()) {
-            $logs = $this->getCachedLogs();
-            $this->clearCachedLogs();
-
-            return $logs;
+            return $this->getCachedLogs();
         }
 
         $logs = $driver->getWebDriverSession()->log(LogType::BROWSER) ?? [];
@@ -97,7 +94,7 @@ class TestLogProvider
         return self::$LOGS;
     }
 
-    private function clearCachedLogs(): void
+    public static function reset(): void
     {
         self::$LOGS = [];
     }

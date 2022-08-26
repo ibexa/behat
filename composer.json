@@ -48,13 +48,11 @@
     },
     "autoload": {
         "psr-4": {
-            "EzSystems\\BehatBundle\\": "src/bundle/",
-            "EzSystems\\Behat\\": "src/lib/",
-            "Ibexa\\Tests\\Behat\\": "tests/lib/",
             "Ibexa\\Behat\\": "src/lib/",
             "Ibexa\\Bundle\\Behat\\": "src/bundle/",
             "Ibexa\\Contracts\\Behat\\": "src/contracts/",
-            "Ibexa\\Tests\\Bundle\\Behat\\": "tests/bundle/"
+            "EzSystems\\BehatBundle\\": "src/bundle/",
+            "EzSystems\\Behat\\": "src/lib/"
         }
     },
     "conflict": {
@@ -62,6 +60,8 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Ibexa\\Tests\\Behat\\": "tests/lib/",
+            "Ibexa\\Tests\\Bundle\\Behat\\": "tests/bundle/",
             "EzSystems\\Behat\\Test\\": "tests/"
         }
     },
