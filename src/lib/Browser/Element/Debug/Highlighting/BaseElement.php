@@ -98,17 +98,6 @@ class BaseElement implements BaseElementInterface
         );
     }
 
-    protected function removeClass(ElementInterface $element, string $class): void
-    {
-        $this->session->executeScript(
-            sprintf(
-                "%s.classList.remove('%s')",
-                $this->getElementScript($element),
-                $class
-            )
-        );
-    }
-
     protected function markRead(ElementInterface $element): void
     {
         $this->addClass($element, self::READ_CLASS);
@@ -129,9 +118,9 @@ class BaseElement implements BaseElementInterface
     private function getElementScript(ElementInterface $element): string
     {
         return sprintf(
-                'document.evaluate("%s", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue',
-                $element->getXPath()
-            );
+            'document.evaluate("%s", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue',
+            $element->getXPath()
+        );
     }
 
     private function getRandomColor(): string
