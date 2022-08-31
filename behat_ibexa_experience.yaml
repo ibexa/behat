@@ -6,6 +6,7 @@ imports:
     - vendor/ibexa/fieldtype-page/behat_suites.yml
     - vendor/ibexa/site-factory/behat_suites.yml
     - vendor/ibexa/workflow/behat_suites_experience.yml
+    - vendor/ibexa/segmentation/behat_suites.yml
 
 regression:
     suites:
@@ -37,6 +38,7 @@ regression:
               - '%paths.base%/vendor/ibexa/fieldtype-page/features/eventSource'
               - '%paths.base%/vendor/ibexa/user/features/browser'
               - '%paths.base%/vendor/ibexa/workflow/features/browser'
+              - '%paths.base%/vendor/ibexa/segmentation/features'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
@@ -85,3 +87,4 @@ regression:
                 - Ibexa\User\Behat\Context\UserSetupContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\Segmentation\Behat\Context\SegmentationContext
