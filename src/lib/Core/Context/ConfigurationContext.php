@@ -20,7 +20,7 @@ class ConfigurationContext implements Context
     private const SITEACCESS_KEY_FORMAT = 'ibexa.system.%s.%s';
     private const SITEACCESS_MATCHER_KEY = 'ibexa.siteaccess.match';
 
-    private $ezplatformConfigFilePath;
+    private $mainProjectConfigFilePath;
 
     private $projectDir;
 
@@ -32,7 +32,7 @@ class ConfigurationContext implements Context
     public function __construct(string $projectDir, ConfigurationEditorInterface $configurationEditor)
     {
         $this->projectDir = $projectDir;
-        $this->ezplatformConfigFilePath = sprintf('%s/config/packages/ibexa.yaml', $projectDir);
+        $this->mainProjectConfigFilePath = sprintf('%s/config/packages/ibexa.yaml', $projectDir);
         $this->configurationEditor = $configurationEditor;
     }
 
@@ -44,7 +44,7 @@ class ConfigurationContext implements Context
      */
     public function iAddSiteaccessWithSettings($siteaccessName, $siteaccessGroup, TableNode $settings)
     {
-        $config = $this->configurationEditor->getConfigFromFile($this->ezplatformConfigFilePath);
+        $config = $this->configurationEditor->getConfigFromFile($this->mainProjectConfigFilePath);
 
         $config = $this->configurationEditor->append($config, 'ibexa.siteaccess.list', $siteaccessName);
         $config = $this->configurationEditor->append($config, sprintf('ibexa.siteaccess.groups.%s', $siteaccessGroup), $siteaccessName);
@@ -55,7 +55,7 @@ class ConfigurationContext implements Context
             $config = $this->configurationEditor->set($config, sprintf(self::SITEACCESS_KEY_FORMAT, $siteaccessName, $key), $value);
         }
 
-        $this->configurationEditor->saveConfigToFile($this->ezplatformConfigFilePath, $config);
+        $this->configurationEditor->saveConfigToFile($this->mainProjectConfigFilePath, $config);
     }
 
     /**
@@ -68,7 +68,7 @@ class ConfigurationContext implements Context
     {
         $appendToExisting = $this->shouldAppendValue($mode);
 
-        $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->ezplatformConfigFilePath;
+        $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
 
         $config = $this->configurationEditor->getConfigFromFile($configFilePath);
 
@@ -96,7 +96,7 @@ class ConfigurationContext implements Context
     {
         $appendToExisting = $this->shouldAppendValue($mode);
 
-        $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->ezplatformConfigFilePath;
+        $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
 
         $config = $this->configurationEditor->getConfigFromFile($configFilePath);
         $parsedConfig = $this->parseConfig($configFragment);
@@ -162,7 +162,7 @@ class ConfigurationContext implements Context
      */
     public function iCopyTheConfigurationFromTo(string $keyName, string $newKeyName, string $configFilePath = null)
     {
-        $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->ezplatformConfigFilePath;
+        $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
         $config = $this->configurationEditor->getConfigFromFile($configFilePath);
         $config = $this->configurationEditor->copyKey($config, $keyName, $newKeyName);
         $this->configurationEditor->saveConfigToFile($configFilePath, $config);
