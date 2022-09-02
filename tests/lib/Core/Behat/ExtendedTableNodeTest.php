@@ -18,6 +18,7 @@ use PHPUnit\Framework\TestCase;
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  *
  * @internal
+ *
  * @coversNothing
  */
 class ExtendedTableNodeTest extends TestCase
