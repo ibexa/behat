@@ -16,6 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class ArgumentParserTest extends TestCase
