@@ -1,66 +1,66 @@
 imports:
     - behat_ibexa_content.yaml
-    - vendor/ezsystems/date-based-publisher/behat_suites_experience.yml
-    - vendor/ezsystems/ezplatform-form-builder/behat_suites.yml
-    - vendor/ezsystems/ezplatform-page-builder/behat_suites.yml
-    - vendor/ezsystems/ezplatform-page-fieldtype/behat_suites.yml
-    - vendor/ezsystems/ezplatform-site-factory/behat_suites.yml
-    - vendor/ezsystems/ezplatform-segmentation/behat_suites.yml
-    - vendor/ezsystems/ezplatform-workflow/behat_suites_experience.yml
+    - vendor/ibexa/scheduler/behat_suites_experience.yml
+    - vendor/ibexa/form-builder/behat_suites.yml
+    - vendor/ibexa/page-builder/behat_suites.yml
+    - vendor/ibexa/fieldtype-page/behat_suites.yml
+    - vendor/ibexa/site-factory/behat_suites.yml
+    - vendor/ibexa/workflow/behat_suites_experience.yml
+    - vendor/ibexa/segmentation/behat_suites.yml
 
 regression:
     suites:
         setup-experience:
             paths:
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/personas'
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/setup/richtextConfiguration/custom_styles.feature'
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/setup/richtextConfiguration/custom_tags.feature'
-                - '%paths.base%/vendor/ezsystems/ezplatform-workflow/features/setup/setup_experience.feature'
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/setup/loginMethods'
+                - '%paths.base%/vendor/ibexa/behat/features/personas'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/richtextConfiguration/custom_styles.feature'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/richtextConfiguration/custom_tags.feature'
+                - '%paths.base%/vendor/ibexa/workflow/features/setup/setup_experience.feature'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
             contexts:
-                - EzSystems\Behat\API\Context\ContentContext
-                - EzSystems\Behat\API\Context\ContentTypeContext
-                - EzSystems\Behat\API\Context\LanguageContext
-                - EzSystems\Behat\API\Context\RoleContext
-                - EzSystems\Behat\API\Context\TestContext
-                - EzSystems\Behat\API\Context\UserContext
-                - EzSystems\Behat\Core\Context\ConfigurationContext
-                - EzSystems\Behat\Core\Context\FileContext
+                - Ibexa\Behat\API\Context\ContentContext
+                - Ibexa\Behat\API\Context\ContentTypeContext
+                - Ibexa\Behat\API\Context\LanguageContext
+                - Ibexa\Behat\API\Context\RoleContext
+                - Ibexa\Behat\API\Context\TestContext
+                - Ibexa\Behat\API\Context\UserContext
+                - Ibexa\Behat\Core\Context\ConfigurationContext
+                - Ibexa\Behat\Core\Context\FileContext
         experience:
             paths:
-              - '%paths.base%/vendor/ezsystems/date-based-publisher/features'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/personas'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/standard'
-              - '%paths.base%/vendor/ezsystems/ezplatform-form-builder/features'
-              - '%paths.base%/vendor/ezsystems/ezplatform-page-builder/features/DynamicLandingPage'
-              - '%paths.base%/vendor/ezsystems/ezplatform-page-builder/features/personas'
-              - '%paths.base%/vendor/ezsystems/ezplatform-page-fieldtype/features/eventSource'
-              - '%paths.base%/vendor/ezsystems/ezplatform-user/features/browser'
-              - '%paths.base%/vendor/ezsystems/ezplatform-segmentation/features'
-              - '%paths.base%/vendor/ezsystems/ezplatform-workflow/features/browser'
+              - '%paths.base%/vendor/ibexa/scheduler/features'
+              - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
+              - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
+              - '%paths.base%/vendor/ibexa/form-builder/features'
+              - '%paths.base%/vendor/ibexa/page-builder/features/DynamicLandingPage'
+              - '%paths.base%/vendor/ibexa/page-builder/features/personas'
+              - '%paths.base%/vendor/ibexa/product-catalog/features'
+              - '%paths.base%/vendor/ibexa/fieldtype-page/features/eventSource'
+              - '%paths.base%/vendor/ibexa/user/features/browser'
+              - '%paths.base%/vendor/ibexa/workflow/features/browser'
+              - '%paths.base%/vendor/ibexa/segmentation/features'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
                 - Behat\MinkExtension\Context\MinkContext
-                - EzSystems\Behat\API\Context\ContentContext
-                - EzSystems\Behat\API\Context\ContentTypeContext
-                - EzSystems\Behat\API\Context\RoleContext
-                - EzSystems\Behat\API\Context\TestContext
-                - EzSystems\Behat\API\Context\TrashContext
-                - EzSystems\Behat\API\Context\UserContext
+                - Ibexa\Behat\API\Context\ContentContext
+                - Ibexa\Behat\API\Context\ContentTypeContext
+                - Ibexa\Behat\API\Context\RoleContext
+                - Ibexa\Behat\API\Context\TestContext
+                - Ibexa\Behat\API\Context\TrashContext
+                - Ibexa\Behat\API\Context\UserContext
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentPreviewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentTypeContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\DashboardContext
                 - Ibexa\AdminUi\Behat\BrowserContext\LanguageContext
-                - Ibexa\AdminUi\Behat\BrowserContext\LeftMenuContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ObjectStatesContext
-                - Ibexa\AdminUi\Behat\BrowserContext\RightMenuContext
                 - Ibexa\AdminUi\Behat\BrowserContext\RolesContext
                 - Ibexa\AdminUi\Behat\BrowserContext\SearchContext
                 - Ibexa\AdminUi\Behat\BrowserContext\SectionsContext
@@ -77,7 +77,11 @@ regression:
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormBuilderContext
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormFieldConfigurationContext
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormFrontContext
+                - Ibexa\Migration\Behat\Context\MigrationContext
                 - Ibexa\PageBuilder\Behat\Context\PageBuilderContext
+                - Ibexa\ProductCatalog\Behat\Context\AttributesContext
+                - Ibexa\ProductCatalog\Behat\Context\AttributeGroupsContext
+                - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
