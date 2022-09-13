@@ -38,6 +38,7 @@ regression:
               - '%paths.base%/vendor/ezsystems/ezplatform-user/features/browser'
               - '%paths.base%/vendor/ezsystems/ezplatform-segmentation/features'
               - '%paths.base%/vendor/ezsystems/ezplatform-workflow/features/browser'
+              - '%paths.base%/vendor/ezsystems/ezplatform-version-comparison'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
