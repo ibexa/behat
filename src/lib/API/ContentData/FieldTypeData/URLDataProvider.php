@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace EzSystems\Behat\API\ContentData\FieldTypeData;
 
+use eZ\Publish\Core\FieldType\Url\Value;
+
 class URLDataProvider extends AbstractFieldTypeDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
@@ -17,6 +19,13 @@ class URLDataProvider extends AbstractFieldTypeDataProvider
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
     {
-        return $this->getFaker()->url;
+        return new Value($this->getFaker()->url, $this->getFaker()->realText(80, 1));
+    }
+
+    public function parseFromString(string $value)
+    {
+        [$url, $text] = explode(',', $value);
+
+        return new Value($url, $text);
     }
 }
