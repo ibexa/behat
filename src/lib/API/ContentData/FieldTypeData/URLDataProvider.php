@@ -24,7 +24,9 @@ class URLDataProvider extends AbstractFieldTypeDataProvider
 
     public function parseFromString(string $value)
     {
-        [$url, $text] = explode(',', $value);
+        $values = explode(',', $value);
+        $url = $values[0];
+        $text = $values[1] ?? null;
 
         return new Value($url, $text);
     }
