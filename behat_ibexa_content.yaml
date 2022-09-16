@@ -30,7 +30,7 @@ regression:
               - '%paths.base%/vendor/ibexa/product-catalog/features'
               - '%paths.base%/vendor/ibexa/user/features/browser'
               - '%paths.base%/vendor/ibexa/workflow/features/browser'
-              - '%paths.base%/vendor/ibexa/version-comparison'
+              - '%paths.base%/vendor/ibexa/version-comparison//features'
             filters:
                 tags: "~@broken&&@IbexaContent"
             contexts: 
