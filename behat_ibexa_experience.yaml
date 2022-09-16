@@ -88,6 +88,7 @@ regression:
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
+                - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\Segmentation\Behat\Context\SegmentationContext
