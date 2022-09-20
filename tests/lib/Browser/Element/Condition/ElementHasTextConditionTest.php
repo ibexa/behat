@@ -21,7 +21,7 @@ class ElementHasTextConditionTest extends BaseTestCase
         $condition = new ElementHasTextCondition(
             $this->createElementWithChildElement(
                 'root',
-                new CSSLocator('dummy-id', 'dummy-selector'),
+                $searchedElementLocator,
                 $this->createElement('DummyText')
             ),
             $searchedElementLocator,

@@ -29,6 +29,9 @@ class ElementHasTextCondition implements ConditionInterface
      */
     private $expectedText;
 
+    /**
+     * @var string[]
+     */
     private $foundElementText;
 
     public function __construct(BaseElementInterface $searchedNode, LocatorInterface $elementLocator, string $expectedText)
