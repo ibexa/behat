@@ -32,7 +32,7 @@ class ElementHasTextCondition implements ConditionInterface
     /**
      * @var string[]
      */
-    private $foundElementText;
+    private $foundElementsText;
 
     public function __construct(BaseElementInterface $searchedNode, LocatorInterface $elementLocator, string $expectedText)
     {
@@ -47,9 +47,9 @@ class ElementHasTextCondition implements ConditionInterface
         $this->searchedNode->setTimeout(0);
         $elements = $this->searchedNode->findAll($this->elementLocator);
         $this->searchedNode->setTimeout($currentTimeout);
-        $this->foundElementText = $elements->mapBy(new ElementTextMapper());
+        $this->$foundElementsText = $elements->mapBy(new ElementTextMapper());
 
-        return in_array($this->expectedText, $this->foundElementText);
+        return in_array($this->expectedText, $this->$foundElementsText);
     }
 
     public function getErrorMessage(BaseElementInterface $invokingElement): string
@@ -61,7 +61,7 @@ class ElementHasTextCondition implements ConditionInterface
             $this->elementLocator->getIdentifier(),
             $this->elementLocator->getSelector(),
             $invokingElement->getTimeout(),
-            implode(',', $this->foundElementText)
+            implode(',', $this->$foundElementsText)
         );
     }
 }
