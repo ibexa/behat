@@ -11,6 +11,7 @@ namespace Ibexa\Behat\API\Facade;
 use FOS\HttpCacheBundle\CacheManager;
 use Ibexa\Behat\API\ContentData\ContentDataProvider;
 use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\Contracts\Core\Repository\Repository;
 use Ibexa\Contracts\Core\Repository\URLAliasService;
@@ -127,6 +128,26 @@ class ContentFacade
     private function flushHTTPcache(): void
     {
         $this->cacheManager->flush();
+    }
+
+    public function createContentIfNotExists(string $contentTypeIdentifier, string $contentUrl, string $parentUrl, array $contentItemData, string $language = 'eng-GB'): void
+    {
+        if ($this->contentExists($contentUrl)) {
+            return;
+        }
+
+        $this->createContent($contentTypeIdentifier, $parentUrl, $language, $contentItemData);
+    }
+
+    private function contentExists(string $contentUrl): bool
+    {
+        try {
+            $this->urlAliasService->lookup($contentUrl);
+
+            return true;
+        } catch (NotFoundException $exception) {
+            return false;
+        }
     }
 }
 
