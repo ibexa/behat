@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Test\Browser\Element\Assert;
+namespace  Ibexa\Tests\Behat\Browser\Element\Assert;
 
-use EzSystems\Behat\Test\Browser\Element\BaseTestCase;
 use Ibexa\Behat\Browser\Assert\CollectionAssert;
 use Ibexa\Behat\Browser\Element\ElementCollection;
 use Ibexa\Behat\Browser\Locator\XPathLocator;
+use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\ExpectationFailedException;
 
 class CollectionAssertTest extends BaseTestCase

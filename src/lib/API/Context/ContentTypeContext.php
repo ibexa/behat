@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
-use EzSystems\Behat\API\Facade\ContentTypeFacade;
+use Ibexa\Behat\API\Facade\ContentTypeFacade;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
 
 class ContentTypeContext implements Context
 {
-    /** @var \EzSystems\Behat\API\Facade\ContentTypeFacade */
+    /** @var \Ibexa\Behat\API\Facade\ContentTypeFacade */
     private $contentTypeFacade;
 
     public function __construct(ContentTypeFacade $contentTypeFacade)
@@ -142,3 +142,5 @@ class ContentTypeContext implements Context
         return $parsedSettings;
     }
 }
+
+class_alias(ContentTypeContext::class, 'EzSystems\Behat\API\Context\ContentTypeContext');

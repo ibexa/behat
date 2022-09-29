@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Configuration;
+namespace Ibexa\Behat\Core\Configuration;
 
 interface ConfigurationEditorInterface
 {
@@ -44,4 +44,8 @@ interface ConfigurationEditorInterface
      * @param $config
      */
     public function saveConfigToFile($filePath, $config): void;
+
+    public function copyKey($config, string $keyName, string $newKeyName);
 }
+
+class_alias(ConfigurationEditorInterface::class, 'EzSystems\Behat\Core\Configuration\ConfigurationEditorInterface');
