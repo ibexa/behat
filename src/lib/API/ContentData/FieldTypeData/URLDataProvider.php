@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
+use Ibexa\Core\FieldType\Url\Value;
+
 class URLDataProvider extends AbstractFieldTypeDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
@@ -17,7 +19,16 @@ class URLDataProvider extends AbstractFieldTypeDataProvider
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
     {
-        return $this->getFaker()->url;
+        return new Value($this->getFaker()->url, $this->getFaker()->realText(80, 1));
+    }
+
+    public function parseFromString(string $value)
+    {
+        $values = explode(',', $value);
+        $url = $values[0];
+        $text = $values[1] ?? null;
+
+        return new Value($url, $text);
     }
 }
 
