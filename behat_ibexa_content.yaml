@@ -3,6 +3,7 @@ imports:
     - vendor/ibexa/scheduler/behat_suites_content.yml
     - vendor/ibexa/workflow/behat_suites_content.yml
     - vendor/ibexa/product-catalog/behat_suites.yml
+    - vendor/ibexa/version-comparison/behat_suites.yml
 
 regression:
     suites:
@@ -29,6 +30,7 @@ regression:
               - '%paths.base%/vendor/ibexa/product-catalog/features'
               - '%paths.base%/vendor/ibexa/user/features/browser'
               - '%paths.base%/vendor/ibexa/workflow/features/browser'
+              - '%paths.base%/vendor/ibexa/version-comparison/features'
             filters:
                 tags: "~@broken&&@IbexaContent"
             contexts: 
@@ -70,5 +72,6 @@ regression:
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
+                - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
