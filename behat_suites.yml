@@ -79,3 +79,10 @@ setup:
                 - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
             contexts:
                 - Ibexa\Behat\Core\Context\ConfigurationContext
+        content-translation:
+            paths:
+                - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
+            contexts:
+                - Ibexa\Behat\Core\Context\ConfigurationContext
+                - Ibexa\Behat\API\Context\LanguageContext
+                - Ibexa\Behat\API\Context\TestContext

@@ -14,6 +14,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/behat/features/setup/richtextConfiguration/custom_tags.feature'
                 - '%paths.base%/vendor/ibexa/workflow/features/setup/setup_content.feature'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -22,6 +23,7 @@ regression:
                 - Ibexa\Behat\API\Context\UserContext
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\Core\Context\FileContext
+                - Ibexa\Behat\API\Context\LanguageContext
         content:
             paths:
               - '%paths.base%/vendor/ibexa/scheduler/features'
