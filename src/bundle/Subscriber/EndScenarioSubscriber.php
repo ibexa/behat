@@ -10,7 +10,7 @@ namespace Ibexa\Bundle\Behat\Subscriber;
 
 use Behat\Behat\EventDispatcher\Event\ExampleTested;
 use Behat\Behat\EventDispatcher\Event\ScenarioTested;
-use EzSystems\Behat\Core\Log\TestLogProvider;
+use Ibexa\Behat\Core\Log\TestLogProvider;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class EndScenarioSubscriber implements EventSubscriberInterface

@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use Ibexa\Platform\Contracts\Permissions\Repository\Values\User\Limitation\FieldGroupLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Permissions\Repository\Values\User\Limitation\FieldGroupLimitation;
 
 class FieldGroupLimitationParser implements LimitationParserInterface
 {
@@ -27,3 +27,5 @@ class FieldGroupLimitationParser implements LimitationParserInterface
         );
     }
 }
+
+class_alias(FieldGroupLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\FieldGroupLimitationParser');
