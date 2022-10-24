@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Log;
+namespace Ibexa\Behat\Core\Log;
 
 use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
@@ -104,3 +104,5 @@ final class TestLogProvider
         self::$LOGS = $logs;
     }
 }
+
+class_alias(TestLogProvider::class, 'EzSystems\Behat\Core\Log\TestLogProvider');
