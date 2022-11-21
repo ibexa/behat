@@ -25,6 +25,7 @@ regression:
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Behat\API\Context\LanguageContext
+                - Ibexa\Migration\Behat\Context\MigrationContext
         content:
             paths:
               - '%paths.base%/vendor/ibexa/scheduler/features'
