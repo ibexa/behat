@@ -23,6 +23,7 @@ regression:
                 - Ibexa\Behat\API\Context\UserContext
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\Core\Context\FileContext
+                - Ibexa\Migration\Behat\Context\MigrationContext
         commerce:
             paths:
                 - '%paths.base%/vendor/ibexa/scheduler/features'
