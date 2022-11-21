@@ -13,6 +13,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/workflow/features/setup/setup_experience.feature'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
+                - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
