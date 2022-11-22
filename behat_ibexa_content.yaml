@@ -31,7 +31,7 @@ regression:
               - '%paths.base%/vendor/ibexa/scheduler/features'
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
               - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
-              - '%paths.base%/vendor/ibexa/product-catalog/features'
+              - '%paths.base%/vendor/ibexa/product-catalog/features/browser'
               - '%paths.base%/vendor/ibexa/user/features/browser'
               - '%paths.base%/vendor/ibexa/workflow/features/browser'
               - '%paths.base%/vendor/ibexa/version-comparison/features'
