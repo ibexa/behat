@@ -71,6 +71,7 @@ regression:
                 - Ibexa\ProductCatalog\Behat\Context\AttributesContext
                 - Ibexa\ProductCatalog\Behat\Context\AttributeGroupsContext
                 - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
+                - Ibexa\ProductCatalog\Behat\Context\CustomerGroupsContext
                 - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
                 - Ibexa\ProductCatalog\Behat\Context\ProductsContext 
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
