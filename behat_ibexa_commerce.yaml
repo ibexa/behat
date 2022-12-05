@@ -25,8 +25,6 @@ regression:
         commerce:
             paths:
                 - '%paths.base%/vendor/ibexa/scheduler/features'
-                - '%paths.base%/vendor/ibexa/commerce-admin-ui/features/standard'
-                - '%paths.base%/vendor/ibexa/commerce-shop/features'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
                 - '%paths.base%/vendor/ibexa/form-builder/features'
@@ -70,7 +68,6 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
                 - Ibexa\Behat\Browser\Context\DebuggingContext
-                - Ibexa\Bundle\Commerce\ShopTools\Behat\Context\FrontContext
                 - Ibexa\FieldTypePage\Behat\Context\BlockHideEventsSourceContext
                 - Ibexa\FieldTypePage\Behat\Context\BlockRevealEventsSourceContext
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormAdministrationContext
