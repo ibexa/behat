@@ -1,7 +1,5 @@
 imports:
     - behat_ibexa_experience.yaml
-    - vendor/ibexa/commerce-admin-ui/behat_suites.yml
-    - vendor/ibexa/commerce-shop/behat_suites.yml
 
 regression:
     suites:
