@@ -89,6 +89,7 @@ regression:
                 - Ibexa\ProductCatalog\Behat\Context\CustomerGroupsContext
                 - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
                 - Ibexa\ProductCatalog\Behat\Context\ProductsContext 
+                - Ibexa\ProductCatalog\Behat\Context\CurrenciesContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
