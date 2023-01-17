@@ -29,6 +29,7 @@ class LoginPage extends Page
         $this->getHTMLPage()->findAll($this->getLocator('button'))
             ->filterBy(new LogicalOrCriterion([
                 new ElementTextCriterion('Login'),
+                new ElementTextCriterion('Log in'),
                 new ElementTextCriterion('Sign in'),
             ]))
             ->single()
