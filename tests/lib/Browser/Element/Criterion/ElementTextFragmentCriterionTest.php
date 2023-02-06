@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Behat\Browser\Element\Criterion;
 
 use Ibexa\Behat\Browser\Element\Criterion\ElementTextFragmentCriterion;
-use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
 use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\Assert;
@@ -19,19 +18,19 @@ class ElementTextFragmentCriterionTest extends BaseTestCase
     /**
      * @dataProvider dataProviderTestMatches
      */
-    public function testMatches(ElementInterface $element, bool $shouldMatch): void
+    public function testMatches(string $elementText, bool $shouldMatch): void
     {
         $criterion = new ElementTextFragmentCriterion('text');
-
+        $element = $this->createElement($elementText);
         Assert::assertEquals($shouldMatch, $criterion->matches($element));
     }
 
-    public function dataProviderTestMatches(): array
+    public static function dataProviderTestMatches(): array
     {
         return [
-            [$this->createElement('text'), true],
-            [$this->createElement('thisIsALongertext'), true],
-            [$this->createElement('thisStringDoesNotContainText'), false],
+            ['text', true],
+            ['thisIsALongertext', true],
+            ['thisStringDoesNotContainText', false],
         ];
     }
 
