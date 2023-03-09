@@ -57,7 +57,7 @@ class ElementTransitionHasEndedConditionTest extends BaseTestCase
 
         Assert::assertFalse($condition->isMet());
         Assert::assertEquals(
-            "Transition has not started at all for element with CSS locator 'searched-id': 'searched-test'. Please make sure the condition is used on the correct element. Timeout value: 1 seconds.",
+            "Transition has not started at all for element with CSS locator 'searched-id': 'searched-test'. Please make sure that you have performed composer run post-install-cmd command before running tests locally and make sure that the condition is used on the correct element. Timeout value: 1 seconds.",
             $condition->getErrorMessage($baseElement)
         );
     }

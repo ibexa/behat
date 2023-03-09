@@ -12,6 +12,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/corporate-account/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -27,6 +28,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/scheduler/features'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
+                - '%paths.base%/vendor/ibexa/corporate-account/features/browser'
                 - '%paths.base%/vendor/ibexa/form-builder/features'
                 - '%paths.base%/vendor/ibexa/page-builder/features/DynamicLandingPage'
                 - '%paths.base%/vendor/ibexa/page-builder/features/personas'
@@ -68,6 +70,7 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
                 - Ibexa\Behat\Browser\Context\DebuggingContext
+                - Ibexa\CorporateAccount\Behat\Context\CompaniesContext
                 - Ibexa\FieldTypePage\Behat\Context\BlockHideEventsSourceContext
                 - Ibexa\FieldTypePage\Behat\Context\BlockRevealEventsSourceContext
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormAdministrationContext
