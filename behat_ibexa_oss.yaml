@@ -23,13 +23,12 @@ default:
             javascript_session: 'selenium'
             sessions:
                 selenium:
-                    selenium2:
+                    webdriver:
                         browser: chrome
                         wd_host: '%env(string:SELENIUM_HOST)%'
                         capabilities:
                             extra_capabilities:
-                                chromeOptions:
-                                    w3c: false
+                                goog:chromeOptions:
                                     args:
                                         - "--window-size=1440,1080"
                                         - "--no-sandbox"
@@ -38,6 +37,8 @@ default:
                 chrome:
                     chrome:
                         api_url: '%env(string:CHROMIUM_HOST)%'
+
+        OAndreyev\MinkPhpWebdriverExtension: ~
 
         DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
 
