@@ -36,7 +36,7 @@ default:
                                         - "--disable-features=site-per-process"
                                         - "--disable-renderer-backgrounding"
                                         - "--disable-background-timer-throttling"
-                                        - "--disable-backgrounding-occluded-window"
+                                        - "--disable-backgrounding-occluded-windows"
                 chrome:
                     chrome:
                         api_url: '%env(string:CHROMIUM_HOST)%'
