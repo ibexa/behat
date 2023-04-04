@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Subscriber;
+namespace Ibexa\Behat\Subscriber;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\API\Repository\UserService;
-use EzSystems\Behat\API\ContentData\ContentDataProvider;
-use EzSystems\Behat\API\ContentData\RandomDataGenerator;
-use EzSystems\Behat\Event\Events;
-use EzSystems\Behat\Event\TransitionEvent;
+use Ibexa\Behat\API\ContentData\ContentDataProvider;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Behat\Event\Events;
+use Ibexa\Behat\Event\TransitionEvent;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Contracts\Core\Repository\UserService;
 use Ibexa\Workflow\Behat\Facade\WorkflowFacade;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -22,10 +22,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class Review extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \EzSystems\Behat\API\ContentData\ContentDataProvider */
+    /** @var \Ibexa\Behat\API\ContentData\ContentDataProvider */
     private $contentDataProvider;
 
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
     /** @var \Ibexa\Workflow\Behat\Facade\WorkflowFacade */
@@ -77,3 +77,5 @@ class Review extends AbstractProcessStage implements EventSubscriberInterface
         $this->workflowFacade->transition($event->content, $transitionName, $this->randomDataGenerator->getRandomTextLine());
     }
 }
+
+class_alias(Review::class, 'EzSystems\Behat\Subscriber\Review');

@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Debug;
+namespace Ibexa\Behat\Core\Debug;
 
 use Exception;
-use EzSystems\Behat\Core\Debug\Command\GoBackCommand;
-use EzSystems\Behat\Core\Debug\Command\RefreshPageCommand;
-use EzSystems\Behat\Core\Debug\Command\ShowHTMLCommand;
-use EzSystems\Behat\Core\Debug\Command\ShowURLCommand;
-use EzSystems\Behat\Core\Debug\Command\TakeScreenshotCommand;
-use EzSystems\Behat\Core\Debug\Shell\Shell;
 use Ibexa\Behat\Browser\Component\Component;
+use Ibexa\Behat\Core\Debug\Command\GoBackCommand;
+use Ibexa\Behat\Core\Debug\Command\RefreshPageCommand;
+use Ibexa\Behat\Core\Debug\Command\ShowHTMLCommand;
+use Ibexa\Behat\Core\Debug\Command\ShowURLCommand;
+use Ibexa\Behat\Core\Debug\Command\TakeScreenshotCommand;
+use Ibexa\Behat\Core\Debug\Shell\Shell;
 use RuntimeException;
 
 trait InteractiveDebuggerTrait
@@ -127,3 +127,5 @@ trait InteractiveDebuggerTrait
         ]);
     }
 }
+
+class_alias(InteractiveDebuggerTrait::class, 'EzSystems\Behat\Core\Debug\InteractiveDebuggerTrait');
