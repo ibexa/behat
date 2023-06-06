@@ -9,11 +9,9 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\Behat;
 
 use Behat\Behat\EventDispatcher\ServiceContainer\EventDispatcherExtension;
-use Behat\Testwork\Exception\ServiceContainer\ExceptionExtension;
 use Behat\Testwork\ServiceContainer\Extension;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
 use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
-use Ibexa\Bundle\Behat\Extension\ExceptionStringer\PHPUnit10ExceptionStringer;
 use Ibexa\Bundle\Behat\Initializer\BehatSiteAccessInitializer;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\FileLocator;
@@ -57,7 +55,6 @@ class IbexaExtension implements Extension
 
     public function load(ContainerBuilder $container, array $config)
     {
-        $this->loadExceptionStringer($container);
         $this->loadSiteAccessInitializer($container);
         $this->setMinkParameters($container, $config);
 
@@ -73,13 +70,6 @@ class IbexaExtension implements Extension
         ]);
         $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, ['priority' => 0]);
         $container->setDefinition(BehatSiteAccessInitializer::class, $definition);
-    }
-
-    private function loadExceptionStringer(ContainerBuilder $container): void
-    {
-        $definition = new Definition(PHPUnit10ExceptionStringer::class);
-        $definition->addTag(ExceptionExtension::STRINGER_TAG, ['priority' => 1000]);
-        $container->setDefinition(PHPUnit10ExceptionStringer::class, $definition);
     }
 
     private function setMinkParameters(ContainerBuilder $container, array $config): void
