@@ -1,5 +1,5 @@
 imports:
-    - behat_ibexa_headless.yaml
+    - behat_ibexa_content.yaml
     - vendor/ibexa/scheduler/behat_suites_experience.yml
     - vendor/ibexa/form-builder/behat_suites.yml
     - vendor/ibexa/page-builder/behat_suites.yml

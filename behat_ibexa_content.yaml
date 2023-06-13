@@ -1,18 +1,18 @@
 imports:
     - behat_ibexa_oss.yaml
-    - vendor/ibexa/scheduler/behat_suites_headless.yml
-    - vendor/ibexa/workflow/behat_suites_headless.yml
+    - vendor/ibexa/scheduler/behat_suites_content.yml
+    - vendor/ibexa/workflow/behat_suites_content.yml
     - vendor/ibexa/product-catalog/behat_suites.yml
     - vendor/ibexa/version-comparison/behat_suites.yml
 
 regression:
     suites:
-        setup-headless:
+        setup-content:
             paths:
                 - '%paths.base%/vendor/ibexa/behat/features/personas'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/richtextConfiguration/custom_styles.feature'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/richtextConfiguration/custom_tags.feature'
-                - '%paths.base%/vendor/ibexa/workflow/features/setup/setup_headless.feature'
+                - '%paths.base%/vendor/ibexa/workflow/features/setup/setup_content.feature'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
@@ -26,7 +26,7 @@ regression:
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Behat\API\Context\LanguageContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
-        headless:
+        content:
             paths:
               - '%paths.base%/vendor/ibexa/scheduler/features'
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
@@ -36,7 +36,7 @@ regression:
               - '%paths.base%/vendor/ibexa/workflow/features/browser'
               - '%paths.base%/vendor/ibexa/version-comparison/features'
             filters:
-                tags: "~@broken&&@IbexaHeadless"
+                tags: "~@broken&&@IbexaContent"
             contexts: 
                 - Behat\MinkExtension\Context\MinkContext
                 - Ibexa\Behat\API\Context\ContentContext
