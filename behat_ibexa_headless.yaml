@@ -1,9 +1,10 @@
 imports:
     - behat_ibexa_oss.yaml
-    - vendor/ibexa/scheduler/behat_suites_headless.yml
-    - vendor/ibexa/workflow/behat_suites_headless.yml
     - vendor/ibexa/product-catalog/behat_suites.yml
+    - vendor/ibexa/scheduler/behat_suites_headless.yml
+    - vendor/ibexa/taxonomy/behat_suites_headless.yml
     - vendor/ibexa/version-comparison/behat_suites.yml
+    - vendor/ibexa/workflow/behat_suites_headless.yml
 
 regression:
     suites:
@@ -28,13 +29,14 @@ regression:
                 - Ibexa\Migration\Behat\Context\MigrationContext
         headless:
             paths:
-              - '%paths.base%/vendor/ibexa/scheduler/features'
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
               - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
               - '%paths.base%/vendor/ibexa/product-catalog/features/browser'
+              - '%paths.base%/vendor/ibexa/scheduler/features'
+              - '%paths.base%/vendor/ibexa/taxonomy/features/browser'
               - '%paths.base%/vendor/ibexa/user/features/browser'
-              - '%paths.base%/vendor/ibexa/workflow/features/browser'
               - '%paths.base%/vendor/ibexa/version-comparison/features'
+              - '%paths.base%/vendor/ibexa/workflow/features/browser'
             filters:
                 tags: "~@broken&&@IbexaHeadless"
             contexts: 
@@ -76,6 +78,8 @@ regression:
                 - Ibexa\ProductCatalog\Behat\Context\ProductsContext 
                 - Ibexa\ProductCatalog\Behat\Context\CurrenciesContext 
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
+                - Ibexa\Taxonomy\Behat\Context\Browser\TaxonomyContext
+                - Ibexa\Taxonomy\Behat\Context\Service\TaxonomyContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
                 - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext

@@ -1,13 +1,14 @@
 imports:
     - behat_ibexa_headless.yaml
-    - vendor/ibexa/scheduler/behat_suites_experience.yml
+    - vendor/ibexa/corporate-account/behat_suites.yml
+    - vendor/ibexa/fieldtype-page/behat_suites.yml
     - vendor/ibexa/form-builder/behat_suites.yml
     - vendor/ibexa/page-builder/behat_suites.yml
-    - vendor/ibexa/fieldtype-page/behat_suites.yml
-    - vendor/ibexa/site-factory/behat_suites.yml
-    - vendor/ibexa/workflow/behat_suites_experience.yml
+    - vendor/ibexa/scheduler/behat_suites_experience.yml
     - vendor/ibexa/segmentation/behat_suites.yml
-    - vendor/ibexa/corporate-account/behat_suites.yml
+    - vendor/ibexa/site-factory/behat_suites.yml
+    - vendor/ibexa/taxonomy/behat_suites_experience.yml
+    - vendor/ibexa/workflow/behat_suites_experience.yml
 
 regression:
     suites:
@@ -33,19 +34,20 @@ regression:
                 - Ibexa\Migration\Behat\Context\MigrationContext
         experience:
             paths:
-              - '%paths.base%/vendor/ibexa/scheduler/features'
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
               - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
               - '%paths.base%/vendor/ibexa/corporate-account/features/browser'
+              - '%paths.base%/vendor/ibexa/fieldtype-page/features/eventSource'
               - '%paths.base%/vendor/ibexa/form-builder/features'
               - '%paths.base%/vendor/ibexa/page-builder/features/DynamicLandingPage'
               - '%paths.base%/vendor/ibexa/page-builder/features/personas'
               - '%paths.base%/vendor/ibexa/product-catalog/features/browser'
-              - '%paths.base%/vendor/ibexa/fieldtype-page/features/eventSource'
-              - '%paths.base%/vendor/ibexa/user/features/browser'
-              - '%paths.base%/vendor/ibexa/workflow/features/browser'
+              - '%paths.base%/vendor/ibexa/scheduler/features'
               - '%paths.base%/vendor/ibexa/segmentation/features'
+              - '%paths.base%/vendor/ibexa/taxonomy/features/browser'
+              - '%paths.base%/vendor/ibexa/user/features/browser'
               - '%paths.base%/vendor/ibexa/version-comparison/features'
+              - '%paths.base%/vendor/ibexa/workflow/features/browser'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
@@ -95,6 +97,8 @@ regression:
                 - Ibexa\ProductCatalog\Behat\Context\ProductsContext 
                 - Ibexa\ProductCatalog\Behat\Context\CurrenciesContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
+                - Ibexa\Taxonomy\Behat\Context\Browser\TaxonomyContext
+                - Ibexa\Taxonomy\Behat\Context\Service\TaxonomyContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
                 - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
