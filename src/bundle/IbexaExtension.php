@@ -15,6 +15,7 @@ use Behat\Testwork\ServiceContainer\ExtensionManager;
 use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
 use Ibexa\Bundle\Behat\Extension\ExceptionStringer\PHPUnit10ExceptionStringer;
 use Ibexa\Bundle\Behat\Initializer\BehatSiteAccessInitializer;
+use Ibexa\Bundle\Behat\Subscriber\StartScenarioSubscriber;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -25,6 +26,10 @@ use Symfony\Component\DependencyInjection\Reference;
 class IbexaExtension implements Extension
 {
     private const MINK_DEFAULT_JAVASCRIPT_SESSION_PARAMETER = 'ibexa.platform.behat.mink.default_javascript_session';
+
+    private const WIDTH_PARAMETER = 'ibexa.behat.browser.width';
+
+    private const HEIGHT_PARAMETER = 'ibexa.behat.browser.height';
 
     public function getConfigKey()
     {
@@ -50,6 +55,8 @@ class IbexaExtension implements Extension
                 ->arrayNode('mink')
                     ->children()
                         ->scalarNode('default_javascript_session')->defaultNull()->end()
+                        ->scalarNode('width')->defaultValue(1440)->end()
+                        ->scalarNode('height')->defaultValue(1080)->end()
                     ->end()
                 ->end()
             ->end();
@@ -59,6 +66,7 @@ class IbexaExtension implements Extension
     {
         $this->loadExceptionStringer($container);
         $this->loadSiteAccessInitializer($container);
+        $this->loadStartScenarioSubscriber($container);
         $this->setMinkParameters($container, $config);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/Resources/config'));
@@ -98,11 +106,31 @@ class IbexaExtension implements Extension
                 $container->setParameter($parameter, $value);
             }
         }
+
+        $container->setParameter(self::WIDTH_PARAMETER, (int) $config['mink']['width']);
+        $container->setParameter(self::HEIGHT_PARAMETER, (int) $config['mink']['height']);
     }
 
     private function setDefaultJavascriptSession(ContainerBuilder $container, string $defaultJavascriptSession): void
     {
         $container->setParameter('mink.javascript_session', $defaultJavascriptSession);
+    }
+
+    private function loadStartScenarioSubscriber(ContainerBuilder $container)
+    {
+        $definition = new Definition(StartScenarioSubscriber::class);
+        $definition->setArguments([
+            new Reference(SymfonyExtension::KERNEL_ID),
+            $this->getParameterReference(self::WIDTH_PARAMETER),
+            $this->getParameterReference(self::HEIGHT_PARAMETER),
+        ]);
+        $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, ['priority' => StartScenarioSubscriber::PRIORITY]);
+        $container->setDefinition(StartScenarioSubscriber::class, $definition);
+    }
+
+    private function getParameterReference(string $name): string
+    {
+        return '%' . $name . '%';
     }
 }
 
