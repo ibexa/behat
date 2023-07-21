@@ -8,8 +8,17 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\Locator;
 
+use Ibexa\Behat\Browser\Locator\Validator\CssLocatorValidator;
+
 class CSSLocator extends BaseLocator
 {
+    public function __construct(string $identifier, string $selector)
+    {
+        parent::__construct($identifier, $selector);
+        $validator = new CssLocatorValidator();
+        $validator->validate($this);
+    }
+
     public function getType(): string
     {
         return 'css';
