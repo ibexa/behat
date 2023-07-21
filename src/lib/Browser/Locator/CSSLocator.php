@@ -16,7 +16,11 @@ class CSSLocator extends BaseLocator
     {
         parent::__construct($identifier, $selector);
         $validator = new CssLocatorValidator();
-        $validator->validate($this);
+        if (str_contains($selector, '%d') || str_contains($selector, '%s')) {
+            $validator->validate(new self($identifier, str_replace(['%d', '%s'], '1', $selector)));
+        } else {
+            $validator->validate($this);
+        }
     }
 
     public function getType(): string
