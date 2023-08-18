@@ -13,6 +13,7 @@ use Symfony\Component\CssSelector\Exception\ParseException;
 use Symfony\Component\CssSelector\Node\CombinedSelectorNode;
 use Symfony\Component\CssSelector\Node\ElementNode;
 use Symfony\Component\CssSelector\Node\FunctionNode;
+use Symfony\Component\CssSelector\Node\PseudoNode;
 use Symfony\Component\CssSelector\Node\SelectorNode;
 use Symfony\Component\CssSelector\Parser\Parser;
 
@@ -50,12 +51,19 @@ class CssLocatorValidator
             if ($token instanceof SelectorNode) {
                 array_push($tokens, $token->getTree());
             }
+
             if ($token instanceof CombinedSelectorNode) {
                 array_push($tokens, $token->getSelector(), $token->getSubSelector());
             }
 
             if ($token instanceof FunctionNode) {
                 if (!$this->isValidFunctionNode($token)) {
+                    return false;
+                }
+            }
+
+            if ($token instanceof PseudoNode) {
+                if (!$this->isValidPseudoNode($token)) {
                     return false;
                 }
             }
@@ -67,6 +75,25 @@ class CssLocatorValidator
     private function isValidFunctionNode(FunctionNode $node): bool
     {
         if (!in_array($node->getName(), $this->partiallySupportedPseudoClasses)) {
+            return true;
+        }
+
+        $selector = $node->getSelector();
+
+        if (!($selector instanceof ElementNode)) {
+            $selector = $selector->getSelector();
+        }
+
+        if ($selector->getElement() === null) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function isValidPseudoNode(PseudoNode $node): bool
+    {
+        if (!in_array($node->getIdentifier(), $this->partiallySupportedPseudoClasses)) {
             return true;
         }
 

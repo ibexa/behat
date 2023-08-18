@@ -50,6 +50,7 @@ class CssLocatorValidatorTest extends TestCase
     {
         return [
             ['div'],
+            ['.ibexa-segmentation__items li.ibexa-segmentation__item:last-of-type div.ibexa-segmentation__content-wrapper > button'],
             ['div:nth-of-type(1)'],
             ['div.ibexa-content-field:nth-of-type(3)'],
             ['selector1 section:nth-of-type(2)'],
@@ -67,6 +68,8 @@ class CssLocatorValidatorTest extends TestCase
     {
         return [
             ['.ibexa:nth-of-type(1)'],
+            ['.ibexa-segmentation__items .ibexa-segmentation__item:last-of-type div.ibexa-segmentation__content-wrapper > button'],
+            ['.ibexa-pb-schedule-active-item:nth-of-type(1)'],
             ['.ibexa-table__cell:nth-of-type(5),td:nth-of-type(5)'],
             ['.ibexa-available-field-types__list > li:not(.ibexa-available-field-type--hidden) .ibexa-available-field-type__content:nth-of-type(5)'],
             ['.c-finder-branch:nth-of-type(3) .c-finder-leaf'],
