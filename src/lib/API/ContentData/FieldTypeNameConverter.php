@@ -41,6 +41,7 @@ class FieldTypeNameConverter
         'eztime' => 'Time',
         'ezurl' => 'URL',
         'ezuser' => 'User account',
+        'ibexa_taxonomy_entry_assignment' => 'Taxonomy Entry Assignment',
     ];
 
     public static function getFieldTypeNameByIdentifier(string $fieldTypeIdentifier): string
