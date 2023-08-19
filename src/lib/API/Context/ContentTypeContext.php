@@ -76,7 +76,6 @@ class ContentTypeContext implements Context
     private function parseFieldSettings(string $fieldTypeIdentifier, string $settings)
     {
         $parsedSettings = [];
-        // TODO: Clean this up in the future if needed
         switch ($fieldTypeIdentifier) {
             case 'ezcontentquery':
                 return $this->parseContentQuerySettings($settings);
@@ -86,6 +85,9 @@ class ContentTypeContext implements Context
 
             case 'ezselection':
                 return $this->parseSelectionSettings($settings);
+
+            case 'ibexa_taxonomy_entry_assignment':
+                return $this->parseTaxonomySettings($settings);
 
             default:
                 return $parsedSettings;
@@ -140,6 +142,11 @@ class ContentTypeContext implements Context
         }
 
         return $parsedSettings;
+    }
+
+    private function parseTaxonomySettings(string $settings): array
+    {
+        return ['taxonomy' => $settings];
     }
 }
 
