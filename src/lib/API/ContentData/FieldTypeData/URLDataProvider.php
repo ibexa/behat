@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\Core\FieldType\Url\Value;
+use Ibexa\Core\FieldType\Url\Value;
 
 class URLDataProvider extends AbstractFieldTypeDataProvider
 {
@@ -31,3 +31,5 @@ class URLDataProvider extends AbstractFieldTypeDataProvider
         return new Value($url, $text);
     }
 }
+
+class_alias(URLDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\URLDataProvider');
