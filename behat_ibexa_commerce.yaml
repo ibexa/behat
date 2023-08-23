@@ -1,5 +1,6 @@
 imports:
     - behat_ibexa_experience.yaml
+    - vendor/ibexa/payment/behat_suites.yml
 
 regression:
     suites:
@@ -38,6 +39,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
                 - '%paths.base%/vendor/ibexa/segmentation/features'
                 - '%paths.base%/vendor/ibexa/version-comparison/features'
+                - '%paths.base%/vendor/ibexa/payment/features'
             filters:
                 tags: "~@broken&&@IbexaCommerce"
             contexts: 
@@ -93,3 +95,4 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\Segmentation\Behat\Context\SegmentationContext
+                - Ibexa\Payment\Behat\Context\PaymentMethodsContext
