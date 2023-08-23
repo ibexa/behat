@@ -101,3 +101,4 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\Segmentation\Behat\Context\SegmentationContext
+                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext

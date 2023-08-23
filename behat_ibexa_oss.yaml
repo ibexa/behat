@@ -126,3 +126,4 @@ regression:
                 - Ibexa\Behat\Browser\Context\DebuggingContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
+                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
