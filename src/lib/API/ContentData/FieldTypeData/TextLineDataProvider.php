@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
+use Ibexa\Core\FieldType\TextLine\Value;
+
 class TextLineDataProvider extends AbstractFieldTypeDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
@@ -15,11 +17,16 @@ class TextLineDataProvider extends AbstractFieldTypeDataProvider
         return 'ezstring' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string
+    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): Value
     {
         $this->setLanguage($language);
 
-        return $this->getFaker()->realText(80, 1);
+        return new Value($this->getFaker()->realText(80, 1));
+    }
+
+    public function parseFromString(string $value): Value
+    {
+        return new Value($value);
     }
 }
 
