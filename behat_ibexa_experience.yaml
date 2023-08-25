@@ -1,13 +1,14 @@
 imports:
     - behat_ibexa_headless.yaml
-    - vendor/ibexa/scheduler/behat_suites_experience.yml
+    - vendor/ibexa/corporate-account/behat_suites.yml
+    - vendor/ibexa/fieldtype-page/behat_suites.yml
     - vendor/ibexa/form-builder/behat_suites.yml
     - vendor/ibexa/page-builder/behat_suites.yml
-    - vendor/ibexa/fieldtype-page/behat_suites.yml
-    - vendor/ibexa/site-factory/behat_suites.yml
-    - vendor/ibexa/workflow/behat_suites_experience.yml
+    - vendor/ibexa/scheduler/behat_suites_experience.yml
     - vendor/ibexa/segmentation/behat_suites.yml
-    - vendor/ibexa/corporate-account/behat_suites.yml
+    - vendor/ibexa/site-factory/behat_suites.yml
+    - vendor/ibexa/taxonomy/behat_suites_experience.yml
+    - vendor/ibexa/workflow/behat_suites_experience.yml
 
 regression:
     suites:
@@ -33,29 +34,24 @@ regression:
                 - Ibexa\Migration\Behat\Context\MigrationContext
         experience:
             paths:
-              - '%paths.base%/vendor/ibexa/scheduler/features'
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
               - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
               - '%paths.base%/vendor/ibexa/corporate-account/features/browser'
+              - '%paths.base%/vendor/ibexa/fieldtype-page/features/eventSource'
               - '%paths.base%/vendor/ibexa/form-builder/features'
               - '%paths.base%/vendor/ibexa/page-builder/features/DynamicLandingPage'
               - '%paths.base%/vendor/ibexa/page-builder/features/personas'
               - '%paths.base%/vendor/ibexa/product-catalog/features/browser'
-              - '%paths.base%/vendor/ibexa/fieldtype-page/features/eventSource'
-              - '%paths.base%/vendor/ibexa/user/features/browser'
-              - '%paths.base%/vendor/ibexa/workflow/features/browser'
+              - '%paths.base%/vendor/ibexa/scheduler/features'
               - '%paths.base%/vendor/ibexa/segmentation/features'
+              - '%paths.base%/vendor/ibexa/taxonomy/features'
+              - '%paths.base%/vendor/ibexa/user/features/browser'
               - '%paths.base%/vendor/ibexa/version-comparison/features'
+              - '%paths.base%/vendor/ibexa/workflow/features/browser'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
                 - Behat\MinkExtension\Context\MinkContext
-                - Ibexa\Behat\API\Context\ContentContext
-                - Ibexa\Behat\API\Context\ContentTypeContext
-                - Ibexa\Behat\API\Context\RoleContext
-                - Ibexa\Behat\API\Context\TestContext
-                - Ibexa\Behat\API\Context\TrashContext
-                - Ibexa\Behat\API\Context\UserContext
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
@@ -65,6 +61,7 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\DashboardContext
                 - Ibexa\AdminUi\Behat\BrowserContext\LanguageContext
+                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ObjectStatesContext
@@ -76,6 +73,12 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\UDWContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserNotificationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
+                - Ibexa\Behat\API\Context\ContentContext
+                - Ibexa\Behat\API\Context\ContentTypeContext
+                - Ibexa\Behat\API\Context\RoleContext
+                - Ibexa\Behat\API\Context\TestContext
+                - Ibexa\Behat\API\Context\TrashContext
+                - Ibexa\Behat\API\Context\UserContext
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
                 - Ibexa\Behat\Browser\Context\DebuggingContext
                 - Ibexa\CorporateAccount\Behat\Context\CompaniesContext
@@ -87,18 +90,19 @@ regression:
                 - Ibexa\FormBuilder\Behat\BrowserContext\FormFrontContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
                 - Ibexa\PageBuilder\Behat\Context\PageBuilderContext
-                - Ibexa\ProductCatalog\Behat\Context\AttributesContext
                 - Ibexa\ProductCatalog\Behat\Context\AttributeGroupsContext
+                - Ibexa\ProductCatalog\Behat\Context\AttributesContext
                 - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
-                - Ibexa\ProductCatalog\Behat\Context\CustomerGroupsContext
-                - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
-                - Ibexa\ProductCatalog\Behat\Context\ProductsContext 
                 - Ibexa\ProductCatalog\Behat\Context\CurrenciesContext
+                - Ibexa\ProductCatalog\Behat\Context\CustomerGroupsContext
+                - Ibexa\ProductCatalog\Behat\Context\ProductsContext 
+                - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
+                - Ibexa\Segmentation\Behat\Context\SegmentationContext
+                - Ibexa\Taxonomy\Behat\Context\Browser\TaxonomyContext
+                - Ibexa\Taxonomy\Behat\Context\Service\TaxonomyContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
                 - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
-                - Ibexa\Segmentation\Behat\Context\SegmentationContext
-                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
