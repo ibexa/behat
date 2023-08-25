@@ -96,3 +96,4 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\Segmentation\Behat\Context\SegmentationContext
                 - Ibexa\Payment\Behat\Context\PaymentMethodsContext
+                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
