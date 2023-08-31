@@ -100,3 +100,4 @@ regression:
                 - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
