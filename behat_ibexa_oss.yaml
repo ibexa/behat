@@ -13,8 +13,6 @@ default:
         cache: false
     formatters:
         pretty: true
-        allure:
-          output_path: '%paths.base%/build/allure'
     extensions:
         Behat\MinkExtension:
             files_path: '%paths.base%/vendor/ibexa/admin-ui/src/lib/Behat/TestFiles/'
@@ -64,9 +62,6 @@ default:
                     preset: ezplatform
                     mode: normal
                     limit: 10
-
-        Allure\Behat\AllureFormatterExtension:
-            image_attachment_limit: 5
 
     suites: ~
 
