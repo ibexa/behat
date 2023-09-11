@@ -1,6 +1,7 @@
 imports:
     - behat_ibexa_experience.yaml
     - vendor/ibexa/payment/behat_suites.yml
+    - vendor/ibexa/storefront/behat_suites.yml
 
 regression:
     suites:
@@ -14,6 +15,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/corporate-account/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/storefront/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -39,6 +41,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/segmentation/features'
                 - '%paths.base%/vendor/ibexa/taxonomy/features'
                 - '%paths.base%/vendor/ibexa/user/features/browser'
+                - '%paths.base%/vendor/ibexa/storefront/features'
                 - '%paths.base%/vendor/ibexa/version-comparison/features'
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
             filters:
@@ -92,7 +95,6 @@ regression:
                 - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\Segmentation\Behat\Context\SegmentationContext
-                - Ibexa\Segmentation\Behat\Context\SegmentationContext
                 - Ibexa\Taxonomy\Behat\Context\Browser\TaxonomyContext
                 - Ibexa\Taxonomy\Behat\Context\Service\TaxonomyContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
@@ -100,3 +102,5 @@ regression:
                 - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
+                - Ibexa\Storefront\Behat\Context\StorefrontContext
