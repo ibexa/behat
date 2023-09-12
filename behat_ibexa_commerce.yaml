@@ -2,6 +2,7 @@ imports:
     - behat_ibexa_experience.yaml
     - vendor/ibexa/payment/behat_suites.yml
     - vendor/ibexa/shipping/behat_suites.yml
+    - vendor/ibexa/storefront/behat_suites.yml
 
 regression:
     suites:
@@ -17,6 +18,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/corporate-account/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/shipping/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/storefront/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -27,6 +29,7 @@ regression:
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
+                - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
         commerce:
             paths:
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
@@ -40,6 +43,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/product-catalog/features/browser'
                 - '%paths.base%/vendor/ibexa/scheduler/features'
                 - '%paths.base%/vendor/ibexa/segmentation/features'
+                - '%paths.base%/vendor/ibexa/storefront/features/browser'
                 - '%paths.base%/vendor/ibexa/taxonomy/features'
                 - '%paths.base%/vendor/ibexa/user/features/browser'
                 - '%paths.base%/vendor/ibexa/version-comparison/features'
@@ -96,7 +100,7 @@ regression:
                 - Ibexa\ProductCatalog\Behat\Context\ProductTypesContext
                 - Ibexa\Scheduler\Behat\BrowserContext\DateBasedPublisherContext
                 - Ibexa\Segmentation\Behat\Context\SegmentationContext
-                - Ibexa\Segmentation\Behat\Context\SegmentationContext
+                - Ibexa\Storefront\Behat\Context\StorefrontContext
                 - Ibexa\Taxonomy\Behat\Context\Browser\TaxonomyContext
                 - Ibexa\Taxonomy\Behat\Context\Service\TaxonomyContext
                 - Ibexa\User\Behat\Context\UserSettingsContext
