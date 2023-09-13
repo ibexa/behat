@@ -104,4 +104,4 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
-                - Ibexa\Payment\Behat\Context\ShippingMethodsContext
+                - Ibexa\Shipping\Behat\Context\ShippingMethodsContext
