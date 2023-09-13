@@ -1,6 +1,7 @@
 imports:
     - behat_ibexa_experience.yaml
     - vendor/ibexa/payment/behat_suites.yml
+    - vendor/ibexa/shipping/behat_suites.yml
 
 regression:
     suites:
@@ -14,6 +15,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/corporate-account/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/shipping/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -41,6 +43,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/user/features/browser'
                 - '%paths.base%/vendor/ibexa/version-comparison/features'
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
+                - '%paths.base%/vendor/ibexa/shipping/features/browser'
             filters:
                 tags: "~@broken&&@IbexaCommerce"
             contexts: 
@@ -100,3 +103,4 @@ regression:
                 - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\Shipping\Behat\Context\ShippingMethodsContext
