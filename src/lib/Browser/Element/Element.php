@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Browser\Element;
 
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Session;
+use Facebook\WebDriver\Exception\StaleElementReferenceException;
 use Ibexa\Behat\Browser\Assert\ElementAssert;
 use Ibexa\Behat\Browser\Assert\ElementAssertInterface;
 use Ibexa\Behat\Browser\Element\Factory\ElementFactoryInterface;
@@ -36,6 +37,8 @@ final class Element extends BaseElement implements ElementInterface
         } catch (StaleElementReference $e) {
             return false;
         } catch (NoSuchElement $element) {
+            return false;
+        } catch (StaleElementReferenceException $e) {
             return false;
         }
     }
