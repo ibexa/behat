@@ -12,6 +12,7 @@ use Behat\Mink\Session;
 use Exception;
 use Ibexa\Behat\Browser\Assert\Debug\Interactive\ElementAssert as InteractiveElementAssert;
 use Ibexa\Behat\Browser\Assert\ElementAssertInterface;
+use Ibexa\Behat\Browser\Element\Action\ActionInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
 
@@ -111,5 +112,10 @@ final class Element extends BaseElement implements ElementInterface
     public function scrollToBottom(Session $session): void
     {
         $this->element->scrollToBottom($session);
+    }
+
+    public function execute(ActionInterface $action): void
+    {
+        $this->element->execute($action);
     }
 }

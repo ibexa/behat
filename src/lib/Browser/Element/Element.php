@@ -12,6 +12,7 @@ use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Session;
 use Ibexa\Behat\Browser\Assert\ElementAssert;
 use Ibexa\Behat\Browser\Assert\ElementAssertInterface;
+use Ibexa\Behat\Browser\Element\Action\ActionInterface;
 use Ibexa\Behat\Browser\Element\Factory\ElementFactoryInterface;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Webdriver\Exception\NoSuchElement;
@@ -146,5 +147,10 @@ final class Element extends BaseElement implements ElementInterface
     protected function isRadioGroup(): bool
     {
         return $this->decoratedElement->hasAttribute('type') && 'radio' === $this->decoratedElement->getAttribute('type');
+    }
+
+    public function execute(ActionInterface $action): void
+    {
+        $action->execute($this);
     }
 }
