@@ -46,9 +46,9 @@ class AuthenticationContext extends RawMinkContext
         $factory = new LockFactory($store);
 
         $lock = $factory->createLock('admin-login');
-        $this->redirectLoginPage->open('admin');
 
         if ($lock->acquire(true)) {
+            $this->redirectLoginPage->open('admin');
             $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
             $lock->release();
         }
