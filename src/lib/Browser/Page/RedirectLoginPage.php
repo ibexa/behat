@@ -33,6 +33,6 @@ class RedirectLoginPage extends LoginPage
 
     protected function getRoute(): string
     {
-        return '/unauthenticated_login_redirect';
+        return '/unauthenticated/login_redirect';
     }
 }

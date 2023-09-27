@@ -9,6 +9,6 @@ ibexa.behat.current_user_data:
         _controller: 'Ibexa\Bundle\Behat\Controller\CurrentUserDataController::showCurrentUserAction'
 
 ibexa_testing_login_redirect:
-    path: '/unauthenticated_login_redirect'
+    path: '/unauthenticated/login_redirect'
     defaults:
         _controller: 'Ibexa\Bundle\Behat\Controller\UnauthenticatedRedirectController::redirectAction'
