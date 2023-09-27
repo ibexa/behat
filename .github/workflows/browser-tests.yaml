@@ -16,7 +16,7 @@ jobs:
             test-suite:  '--profile=browser --suite=admin-ui-full'
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
             multirepository: true
-            timeout: 40
+            timeout: 60
             php-image: "ezsystems/php:8.1-v2-node16"
         secrets:
             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
