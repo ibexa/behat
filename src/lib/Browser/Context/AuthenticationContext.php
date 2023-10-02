@@ -49,6 +49,8 @@ class AuthenticationContext extends RawMinkContext
 
         if ($lock->acquire(true)) {
             $this->redirectLoginPage->open('admin');
+            $this->redirectLoginPage->logout();
+            $this->redirectLoginPage->open('admin');
             $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
             $lock->release();
         }
