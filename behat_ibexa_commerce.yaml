@@ -13,6 +13,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/workflow/features/setup/setup_experience.feature'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
+                - '%paths.base%/vendor/ibexa/page-builder/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/corporate-account/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/shipping/features/setup/setup.feature'
