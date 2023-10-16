@@ -33,7 +33,7 @@ final class RootElement extends BaseElement implements RootElementInterface
         } catch (Exception $exception) {
             $exceptionWithScript = new Exception(sprintf('Script: %s, Error: %s', $script, $exception->getMessage()));
 
-            $this->startInteractiveSessionOnException($exceptionWithScript, true);
+            return $this->startInteractiveSessionOnException($exceptionWithScript, true);
         }
     }
 }
