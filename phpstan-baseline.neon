@@ -2166,6 +2166,16 @@ parameters:
 			path: src/lib/Browser/Locator/LocatorCollection.php
 
 		-
+			message: "#^Call to an undefined method Symfony\\\\Component\\\\CssSelector\\\\Node\\\\NodeInterface\\:\\:getSelector\\(\\)\\.$#"
+			count: 2
+			path: src/lib/Browser/Locator/Validator/CssLocatorValidator.php
+
+		-
+			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Locator\\\\Validator\\\\CssLocatorValidator\\:\\:\\$partiallySupportedPseudoClasses type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/lib/Browser/Locator/Validator/CssLocatorValidator.php
+
+		-
 			message: "#^Cannot call method isVisible\\(\\) on Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementInterface\\|null\\.$#"
 			count: 1
 			path: src/lib/Browser/Locator/VisibleCSSLocator.php
@@ -3024,6 +3034,16 @@ parameters:
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\Assert\\\\CollectionAssertTest\\:\\:testAssertionPasses\\(\\) has parameter \\$expectedElementTexts with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Locator\\\\Validator\\\\CssLocatorValidatorTest\\:\\:provideInvalidSelectors\\(\\) return type has no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: tests/Browser/Locator/Validator/CssLocatorValidatorTest.php
+
+		-
+			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Locator\\\\Validator\\\\CssLocatorValidatorTest\\:\\:provideValidSelectors\\(\\) return type has no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: tests/Browser/Locator/Validator/CssLocatorValidatorTest.php
 
 		-
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\BaseTestCase\\:\\:createCollection\\(\\) has parameter \\$elementTexts with no type specified\\.$#"
