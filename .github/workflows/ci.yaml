@@ -68,3 +68,6 @@ jobs:
 
       - name: Run code style check
         run: composer run-script check-cs -- --format=checkstyle | cs2pr
+
+      - name: Run PHPStan analysis
+        run: composer run-script phpstan
