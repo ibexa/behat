@@ -151,6 +151,11 @@ parameters:
 			path: src/bundle/Form/RetryChoiceListFactory.php
 
 		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$groupBy with no type specified\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$index with no type specified\\.$#"
 			count: 1
 			path: src/bundle/Form/RetryChoiceListFactory.php

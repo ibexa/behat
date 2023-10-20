@@ -51,7 +51,7 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
         $preferredChoices = null,
         $label = null,
         $index = null,
-        callable $groupBy = null,
+        $groupBy = null,
         $attr = null
     ): ChoiceListView {
         $labelTranslationParameters = \func_num_args() > 6 ? func_get_arg(6) : [];
