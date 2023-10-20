@@ -12,11 +12,23 @@ use ErrorException;
 use Ibexa\Bundle\Behat\Form\RetryChoiceListFactory;
 use Ibexa\Tests\Bundle\Behat\Form\Stub\UnstableChoiceListFactory;
 use PHPUnit\Framework\TestCase;
+use Symfony\Bridge\PhpUnit\ClockMock;
 use Symfony\Component\Form\ChoiceList\ChoiceListInterface;
 use Symfony\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface;
 
 final class RetryChoiceListFactoryTest extends TestCase
 {
+    public function setUp(): void
+    {
+        ClockMock::register(__CLASS__);
+        ClockMock::withClockMock(true);
+    }
+
+    public function tearDown(): void
+    {
+        ClockMock::withClockMock(false);
+    }
+
     /**
      * @dataProvider provider
      */

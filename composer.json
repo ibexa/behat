@@ -49,7 +49,8 @@
         "mikey179/vfsstream": "^1.6",
         "phpstan/phpstan": "^1.10",
         "phpstan/phpstan-phpunit": "^1.3",
-        "phpstan/phpstan-symfony": "^1.3"
+        "phpstan/phpstan-symfony": "^1.3",
+        "symfony/phpunit-bridge": "^6.3"
     },
     "autoload": {
         "psr-4": {

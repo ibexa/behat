@@ -87,6 +87,7 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
                     throw $e;
                 }
                 ++$counter;
+                usleep(100000 * 2 ** $counter);
             }
         }
     }
