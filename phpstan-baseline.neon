@@ -136,7 +136,22 @@ parameters:
 			path: src/bundle/Form/RetryChoiceListFactory.php
 
 		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromChoices\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromLoader\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$attr with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$index with no type specified\\.$#"
 			count: 1
 			path: src/bundle/Form/RetryChoiceListFactory.php
 
