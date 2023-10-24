@@ -11,11 +11,14 @@ namespace Ibexa\Bundle\Behat\Subscriber;
 use Behat\Behat\EventDispatcher\Event\BeforeScenarioTested;
 use Behat\Behat\EventDispatcher\Event\ExampleTested;
 use Behat\Behat\EventDispatcher\Event\ScenarioTested;
+use Facebook\WebDriver\Exception\UnknownErrorException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 class StartScenarioSubscriber implements EventSubscriberInterface
 {
+    private const RETRY_LIMIT = 2;
+
     public const PRIORITY = -1000;
 
     private KernelInterface $kernel;
@@ -50,6 +53,31 @@ class StartScenarioSubscriber implements EventSubscriberInterface
             $session->start();
         }
 
-        $session->resizeWindow($this->width, $this->height);
+        $this->executeWithRetry(function () use ($session): void {
+            $session->resizeWindow($this->width, $this->height);
+        });
+    }
+
+    /**
+     * @template T
+     *
+     * @param callable(mixed ...$args): T $fn
+     *
+     * @return T
+     */
+    private function executeWithRetry(callable $fn)
+    {
+        $counter = 0;
+        while (true) {
+            try {
+                return $fn();
+            } catch (UnknownErrorException $e) {
+                if ($counter > self::RETRY_LIMIT) {
+                    throw $e;
+                }
+                ++$counter;
+                usleep(100000 * 2 ** $counter);
+            }
+        }
     }
 }
