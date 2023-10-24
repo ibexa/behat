@@ -131,6 +131,56 @@ parameters:
 			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
 
 		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromChoices\\(\\) has parameter \\$choices with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromChoices\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromLoader\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$attr with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$groupBy with no type specified\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$index with no type specified\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$preferredChoices with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Symfony\\\\Component\\\\Form\\\\ChoiceList\\\\Factory\\\\ChoiceListFactoryInterface\\:\\:createListFromChoices\\(\\) invoked with 3 parameters, 1\\-2 required\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Symfony\\\\Component\\\\Form\\\\ChoiceList\\\\Factory\\\\ChoiceListFactoryInterface\\:\\:createListFromLoader\\(\\) invoked with 3 parameters, 1\\-2 required\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: "#^Method Symfony\\\\Component\\\\Form\\\\ChoiceList\\\\Factory\\\\ChoiceListFactoryInterface\\:\\:createView\\(\\) invoked with 7 parameters, 1\\-6 required\\.$#"
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\IbexaBehatBundle\\:\\:build\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/bundle/IbexaBehatBundle.php
@@ -3044,6 +3094,21 @@ parameters:
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Locator\\\\Validator\\\\CssLocatorValidatorTest\\:\\:provideValidSelectors\\(\\) return type has no value type specified in iterable type iterable\\.$#"
 			count: 1
 			path: tests/Browser/Locator/Validator/CssLocatorValidatorTest.php
+
+		-
+			message: "#^Method Ibexa\\\\Tests\\\\Bundle\\\\Behat\\\\Form\\\\Stub\\\\UnstableChoiceListFactory\\:\\:createListFromChoices\\(\\) has parameter \\$choices with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Tests\\\\Bundle\\\\Behat\\\\Form\\\\Stub\\\\UnstableChoiceListFactory\\:\\:createView\\(\\) has parameter \\$attr with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
+
+		-
+			message: "#^Method Ibexa\\\\Tests\\\\Bundle\\\\Behat\\\\Form\\\\Stub\\\\UnstableChoiceListFactory\\:\\:createView\\(\\) has parameter \\$preferredChoices with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
 
 		-
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\BaseTestCase\\:\\:createCollection\\(\\) has parameter \\$elementTexts with no type specified\\.$#"
