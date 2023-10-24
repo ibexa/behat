@@ -37,7 +37,8 @@
         "symfony/yaml": "^5.0",
         "psy/psysh": "^0.10.8",
         "oleg-andreyev/mink-phpwebdriver": "^1.2",
-        "oleg-andreyev/mink-phpwebdriver-extension": "^1.0"
+        "oleg-andreyev/mink-phpwebdriver-extension": "^1.0",
+        "symfony/form": "^5.4"
     },
     "require-dev": {
         "ibexa/code-style": "^1.0",
@@ -48,7 +49,8 @@
         "mikey179/vfsstream": "^1.6",
         "phpstan/phpstan": "^1.10",
         "phpstan/phpstan-phpunit": "^1.3",
-        "phpstan/phpstan-symfony": "^1.3"
+        "phpstan/phpstan-symfony": "^1.3",
+        "symfony/phpunit-bridge": "^6.3"
     },
     "autoload": {
         "psr-4": {

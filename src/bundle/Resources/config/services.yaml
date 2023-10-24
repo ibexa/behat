@@ -2,6 +2,7 @@ imports:
     - { resource: services/contexts.yaml }
     - { resource: services/controllers.yaml }
     - { resource: services/factory.yaml }
+    - { resource: services/form.yaml }
     - { resource: services/fieldtype_data_providers.yaml }
     - { resource: services/known_issues.yaml }
     - { resource: services/limitation_parsers.yaml }
