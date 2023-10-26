@@ -14,6 +14,8 @@ use Behat\Behat\EventDispatcher\Event\ScenarioTested;
 use Facebook\WebDriver\Exception\UnknownErrorException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\Lock\LockFactory;
+use Symfony\Component\Lock\Store\FlockStore;
 
 class StartScenarioSubscriber implements EventSubscriberInterface
 {
@@ -50,7 +52,18 @@ class StartScenarioSubscriber implements EventSubscriberInterface
 
         $session = $this->kernel->getContainer()->get('behat.mink.default_session');
         if (!$session->isStarted()) {
-            $session->start();
+            $store = new FlockStore(sys_get_temp_dir());
+            $factory = new LockFactory($store);
+
+            $lock = $factory->createLock('session-start');
+
+            if ($lock->acquire(true)) {
+                try {
+                    $session->start();
+                } finally {
+                    $lock->release();
+                }
+            }
         }
 
         $this->executeWithRetry(function () use ($session): void {
