@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use eZ\Publish\API\Repository\ObjectStateService;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\ObjectStateService;
 
 class ObjectStateContext implements Context
 {
-    /** @var \eZ\Publish\API\Repository\ObjectStateService */
+    /** @var \Ibexa\Contracts\Core\Repository\ObjectStateService */
     private $objectStateService;
 
     public function __construct(ObjectStateService $objectStateService)
@@ -46,3 +46,5 @@ class ObjectStateContext implements Context
         }
     }
 }
+
+class_alias(ObjectStateContext::class, 'EzSystems\Behat\API\Context\ObjectStateContext');

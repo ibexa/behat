@@ -89,6 +89,8 @@ class BaseElement implements BaseElementInterface
                     $wrappedElement = $this->elementFactory->createElement($this->elementFactory, $locator, $foundMinkElement);
 
                     if ($locator->elementMeetsCriteria($wrappedElement)) {
+                        $wrappedElement->setTimeout($this->getTimeout());
+
                         return $wrappedElement;
                     }
                 }

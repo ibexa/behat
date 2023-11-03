@@ -1,10 +1,10 @@
 imports:
-    - vendor/ezsystems/behatbundle/behat_suites.yml
-    - vendor/ezsystems/ezplatform-admin-ui/behat_suites.yml
-    - vendor/ezsystems/ezplatform-content-forms/behat_suites.yml
-    - vendor/ezsystems/ezplatform-http-cache/behat_suites.yml
-    - vendor/ezsystems/ezplatform-kernel/eZ/Bundle/EzPublishCoreBundle/behat_suites.yml
-    - vendor/ezsystems/ezplatform-user/behat_suites.yml
+    - vendor/ibexa/behat/behat_suites.yml
+    - vendor/ibexa/admin-ui/behat_suites.yml
+    - vendor/ibexa/content-forms/behat_suites.yml
+    - vendor/ibexa/http-cache/behat_suites.yml
+    - vendor/ibexa/core/src/bundle/Core/behat_suites.yaml
+    - vendor/ibexa/user/behat_suites.yml
 
 default:
     calls:
@@ -15,21 +15,19 @@ default:
         pretty: true
     extensions:
         Behat\MinkExtension:
-            files_path: '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/src/lib/Behat/TestFiles/'
+            files_path: '%paths.base%/vendor/ibexa/admin-ui/src/lib/Behat/TestFiles/'
             base_url: '%env(string:WEB_HOST)%'
             goutte: ~
             javascript_session: 'selenium'
             sessions:
                 selenium:
-                    selenium2:
+                    webdriver:
                         browser: chrome
                         wd_host: '%env(string:SELENIUM_HOST)%'
                         capabilities:
                             extra_capabilities:
-                                chromeOptions:
-                                    w3c: false
+                                goog:chromeOptions:
                                     args:
-                                        - "--window-size=1440,1080"
                                         - "--no-sandbox"
                                         # problem with different iframe host  - https://bugs.chromium.org/p/chromedriver/issues/detail?id=2758
                                         - "--disable-features=site-per-process"
@@ -40,14 +38,18 @@ default:
                     chrome:
                         api_url: '%env(string:CHROMIUM_HOST)%'
 
+        OAndreyev\MinkPhpWebdriverExtension: ~
+
         DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
 
         FriendsOfBehat\SymfonyExtension:
             bootstrap: 'tests/bootstrap.php'
 
-        EzSystems\BehatBundle\BehatExtension:
+        Ibexa\Bundle\Behat\IbexaExtension:
             mink:
                 default_javascript_session: '%env(string:MINK_DEFAULT_SESSION)%'
+                width: 1440
+                height: 1080
 
         Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
 
@@ -67,47 +69,47 @@ regression:
     suites:
         setup-oss:
             paths:
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/personas'
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/setup/richtextConfiguration/custom_styles.feature'
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/setup/richtextConfiguration/custom_tags.feature'
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/setup/loginMethods'
-                - '%paths.base%/vendor/ezsystems/behatbundle/features/setup/contentTranslation'
+                - '%paths.base%/vendor/ibexa/behat/features/personas'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/richtextConfiguration/custom_styles.feature'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/richtextConfiguration/custom_tags.feature'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/loginMethods'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
             contexts:
-                - EzSystems\Behat\API\Context\ContentContext
-                - EzSystems\Behat\API\Context\ContentTypeContext
-                - EzSystems\Behat\API\Context\RoleContext
-                - EzSystems\Behat\API\Context\TestContext
-                - EzSystems\Behat\API\Context\UserContext
-                - EzSystems\Behat\Core\Context\ConfigurationContext
-                - EzSystems\Behat\Core\Context\FileContext
-                - EzSystems\Behat\API\Context\LanguageContext
+                - Ibexa\Behat\API\Context\ContentContext
+                - Ibexa\Behat\API\Context\ContentTypeContext
+                - Ibexa\Behat\API\Context\RoleContext
+                - Ibexa\Behat\API\Context\TestContext
+                - Ibexa\Behat\API\Context\UserContext
+                - Ibexa\Behat\Core\Context\ConfigurationContext
+                - Ibexa\Behat\Core\Context\FileContext
+                - Ibexa\Behat\API\Context\LanguageContext
         oss:
             paths:
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/personas'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/standard'
-              - '%paths.base%/vendor/ezsystems/ezplatform-user/features/browser'
+              - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
+              - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
+              - '%paths.base%/vendor/ibexa/user/features/browser'
             filters:
                 tags: "~@broken&&@IbexaOSS"
             contexts: 
                 - Behat\MinkExtension\Context\MinkContext
-                - EzSystems\Behat\API\Context\ContentContext
-                - EzSystems\Behat\API\Context\ContentTypeContext
-                - EzSystems\Behat\API\Context\TestContext
-                - EzSystems\Behat\API\Context\TrashContext
-                - EzSystems\Behat\API\Context\UserContext
+                - Ibexa\Behat\API\Context\ContentContext
+                - Ibexa\Behat\API\Context\ContentTypeContext
+                - Ibexa\Behat\API\Context\RoleContext
+                - Ibexa\Behat\API\Context\TestContext
+                - Ibexa\Behat\API\Context\TrashContext
+                - Ibexa\Behat\API\Context\UserContext
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentPreviewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentTypeContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\DashboardContext
                 - Ibexa\AdminUi\Behat\BrowserContext\LanguageContext
-                - Ibexa\AdminUi\Behat\BrowserContext\LeftMenuContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ObjectStatesContext
-                - Ibexa\AdminUi\Behat\BrowserContext\RightMenuContext
                 - Ibexa\AdminUi\Behat\BrowserContext\RolesContext
                 - Ibexa\AdminUi\Behat\BrowserContext\SearchContext
                 - Ibexa\AdminUi\Behat\BrowserContext\SectionsContext
@@ -116,7 +118,7 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\UDWContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
-                - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\Behat\Browser\Context\DebuggingContext
+                - Ibexa\User\Behat\Context\UserSettingsContext
                 - Ibexa\User\Behat\Context\UserSetupContext
-                - EzSystems\Behat\API\Context\RoleContext
+                - Ibexa\AdminUi\Behat\BrowserContext\MyDraftsContext
