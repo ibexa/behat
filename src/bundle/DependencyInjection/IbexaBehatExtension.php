@@ -36,6 +36,7 @@ class IbexaBehatExtension extends Extension implements PrependExtensionInterface
         }
 
         $container->setParameter('ibexa.site_access.config.admin_group.notifications.success.timeout', 30000);
+        $container->setParameter('ibexa.site_access.config.admin_group.pagination.content_draft_limit', 50);
     }
 
     public function prepend(ContainerBuilder $container)
