@@ -1,6 +1,7 @@
 imports:
     - behat_ibexa_headless.yaml
     - vendor/ibexa/corporate-account/behat_suites.yml
+    - vendor/ibexa/dashboard/behat_suites.yml
     - vendor/ibexa/fieldtype-page/behat_suites.yml
     - vendor/ibexa/form-builder/behat_suites.yml
     - vendor/ibexa/page-builder/behat_suites.yml
@@ -23,6 +24,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/page-builder/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/corporate-account/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/dashboard/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext

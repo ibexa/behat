@@ -19,6 +19,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/corporate-account/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/shipping/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/storefront/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/dashboard/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
