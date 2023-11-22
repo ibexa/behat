@@ -13,7 +13,6 @@ use Behat\Gherkin\Node\TableNode;
 use Ibexa\Behat\API\Facade\UserFacade;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
-use Ibexa\Contracts\Core\Repository\RoleService;
 
 class UserContext implements Context
 {
@@ -23,13 +22,10 @@ class UserContext implements Context
     /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
     private $argumentParser;
 
-    private RoleService $roleService;
-
-    public function __construct(UserFacade $userFacade, ArgumentParser $argumentParser, RoleService $roleService)
+    public function __construct(UserFacade $userFacade, ArgumentParser $argumentParser)
     {
         $this->userFacade = $userFacade;
         $this->argumentParser = $argumentParser;
-        $this->roleService = $roleService;
     }
 
     /**
@@ -65,8 +61,18 @@ class UserContext implements Context
     public function assignUserToRoleIfPossible(string $userName, string $roleIdentifier): void
     {
         try {
-            $this->roleService->loadRoleByIdentifier($roleIdentifier);
-            $this->userFacade->assignUserToRole($userName, $roleIdentifier);
+            $this->assignUserToRole($userName, $roleIdentifier);
+        } catch (NotFoundException $e) {
+        }
+    }
+
+    /**
+     * @Given I assign user group :userGroupName to role :roleIdentifier if possible
+     */
+    public function assignUserGroupToRoleIfPossible(string $userGroupName, string $roleIdentifier): void
+    {
+        try {
+            $this->assignUserGroupToRole($userGroupName, $roleIdentifier);
         } catch (NotFoundException $e) {
         }
     }
