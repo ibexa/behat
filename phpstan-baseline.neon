@@ -2701,7 +2701,7 @@ parameters:
 			path: src/lib/Core/Debug/Shell/Shell.php
 
 		-
-			message: "#^Parameter \\#2 \\$callback of function array_filter expects callable\\(int\\|string\\)\\: mixed, Closure\\(string\\)\\: bool given\\.$#"
+			message: "#^Parameter \\#2 \\$callback of function array_filter expects \\(callable\\(int\\|string\\)\\: mixed\\)\\|null, Closure\\(string\\)\\: bool given\\.$#"
 			count: 1
 			path: src/lib/Core/Debug/Shell/Shell.php
 

@@ -12,6 +12,7 @@ use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
 use Ibexa\Behat\API\Facade\UserFacade;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 
 class UserContext implements Context
 {
@@ -52,6 +53,28 @@ class UserContext implements Context
     public function assignUserToRole(string $userName, string $roleName): void
     {
         $this->userFacade->assignUserToRole($userName, $roleName);
+    }
+
+    /**
+     * @Given I assign user :userName to role :roleIdentifier if possible
+     */
+    public function assignUserToRoleIfPossible(string $userName, string $roleIdentifier): void
+    {
+        try {
+            $this->assignUserToRole($userName, $roleIdentifier);
+        } catch (NotFoundException $e) {
+        }
+    }
+
+    /**
+     * @Given I assign user group :userGroupName to role :roleIdentifier if possible
+     */
+    public function assignUserGroupToRoleIfPossible(string $userGroupName, string $roleIdentifier): void
+    {
+        try {
+            $this->assignUserGroupToRole($userGroupName, $roleIdentifier);
+        } catch (NotFoundException $e) {
+        }
     }
 
     /**

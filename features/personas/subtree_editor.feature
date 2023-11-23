@@ -1,6 +1,6 @@
+@setup @subtreeEditor
 Feature: Editor that has access only to a Subtree of Content Structure
 
-  @admin @setup @subtreeEditor
   Scenario: Create a Role and assign policies with limitations to it
     Given I create a "DedicatedFolder" Content Type in "Content" with "dedicatedFolder" identifier
       | Field Type  | Name         | Identifier        | Required | Searchable | Translatable |
@@ -54,3 +54,6 @@ Feature: Editor that has access only to a Subtree of Content Structure
     And I assign user group "SubtreeEditorsGroup" to role "SubtreeEditorsRole" with limitations:
       | limitationType      | limitationValue                 |
       | Subtree             | /FolderGrandParent/FolderParent |
+
+  Scenario: Allow Subtree Editors to preview the Dashbord
+    Given I assign user group "SubtreeEditorsGroup" to role "Dashboard" if possible
