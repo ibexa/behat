@@ -10,6 +10,8 @@ namespace Ibexa\Behat\Browser\Component;
 
 use Behat\Mink\Session;
 use Facebook\WebDriver\Chrome\ChromeDevToolsDriver;
+use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
+use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Element\Factory\Debug\Highlighting\ElementFactory as HighlightingDebugElementFactory;
 use Ibexa\Behat\Browser\Element\Factory\Debug\Interactive\ElementFactory as InteractiveDebugElementFactory;
 use Ibexa\Behat\Browser\Element\Factory\ElementFactory;
@@ -44,6 +46,17 @@ abstract class Component implements ComponentInterface
     final protected function getHTMLPage(): RootElementInterface
     {
         return $this->elementFactory->createRootElement($this->getSession(), $this->elementFactory);
+    }
+
+    public function find(LocatorInterface $locator): ElementInterface
+    {
+        return $this->getHTMLPage()->find($locator);
+    }
+
+    /** @return ElementCollectionInterface<ElementInterface> */
+    public function findAll(LocatorInterface $locator): ElementCollectionInterface
+    {
+        return $this->getHTMLPage()->findAll($locator);
     }
 
     public function setElementFactory(ElementFactoryInterface $elementFactory): void

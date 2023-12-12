@@ -19,7 +19,7 @@ use Traversable;
 
 class ElementCollection implements ElementCollectionInterface
 {
-    /** @var ElementInterface[]|\Traversable */
+    /** @var iterable<ElementInterface> */
     private $elements;
 
     /**
@@ -38,16 +38,13 @@ class ElementCollection implements ElementCollectionInterface
         $this->elements = $elements;
     }
 
-    /**
-     * @return \Ibexa\Behat\Browser\Element\ElementInterface[]
-     */
     public function getIterator(): Traversable
     {
         if (is_array($this->elements)) {
             return new \ArrayIterator($this->elements);
         }
 
-        return $this->elements;
+        yield from $this->elements;
     }
 
     public function getByCriterion(CriterionInterface $criterion): ElementInterface
