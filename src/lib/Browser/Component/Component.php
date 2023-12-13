@@ -53,7 +53,6 @@ abstract class Component implements ComponentInterface
         return $this->getHTMLPage()->find($locator);
     }
 
-    /** @return ElementCollectionInterface<ElementInterface> */
     public function findAll(LocatorInterface $locator): ElementCollectionInterface
     {
         return $this->getHTMLPage()->findAll($locator);

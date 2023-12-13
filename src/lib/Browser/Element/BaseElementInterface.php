@@ -19,10 +19,14 @@ interface BaseElementInterface
 
     public function find(LocatorInterface $locator): ElementInterface;
 
-    /** @return ElementCollectionInterface<ElementInterface> */
     public function findAll(LocatorInterface $locator): ElementCollectionInterface;
 
     public function waitUntilCondition(ConditionInterface $condition): BaseElementInterface;
 
+    /**
+     * @param callable(mixed): mixed $callback
+     *
+     * @return mixed
+     */
     public function waitUntil(callable $callback, string $errorMessage);
 }

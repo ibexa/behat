@@ -1116,92 +1116,7 @@ parameters:
 			path: src/lib/API/Facade/UserFacade.php
 
 		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssert\\:\\:__construct\\(\\) has parameter \\$elementCollection with no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssert\\:\\:containsElementsWithText\\(\\) has parameter \\$expectedElementTexts with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssert\\:\\:containsElementsWithText\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssert\\:\\:countEquals\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssert\\:\\:hasElements\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssert\\:\\:isEmpty\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssert.php
-
-		-
-			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssert\\:\\:\\$elementCollection type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssertInterface\\:\\:containsElementsWithText\\(\\) has parameter \\$expectedElementTexts with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssertInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssertInterface\\:\\:containsElementsWithText\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssertInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssertInterface\\:\\:countEquals\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssertInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssertInterface\\:\\:hasElements\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssertInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\CollectionAssertInterface\\:\\:isEmpty\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/CollectionAssertInterface.php
-
-		-
 			message: "#^Invalid type Exception\\|null to throw\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\Debug\\\\Interactive\\\\CollectionAssert\\:\\:containsElementsWithText\\(\\) has parameter \\$expectedElementTexts with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\Debug\\\\Interactive\\\\CollectionAssert\\:\\:containsElementsWithText\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\Debug\\\\Interactive\\\\CollectionAssert\\:\\:countEquals\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\Debug\\\\Interactive\\\\CollectionAssert\\:\\:hasElements\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\Debug\\\\Interactive\\\\CollectionAssert\\:\\:isEmpty\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
 			count: 1
 			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
 
@@ -1406,16 +1321,6 @@ parameters:
 			path: src/lib/Browser/Element/BaseElement.php
 
 		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\BaseElement\\:\\:waitUntil\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/BaseElement.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\BaseElementInterface\\:\\:waitUntil\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/BaseElementInterface.php
-
-		-
 			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Criterion\\\\ChildElementTextCriterion\\:\\:\\$results type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/lib/Browser/Element/Criterion/ChildElementTextCriterion.php
@@ -1444,11 +1349,6 @@ parameters:
 			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Criterion\\\\LogicalOrCriterion\\:\\:\\$results is unused\\.$#"
 			count: 1
 			path: src/lib/Browser/Element/Criterion/LogicalOrCriterion.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Highlighting\\\\BaseElement\\:\\:waitUntil\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Highlighting/BaseElement.php
 
 		-
 			message: "#^Call to an undefined method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\BaseElementInterface\\:\\:assert\\(\\)\\.$#"
@@ -1587,11 +1487,6 @@ parameters:
 
 		-
 			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\BaseElement\\:\\:startInteractiveSessionOnException\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\BaseElement\\:\\:waitUntil\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
 
@@ -1771,41 +1666,6 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
 
 		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:__construct\\(\\) has parameter \\$baseElementCollection with no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:filter\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:filterBy\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:getIterator\\(\\) return type has no value type specified in iterable type Traversable\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:map\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:mapBy\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:setElements\\(\\) has parameter \\$elements with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
 			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\ElementCollection\\:\\:setInteractiveBreakpoint\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
@@ -1906,56 +1766,6 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
 
 		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:attachFile\\(\\)\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:click\\(\\)\\.$#"
-			count: 2
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:getAttribute\\(\\)\\.$#"
-			count: 3
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:getValue\\(\\)\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:hasAttribute\\(\\)\\.$#"
-			count: 3
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:hasClass\\(\\)\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:isVisible\\(\\)\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:mouseOver\\(\\)\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:selectOption\\(\\)\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Element.php
-
-		-
-			message: "#^Call to an undefined method Behat\\\\Mink\\\\Element\\\\TraversableElement\\:\\:setValue\\(\\)\\.$#"
-			count: 3
-			path: src/lib/Browser/Element/Element.php
-
-		-
 			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Element\\:\\:attachFile\\(\\) has parameter \\$filePath with no type specified\\.$#"
 			count: 1
 			path: src/lib/Browser/Element/Element.php
@@ -1976,77 +1786,7 @@ parameters:
 			path: src/lib/Browser/Element/ElementCollection.php
 
 		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:filter\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:filterBy\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:getIterator\\(\\) return type has no value type specified in iterable type Traversable\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:internalFilter\\(\\) return type has no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:internalFilterBy\\(\\) return type has no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:map\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:mapBy\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\:\\:setElements\\(\\) has parameter \\$elements with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
-			message: "#^PHPDoc tag @param has invalid value \\(callable Callable accepting a NodeElement parameter\\)\\: Unexpected token \"Callable\", expected variable at offset 27$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollection.php
-
-		-
 			message: "#^Interface Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface extends generic interface IteratorAggregate but does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollectionInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\:\\:filter\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollectionInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\:\\:filterBy\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollectionInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\:\\:map\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollectionInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\:\\:mapBy\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/ElementCollectionInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionInterface\\:\\:setElements\\(\\) has parameter \\$elements with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/lib/Browser/Element/ElementCollectionInterface.php
 
@@ -2069,21 +1809,6 @@ parameters:
 			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementInterface\\:\\:setValue\\(\\) has parameter \\$value with no type specified\\.$#"
 			count: 1
 			path: src/lib/Browser/Element/ElementInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Mapper\\\\MapperInterface\\:\\:map\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/Mapper/MapperInterface.php
-
-		-
-			message: "#^Expression on left side of \\?\\? is not nullable\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/RootElement.php
-
-		-
-			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Element\\\\RootElement\\:\\:\\$session has no type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Element/RootElement.php
 
 		-
 			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Environment\\\\ParameterProvider\\:\\:setParameter\\(\\) has parameter \\$value with no type specified\\.$#"
@@ -2134,16 +1859,6 @@ parameters:
 			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Filter\\\\BrowserLogFilter\\:\\:\\$excludedPatterns has no type specified\\.$#"
 			count: 1
 			path: src/lib/Browser/Filter/BrowserLogFilter.php
-
-		-
-			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Locator\\\\BaseLocator\\:\\:\\$identifier has no type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Locator/BaseLocator.php
-
-		-
-			message: "#^Property Ibexa\\\\Behat\\\\Browser\\\\Locator\\\\BaseLocator\\:\\:\\$selector has no type specified\\.$#"
-			count: 1
-			path: src/lib/Browser/Locator/BaseLocator.php
 
 		-
 			message: "#^Method Ibexa\\\\Behat\\\\Browser\\\\Locator\\\\CSSLocatorBuilder\\:\\:combine\\(\\) has parameter \\$locators with no type specified\\.$#"
@@ -2981,11 +2696,6 @@ parameters:
 			path: tests/Browser/Element/Assert/CollectionAssertTest.php
 
 		-
-			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\Assert\\\\CollectionAssertTest\\:\\:createElementCollection\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\.$#"
-			count: 1
-			path: tests/Browser/Element/Assert/CollectionAssertTest.php
-
-		-
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\Assert\\\\CollectionAssertTest\\:\\:provideForTestAssertionFails\\(\\) return type has no value type specified in iterable type iterable\\.$#"
 			count: 1
 			path: tests/Browser/Element/Assert/CollectionAssertTest.php
@@ -3032,11 +2742,6 @@ parameters:
 
 		-
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\BaseTestCase\\:\\:createCollection\\(\\) has parameter \\$elementTexts with no type specified\\.$#"
-			count: 1
-			path: tests/lib/Browser/Element/BaseTestCase.php
-
-		-
-			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\BaseTestCase\\:\\:createCollection\\(\\) return type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\.$#"
 			count: 1
 			path: tests/lib/Browser/Element/BaseTestCase.php
 
@@ -3112,11 +2817,6 @@ parameters:
 
 		-
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionTest\\:\\:testEmpty\\(\\) has parameter \\$elementNames with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/lib/Browser/Element/ElementCollectionTest.php
-
-		-
-			message: "#^Property Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\ElementCollectionTest\\:\\:\\$collection type has no value type specified in iterable type Ibexa\\\\Behat\\\\Browser\\\\Element\\\\ElementCollection\\.$#"
 			count: 1
 			path: tests/lib/Browser/Element/ElementCollectionTest.php
 

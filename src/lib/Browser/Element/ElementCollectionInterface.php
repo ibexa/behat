@@ -16,12 +16,12 @@ use Traversable;
 interface ElementCollectionInterface extends \Countable, \IteratorAggregate
 {
     /**
-     * @return ElementCollectionInterface<ElementInterface>
+     * @return Traversable<ElementInterface>
      */
     public function getIterator(): Traversable;
 
     /**
-     * @parameter array<ElementInterface> $elements;
+     * @param array<ElementInterface> $elements
      */
     public function setElements(array $elements): void;
 
@@ -47,10 +47,19 @@ interface ElementCollectionInterface extends \Countable, \IteratorAggregate
 
     public function single(): ElementInterface;
 
+    /**
+     * @param callable(ElementInterface): mixed $callable
+     *
+     * @return array<mixed>
+     */
     public function map(callable $callable): array;
 
+    /** @return array<mixed> */
     public function mapBy(MapperInterface $mapper): array;
 
+    /**
+     * @param callable(ElementInterface): bool $callable
+     */
     public function filter(callable $callable): ElementCollectionInterface;
 
     public function filterBy(CriterionInterface $criterion): ElementCollectionInterface;

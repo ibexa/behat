@@ -22,10 +22,7 @@ class ElementCollection implements ElementCollectionInterface
     /** @var iterable<ElementInterface> */
     private $elements;
 
-    /**
-     * @var \Ibexa\Behat\Browser\Locator\LocatorInterface
-     */
-    private $locator;
+    private LocatorInterface $locator;
 
     public function __construct(LocatorInterface $locator, iterable $elements)
     {
@@ -44,7 +41,7 @@ class ElementCollection implements ElementCollectionInterface
             return new \ArrayIterator($this->elements);
         }
 
-        yield from $this->elements;
+        return $this->elements;
     }
 
     public function getByCriterion(CriterionInterface $criterion): ElementInterface
@@ -61,7 +58,7 @@ class ElementCollection implements ElementCollectionInterface
     }
 
     /**
-     * @param callable Callable accepting a NodeElement parameter
+     * @param callable(ElementInterface): bool $callable
      */
     public function getBy(callable $callable): ElementInterface
     {
@@ -205,6 +202,11 @@ class ElementCollection implements ElementCollectionInterface
         return new CollectionAssert($this->locator, $this);
     }
 
+    /**
+     * @param callable(ElementInterface $element): bool $callable
+     *
+     * @return iterable<ElementInterface>
+     */
     private function internalFilter(callable $callable): iterable
     {
         foreach ($this->elements as $element) {
@@ -214,6 +216,7 @@ class ElementCollection implements ElementCollectionInterface
         }
     }
 
+    /** @return iterable<ElementInterface> */
     private function internalFilterBy(CriterionInterface $criterion): iterable
     {
         foreach ($this->elements as $element) {
