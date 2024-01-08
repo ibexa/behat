@@ -24,7 +24,6 @@ class ContentTypeContext implements Context
     }
 
     /**
-     * @Given I create a :contentTypeName Content Type in :contentTypeGroupName with :contentTypeIdentifier identifier
      * @Given I create a :contentTypeName content type in :contentTypeGroupName with :contentTypeIdentifier identifier
      *
      * @param mixed $contentTypeName
