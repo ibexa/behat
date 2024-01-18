@@ -12,6 +12,7 @@ use Behat\Behat\Hook\Scope\AfterScenarioScope;
 use Behat\Behat\Hook\Scope\AfterStepScope;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Behat\Hook\Scope\BeforeStepScope;
+use Behat\Mink\Session;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Testwork\Tester\Result\TestResult;
 use Ibexa\Behat\Core\Log\Failure\TestFailureData;
@@ -19,7 +20,7 @@ use Ibexa\Behat\Core\Log\KnownIssuesRegistry;
 use Ibexa\Behat\Core\Log\TestLogProvider;
 use Psr\Log\LoggerInterface;
 
-class DebuggingContext extends RawMinkContext
+final class DebuggingContext extends RawMinkContext
 {
     /** @var \Psr\Log\LoggerInterface */
     private $logger;
@@ -30,23 +31,29 @@ class DebuggingContext extends RawMinkContext
     /** @var \Ibexa\Behat\Core\Log\KnownIssuesRegistry */
     private $knownIssuesRegistry;
 
+    /** @var \Behat\Mink\Session */
+    private $session;
+
     /** @var \Behat\Testwork\Tester\Result\TestResult */
     private $failedStepResult;
 
     public function __construct(
         LoggerInterface $logger,
         string $logDir,
-        KnownIssuesRegistry $knownIssuesRegistry
+        KnownIssuesRegistry $knownIssuesRegistry,
+        Session $session
     ) {
         $this->logger = $logger;
         $this->logDir = $logDir;
         $this->knownIssuesRegistry = $knownIssuesRegistry;
+        $this->session = $session;
     }
 
     /** @BeforeScenario
      */
     public function logStartingScenario(BeforeScenarioScope $scope)
     {
+        $this->session->executeScript(sprintf('console.error("Starting Scenario:: %s")', $scope->getScenario()->getTitle()));
         $this->logger->error(sprintf('Behat: Starting Scenario "%s"', $scope->getScenario()->getTitle()));
     }
 
@@ -54,6 +61,7 @@ class DebuggingContext extends RawMinkContext
      */
     public function logStartingStep(BeforeStepScope $scope)
     {
+        $this->session->executeScript(sprintf('console.error("Starting Step: %s")', $scope->getStep()->getText()));
         $this->logger->error(sprintf('Behat: Starting Step "%s"', $scope->getStep()->getText()));
     }
 
@@ -61,6 +69,7 @@ class DebuggingContext extends RawMinkContext
      */
     public function logEndingScenario(AfterScenarioScope $scope)
     {
+        $this->session->executeScript(sprintf('console.error("Ending Scenario: %s")', $scope->getScenario()->getTitle()));
         $this->logger->error(sprintf('Behat: Ending Scenario "%s"', $scope->getScenario()->getTitle()));
     }
 
@@ -68,6 +77,7 @@ class DebuggingContext extends RawMinkContext
      */
     public function logEndingStep(AfterStepScope $scope)
     {
+        $this->session->executeScript(sprintf('console.error("Ending Step: %s")', $scope->getStep()->getText()));
         $this->logger->error(sprintf('Behat: Ending Step "%s"', $scope->getStep()->getText()));
 
         if ($scope->getTestResult()->isPassed()) {
