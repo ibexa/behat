@@ -53,7 +53,8 @@ final class DebuggingContext extends RawMinkContext
      */
     public function logStartingScenario(BeforeScenarioScope $scope)
     {
-        $this->session->executeScript(sprintf('console.error("Starting Scenario:: %s")', $scope->getScenario()->getTitle()));
+        $text = sprintf('console.error("Starting Scenario: %s")', $scope->getScenario()->getTitle());
+        $this->session->executeScript($text);
         $this->logger->error(sprintf('Behat: Starting Scenario "%s"', $scope->getScenario()->getTitle()));
     }
 
@@ -61,7 +62,7 @@ final class DebuggingContext extends RawMinkContext
      */
     public function logStartingStep(BeforeStepScope $scope)
     {
-        $this->session->executeScript(sprintf('console.error("Starting Step: %s")', $scope->getStep()->getText()));
+        // $this->session->executeScript(sprintf('console.error("Starting Step: %s")', $scope->getStep()->getText()));
         $this->logger->error(sprintf('Behat: Starting Step "%s"', $scope->getStep()->getText()));
     }
 
@@ -69,7 +70,7 @@ final class DebuggingContext extends RawMinkContext
      */
     public function logEndingScenario(AfterScenarioScope $scope)
     {
-        $this->session->executeScript(sprintf('console.error("Ending Scenario: %s")', $scope->getScenario()->getTitle()));
+        // $this->session->executeScript(sprintf('console.error("Ending Scenario: %s")', $scope->getScenario()->getTitle()));
         $this->logger->error(sprintf('Behat: Ending Scenario "%s"', $scope->getScenario()->getTitle()));
     }
 
@@ -77,7 +78,7 @@ final class DebuggingContext extends RawMinkContext
      */
     public function logEndingStep(AfterStepScope $scope)
     {
-        $this->session->executeScript(sprintf('console.error("Ending Step: %s")', $scope->getStep()->getText()));
+        // $this->session->executeScript(sprintf('console.error("Ending Step: %s")', $scope->getStep()->getText()));
         $this->logger->error(sprintf('Behat: Ending Step "%s"', $scope->getStep()->getText()));
 
         if ($scope->getTestResult()->isPassed()) {
