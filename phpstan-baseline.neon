@@ -2691,11 +2691,6 @@ parameters:
 			path: src/lib/Core/Debug/Shell/Shell.php
 
 		-
-			message: "#^Parameter \\#2 \\$callback of function array_filter expects callable\\(int\\|string\\)\\: mixed, Closure\\(string\\)\\: bool given\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Shell/Shell.php
-
-		-
 			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Log\\\\Failure\\\\AnalysisResult\\:\\:getJiraReference\\(\\) should return string but returns string\\|null\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/AnalysisResult.php
