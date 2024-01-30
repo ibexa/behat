@@ -57,7 +57,7 @@ class ContentTypeLimitationParser implements LimitationParserInterface
     {
         $contentTypeName = strtolower($contentTypeName);
 
-        if (\in_array($contentTypeName, $this->contentTypeNameIdentifierMap, true)) {
+        if (\array_key_exists($contentTypeName, $this->contentTypeNameIdentifierMap)) {
             return $this->contentTypeNameIdentifierMap[$contentTypeName];
         }
 

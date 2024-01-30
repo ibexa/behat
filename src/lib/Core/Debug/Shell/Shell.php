@@ -40,9 +40,12 @@ class Shell extends BaseShell
             ++$level;
         }
         $dir = dirname(__DIR__, $level);
-        $classess = array_keys(require $dir . '/vendor/composer/autoload_classmap.php');
+        $classes = array_map(
+            'strval',
+            array_keys(require $dir . '/vendor/composer/autoload_classmap.php')
+        );
 
-        $baseImports = array_filter($classess, static function (string $classFcqn) {
+        $baseImports = array_filter($classes, static function (string $classFcqn): bool {
             return strpos($classFcqn, 'Ibexa\Behat\Browser\Element') === 0 ||
                 strpos($classFcqn, 'Ibexa\Behat\Browser\Locator') === 0;
         });
