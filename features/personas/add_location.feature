@@ -11,8 +11,11 @@ Feature: Editor user that has policies with Content Type limitation
       | module  | function |
       | user    | login    |
     And I add policy "content" "read" to "AddLocationRole" with limitations
-        | limitationType | limitationValue             |
-        | Content Type   | article,folder,landing_page |
+      | limitationType | limitationValue |
+      | Content Type   | article,folder  |
+    And I add policy "content" "read" to "AddLocationRole" with limitations
+      | limitationType | limitationValue |
+      | Location       | root            |
     And I add policy "content" "create" to "AddLocationRole" with limitations
       | limitationType | limitationValue |
       | ContentType    | Article         |
