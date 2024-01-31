@@ -15,7 +15,7 @@ Feature: Editor user that has policies with Content Type limitation
       | Content Type   | article,folder  |
     And I add policy "content" "read" to "AddLocationRole" with limitations
       | limitationType | limitationValue |
-      | Section        | Dashboard       |
+      | Section        | Media,Dashboard |
     And I add policy "content" "read" to "AddLocationRole" with limitations
       | limitationType | limitationValue |
       | Location       | root            |
