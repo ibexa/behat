@@ -8,9 +8,11 @@ Feature: Editor user that has policies with Content Type limitation
     And I create a user group "AddLocationGroup"
     And I create a user "Add" with last name "Location" in group "AddLocationGroup"
     And I create a role "AddLocationRole" with policies
-      | module | function |
-      | user   | login    |
-      | content | read    |
+      | module  | function |
+      | user    | login    |
+    And I add policy "content" "read" to "AddLocationRole" with limitations
+        | limitationType | limitationValue             |
+        | Content Type   | article,folder,landing_page |
     And I add policy "content" "create" to "AddLocationRole" with limitations
       | limitationType | limitationValue |
       | ContentType    | Article         |
