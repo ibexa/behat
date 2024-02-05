@@ -8,22 +8,18 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\Element;
 
+use Behat\Mink\Element\ElementInterface as MinkElementInterface;
 use Ibexa\Behat\Browser\Element\Condition\ConditionInterface;
 use Ibexa\Behat\Browser\Element\Factory\ElementFactoryInterface;
 use Ibexa\Behat\Browser\Exception\TimeoutException;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Traversable;
 
-class BaseElement implements BaseElementInterface
+abstract class BaseElement implements BaseElementInterface
 {
-    /** @var int */
-    protected $timeout = 1;
+    protected int $timeout = 1;
 
-    /** @var \Behat\Mink\Element\TraversableElement */
-    protected $decoratedElement;
-
-    /** @var \Ibexa\Behat\Browser\Element\Factory\ElementFactoryInterface */
-    private $elementFactory;
+    private ElementFactoryInterface $elementFactory;
 
     public function __construct(ElementFactoryInterface $elementFactory)
     {
@@ -83,7 +79,7 @@ class BaseElement implements BaseElementInterface
     {
         return $this->waitUntil(
             function () use ($locator) {
-                $foundMinkElements = $this->decoratedElement->findAll($locator->getType(), $locator->getSelector());
+                $foundMinkElements = $this->getDecoratedElement()->findAll($locator->getType(), $locator->getSelector());
 
                 foreach ($foundMinkElements as $foundMinkElement) {
                     $wrappedElement = $this->elementFactory->createElement($this->elementFactory, $locator, $foundMinkElement);
@@ -116,7 +112,7 @@ class BaseElement implements BaseElementInterface
     {
         try {
             $minkElements = $this->waitUntil(function () use ($locator) {
-                $minkElements = $this->decoratedElement->findAll($locator->getType(), $locator->getSelector());
+                $minkElements = $this->getDecoratedElement()->findAll($locator->getType(), $locator->getSelector());
                 foreach ($minkElements as $minkElement) {
                     if (!$minkElement->isValid()) {
                         return false;
@@ -138,4 +134,6 @@ class BaseElement implements BaseElementInterface
             }
         }
     }
+
+    abstract protected function getDecoratedElement(): MinkElementInterface;
 }
