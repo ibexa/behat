@@ -15,8 +15,9 @@ use RuntimeException;
 
 final class RootElement extends BaseElement implements RootElementInterface
 {
-    /** @vat \Behat\Mink\Session */
-    private $session;
+    private Session $session;
+
+    private DocumentElement $decoratedElement;
 
     public function __construct(ElementFactoryInterface $elementFactory, Session $session, DocumentElement $baseElement)
     {
@@ -42,6 +43,11 @@ final class RootElement extends BaseElement implements RootElementInterface
 
     public function executeJavaScript(string $script): string
     {
-        return (string) $this->session->evaluateScript($script) ?? '';
+        return $this->session->evaluateScript($script) ?? '';
+    }
+
+    protected function getDecoratedElement(): DocumentElement
+    {
+        return $this->decoratedElement;
     }
 }

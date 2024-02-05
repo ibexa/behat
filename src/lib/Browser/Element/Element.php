@@ -20,8 +20,9 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 
 final class Element extends BaseElement implements ElementInterface
 {
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface */
-    private $locator;
+    private LocatorInterface $locator;
+
+    private NodeElement $decoratedElement;
 
     public function __construct(ElementFactoryInterface $elementFactory, LocatorInterface $locator, NodeElement $baseElement)
     {
@@ -116,7 +117,7 @@ final class Element extends BaseElement implements ElementInterface
 
     public function isValid(): bool
     {
-        return null !== $this->decoratedElement ? $this->decoratedElement->isValid() : false;
+        return $this->decoratedElement->isValid();
     }
 
     public function selectOption(string $option): void
@@ -152,5 +153,10 @@ final class Element extends BaseElement implements ElementInterface
     public function execute(ActionInterface $action): void
     {
         $action->execute($this);
+    }
+
+    protected function getDecoratedElement(): NodeElement
+    {
+        return $this->decoratedElement;
     }
 }
