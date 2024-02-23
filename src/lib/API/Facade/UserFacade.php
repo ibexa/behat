@@ -135,15 +135,21 @@ class UserFacade
             new Criterion\ContentTypeIdentifier(self::USERGROUP_CONTENT_IDENTIFIER),
         ]);
 
-        $result = $this->searchService->findContent($query);
+        $iteration_count = 5;
 
-        foreach ($result->searchHits as $searchHit) {
-            /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Content $content */
-            $content = $searchHit->valueObject;
+        while ($iteration_count > 0) {
+            $result = $this->searchService->findContent($query);
 
-            if ($content->contentInfo->name === $userGroupName) {
-                return $this->userService->loadUserGroup($content->contentInfo->id);
+            foreach ($result->searchHits as $searchHit) {
+                /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Content $content */
+                $content = $searchHit->valueObject;
+
+                if ($content->contentInfo->name === $userGroupName) {
+                    return $this->userService->loadUserGroup($content->contentInfo->id);
+                }
             }
+            usleep(500000);
+            --$iteration_count;
         }
 
         throw new NotFoundException('User Group', $userGroupName);
