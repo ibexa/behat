@@ -1,6 +1,6 @@
 Feature: Multirepository setup for testing with Elastic
 
-  @multirepository
+  @multirepository @IbexaContent @IbexaExperience @IbexaCommerce
   Scenario: Set up new connection and make the default one unaccessible
     Given I append configuration to "parameters" in "config/packages/ibexa_elasticsearch.yaml"
     """
