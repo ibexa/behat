@@ -1,6 +1,6 @@
 Feature: Multirepository setup for testing
 
-    @multirepository
+  @multirepository @lse
   Scenario: Set up new repository and make the default one unaccessible
     Given I set configuration to "doctrine.dbal" in "config/packages/doctrine.yaml"
     """
