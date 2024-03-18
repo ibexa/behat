@@ -80,7 +80,9 @@
             "dev-main": "4.6.x-dev"
         }
     },
-    "bin": ["bin/ibexabehat"],
+    "bin": [
+        "bin/ibexabehat"
+    ],
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
