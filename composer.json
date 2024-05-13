@@ -40,7 +40,7 @@
         "symfony/form": "^5.4"
     },
     "require-dev": {
-        "ibexa/code-style": "^1.0",
+        "ibexa/code-style": "~2.0.0",
         "friendsofphp/php-cs-fixer": "^3.0",
         "ibexa/ci-scripts": "^0.2@dev",
         "ibexa/doctrine-schema": "~5.0.0@dev",
