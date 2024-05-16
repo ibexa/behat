@@ -33,7 +33,7 @@ class CollectionAssertTest extends BaseTestCase
         $collectionAssert = new CollectionAssert($this->locator, $collection);
         $returnedCollection = $collectionAssert->containsElementsWithText($expectedElementTexts);
 
-        $this->assertSame($collection, $returnedCollection);
+        self::assertSame($collection, $returnedCollection);
     }
 
     /**
