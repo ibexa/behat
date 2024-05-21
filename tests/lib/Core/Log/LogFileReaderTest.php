@@ -80,5 +80,3 @@ EOD
         Assert::assertEquals([2, 3, 4, 5, 6], $logEntries);
     }
 }
-
-class_alias(LogFileReaderTest::class, 'EzSystems\Behat\Test\Core\Log\LogFileReaderTest');

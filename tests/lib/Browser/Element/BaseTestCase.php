@@ -73,5 +73,3 @@ class BaseTestCase extends TestCase
         return new ElementCollection($locator, $elements);
     }
 }
-
-class_alias(BaseTestCase::class, 'EzSystems\Behat\Test\Browser\Element\BaseTestCase');

@@ -88,5 +88,3 @@ class ExtendedTableNodeTest extends TestCase
             ['Value21', 'Value23'], ], $afterTable->getTable());
     }
 }
-
-class_alias(ExtendedTableNodeTest::class, 'EzSystems\Behat\Test\Core\Behat\ExtendedTableNodeTest');

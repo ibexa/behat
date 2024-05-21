@@ -183,5 +183,3 @@ class ElementTest extends BaseTestCase
         return new Element(new ElementFactory(), $this->irrelevantLocator, $nodeElement);
     }
 }
-
-class_alias(ElementTest::class, 'EzSystems\Behat\Test\Browser\Element\ElementTest');

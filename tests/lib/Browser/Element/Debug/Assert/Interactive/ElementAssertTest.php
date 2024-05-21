@@ -22,5 +22,3 @@ class ElementAssertTest extends TestCase
         Assert::assertInstanceOf(ElementAssert::class, $collectionAssert);
     }
 }
-
-class_alias(ElementAssertTest::class, 'EzSystems\Behat\Test\Browser\Element\Debug\Assert\Interactive\ElementAssertTest');

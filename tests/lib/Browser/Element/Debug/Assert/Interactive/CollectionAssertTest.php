@@ -22,5 +22,3 @@ class CollectionAssertTest extends TestCase
         Assert::assertInstanceOf(CollectionAssert::class, $collectionAssert);
     }
 }
-
-class_alias(CollectionAssertTest::class, 'EzSystems\Behat\Test\Browser\Element\Debug\Assert\Interactive\CollectionAssertTest');

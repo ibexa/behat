@@ -47,5 +47,3 @@ Could not find element named: 'Test2'. Found names: Test3 instead. CSS locator '
         );
     }
 }
-
-class_alias(LogicalOrCriterionTest::class, 'EzSystems\Behat\Test\Browser\Element\Criterion\LogicalOrCriterionTest');

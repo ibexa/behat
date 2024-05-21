@@ -66,5 +66,3 @@ class ElementAttributeCriterionTest extends BaseTestCase
         return $element;
     }
 }
-
-class_alias(ElementAttributeCriterionTest::class, 'EzSystems\Behat\Test\Browser\Element\Criterion\ElementAttributeCriterionTest');

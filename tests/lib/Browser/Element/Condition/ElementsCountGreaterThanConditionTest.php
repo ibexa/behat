@@ -45,5 +45,3 @@ class ElementsCountGreaterThanConditionTest extends BaseTestCase
         );
     }
 }
-
-class_alias(ElementsCountGreaterThanConditionTest::class, 'EzSystems\Behat\Test\Browser\Element\Condition\ElementsCountGreaterThanConditionTest');
