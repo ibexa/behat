@@ -108,5 +108,3 @@ final class TestLogProvider
         self::$LOGS = $logs;
     }
 }
-
-class_alias(TestLogProvider::class, 'EzSystems\Behat\Core\Log\TestLogProvider');

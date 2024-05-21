@@ -27,5 +27,3 @@ class ObjectStateLimitationParser extends NewStateLimitationParser implements Li
         );
     }
 }
-
-class_alias(ObjectStateLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ObjectStateLimitationParser');

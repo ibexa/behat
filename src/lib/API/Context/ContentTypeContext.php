@@ -149,5 +149,3 @@ class ContentTypeContext implements Context
         return ['taxonomy' => $settings];
     }
 }
-
-class_alias(ContentTypeContext::class, 'EzSystems\Behat\API\Context\ContentTypeContext');

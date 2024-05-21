@@ -43,5 +43,3 @@ class NewSectionLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(NewSectionLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\NewSectionLimitationParser');

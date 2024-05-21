@@ -25,5 +25,3 @@ class LanguageLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(LanguageLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\LanguageLimitationParser');

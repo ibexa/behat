@@ -41,5 +41,3 @@ class TestContext implements Context
         $this->iAmLoggedAsApiUser('admin');
     }
 }
-
-class_alias(TestContext::class, 'EzSystems\Behat\API\Context\TestContext');

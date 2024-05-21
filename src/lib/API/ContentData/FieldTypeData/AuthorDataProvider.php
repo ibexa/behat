@@ -45,5 +45,3 @@ class AuthorDataProvider extends AbstractFieldTypeDataProvider
         return $author;
     }
 }
-
-class_alias(AuthorDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\AuthorDataProvider');

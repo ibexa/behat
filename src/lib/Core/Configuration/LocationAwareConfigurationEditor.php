@@ -83,5 +83,3 @@ class LocationAwareConfigurationEditor implements ConfigurationEditorInterface
         return $this->resolveLocationReference($config);
     }
 }
-
-class_alias(LocationAwareConfigurationEditor::class, 'EzSystems\Behat\Core\Configuration\LocationAwareConfigurationEditor');

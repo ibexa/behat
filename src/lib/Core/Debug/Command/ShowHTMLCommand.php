@@ -40,5 +40,3 @@ class ShowHTMLCommand extends Command
         return 0;
     }
 }
-
-class_alias(ShowHTMLCommand::class, 'EzSystems\Behat\Core\Debug\Command\ShowHTMLCommand');

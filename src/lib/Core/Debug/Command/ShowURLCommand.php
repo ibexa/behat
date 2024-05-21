@@ -40,5 +40,3 @@ class ShowURLCommand extends Command
         return 0;
     }
 }
-
-class_alias(ShowURLCommand::class, 'EzSystems\Behat\Core\Debug\Command\ShowURLCommand');

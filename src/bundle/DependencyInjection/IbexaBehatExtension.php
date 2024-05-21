@@ -83,5 +83,3 @@ class IbexaBehatExtension extends Extension implements PrependExtensionInterface
         return isset($bundles['IbexaPageBuilderBundle'], $bundles['IbexaWorkflowBundle']);
     }
 }
-
-class_alias(IbexaBehatExtension::class, 'EzSystems\BehatBundle\DependencyInjection\eZBehatExtension');

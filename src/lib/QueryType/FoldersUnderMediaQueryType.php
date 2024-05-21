@@ -35,5 +35,3 @@ class FoldersUnderMediaQueryType implements QueryType
         return 'Folders under media';
     }
 }
-
-class_alias(FoldersUnderMediaQueryType::class, 'EzSystems\Behat\QueryType\FoldersUnderMediaQueryType');

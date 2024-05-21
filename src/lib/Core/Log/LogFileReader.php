@@ -40,5 +40,3 @@ class LogFileReader
         return $logEntries;
     }
 }
-
-class_alias(LogFileReader::class, 'EzSystems\Behat\Core\Log\LogFileReader');

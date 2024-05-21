@@ -94,5 +94,3 @@ class UserContext implements Context
         $this->userFacade->assignUserGroupToRole($userGroupName, $roleName, $roleLimitation);
     }
 }
-
-class_alias(UserContext::class, 'EzSystems\Behat\API\Context\UserContext');

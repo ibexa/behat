@@ -70,5 +70,3 @@ class ImageDataProvider extends AbstractFieldTypeDataProvider
         );
     }
 }
-
-class_alias(ImageDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ImageDataProvider');

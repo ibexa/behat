@@ -32,5 +32,3 @@ class ObjectRelationListDataProvider extends ObjectRelationDataProvider
         return new Value($itemsToAdd);
     }
 }
-
-class_alias(ObjectRelationListDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ObjectRelationListDataProvider');

@@ -55,5 +55,3 @@ class MediaDataProvider implements FieldTypeDataProviderInterface
         return $mediaValue;
     }
 }
-
-class_alias(MediaDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\MediaDataProvider');

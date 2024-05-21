@@ -45,5 +45,3 @@ class SubtreeLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(SubtreeLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\SubtreeLimitationParser');

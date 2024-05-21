@@ -17,5 +17,3 @@ class ExceptionController
         throw new UnauthorizedException($module, $function, $properties);
     }
 }
-
-class_alias(ExceptionController::class, 'EzSystems\BehatBundle\Controller\ExceptionController');

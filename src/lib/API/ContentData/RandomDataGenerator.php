@@ -69,5 +69,3 @@ class RandomDataGenerator
         return random_int(0, 999) / 1000;
     }
 }
-
-class_alias(RandomDataGenerator::class, 'EzSystems\Behat\API\ContentData\RandomDataGenerator');

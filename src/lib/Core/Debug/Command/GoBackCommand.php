@@ -42,5 +42,3 @@ class GoBackCommand extends Command
         return 0;
     }
 }
-
-class_alias(GoBackCommand::class, 'EzSystems\Behat\Core\Debug\Command\GoBackCommand');

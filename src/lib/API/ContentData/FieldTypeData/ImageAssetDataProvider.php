@@ -99,5 +99,3 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
         return new Value($location->getContentInfo()->id, $this->getFaker()->realText(100));
     }
 }
-
-class_alias(ImageAssetDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ImageAssetDataProvider');

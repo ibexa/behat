@@ -25,5 +25,3 @@ class FloatDataProvider extends AbstractFieldTypeDataProvider
         return (float) $value;
     }
 }
-
-class_alias(FloatDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\FloatDataProvider');

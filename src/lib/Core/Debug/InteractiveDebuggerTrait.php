@@ -131,5 +131,3 @@ trait InteractiveDebuggerTrait
         ]);
     }
 }
-
-class_alias(InteractiveDebuggerTrait::class, 'EzSystems\Behat\Core\Debug\InteractiveDebuggerTrait');

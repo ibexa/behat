@@ -42,5 +42,3 @@ class TransitionEvent extends Event
         $this->mainLanguage = $mainLanguage;
     }
 }
-
-class_alias(TransitionEvent::class, 'EzSystems\Behat\Event\TransitionEvent');

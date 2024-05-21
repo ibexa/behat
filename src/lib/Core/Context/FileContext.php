@@ -83,5 +83,3 @@ class FileContext implements Context
         }
     }
 }
-
-class_alias(FileContext::class, 'EzSystems\Behat\Core\Context\FileContext');

@@ -16,5 +16,3 @@ interface LimitationParserInterface
 
     public function parse(string $limitationValues): Limitation;
 }
-
-class_alias(LimitationParserInterface::class, 'EzSystems\Behat\API\Context\LimitationParser\LimitationParserInterface');

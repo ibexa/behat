@@ -123,5 +123,3 @@ class IbexaExtension implements Extension
         return '%' . $name . '%';
     }
 }
-
-class_alias(IbexaExtension::class, 'EzSystems\BehatBundle\BehatExtension');

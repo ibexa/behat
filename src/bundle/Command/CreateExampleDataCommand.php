@@ -95,5 +95,3 @@ class CreateExampleDataCommand extends Command implements BackwardCompatibleComm
         return ['ezplatform:tools:create-data'];
     }
 }
-
-class_alias(CreateExampleDataCommand::class, 'EzSystems\BehatBundle\Command\CreateExampleDataCommand');

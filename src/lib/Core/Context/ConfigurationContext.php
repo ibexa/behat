@@ -168,5 +168,3 @@ class ConfigurationContext implements Context
         $this->configurationEditor->saveConfigToFile($configFilePath, $config);
     }
 }
-
-class_alias(ConfigurationContext::class, 'EzSystems\Behat\Core\Context\ConfigurationContext');

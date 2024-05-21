@@ -62,5 +62,3 @@ class RichTextDataProvider extends AbstractFieldTypeDataProvider
         return sprintf(self::SIMPLE_RICHTEXT_XML, $value);
     }
 }
-
-class_alias(RichTextDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\RichTextDataProvider');

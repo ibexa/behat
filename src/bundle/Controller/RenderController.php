@@ -37,5 +37,3 @@ class RenderController extends Controller
         return $view;
     }
 }
-
-class_alias(RenderController::class, 'EzSystems\BehatBundle\Controller\RenderController');

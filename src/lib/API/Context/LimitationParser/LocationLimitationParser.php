@@ -56,5 +56,3 @@ class LocationLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(LocationLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\LocationLimitationParser');

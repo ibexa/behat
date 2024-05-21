@@ -28,5 +28,3 @@ class FieldTypeDataProviderPass implements CompilerPassInterface
         }
     }
 }
-
-class_alias(FieldTypeDataProviderPass::class, 'EzSystems\BehatBundle\DependencyInjection\Compiler\FieldTypeDataProviderPass');

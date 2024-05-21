@@ -104,5 +104,3 @@ class SearchFacade
         return $this->contentService->loadContent($contentId)->contentInfo->mainLocationId;
     }
 }
-
-class_alias(SearchFacade::class, 'EzSystems\Behat\API\Facade\SearchFacade');

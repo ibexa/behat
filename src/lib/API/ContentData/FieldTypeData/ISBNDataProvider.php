@@ -20,5 +20,3 @@ class ISBNDataProvider extends AbstractFieldTypeDataProvider
         return $this->getFaker()->isbn13;
     }
 }
-
-class_alias(ISBNDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ISBNDataProvider');

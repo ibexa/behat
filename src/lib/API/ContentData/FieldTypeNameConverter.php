@@ -54,5 +54,3 @@ class FieldTypeNameConverter
         return array_search($fieldTypeName, static::$FIELD_TYPE_MAPPING);
     }
 }
-
-class_alias(FieldTypeNameConverter::class, 'EzSystems\Behat\API\ContentData\FieldTypeNameConverter');

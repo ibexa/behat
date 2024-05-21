@@ -39,5 +39,3 @@ class LanguageFacade
         $this->languageService->createLanguage($languageCreateStruct);
     }
 }
-
-class_alias(LanguageFacade::class, 'EzSystems\Behat\API\Facade\LanguageFacade');

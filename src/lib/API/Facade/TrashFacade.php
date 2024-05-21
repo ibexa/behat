@@ -42,5 +42,3 @@ class TrashFacade
         $this->trashService->trash($location);
     }
 }
-
-class_alias(TrashFacade::class, 'EzSystems\Behat\API\Facade\TrashFacade');

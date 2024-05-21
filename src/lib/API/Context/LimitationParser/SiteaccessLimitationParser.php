@@ -32,5 +32,3 @@ class SiteaccessLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(SiteaccessLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\SiteaccessLimitationParser');

@@ -28,5 +28,3 @@ class TimeDataProvider extends AbstractFieldTypeDataProvider
         return Value::fromDateTime(DateTime::createFromFormat('H:i:s', $value));
     }
 }
-
-class_alias(TimeDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\TimeDataProvider');

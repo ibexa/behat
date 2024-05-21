@@ -114,5 +114,3 @@ class ContentTypeFacade
         }
     }
 }
-
-class_alias(ContentTypeFacade::class, 'EzSystems\Behat\API\Facade\ContentTypeFacade');

@@ -64,5 +64,3 @@ class PublishDraft extends AbstractProcessStage implements EventSubscriberInterf
         $event->content = $this->contentService->publishVersion($event->content->versionInfo);
     }
 }
-
-class_alias(PublishDraft::class, 'EzSystems\Behat\Subscriber\PublishDraft');

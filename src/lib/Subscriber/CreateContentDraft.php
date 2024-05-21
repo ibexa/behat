@@ -66,5 +66,3 @@ class CreateContentDraft extends AbstractProcessStage implements EventSubscriber
         $this->workflowFacade->transition($event->content, $transitionName, $this->randomDataGenerator->getRandomTextLine());
     }
 }
-
-class_alias(CreateContentDraft::class, 'EzSystems\Behat\Subscriber\CreateContentDraft');

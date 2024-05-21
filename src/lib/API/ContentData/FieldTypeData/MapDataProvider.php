@@ -50,5 +50,3 @@ class MapDataProvider implements FieldTypeDataProviderInterface
         return new Value(self::LOCATION_DATA[$value]);
     }
 }
-
-class_alias(MapDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\MapDataProvider');

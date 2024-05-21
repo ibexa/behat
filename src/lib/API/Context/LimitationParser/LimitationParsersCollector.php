@@ -34,5 +34,3 @@ class LimitationParsersCollector
         return $this->limitationParsers;
     }
 }
-
-class_alias(LimitationParsersCollector::class, 'EzSystems\Behat\API\Context\LimitationParser\LimitationParsersCollector');

@@ -30,5 +30,3 @@ class Events
 
     public const PUBLISH_LATER_TO_END = 'volume_testing.transition.publish_later_to_end';
 }
-
-class_alias(Events::class, 'EzSystems\Behat\Event\Events');

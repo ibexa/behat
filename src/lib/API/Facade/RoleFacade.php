@@ -69,5 +69,3 @@ class RoleFacade
         return $this->limitationParsersCollector->getLimitationParsers();
     }
 }
-
-class_alias(RoleFacade::class, 'EzSystems\Behat\API\Facade\RoleFacade');

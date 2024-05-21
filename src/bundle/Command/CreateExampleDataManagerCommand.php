@@ -167,5 +167,3 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         return ['ezplatform:tools:generate-items'];
     }
 }
-
-class_alias(CreateExampleDataManagerCommand::class, 'EzSystems\BehatBundle\Command\CreateExampleDataManagerCommand');

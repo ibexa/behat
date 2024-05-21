@@ -28,5 +28,3 @@ class LimitationParserPass implements CompilerPassInterface
         }
     }
 }
-
-class_alias(LimitationParserPass::class, 'EzSystems\BehatBundle\DependencyInjection\Compiler\LimitationParserPass');

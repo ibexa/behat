@@ -25,5 +25,3 @@ class ParentDepthLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(ParentDepthLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ParentDepthLimitationParser');
