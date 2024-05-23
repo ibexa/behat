@@ -29,5 +29,3 @@ class ElementTextMapperTest extends BaseTestCase
         Assert::assertEquals('Element1', $this->mapper->map($element));
     }
 }
-
-class_alias(TextMapperTestCase::class, 'EzSystems\Behat\Test\Browser\Element\Mapper\TextMapperTestCase');
