@@ -78,13 +78,13 @@ final class RetryChoiceListFactoryTest extends TestCase
     }
 
     /**
-     * @return iterable<array<string,int>>
+     * @return iterable<string, array{int}>
      */
     public static function provider(): iterable
     {
-        yield ['No failures' => 0];
-        yield ['One failure' => 1];
-        yield ['Two failures' => 2];
-        yield ['Three failures' => 3];
+        yield 'No failures' => [0];
+        yield 'One failure' => [1];
+        yield 'Two failures' => [2];
+        yield 'Three failures' => [3];
     }
 }

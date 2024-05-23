@@ -66,7 +66,7 @@ class ElementTransitionHasEndedConditionTest extends BaseTestCase
     {
         $childElement = $this->createStub(ElementInterface::class);
         $childElement->method('getText')->willReturn('ChildText');
-        $childElement->method('hasClass')->will($this->returnValueMap(
+        $childElement->method('hasClass')->will(self::returnValueMap(
             [
                 ['ibexa-selenium-transition-started', $hasStartedTransition],
                 ['ibexa-selenium-transition-ended', $hasEndedTransition],

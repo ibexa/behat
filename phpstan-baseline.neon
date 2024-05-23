@@ -1971,11 +1971,6 @@ parameters:
 			path: src/lib/Browser/Routing/Router.php
 
 		-
-			message: "#^Access to an undefined property Ibexa\\\\Behat\\\\Core\\\\Behat\\\\ArgumentParser\\:\\:\\$roleFacade\\.$#"
-			count: 2
-			path: src/lib/Core/Behat/ArgumentParser.php
-
-		-
 			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Behat\\\\ArgumentParser\\:\\:parseLimitations\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/lib/Core/Behat/ArgumentParser.php
@@ -2859,11 +2854,6 @@ parameters:
 			message: "#^Property Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\ElementTest\\:\\:\\$session is unused\\.$#"
 			count: 1
 			path: tests/lib/Browser/Element/ElementTest.php
-
-		-
-			message: "#^Class Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\Mapper\\\\TextMapperTestCase not found\\.$#"
-			count: 1
-			path: tests/lib/Browser/Element/Mapper/ElementTextMapperTest.php
 
 		-
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Filter\\\\BrowserLogFilterTest\\:\\:testFiltersOutExcludedPatterns\\(\\) has no return type specified\\.$#"
