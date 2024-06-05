@@ -30,5 +30,3 @@ class UserGroupLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(UserGroupLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\UserGroupLimitationParser');

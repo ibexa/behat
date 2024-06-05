@@ -39,5 +39,3 @@ class BrowserLogFilterTest extends TestCase
         Assert::assertEquals(['Real JS Error', 'Another real JS error'], $actualResult);
     }
 }
-
-class_alias(BrowserLogFilterTest::class, 'EzSystems\Behat\Test\Browser\Filter\BrowserLogFilterTest');

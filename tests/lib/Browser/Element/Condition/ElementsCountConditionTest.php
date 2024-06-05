@@ -45,5 +45,3 @@ class ElementsCountConditionTest extends BaseTestCase
         );
     }
 }
-
-class_alias(ElementsCountConditionTest::class, 'EzSystems\Behat\Test\Browser\Element\Condition\ElementsCountConditionTest');

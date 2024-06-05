@@ -59,5 +59,3 @@ final class BehatSiteAccessInitializer implements EventSubscriberInterface
         return new SiteAccess($siteAccessName, 'cli');
     }
 }
-
-class_alias(BehatSiteAccessInitializer::class, 'EzSystems\BehatBundle\Initializer\BehatSiteAccessInitializer');

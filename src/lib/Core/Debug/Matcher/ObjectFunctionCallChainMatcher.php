@@ -117,5 +117,3 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
         return get_class($object);
     }
 }
-
-class_alias(ObjectFunctionCallChainMatcher::class, 'EzSystems\Behat\Core\Debug\Matcher\ObjectFunctionCallChainMatcher');

@@ -28,5 +28,3 @@ class DateTimeDataProvider extends AbstractFieldTypeDataProvider
         return DateTime::createFromFormat('Y-m-d H:i:s', $value);
     }
 }
-
-class_alias(DateTimeDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\DateTimeDataProvider');

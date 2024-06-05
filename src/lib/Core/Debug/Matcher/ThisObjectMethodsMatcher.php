@@ -54,5 +54,3 @@ class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
         ));
     }
 }
-
-class_alias(ThisObjectMethodsMatcher::class, 'EzSystems\Behat\Core\Debug\Matcher\ThisObjectMethodsMatcher');

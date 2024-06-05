@@ -47,5 +47,3 @@ interface ConfigurationEditorInterface
 
     public function copyKey($config, string $keyName, string $newKeyName);
 }
-
-class_alias(ConfigurationEditorInterface::class, 'EzSystems\Behat\Core\Configuration\ConfigurationEditorInterface');

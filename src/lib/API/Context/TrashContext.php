@@ -37,5 +37,3 @@ class TrashContext implements Context
         $this->trashFacade->trash($locationURL);
     }
 }
-
-class_alias(TrashContext::class, 'EzSystems\Behat\API\Context\TrashContext');

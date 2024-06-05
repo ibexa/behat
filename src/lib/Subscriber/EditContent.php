@@ -76,5 +76,3 @@ class EditContent extends AbstractProcessStage implements EventSubscriberInterfa
         $this->workflowFacade->transition($event->content, $transitionName, $this->randomDataGenerator->getRandomTextLine());
     }
 }
-
-class_alias(EditContent::class, 'EzSystems\Behat\Subscriber\EditContent');

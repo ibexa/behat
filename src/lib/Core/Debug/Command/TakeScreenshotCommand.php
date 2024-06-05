@@ -62,5 +62,3 @@ class TakeScreenshotCommand extends Command
         }
     }
 }
-
-class_alias(TakeScreenshotCommand::class, 'EzSystems\Behat\Core\Debug\Command\TakeScreenshotCommand');

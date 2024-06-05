@@ -23,5 +23,3 @@ class IbexaBehatBundle extends Bundle
         $container->addCompilerPass(new ElementFactoryCompilerPass());
     }
 }
-
-class_alias(IbexaBehatBundle::class, 'EzSystems\BehatBundle\EzSystemsBehatBundle');

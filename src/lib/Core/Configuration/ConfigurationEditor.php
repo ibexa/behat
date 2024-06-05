@@ -125,5 +125,3 @@ class ConfigurationEditor implements ConfigurationEditorInterface
         return $config;
     }
 }
-
-class_alias(ConfigurationEditor::class, 'EzSystems\Behat\Core\Configuration\ConfigurationEditor');

@@ -35,5 +35,3 @@ abstract class AbstractFieldTypeDataProvider implements FieldTypeDataProviderInt
         return $this->randomDataGenerator->getFaker();
     }
 }
-
-class_alias(AbstractFieldTypeDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\AbstractFieldTypeDataProvider');

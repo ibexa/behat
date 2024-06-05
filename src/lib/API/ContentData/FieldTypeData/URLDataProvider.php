@@ -31,5 +31,3 @@ class URLDataProvider extends AbstractFieldTypeDataProvider
         return new Value($url, $text);
     }
 }
-
-class_alias(URLDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\URLDataProvider');

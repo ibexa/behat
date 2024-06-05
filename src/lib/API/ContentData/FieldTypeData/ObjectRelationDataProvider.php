@@ -66,5 +66,3 @@ class ObjectRelationDataProvider implements FieldTypeDataProviderInterface
         return $location->getContentInfo()->id;
     }
 }
-
-class_alias(ObjectRelationDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ObjectRelationDataProvider');

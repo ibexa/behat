@@ -1,7 +1,7 @@
 {
     "name": "ibexa/behat",
     "description": "Ibexa Behat",
-    "license": "GPL-2.0",
+    "license": "(GPL-2.0-only or proprietary)",
     "replace": {
         "ezsystems/behatbundle": "*"
     },
@@ -54,9 +54,7 @@
         "psr-4": {
             "Ibexa\\Behat\\": "src/lib/",
             "Ibexa\\Bundle\\Behat\\": "src/bundle/",
-            "Ibexa\\Contracts\\Behat\\": "src/contracts/",
-            "EzSystems\\BehatBundle\\": "src/bundle/",
-            "EzSystems\\Behat\\": "src/lib/"
+            "Ibexa\\Contracts\\Behat\\": "src/contracts/"
         }
     },
     "conflict": {
@@ -65,8 +63,7 @@
     "autoload-dev": {
         "psr-4": {
             "Ibexa\\Tests\\Behat\\": "tests/lib/",
-            "Ibexa\\Tests\\Bundle\\Behat\\": "tests/bundle/",
-            "EzSystems\\Behat\\Test\\": "tests/"
+            "Ibexa\\Tests\\Bundle\\Behat\\": "tests/bundle/"
         }
     },
     "scripts": {

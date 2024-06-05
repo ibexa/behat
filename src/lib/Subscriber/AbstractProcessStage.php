@@ -117,5 +117,3 @@ abstract class AbstractProcessStage
 
     abstract protected function doExecute(TransitionEvent $event): void;
 }
-
-class_alias(AbstractProcessStage::class, 'EzSystems\Behat\Subscriber\AbstractProcessStage');

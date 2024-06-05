@@ -115,5 +115,3 @@ class ContentDataProvider
         return $contentStruct;
     }
 }
-
-class_alias(ContentDataProvider::class, 'EzSystems\Behat\API\ContentData\ContentDataProvider');

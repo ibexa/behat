@@ -36,5 +36,3 @@ class ElementFactoryCompilerPass implements CompilerPassInterface
             $container->getParameter(IbexaBehatExtension::BROWSER_DEBUG_INTERACTIVE_ENABLED);
     }
 }
-
-class_alias(ElementFactoryCompilerPass::class, 'EzSystems\BehatBundle\DependencyInjection\Compiler\ElementFactoryCompilerPass');

@@ -78,5 +78,3 @@ class RoleContext implements Context
         $this->roleFacade->addPolicyToRole($roleName, $module, $function, $parsedLimitations);
     }
 }
-
-class_alias(RoleContext::class, 'EzSystems\Behat\API\Context\RoleContext');

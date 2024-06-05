@@ -27,5 +27,3 @@ class FieldGroupLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(FieldGroupLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\FieldGroupLimitationParser');

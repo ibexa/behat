@@ -50,5 +50,3 @@ class TestSiteaccessCommand extends Command implements BackwardCompatibleCommand
         return 0;
     }
 }
-
-class_alias(TestSiteaccessCommand::class, 'EzSystems\BehatBundle\Command\TestSiteaccessCommand');

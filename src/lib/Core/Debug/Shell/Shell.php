@@ -77,5 +77,3 @@ class Shell extends BaseShell
         $this->writeMessage('The error message is: ' . $e->getMessage());
     }
 }
-
-class_alias(Shell::class, 'EzSystems\Behat\Core\Debug\Shell\Shell');

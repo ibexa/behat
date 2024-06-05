@@ -60,5 +60,3 @@ class NewStateLimitationParser implements LimitationParserInterface
         return $values;
     }
 }
-
-class_alias(NewStateLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\NewStateLimitationParser');

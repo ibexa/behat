@@ -77,5 +77,3 @@ class Review extends AbstractProcessStage implements EventSubscriberInterface
         $this->workflowFacade->transition($event->content, $transitionName, $this->randomDataGenerator->getRandomTextLine());
     }
 }
-
-class_alias(Review::class, 'EzSystems\Behat\Subscriber\Review');

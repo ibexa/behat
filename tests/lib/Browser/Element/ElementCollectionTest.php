@@ -197,5 +197,3 @@ class ElementCollectionTest extends BaseTestCase
         );
     }
 }
-
-class_alias(ElementCollectionTest::class, 'EzSystems\Behat\Test\Browser\Element\ElementCollectionTest');

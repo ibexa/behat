@@ -30,5 +30,3 @@ class OwnerLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(OwnerLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\OwnerLimitationParser');

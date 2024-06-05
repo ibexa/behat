@@ -63,5 +63,3 @@ class PublishInTheFuture extends AbstractProcessStage implements EventSubscriber
         ];
     }
 }
-
-class_alias(PublishInTheFuture::class, 'EzSystems\Behat\Subscriber\PublishInTheFuture');

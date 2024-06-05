@@ -50,5 +50,3 @@ class SelectionDataProvider implements FieldTypeDataProviderInterface
         return new Value($options);
     }
 }
-
-class_alias(SelectionDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\SelectionDataProvider');

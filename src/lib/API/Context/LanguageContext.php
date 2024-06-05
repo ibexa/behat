@@ -31,5 +31,3 @@ class LanguageContext implements Context
         $this->languageFacade->createLanguageIfNotExists($name, $languageCode);
     }
 }
-
-class_alias(LanguageContext::class, 'EzSystems\Behat\API\Context\LanguageContext');

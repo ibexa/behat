@@ -22,5 +22,3 @@ class PasswordProvider extends AbstractFieldTypeDataProvider
         return self::DEFAUlT_PASSWORD;
     }
 }
-
-class_alias(PasswordProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\PasswordProvider');

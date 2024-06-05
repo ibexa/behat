@@ -25,5 +25,3 @@ class IntegerDataProvider extends AbstractFieldTypeDataProvider
         return (int) $value;
     }
 }
-
-class_alias(IntegerDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\IntegerDataProvider');

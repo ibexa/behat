@@ -90,5 +90,3 @@ class LocationAwareConfigurationEditorTest extends TestCase
         Assert::assertEquals(['testKey' => [2, 5]], $config);
     }
 }
-
-class_alias(LocationAwareConfigurationEditorTest::class, 'EzSystems\Behat\Test\Core\Configuration\LocationAwareConfigurationEditorTest');

@@ -22,5 +22,3 @@ class InteractiveElementTest extends TestCase
         Assert::assertInstanceOf(Element::class, $element);
     }
 }
-
-class_alias(InteractiveElementTest::class, 'EzSystems\Behat\Test\Browser\Element\Debug\InteractiveElementTest');

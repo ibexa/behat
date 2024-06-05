@@ -22,5 +22,3 @@ class TextBlockDataProvider extends AbstractFieldTypeDataProvider
         return $this->getFaker()->paragraphs(5, true);
     }
 }
-
-class_alias(TextBlockDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\TextBlockDataProvider');

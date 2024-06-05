@@ -27,5 +27,3 @@ class WorkflowTransitionLimitationParser implements LimitationParserInterface
         );
     }
 }
-
-class_alias(WorkflowTransitionLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\WorkflowTransitionLimitationParser');

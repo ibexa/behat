@@ -57,5 +57,3 @@ class ArgumentParserTest extends TestCase
         ];
     }
 }
-
-class_alias(ArgumentParserTest::class, 'EzSystems\Behat\Test\Core\Behat\ArgumentParserTest');

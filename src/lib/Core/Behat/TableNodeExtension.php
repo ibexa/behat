@@ -62,5 +62,3 @@ class TableNodeExtension extends TableNode
         return new self($newTable);
     }
 }
-
-class_alias(TableNodeExtension::class, 'EzSystems\Behat\Core\Behat\TableNodeExtension');

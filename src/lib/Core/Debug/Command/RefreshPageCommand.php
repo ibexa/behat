@@ -42,5 +42,3 @@ class RefreshPageCommand extends Command
         return 0;
     }
 }
-
-class_alias(RefreshPageCommand::class, 'EzSystems\Behat\Core\Debug\Command\RefreshPageCommand');

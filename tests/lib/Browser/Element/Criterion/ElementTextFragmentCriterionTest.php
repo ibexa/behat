@@ -56,5 +56,3 @@ class ElementTextFragmentCriterionTest extends BaseTestCase
         );
     }
 }
-
-class_alias(ElementTextFragmentCriterionTest::class, 'EzSystems\Behat\Test\Browser\Element\Criterion\ElementTextFragmentCriterionTest');

@@ -83,5 +83,3 @@ class CreateLanguageCommand extends Command implements BackwardCompatibleCommand
         return 0;
     }
 }
-
-class_alias(CreateLanguageCommand::class, 'EzSystems\BehatBundle\Command\CreateLanguageCommand');

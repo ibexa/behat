@@ -29,5 +29,3 @@ class TextLineDataProvider extends AbstractFieldTypeDataProvider
         return new Value($value);
     }
 }
-
-class_alias(TextLineDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\TextLineDataProvider');

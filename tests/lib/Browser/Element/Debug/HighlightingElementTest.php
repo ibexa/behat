@@ -23,5 +23,3 @@ class HighlightingElementTest extends TestCase
         Assert::assertInstanceOf(Element::class, $element);
     }
 }
-
-class_alias(HighlightingElementTest::class, 'EzSystems\Behat\Test\Browser\Element\Debug\HighlightingElementTest');

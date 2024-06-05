@@ -64,5 +64,3 @@ class ContentTypeLimitationParser implements LimitationParserInterface
         return $contentTypeName;
     }
 }
-
-class_alias(ContentTypeLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ContentTypeLimitationParser');

@@ -62,5 +62,3 @@ class TimeContext implements Context
         Assert::assertGreaterThan($maxDuration, $actualDuration);
     }
 }
-
-class_alias(TimeContext::class, 'EzSystems\Behat\Core\Context\TimeContext');

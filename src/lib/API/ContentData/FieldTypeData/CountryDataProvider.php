@@ -44,5 +44,3 @@ class CountryDataProvider implements FieldTypeDataProviderInterface
         return new Value([$value => self::COUNTRY_DATA[$value]]);
     }
 }
-
-class_alias(CountryDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\CountryDataProvider');

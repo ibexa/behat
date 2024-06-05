@@ -76,5 +76,3 @@ class ElementTransitionHasEndedConditionTest extends BaseTestCase
         return $childElement;
     }
 }
-
-class_alias(ElementTransitionHasEndedConditionTest::class, 'EzSystems\Behat\Test\Browser\Element\Condition\ElementTransitionHasEndedConditionTest');

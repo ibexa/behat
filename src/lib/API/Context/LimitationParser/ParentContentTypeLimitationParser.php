@@ -26,5 +26,3 @@ class ParentContentTypeLimitationParser extends ContentTypeLimitationParser
         );
     }
 }
-
-class_alias(ParentContentTypeLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ParentContentTypeLimitationParser');

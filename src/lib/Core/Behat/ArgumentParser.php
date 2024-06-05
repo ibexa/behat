@@ -77,5 +77,3 @@ class ArgumentParser
         return str_replace(self::ROOT_KEYWORD, $this->parameterProvider->getParameter('root_content_name'), $path);
     }
 }
-
-class_alias(ArgumentParser::class, 'EzSystems\Behat\Core\Behat\ArgumentParser');

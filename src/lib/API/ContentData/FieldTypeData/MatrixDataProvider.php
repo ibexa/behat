@@ -92,5 +92,3 @@ class MatrixDataProvider extends AbstractFieldTypeDataProvider
         return new Row($values);
     }
 }
-
-class_alias(MatrixDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\MatrixDataProvider');

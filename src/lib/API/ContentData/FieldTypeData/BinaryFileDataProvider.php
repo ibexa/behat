@@ -45,5 +45,3 @@ class BinaryFileDataProvider implements FieldTypeDataProviderInterface
         return new Value(['inputUri' => $filePath]);
     }
 }
-
-class_alias(BinaryFileDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\BinaryFileDataProvider');

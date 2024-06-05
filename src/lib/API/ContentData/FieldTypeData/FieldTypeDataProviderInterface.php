@@ -16,5 +16,3 @@ interface FieldTypeDataProviderInterface
 
     public function parseFromString(string $value);
 }
-
-class_alias(FieldTypeDataProviderInterface::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface');

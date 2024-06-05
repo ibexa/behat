@@ -69,5 +69,3 @@ class ChildElementTextCriterionTest extends BaseTestCase
         );
     }
 }
-
-class_alias(ChildElementTextCriterionTest::class, 'EzSystems\Behat\Test\Browser\Element\Criterion\ChildElementTextCriterionTest');

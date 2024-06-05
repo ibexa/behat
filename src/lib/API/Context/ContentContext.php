@@ -142,5 +142,3 @@ class ContentContext implements Context
         return $contentItemData->getHash();
     }
 }
-
-class_alias(ContentContext::class, 'EzSystems\Behat\API\Context\ContentContext');

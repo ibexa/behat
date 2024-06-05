@@ -155,5 +155,3 @@ class UserFacade
         throw new NotFoundException('User Group', $userGroupName);
     }
 }
-
-class_alias(UserFacade::class, 'EzSystems\Behat\API\Facade\UserFacade');

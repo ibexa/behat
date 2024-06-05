@@ -43,5 +43,3 @@ class BooleanDataProvider extends AbstractFieldTypeDataProvider
         return 'true' === strtolower($value);
     }
 }
-
-class_alias(BooleanDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\BooleanDataProvider');

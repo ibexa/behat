@@ -43,5 +43,3 @@ class ElementExistsConditionTest extends BaseTestCase
         );
     }
 }
-
-class_alias(ElementExistsConditionTest::class, 'EzSystems\Behat\Test\Browser\Element\Condition\ElementExistsConditionTest');

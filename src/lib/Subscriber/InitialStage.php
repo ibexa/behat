@@ -86,5 +86,3 @@ class InitialStage extends AbstractProcessStage implements EventSubscriberInterf
     {
     }
 }
-
-class_alias(InitialStage::class, 'EzSystems\Behat\Subscriber\InitialStage');

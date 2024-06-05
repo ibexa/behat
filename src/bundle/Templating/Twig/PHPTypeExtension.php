@@ -28,5 +28,3 @@ class PHPTypeExtension extends AbstractExtension
         ];
     }
 }
-
-class_alias(PHPTypeExtension::class, 'EzSystems\BehatBundle\Templating\Twig\PHPTypeExtension');

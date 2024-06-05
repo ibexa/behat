@@ -40,5 +40,3 @@ class InitialEvent extends Event
         $this->mainLanguage = $mainLanguage;
     }
 }
-
-class_alias(InitialEvent::class, 'EzSystems\Behat\Event\InitialEvent');

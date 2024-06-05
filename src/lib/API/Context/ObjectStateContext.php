@@ -46,5 +46,3 @@ class ObjectStateContext implements Context
         }
     }
 }
-
-class_alias(ObjectStateContext::class, 'EzSystems\Behat\API\Context\ObjectStateContext');
