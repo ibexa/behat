@@ -30,6 +30,7 @@ regression:
                 - Ibexa\Migration\Behat\Context\MigrationContext
         headless:
             paths:
+                - '%paths.base%/vendor/ibexa/app-switcher/features/browser'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/browser'
@@ -42,6 +43,7 @@ regression:
                 tags: "~@broken&&@IbexaHeadless"
             contexts:
                 - Behat\MinkExtension\Context\MinkContext
+                - Ibexa\AppSwitcher\Behat\Context\AppSwitcherContext
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
