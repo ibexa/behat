@@ -15,7 +15,7 @@ default:
         pretty: true
     extensions:
         Behat\MinkExtension:
-            files_path: '%paths.base%/vendor/ibexa/admin-ui/src/lib/Behat/TestFiles/'
+            files_path: '%paths.base%/vendor/ibexa/behat/src/lib/Behat/TestFiles/'
             base_url: '%env(string:WEB_HOST)%'
             goutte: ~
             javascript_session: 'selenium'
