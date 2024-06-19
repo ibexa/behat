@@ -1,5 +1,6 @@
 imports:
     - behat_ibexa_oss.yaml
+    - vendor/ibexa/app-switcher/behat_suites.yml
     - vendor/ibexa/product-catalog/behat_suites.yml
     - vendor/ibexa/scheduler/behat_suites_headless.yml
     - vendor/ibexa/taxonomy/behat_suites_headless.yml
@@ -39,7 +40,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
             filters:
                 tags: "~@broken&&@IbexaHeadless"
-            contexts: 
+            contexts:
                 - Behat\MinkExtension\Context\MinkContext
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext
