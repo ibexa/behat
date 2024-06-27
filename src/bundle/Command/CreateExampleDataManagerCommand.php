@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\Behat\Command;
 
 use Ibexa\Behat\Event\InitialEvent;
-use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
@@ -22,7 +21,7 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Component\Yaml\Yaml;
 
-class CreateExampleDataManagerCommand extends Command implements BackwardCompatibleCommand
+class CreateExampleDataManagerCommand extends Command
 {
     private const BATCH_SIZE = 100;
 
@@ -51,11 +50,6 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         $this->env = $env;
         $this->projectDir = $projectDir;
         $this->stopwatch = new Stopwatch();
-    }
-
-    protected function configure(): void
-    {
-        $this->setAliases(['ezplatform:tools:generate-items']);
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
@@ -157,13 +151,5 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
     private function serialize(InitialEvent $eventData): string
     {
         return base64_encode($this->serializer->serialize($eventData, 'json'));
-    }
-
-    /**
-     * @return string[]
-     */
-    public function getDeprecatedAliases(): array
-    {
-        return ['ezplatform:tools:generate-items'];
     }
 }

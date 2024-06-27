@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\Behat\Command;
 
-use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
 use Ibexa\Contracts\Core\Repository\LanguageService;
 use Ibexa\Contracts\Core\Repository\PermissionResolver;
 use Ibexa\Contracts\Core\Repository\UserService;
@@ -17,7 +16,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CreateLanguageCommand extends Command implements BackwardCompatibleCommand
+class CreateLanguageCommand extends Command
 {
     /** @var \Ibexa\Contracts\Core\Repository\LanguageService */
     private $languageService;
@@ -40,19 +39,10 @@ class CreateLanguageCommand extends Command implements BackwardCompatibleCommand
         parent::__construct();
     }
 
-    /**
-     * @return string[]
-     */
-    public function getDeprecatedAliases(): array
-    {
-        return ['ez:behat:create-language'];
-    }
-
     protected function configure()
     {
         $this
             ->setName('ibexa:behat:create-language')
-            ->setAliases(['ez:behat:create-language'])
             ->setDescription('Create a Language')
             ->addArgument('language-code', InputArgument::REQUIRED)
             ->addArgument('language-name', InputArgument::OPTIONAL, 'Language name', '')
