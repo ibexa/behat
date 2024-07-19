@@ -52,7 +52,7 @@ class CreateExampleDataManagerCommand extends Command
         $this->stopwatch = new Stopwatch();
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $data = $this->getData();
         $this->stopwatch->start('timer');
@@ -62,7 +62,7 @@ class CreateExampleDataManagerCommand extends Command
         $event = $this->stopwatch->stop('timer');
         $output->writeln(sprintf('Duration: %d s, memory: %s MB', $event->getDuration() / 1000, $event->getMemory() / 1024 / 1024));
 
-        return 0;
+        return Command::SUCCESS;
     }
 
     private function executeCommand(OutputInterface $output, $cmd, float $timeout = 1200)

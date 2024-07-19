@@ -34,7 +34,7 @@ class StartScenarioSubscriber implements EventSubscriberInterface
         $this->height = $height;
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             ScenarioTested::BEFORE => ['resizeWindow', self::PRIORITY],

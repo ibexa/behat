@@ -27,7 +27,7 @@ class CreateContentDraft extends AbstractProcessStage implements EventSubscriber
     /** @var \Ibexa\Workflow\Behat\Facade\WorkflowFacade */
     private $workflowFacade;
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             Events::START_TO_DRAFT => ['execute', 0],

@@ -70,6 +70,6 @@ class CreateLanguageCommand extends Command
 
         $this->languageService->createLanguage($languageCreateStruct);
 
-        return 0;
+        return Command::SUCCESS;
     }
 }

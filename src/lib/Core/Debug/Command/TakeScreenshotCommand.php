@@ -41,7 +41,7 @@ class TakeScreenshotCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $image = $this->session->getScreenshot();
         $filePath = sys_get_temp_dir() . \DIRECTORY_SEPARATOR . uniqid('debug') . '.png';
@@ -54,7 +54,7 @@ class TakeScreenshotCommand extends Command
             $response = Uploader::unsigned_upload($filePath, self::PRESET);
             $output->writeln(sprintf('Open image at %s', $response['secure_url']));
 
-            return 0;
+            return \Symfony\Component\Console\Command\Command::SUCCESS;
         } catch (Exception $e) {
             $output->writeln(sprintf('Error while uploading image. %s', $e->getMessage()));
 

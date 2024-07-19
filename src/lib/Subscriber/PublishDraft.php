@@ -35,7 +35,7 @@ class PublishDraft extends AbstractProcessStage implements EventSubscriberInterf
         ];
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             Events::REVIEW_TO_PUBLISH => 'execute',

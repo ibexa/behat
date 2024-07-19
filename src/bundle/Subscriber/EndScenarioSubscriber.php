@@ -17,7 +17,7 @@ class EndScenarioSubscriber implements EventSubscriberInterface
 {
     private const PRIORITY = -1000;
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             ScenarioTested::AFTER => ['resetLogProvider', self::PRIORITY],
