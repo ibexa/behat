@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
 
 class JsRoutingDirectoryCacheDirectoryCreator implements CacheWarmerInterface
 {
-    private const FOS_JS_ROUTING_CACHE_DIR = 'fosJsRouting';
+    private const string FOS_JS_ROUTING_CACHE_DIR = 'fosJsRouting';
 
     public function isOptional(): bool
     {
@@ -26,5 +26,7 @@ class JsRoutingDirectoryCacheDirectoryCreator implements CacheWarmerInterface
         if (!file_exists($cachePath) && !mkdir($cachePath) && !is_dir($cachePath)) {
             throw new \RuntimeException('Unable to create JsRoutingBundle cache directory ' . $cachePath);
         }
+
+        return [];
     }
 }
