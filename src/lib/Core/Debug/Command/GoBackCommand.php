@@ -39,6 +39,6 @@ class GoBackCommand extends Command
 
         $output->writeln("The last page from browser's history has been visited.");
 
-        return \Symfony\Component\Console\Command\Command::SUCCESS;
+        return self::SUCCESS;
     }
 }

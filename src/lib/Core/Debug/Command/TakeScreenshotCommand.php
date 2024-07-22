@@ -54,7 +54,7 @@ class TakeScreenshotCommand extends Command
             $response = Uploader::unsigned_upload($filePath, self::PRESET);
             $output->writeln(sprintf('Open image at %s', $response['secure_url']));
 
-            return \Symfony\Component\Console\Command\Command::SUCCESS;
+            return self::SUCCESS;
         } catch (Exception $e) {
             $output->writeln(sprintf('Error while uploading image. %s', $e->getMessage()));
 

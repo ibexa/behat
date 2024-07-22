@@ -39,6 +39,6 @@ class RefreshPageCommand extends Command
 
         $output->writeln('Page has been refreshed.');
 
-        return \Symfony\Component\Console\Command\Command::SUCCESS;
+        return self::SUCCESS;
     }
 }

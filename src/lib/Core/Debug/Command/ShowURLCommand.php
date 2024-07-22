@@ -37,6 +37,6 @@ class ShowURLCommand extends Command
     {
         $output->writeln($this->session->getCurrentUrl());
 
-        return \Symfony\Component\Console\Command\Command::SUCCESS;
+        return self::SUCCESS;
     }
 }

@@ -37,6 +37,6 @@ class ShowHTMLCommand extends Command
     {
         $output->writeln($this->session->getPage()->getOuterHtml());
 
-        return \Symfony\Component\Console\Command\Command::SUCCESS;
+        return self::SUCCESS;
     }
 }
