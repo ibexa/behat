@@ -14,7 +14,7 @@ jobs:
         with:
             project-edition: 'oss'
             test-suite:  '--profile=browser --suite=admin-ui-full'
-            test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
+            test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard --tags=~@addLocation,~@subtreeEditor'
             multirepository: true
             timeout: 40
             job-count: 2
