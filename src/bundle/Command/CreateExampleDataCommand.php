@@ -77,7 +77,7 @@ class CreateExampleDataCommand extends Command
         $this->logger->log(LogLevel::INFO, $statsEnd);
         $output->writeln($statsEnd);
 
-        return Command::SUCCESS;
+        return self::SUCCESS;
     }
 
     private function parseInputData(string $serializedTransitionEvent): InitialEvent
