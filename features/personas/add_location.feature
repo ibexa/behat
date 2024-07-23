@@ -1,6 +1,6 @@
 Feature: Editor user that has policies with Content Type limitation
 
-  @admin @setup @addLocation
+  @admin @setup @addLocation @broken
   Scenario: Create a Role and assign policies with Content Type limitation
     Given I create "folder" Content items in root in "eng-GB"
       | name        | short_name  | short_description | description |

@@ -13,7 +13,7 @@ jobs:
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
             project-edition: 'oss'
-            test-suite:  '--profile=browser --suite=admin-ui-full --tags="~@addLocation&&~@subtreeEditor"'
+            test-suite:  '--profile=browser --suite=admin-ui-full --tags=~@broken'
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
             multirepository: true
             timeout: 40
