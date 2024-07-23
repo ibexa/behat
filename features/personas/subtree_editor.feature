@@ -1,4 +1,4 @@
-@setup @subtreeEditor @broken
+@setup @subtreeEditor
 Feature: Editor that has access only to a Subtree of Content Structure
 
   Scenario: Create a Role and assign policies with limitations to it
