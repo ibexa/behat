@@ -38,7 +38,7 @@ class EditContent extends AbstractProcessStage implements EventSubscriberInterfa
         ];
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             Events::PUBLISH_TO_EDIT => 'execute',

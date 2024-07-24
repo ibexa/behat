@@ -33,10 +33,10 @@ class ShowURLCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln($this->session->getCurrentUrl());
 
-        return 0;
+        return self::SUCCESS;
     }
 }

@@ -56,7 +56,7 @@ class CreateExampleDataCommand extends Command
             ->addArgument('serializedTransitionData', InputArgument::REQUIRED);
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $iterations = $input->getArgument('iterations');
         $initialData = $this->parseInputData($input->getArgument('serializedTransitionData'));
@@ -77,7 +77,7 @@ class CreateExampleDataCommand extends Command
         $this->logger->log(LogLevel::INFO, $statsEnd);
         $output->writeln($statsEnd);
 
-        return 0;
+        return self::SUCCESS;
     }
 
     private function parseInputData(string $serializedTransitionEvent): InitialEvent

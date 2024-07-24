@@ -41,7 +41,7 @@ class Review extends AbstractProcessStage implements EventSubscriberInterface
         ];
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             Events::DRAFT_TO_REVIEW => 'execute',

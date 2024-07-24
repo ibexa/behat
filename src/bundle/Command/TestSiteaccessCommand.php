@@ -37,6 +37,6 @@ class TestSiteaccessCommand extends Command
     {
         $output->writeln($this->siteaccess->name);
 
-        return 0;
+        return self::SUCCESS;
     }
 }

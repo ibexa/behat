@@ -33,12 +33,12 @@ class RefreshPageCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->session->reload();
 
         $output->writeln('Page has been refreshed.');
 
-        return 0;
+        return self::SUCCESS;
     }
 }

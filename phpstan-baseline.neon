@@ -1,11 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Cache\\\\JsRoutingDirectoryCacheDirectoryCreator\\:\\:warmUp\\(\\) should return array\\<string\\> but return statement is missing\\.$#"
-			count: 1
-			path: src/bundle/Cache/JsRoutingDirectoryCacheDirectoryCreator.php
-
-		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Command\\\\CreateExampleDataCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/bundle/Command/CreateExampleDataCommand.php

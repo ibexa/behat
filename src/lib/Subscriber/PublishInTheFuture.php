@@ -56,7 +56,7 @@ class PublishInTheFuture extends AbstractProcessStage implements EventSubscriber
         $this->dateBasedPublisherService->schedulePublish($event->content->versionInfo, $this->randomDataGenerator->getRandomDateInTheFuture());
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             Events::REVIEW_TO_PUBLISH_LATER => 'execute',

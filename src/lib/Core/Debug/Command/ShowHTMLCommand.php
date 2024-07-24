@@ -33,10 +33,10 @@ class ShowHTMLCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln($this->session->getPage()->getOuterHtml());
 
-        return 0;
+        return self::SUCCESS;
     }
 }
