@@ -75,6 +75,7 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\UDWContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserNotificationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
+                - Ibexa\AdminUi\Behat\BrowserContext\UserProfileContext
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
                 - Ibexa\Behat\API\Context\RoleContext
