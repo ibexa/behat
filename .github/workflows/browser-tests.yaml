@@ -13,8 +13,8 @@ jobs:
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
             project-edition: 'oss'
-            test-suite: "--profile=browser --suite=admin-ui-full --tags='~@IbexaDXP\&\&~@broken'"
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
+            test-suite: "--profile=browser --suite=admin-ui-full --tags='~@broken&&~@IbexaDXP'"
             multirepository: true
             timeout: 40
             job-count: 2
