@@ -13,11 +13,9 @@ jobs:
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
             project-edition: 'oss'
-            test-suite:  '--profile=browser --suite=admin-ui-full --tags=~@broken'
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
-            multirepository: true
+            test-suite: "--mode=standard --profile=browser --suite=admin-ui-full --tags='~@broken&&~@IbexaDXP'"
             timeout: 40
-            job-count: 2
         secrets:
             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     examples:
@@ -26,5 +24,14 @@ jobs:
         with:
             project-edition: 'oss'
             test-suite:  '--mode=standard --profile=service --suite=examples'
+        secrets:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    core-behat:
+        name: "Kernel Behat Core tests"
+        uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
+        with:
+            project-edition: 'oss'
+            test-setup-phase-1: '--mode=standard --profile=core --suite=setup'
+            test-suite: "--mode=standard --profile=core --tags='~@broken&&~@setup'"
         secrets:
             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
