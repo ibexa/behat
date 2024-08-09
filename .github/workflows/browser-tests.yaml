@@ -14,7 +14,7 @@ jobs:
         with:
             project-edition: 'oss'
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
-            test-suite: "--profile=browser --suite=admin-ui-full --tags='~@broken&&~@IbexaDXP'"
+            test-suite: "--mode=standard --profile=browser --suite=admin-ui-full --tags='~@broken&&~@IbexaDXP'"
             timeout: 40
         secrets:
             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
