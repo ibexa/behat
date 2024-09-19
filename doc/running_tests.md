@@ -21,7 +21,8 @@ If you want to run browser tests you need to have Selenium Server runnning. One 
 
 Another way is to use the Selenium Server Docker container and setting it up manually. Look at [manifest.json file](https://github.com/ibexa/recipes-dev/blob/master/ibexa/docker/4.6/manifest.json#L23) for the currently used version.
 
-It can be set up using examples from [docker-selenium](https://github.com/SeleniumHQ/docker-selenium)
+It can be set up using examples from [docker-selenium](https://github.com/SeleniumHQ/docker-selenium).
+
 Example for Chrome would be: 
 `docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-chrome:latest`
 
