@@ -2,7 +2,7 @@
 
 ## Configuration
 
-In order to use behat you need to use `behat` Symfony environment (which is defined in Ibexa by default). It is also recommended to run in enabled debug mode, which gives you more detailed browser screenshots in case of failure.
+In order to use ibexa/behat you need to use `behat` Symfony environment (which is defined in Ibexa by default). It is also recommended to run in enabled debug mode, which gives you more detailed browser screenshots in case of failure.
 
 The standard behat configuration file is [behat_ibexa_oss.yaml](https://github.com/ibexa/behat/blob/4.6/behat_ibexa_oss.yaml), located in ibexa/behat directory. There you can:
 - in the `Behat\MinkExtension` section:
@@ -37,7 +37,7 @@ After the container is set up correctly you need to adjust the configuration of 
 
 ### Running standard Behat tests
 
-Behat comes with a wrapper for the standard Behat runner: [ibexabehat](https://github.com/ibexa/behat/blob/4.6/bin/ibexabehat) to make running tests in parallel easier.
+Ibexa/behat comes with a wrapper for the standard Behat runner: [ibexabehat](https://github.com/ibexa/behat/blob/4.6/bin/ibexabehat) to make running tests in parallel easier.
 
 Use:
 ```

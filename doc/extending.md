@@ -2,7 +2,7 @@
 
 There are two extension points:
 - ## Support for custom Field Types
-If you want Behat to support your custom Field Type when generating Content items you need to implement `Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface` and tag the service with the `ibexa.behat.fieldtype_data_provider` tag.
+If you want ibexa/behat to support your custom Field Type when generating Content items you need to implement `Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface` and tag the service with the `ibexa.behat.fieldtype_data_provider` tag.
 
 Example service definition:
 ```

@@ -1,6 +1,6 @@
 # Getting started
 
-Ibexa behat repository was created to make development of [Behat](https://behat.org/en/latest/) tests for Ibexa DXP easier and quicker. If you're new to Behat you can get familiar with it by browsing [Behat's documentation](https://docs.behat.org/en/latest/guides.html).
+Ibexa/behat repository was created to make development of [Behat](https://behat.org/en/latest/) tests for Ibexa DXP easier and quicker. If you're new to Behat you can get familiar with it by browsing [Behat's documentation](https://docs.behat.org/en/latest/guides.html).
 
 # How can I use Behat in my project?
 
