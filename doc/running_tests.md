@@ -2,7 +2,7 @@
 
 ## Configuration
 
-In order to use BehatBundle you need to use `behat` Symfony environment (which is defined in Ibexa by default). It is also recommended to run in enabled debug mode, which gives you more detailed browser screenshots in case of failure.
+In order to use behat you need to use `behat` Symfony environment (which is defined in Ibexa by default). It is also recommended to run in enabled debug mode, which gives you more detailed browser screenshots in case of failure.
 
 The standard behat configuration file is [behat_ibexa_oss.yaml](https://github.com/ibexa/behat/blob/4.6/behat_ibexa_oss.yaml), located in ibexa/behat directory. There you can:
 - in the `Behat\MinkExtension` section:
@@ -21,8 +21,9 @@ If you want to run browser tests you need to have Selenium Server runnning. One 
 
 Another way is to use the Selenium Server Docker container and setting it up manually. Look at [manifest.json file](https://github.com/ibexa/recipes-dev/blob/master/ibexa/docker/4.6/manifest.json#L23) for the currently used version.
 
-It can be set up using:
-`docker run -p 4444:4444 -p 5900:5900 --shm-size=1gb -d --name=containerName selenium/standalone-chrome-debug:3.141.59`
+It can be set up using examples from [docker-selenium](https://github.com/SeleniumHQ/docker-selenium)
+Example for Chrome would be: 
+`docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-chrome:latest`
 
 Where: 
 - 4444 is the port where Selenium Server will be accessible 
@@ -35,7 +36,7 @@ After the container is set up correctly you need to adjust the configuration of 
 
 ### Running standard Behat tests
 
-BehatBundle comes with a wrapper for the standard Behat runner: [ibexabehat](https://github.com/ibexa/behat/blob/4.6/bin/ibexabehat) to make running tests in parallel easier.
+Behat comes with a wrapper for the standard Behat runner: [ibexabehat](https://github.com/ibexa/behat/blob/4.6/bin/ibexabehat) to make running tests in parallel easier.
 
 Use:
 ```
@@ -53,10 +54,10 @@ Running Behat feature files in parallel (on the available number of CPUs) is the
 
 ## Existing test profiles and suites
 
-By convention profiles and suites are defined in the `behat_suites.yml` file in each bundle, if they exist. See [BehatBundle suites](../behat_suites.yml) and [AdminUI suites](https://github.com/ibexa/admin-ui/blob/4.6/behat_suites.yml) for examples.
+By convention profiles and suites are defined in the `behat_suites.yml` file in each bundle, if they exist. See [Behat suites](../behat_suites.yml) and [AdminUI suites](https://github.com/ibexa/admin-ui/blob/4.6/behat_suites.yml) for examples.
 
 In order to run them, execute:
-- `bin/ibexabehat --profile=behat --suite=examples` (BehatBundle usage examples)
+- `bin/ibexabehat --profile=behat --suite=examples` (behat usage examples)
 - `bin/ibexabehat --profile=adminui --suite=adminui` (all AdminUI tests)
 
 ## Previewing browser tests

@@ -1,10 +1,10 @@
 # Getting started
 
-Ibexa BehatBundle is a bundle created to make development of [Behat](https://behat.org/en/latest/) tests for Ibexa DXP easier and quicker. If you're new to Behat you can get familiar with it by browsing [Behat's documentation](https://docs.behat.org/en/latest/guides.html).
+Ibexa behat repository was created to make development of [Behat](https://behat.org/en/latest/) tests for Ibexa DXP easier and quicker. If you're new to Behat you can get familiar with it by browsing [Behat's documentation](https://docs.behat.org/en/latest/guides.html).
 
-# How can I use BehatBundle in my project?
+# How can I use Behat in my project?
 
-This bundle has higher testing levels (system testing and acceptance testing) in mind. You can use it to:
+This repository has higher testing levels (system testing and acceptance testing) in mind. You can use it to:
 * put your system under test in the desired state
   - create necessary Content Types, Content items, Users etc.
   - create required YAML configuration using code

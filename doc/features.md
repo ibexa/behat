@@ -1,16 +1,16 @@
-# BehatBundle features
+# Behat features
 
 ## Example usages
 
 ### API examples
-See [BehatBundle examples](https://github.com/ibexa/behat/tree/master/features/examples) to see how to use Behat sentences to:
+See [Behat examples](https://github.com/ibexa/behat/tree/master/features/examples) to see how to use Behat sentences to:
 - create Languages, Content items, Content Types
 - create Users with complex permissions
 - create given YAML configuration
 
 ### Logging into the repository
 
-Use the [TestContext](../src/lib/API/Context/TestContext.php) to log in to the Repository and perform API calls as given user. You can tag your scenario with `@admin` to be automatically logged in as admin user before the scenario starts.
+Use the [TestContext](../src/lib/API/Context/TestContext.php) to log in to the Repository and perform API calls as given user.
 
 ### Browser examples
 
@@ -24,7 +24,7 @@ Selenium does not support drag and drop interactions between iframes. To achieve
 
 Before you start using that you need to inject the [drag-mock script](../src/bundle/Resources/public/js/scripts/drag-mock.js) into your templates: one way of doing this is described in [Webpack Encore configuration doc](https://doc.ibexa.co/en/4.6/administration/back_office/back_office_elements/importing_assets_from_bundle/#configuration-from-a-bundle). For an example see [ez.config.manager.js](../src/bundle/Resources/encore/ez.config.manager.js).
 
-## BehatBundle extension
+## Behat extension
 
 ### SiteAccess awareness
 
@@ -36,4 +36,4 @@ Use the `Ibexa\Behat\Browser\Context\DebuggingContext` Context class to access b
 
 ## Default testing configuration
 
-BehatBundle might override some settings with values that are needed for testing. If you want to disable this behaviour you should set the `ibexa.behat.override_configuration` parameter to `false`.
+Behat might override some settings with values that are needed for testing. If you want to disable this behaviour you should set the `ibexa.behat.override_configuration` parameter to `false`.
