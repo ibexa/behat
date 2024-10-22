@@ -51,6 +51,7 @@ regression:
               - '%paths.base%/vendor/ibexa/user/features/browser'
               - '%paths.base%/vendor/ibexa/version-comparison/features'
               - '%paths.base%/vendor/ibexa/workflow/features/browser'
+              - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
@@ -110,3 +111,5 @@ regression:
                 - Ibexa\VersionComparison\Behat\Context\VersionComparisonContext
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
+                - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
