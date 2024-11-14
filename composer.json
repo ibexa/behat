@@ -6,7 +6,7 @@
         "ezsystems/behatbundle": "*"
     },
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.1",
         "ext-json": "*",
         "behat/behat": "^3.13",
         "behat/mink-goutte-driver": "^1.2",
