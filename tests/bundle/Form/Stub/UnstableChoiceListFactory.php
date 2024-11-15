@@ -30,7 +30,12 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
         $this->successfulCallAfterNthTry = $successfulCallAfterNthTry;
     }
 
-    public function createListFromChoices(iterable $choices, callable $value = null)
+    /**
+     * @param iterable<string, mixed> $choices
+     *
+     * @throws \ErrorException
+     */
+    public function createListFromChoices(iterable $choices, callable $value = null, ?callable $filter = null): ChoiceListInterface
     {
         ++$this->createListFromChoicesCounter;
         $this->failIfNeeded($this->createListFromChoicesCounter);
@@ -38,22 +43,45 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
         return new ArrayChoiceList([]);
     }
 
-    public function createListFromLoader(ChoiceLoaderInterface $loader, callable $value = null)
-    {
+    /**
+     * @throws \ErrorException
+     */
+    public function createListFromLoader(
+        ChoiceLoaderInterface $loader,
+        callable $value = null,
+        ?callable $filter = null
+    ): ChoiceListInterface {
         ++$this->createListFromLoaderCounter;
         $this->failIfNeeded($this->createListFromLoaderCounter);
 
         return new ArrayChoiceList([]);
     }
 
-    public function createView(ChoiceListInterface $list, $preferredChoices = null, $label = null, callable $index = null, callable $groupBy = null, $attr = null)
-    {
+    /**
+     * @param array<string, mixed>|callable|null $preferredChoices
+     * @param array<string, mixed>|callable|null $attr
+     * @param array<string, mixed>|callable $labelTranslationParameters
+     *
+     * @throws \ErrorException
+     */
+    public function createView(
+        ChoiceListInterface $list,
+        array|callable|null $preferredChoices = null,
+        callable|false|null $label = null,
+        ?callable $index = null,
+        ?callable $groupBy = null,
+        array|callable|null $attr = null,
+        array|callable $labelTranslationParameters = []/* , bool $duplicatePreferredChoices = true */
+    ): ChoiceListView {
         ++$this->createViewCounter;
         $this->failIfNeeded($this->createViewCounter);
 
         return new ChoiceListView([]);
     }
 
+    /**
+     * @throws \ErrorException
+     */
     private function failIfNeeded(int $callNumber): void
     {
         if ($callNumber <= $this->successfulCallAfterNthTry) {
