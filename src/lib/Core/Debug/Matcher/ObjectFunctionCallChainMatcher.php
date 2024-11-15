@@ -13,7 +13,16 @@ use Psy\TabCompletion\Matcher\ObjectMethodsMatcher;
 
 class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
 {
-    public function getMatches(array $tokens, array $info = [])
+    /**
+     * @param array<mixed> $info
+     *
+     * @phpstan-param list<mixed> $tokens
+     *
+     * @return string[]
+     *
+     * @throws \ReflectionException
+     */
+    public function getMatches(array $tokens, array $info = []): array
     {
         $input = $this->getInput($tokens);
 
@@ -50,7 +59,6 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
                 // start a new chain
                 $functionChainStarted = true;
                 $chain[] = $this->getObjectClass($group);
-                continue;
             }
         }
 
@@ -83,7 +91,10 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
         ));
     }
 
-    protected function getTokenName($token)
+    /**
+     * @phpstan-param list<mixed> $token
+     */
+    protected function getTokenName(array|string $token): string
     {
         if (!is_array($token)) {
             return $token;
@@ -92,24 +103,36 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
         return \token_name($token[0]);
     }
 
-    protected function isFunctionCall($tokenGroup): bool
+    /**
+     * @phpstan-param list<mixed> $tokenGroup
+     */
+    protected function isFunctionCall(array $tokenGroup): bool
     {
         return count($tokenGroup) >= 3 && self::tokenIs($tokenGroup[0], self::T_STRING)
                 && $tokenGroup[1] === '('
                 && end($tokenGroup) === ')';
     }
 
-    protected function getFunctionName($tokenGroup): string
+    /**
+     * @phpstan-param list<mixed> $tokenGroup
+     */
+    protected function getFunctionName(array $tokenGroup): string
     {
         return $tokenGroup[0][1];
     }
 
-    protected function isObjectCall($tokenGroup): bool
+    /**
+     * @phpstan-param list<mixed> $tokenGroup
+     */
+    protected function isObjectCall(array $tokenGroup): bool
     {
         return self::tokenIs(end($tokenGroup), self::T_VARIABLE);
     }
 
-    protected function getObjectClass($tokenGroup): string
+    /**
+     * @phpstan-param list<mixed> $tokenGroup
+     */
+    protected function getObjectClass(array $tokenGroup): string
     {
         $objectName = \str_replace('$', '', end($tokenGroup)[1]);
         $object = $this->getVariable($objectName);
