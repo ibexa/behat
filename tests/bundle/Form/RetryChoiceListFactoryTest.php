@@ -60,7 +60,7 @@ final class RetryChoiceListFactoryTest extends TestCase
     {
         $retryChoiceListFactory = new RetryChoiceListFactory(new UnstableChoiceListFactory(4));
         $this->expectException(ErrorException::class);
-        $retryChoiceListFactory->createListFromChoices([], null);
+        $retryChoiceListFactory->createListFromChoices([]);
     }
 
     public function testCreateListFromLoaderFail(): void
