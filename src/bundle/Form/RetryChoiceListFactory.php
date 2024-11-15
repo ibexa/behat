@@ -25,48 +25,64 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
         $this->choiceListFactory = $choiceListFactory;
     }
 
-    /** {@inheritDoc} */
-    public function createListFromChoices(iterable $choices, $value = null): ChoiceListInterface
-    {
-        $filter = \func_num_args() > 2 ? func_get_arg(2) : null;
-
+    /**
+     * @param iterable<string, mixed> $choices
+     *
+     * @throws \ErrorException
+     */
+    public function createListFromChoices(
+        iterable $choices,
+        ?callable $value = null,
+        ?callable $filter = null
+    ): ChoiceListInterface {
         return $this->executeWithRetry(function () use ($choices, $value, $filter) {
             return $this->choiceListFactory->createListFromChoices($choices, $value, $filter);
         });
     }
 
-    /** {@inheritDoc} */
-    public function createListFromLoader(ChoiceLoaderInterface $loader, $value = null): ChoiceListInterface
-    {
-        $filter = \func_num_args() > 2 ? func_get_arg(2) : null;
-
+    /**
+     * @throws \ErrorException
+     */
+    public function createListFromLoader(
+        ChoiceLoaderInterface $loader,
+        ?callable $value = null,
+        ?callable $filter = null
+    ): ChoiceListInterface {
         return $this->executeWithRetry(function () use ($loader, $value, $filter) {
             return $this->choiceListFactory->createListFromLoader($loader, $value, $filter);
         });
     }
 
-    /** {@inheritDoc} */
+    /**
+     * @param array<string, mixed>|callable|null $preferredChoices
+     * @param array<string, mixed>|callable|null $attr
+     * @param array<string, mixed>|callable $labelTranslationParameters
+     *
+     * @throws \ErrorException
+     */
     public function createView(
         ChoiceListInterface $list,
-        $preferredChoices = null,
-        $label = null,
-        $index = null,
-        $groupBy = null,
-        $attr = null
+        array|callable|null $preferredChoices = null,
+        callable|false|null $label = null,
+        ?callable $index = null,
+        ?callable $groupBy = null,
+        array|callable|null $attr = null,
+        array|callable $labelTranslationParameters = []
+        /* , bool $duplicatePreferredChoices = true */
     ): ChoiceListView {
-        $labelTranslationParameters = \func_num_args() > 6 ? func_get_arg(6) : [];
-
-        return $this->executeWithRetry(function () use ($list, $preferredChoices, $label, $index, $groupBy, $attr, $labelTranslationParameters) {
-            return $this->choiceListFactory->createView(
-                $list,
-                $preferredChoices,
-                $label,
-                $index,
-                $groupBy,
-                $attr,
-                $labelTranslationParameters
-            );
-        });
+        return $this->executeWithRetry(
+            function () use ($list, $preferredChoices, $label, $index, $groupBy, $attr, $labelTranslationParameters) {
+                return $this->choiceListFactory->createView(
+                    $list,
+                    $preferredChoices,
+                    $label,
+                    $index,
+                    $groupBy,
+                    $attr,
+                    $labelTranslationParameters
+                );
+            }
+        );
     }
 
     /**
@@ -75,6 +91,8 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
      * @param callable(mixed ...$args): T $fn
      *
      * @return T
+     *
+     * @throws \ErrorException
      */
     private function executeWithRetry(callable $fn)
     {
