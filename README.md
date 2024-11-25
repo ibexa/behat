@@ -21,7 +21,7 @@ For more information about BehatBundle, see:
 
 Copyright (C) 1999-2024 Ibexa AS (formerly eZ Systems AS). All rights reserved.
 
-## LICENSE
+## LICENSE`
 
 This source code is available separately under the following licenses:
 
