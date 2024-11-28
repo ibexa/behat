@@ -50,8 +50,8 @@ regression:
                 - '%paths.base%/vendor/ibexa/version-comparison/features'
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
                 - '%paths.base%/vendor/ibexa/shipping/features/browser'
-#                - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
-#                - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
+                - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
+                - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
             filters:
                 tags: "~@broken&&@IbexaCommerce"
             contexts: 
@@ -114,5 +114,5 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowAdminContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\Shipping\Behat\Context\ShippingMethodsContext
-#                - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
-#                - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
+                - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
+                - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
