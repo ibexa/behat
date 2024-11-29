@@ -5,8 +5,6 @@ imports:
     - vendor/ibexa/taxonomy/behat_suites_headless.yml
     - vendor/ibexa/version-comparison/behat_suites.yml
     - vendor/ibexa/workflow/behat_suites_headless.yml
-    - vendor/ibexa/connector-openai/behat_suites.yaml
-    - vendor/ibexa/connector-ai/behat_suites.yaml
 
 regression:
     suites:
