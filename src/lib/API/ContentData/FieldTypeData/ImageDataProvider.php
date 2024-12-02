@@ -48,7 +48,7 @@ class ImageDataProvider extends AbstractFieldTypeDataProvider
 
         return new Value(
             [
-                'path' => $filePath,
+                'inputUri' => $filePath,
                 'fileSize' => filesize($filePath),
                 'fileName' => basename($filePath),
                 'alternativeText' => $this->getFaker()->text,
@@ -62,7 +62,7 @@ class ImageDataProvider extends AbstractFieldTypeDataProvider
 
         return new Value(
             [
-                'path' => $filePath,
+                'inputUri' => $filePath,
                 'fileSize' => filesize($value),
                 'fileName' => basename($value),
                 'alternativeText' => basename($value),
