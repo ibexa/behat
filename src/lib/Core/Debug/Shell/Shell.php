@@ -17,10 +17,7 @@ use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 class Shell extends BaseShell
 {
-    /**
-     * @return array
-     */
-    protected function getDefaultMatchers()
+    protected function getDefaultMatchers(): array
     {
         $matchers = array_filter(parent::getDefaultMatchers(), static function (AbstractMatcher $matcher) {
             // Remove FunctionsMatcher as it spams autocomplete too much
@@ -36,7 +33,7 @@ class Shell extends BaseShell
     public function addBaseImports(): void
     {
         $level = 1;
-        while (strpos(dirname(__DIR__, $level), 'vendor') !== false) {
+        while (str_contains(dirname(__DIR__, $level), 'vendor')) {
             ++$level;
         }
         $dir = dirname(__DIR__, $level);
@@ -46,8 +43,8 @@ class Shell extends BaseShell
         );
 
         $baseImports = array_filter($classes, static function (string $classFcqn): bool {
-            return strpos($classFcqn, 'Ibexa\Behat\Browser\Element') === 0 ||
-                strpos($classFcqn, 'Ibexa\Behat\Browser\Locator') === 0;
+            return str_starts_with($classFcqn, 'Ibexa\Behat\Browser\Element') ||
+                str_starts_with($classFcqn, 'Ibexa\Behat\Browser\Locator');
         });
 
         foreach ($baseImports as $import) {
@@ -72,7 +69,7 @@ class Shell extends BaseShell
         $this->addInput(sprintf('sprintf("%s");', $message), true);
     }
 
-    public function displayExceptionMessage(Exception $e)
+    public function displayExceptionMessage(Exception $e): void
     {
         $this->writeMessage('The error message is: ' . $e->getMessage());
     }
