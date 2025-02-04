@@ -53,16 +53,6 @@ default:
 
         Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
 
-        Bex\Behat\ScreenshotExtension:
-            active_image_drivers: cloudinary
-            image_drivers:
-                cloudinary:
-                    screenshot_directory: /tmp/behat-screenshot/
-                    cloud_name: ezplatformtravis
-                    preset: ezplatform
-                    mode: normal
-                    limit: 10
-
     suites: ~
 
 regression:
@@ -90,7 +80,7 @@ regression:
               - '%paths.base%/vendor/ibexa/user/features/browser'
             filters:
                 tags: "~@broken&&@IbexaOSS"
-            contexts: 
+            contexts:
                 - Behat\MinkExtension\Context\MinkContext
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext

@@ -1,11 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Command\\\\CreateExampleDataCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/Command/CreateExampleDataCommand.php
-
-		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Command\\\\CreateExampleDataManagerCommand\\:\\:createProcesses\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/bundle/Command/CreateExampleDataManagerCommand.php
@@ -39,16 +34,6 @@ parameters:
 			message: "#^Property Ibexa\\\\Bundle\\\\Behat\\\\Command\\\\CreateExampleDataManagerCommand\\:\\:\\$processes type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/bundle/Command/CreateExampleDataManagerCommand.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Command\\\\CreateLanguageCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/Command/CreateLanguageCommand.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Command\\\\TestSiteaccessCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/Command/TestSiteaccessCommand.php
 
 		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Controller\\\\ExceptionController\\:\\:throwRepositoryUnauthorizedAction\\(\\) has no return type specified\\.$#"
@@ -91,32 +76,7 @@ parameters:
 			path: src/bundle/Controller/UnauthenticatedRedirectController.php
 
 		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\Compiler\\\\ElementFactoryCompilerPass\\:\\:process\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/DependencyInjection/Compiler/ElementFactoryCompilerPass.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\Compiler\\\\FieldTypeDataProviderPass\\:\\:process\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/DependencyInjection/Compiler/FieldTypeDataProviderPass.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\Compiler\\\\LimitationParserPass\\:\\:process\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/DependencyInjection/Compiler/LimitationParserPass.php
-
-		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\IbexaBehatExtension\\:\\:load\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\IbexaBehatExtension\\:\\:prepend\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\IbexaBehatExtension\\:\\:process\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
 
@@ -124,61 +84,6 @@ parameters:
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\IbexaBehatExtension\\:\\:shouldLoadDxpServices\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromChoices\\(\\) has parameter \\$choices with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromChoices\\(\\) has parameter \\$value with no type specified\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createListFromLoader\\(\\) has parameter \\$value with no type specified\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$attr with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$groupBy with no type specified\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$index with no type specified\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Form\\\\RetryChoiceListFactory\\:\\:createView\\(\\) has parameter \\$preferredChoices with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Symfony\\\\Component\\\\Form\\\\ChoiceList\\\\Factory\\\\ChoiceListFactoryInterface\\:\\:createListFromChoices\\(\\) invoked with 3 parameters, 1\\-2 required\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Symfony\\\\Component\\\\Form\\\\ChoiceList\\\\Factory\\\\ChoiceListFactoryInterface\\:\\:createListFromLoader\\(\\) invoked with 3 parameters, 1\\-2 required\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Symfony\\\\Component\\\\Form\\\\ChoiceList\\\\Factory\\\\ChoiceListFactoryInterface\\:\\:createView\\(\\) invoked with 7 parameters, 1\\-6 required\\.$#"
-			count: 1
-			path: src/bundle/Form/RetryChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\IbexaBehatBundle\\:\\:build\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/IbexaBehatBundle.php
 
 		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\IbexaExtension\\:\\:configure\\(\\) has no return type specified\\.$#"
@@ -201,11 +106,6 @@ parameters:
 			path: src/bundle/IbexaExtension.php
 
 		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\IbexaExtension\\:\\:process\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/IbexaExtension.php
-
-		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\IbexaExtension\\:\\:setMinkParameters\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/bundle/IbexaExtension.php
@@ -224,6 +124,11 @@ parameters:
 			message: "#^Parameter \\#1 \\$name of class Ibexa\\\\Core\\\\MVC\\\\Symfony\\\\SiteAccess constructor expects string, array\\|bool\\|float\\|int\\|string\\|null given\\.$#"
 			count: 1
 			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
+
+		-
+			message: "#^Call to an undefined method Behat\\\\Gherkin\\\\Node\\\\ScenarioLikeInterface\\:\\:hasTag\\(\\)\\.$#"
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
 
 		-
 			message: "#^Cannot call method isStarted\\(\\) on object\\|null\\.$#"
@@ -1001,12 +906,7 @@ parameters:
 			path: src/lib/API/Facade/RoleFacade.php
 
 		-
-			message: "#^Access to an undefined property Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\ValueObject\\:\\:\\$contentInfo\\.$#"
-			count: 2
-			path: src/lib/API/Facade/SearchFacade.php
-
-		-
-			message: "#^Argument of an invalid type array\\<int, int\\|string\\>\\|int\\|string supplied for foreach, only iterables are supported\\.$#"
+			message: "#^Argument of an invalid type array\\<int, int\\>\\|int supplied for foreach, only iterables are supported\\.$#"
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 
@@ -1021,17 +921,12 @@ parameters:
 			path: src/lib/API/Facade/SearchFacade.php
 
 		-
-			message: "#^Parameter \\#1 \\$location of method Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\URLAliasService\\:\\:reverseLookup\\(\\) expects Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Location, Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\ValueObject given\\.$#"
-			count: 1
-			path: src/lib/API/Facade/SearchFacade.php
-
-		-
 			message: "#^Parameter \\#1 \\$min \\(0\\) of function random_int expects lower number than parameter \\#2 \\$max \\(int\\<\\-1, max\\>\\)\\.$#"
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 
 		-
-			message: "#^Possibly invalid array key type array\\<int, int\\|string\\>\\|int\\|string\\.$#"
+			message: "#^Possibly invalid array key type array\\<int, int\\>\\|int\\.$#"
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 
@@ -1039,11 +934,6 @@ parameters:
 			message: "#^Method Ibexa\\\\Behat\\\\API\\\\Facade\\\\TrashFacade\\:\\:trash\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/lib/API/Facade/TrashFacade.php
-
-		-
-			message: "#^Access to an undefined property Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\ValueObject\\:\\:\\$contentInfo\\.$#"
-			count: 1
-			path: src/lib/API/Facade/UserFacade.php
 
 		-
 			message: "#^Method Ibexa\\\\Behat\\\\API\\\\Facade\\\\UserFacade\\:\\:assignUserGroupToRole\\(\\) has no return type specified\\.$#"
@@ -2246,57 +2136,7 @@ parameters:
 			path: src/lib/Core/Context/TimeContext.php
 
 		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Command\\\\GoBackCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Command/GoBackCommand.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Command\\\\RefreshPageCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Command/RefreshPageCommand.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Command\\\\ShowHTMLCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Command/ShowHTMLCommand.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Command\\\\ShowURLCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Command/ShowURLCommand.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Command\\\\TakeScreenshotCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Command/TakeScreenshotCommand.php
-
-		-
 			message: "#^Cannot call method getName\\(\\) on ReflectionType\\|null\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:getFunctionName\\(\\) has parameter \\$tokenGroup with no type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:getMatches\\(\\) has parameter \\$info with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:getMatches\\(\\) has parameter \\$tokens with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:getMatches\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:getObjectClass\\(\\) has parameter \\$tokenGroup with no type specified\\.$#"
 			count: 1
 			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
 
@@ -2306,62 +2146,17 @@ parameters:
 			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
 
 		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:getTokenName\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:getTokenName\\(\\) has parameter \\$token with no type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:isFunctionCall\\(\\) has parameter \\$tokenGroup with no type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ObjectFunctionCallChainMatcher\\:\\:isObjectCall\\(\\) has parameter \\$tokenGroup with no type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ThisObjectMethodsMatcher\\:\\:getMatches\\(\\) has parameter \\$info with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ThisObjectMethodsMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ThisObjectMethodsMatcher\\:\\:getMatches\\(\\) has parameter \\$tokens with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ThisObjectMethodsMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Matcher\\\\ThisObjectMethodsMatcher\\:\\:getMatches\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Matcher/ThisObjectMethodsMatcher.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Shell\\\\Shell\\:\\:displayExceptionMessage\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Shell/Shell.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Debug\\\\Shell\\\\Shell\\:\\:getDefaultMatchers\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Core/Debug/Shell/Shell.php
-
-		-
 			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Log\\\\Failure\\\\AnalysisResult\\:\\:getJiraReference\\(\\) should return string but returns string\\|null\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/AnalysisResult.php
 
 		-
-			message: "#^Cannot call method getMessage\\(\\) on Exception\\|null\\.$#"
+			message: "#^Cannot call method getMessage\\(\\) on Throwable\\|null\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/TestFailureData.php
 
 		-
-			message: "#^Cannot call method getTraceAsString\\(\\) on Exception\\|null\\.$#"
+			message: "#^Cannot call method getTraceAsString\\(\\) on Throwable\\|null\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/TestFailureData.php
 
@@ -2734,21 +2529,6 @@ parameters:
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Locator\\\\Validator\\\\CssLocatorValidatorTest\\:\\:provideValidSelectors\\(\\) return type has no value type specified in iterable type iterable\\.$#"
 			count: 1
 			path: tests/Browser/Locator/Validator/CssLocatorValidatorTest.php
-
-		-
-			message: "#^Method Ibexa\\\\Tests\\\\Bundle\\\\Behat\\\\Form\\\\Stub\\\\UnstableChoiceListFactory\\:\\:createListFromChoices\\(\\) has parameter \\$choices with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Tests\\\\Bundle\\\\Behat\\\\Form\\\\Stub\\\\UnstableChoiceListFactory\\:\\:createView\\(\\) has parameter \\$attr with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
-
-		-
-			message: "#^Method Ibexa\\\\Tests\\\\Bundle\\\\Behat\\\\Form\\\\Stub\\\\UnstableChoiceListFactory\\:\\:createView\\(\\) has parameter \\$preferredChoices with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
 
 		-
 			message: "#^Method Ibexa\\\\Tests\\\\Behat\\\\Browser\\\\Element\\\\BaseTestCase\\:\\:createCollection\\(\\) has parameter \\$elementTexts with no type specified\\.$#"
