@@ -126,6 +126,11 @@ parameters:
 			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
 
 		-
+			message: "#^Call to an undefined method Behat\\\\Gherkin\\\\Node\\\\ScenarioLikeInterface\\:\\:hasTag\\(\\)\\.$#"
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
+
+		-
 			message: "#^Cannot call method isStarted\\(\\) on object\\|null\\.$#"
 			count: 1
 			path: src/bundle/Subscriber/StartScenarioSubscriber.php
@@ -901,12 +906,7 @@ parameters:
 			path: src/lib/API/Facade/RoleFacade.php
 
 		-
-			message: "#^Access to an undefined property Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\ValueObject\\:\\:\\$contentInfo\\.$#"
-			count: 2
-			path: src/lib/API/Facade/SearchFacade.php
-
-		-
-			message: "#^Argument of an invalid type array\\<int, int\\|string\\>\\|int\\|string supplied for foreach, only iterables are supported\\.$#"
+			message: "#^Argument of an invalid type array\\<int, int\\>\\|int supplied for foreach, only iterables are supported\\.$#"
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 
@@ -921,17 +921,12 @@ parameters:
 			path: src/lib/API/Facade/SearchFacade.php
 
 		-
-			message: "#^Parameter \\#1 \\$location of method Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\URLAliasService\\:\\:reverseLookup\\(\\) expects Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Location, Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\ValueObject given\\.$#"
-			count: 1
-			path: src/lib/API/Facade/SearchFacade.php
-
-		-
 			message: "#^Parameter \\#1 \\$min \\(0\\) of function random_int expects lower number than parameter \\#2 \\$max \\(int\\<\\-1, max\\>\\)\\.$#"
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 
 		-
-			message: "#^Possibly invalid array key type array\\<int, int\\|string\\>\\|int\\|string\\.$#"
+			message: "#^Possibly invalid array key type array\\<int, int\\>\\|int\\.$#"
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 
@@ -939,11 +934,6 @@ parameters:
 			message: "#^Method Ibexa\\\\Behat\\\\API\\\\Facade\\\\TrashFacade\\:\\:trash\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/lib/API/Facade/TrashFacade.php
-
-		-
-			message: "#^Access to an undefined property Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\ValueObject\\:\\:\\$contentInfo\\.$#"
-			count: 1
-			path: src/lib/API/Facade/UserFacade.php
 
 		-
 			message: "#^Method Ibexa\\\\Behat\\\\API\\\\Facade\\\\UserFacade\\:\\:assignUserGroupToRole\\(\\) has no return type specified\\.$#"
@@ -2161,12 +2151,12 @@ parameters:
 			path: src/lib/Core/Log/Failure/AnalysisResult.php
 
 		-
-			message: "#^Cannot call method getMessage\\(\\) on Exception\\|null\\.$#"
+			message: "#^Cannot call method getMessage\\(\\) on Throwable\\|null\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/TestFailureData.php
 
 		-
-			message: "#^Cannot call method getTraceAsString\\(\\) on Exception\\|null\\.$#"
+			message: "#^Cannot call method getTraceAsString\\(\\) on Throwable\\|null\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/TestFailureData.php
 
