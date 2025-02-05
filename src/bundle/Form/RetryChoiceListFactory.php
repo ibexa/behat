@@ -16,7 +16,7 @@ use Symfony\Component\Form\ChoiceList\View\ChoiceListView;
 
 final class RetryChoiceListFactory implements ChoiceListFactoryInterface
 {
-    private const RETRY_LIMIT = 2;
+    private const int RETRY_LIMIT = 2;
 
     private ChoiceListFactoryInterface $choiceListFactory;
 
@@ -32,8 +32,8 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
      */
     public function createListFromChoices(
         iterable $choices,
-        ?callable $value = null,
-        ?callable $filter = null
+        mixed $value = null,
+        mixed $filter = null
     ): ChoiceListInterface {
         return $this->executeWithRetry(function () use ($choices, $value, $filter) {
             return $this->choiceListFactory->createListFromChoices($choices, $value, $filter);
@@ -45,8 +45,8 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
      */
     public function createListFromLoader(
         ChoiceLoaderInterface $loader,
-        ?callable $value = null,
-        ?callable $filter = null
+        mixed $value = null,
+        mixed $filter = null
     ): ChoiceListInterface {
         return $this->executeWithRetry(function () use ($loader, $value, $filter) {
             return $this->choiceListFactory->createListFromLoader($loader, $value, $filter);
@@ -62,13 +62,13 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
      */
     public function createView(
         ChoiceListInterface $list,
-        array|callable|null $preferredChoices = null,
-        callable|false|null $label = null,
-        ?callable $index = null,
-        ?callable $groupBy = null,
-        array|callable|null $attr = null,
-        array|callable $labelTranslationParameters = []
-        /* , bool $duplicatePreferredChoices = true */
+        mixed $preferredChoices = null,
+        mixed $label = null,
+        mixed $index = null,
+        mixed $groupBy = null,
+        mixed $attr = null,
+        mixed $labelTranslationParameters = [],
+        bool $duplicatePreferredChoices = true
     ): ChoiceListView {
         return $this->executeWithRetry(
             function () use ($list, $preferredChoices, $label, $index, $groupBy, $attr, $labelTranslationParameters) {
