@@ -33,7 +33,7 @@
         "symfony/property-access": "^6.4",
         "symfony/yaml": "^6.4",
         "psy/psysh": "^0.12.4",
-        "oleg-andreyev/mink-phpwebdriver": "<1.3.3",
+        "oleg-andreyev/mink-phpwebdriver": "^1.2.1",
         "oleg-andreyev/mink-phpwebdriver-extension": "^1.0",
         "symfony/form": "^6.4"
     },
