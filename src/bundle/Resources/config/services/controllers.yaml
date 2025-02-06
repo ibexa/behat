@@ -13,10 +13,6 @@ services:
 
   Ibexa\Bundle\Behat\Controller\RenderController: ~
 
-  Ibexa\Bundle\Behat\Controller\UnauthenticatedRedirectController:
-    tags: [ 'controller.service_arguments' ]
-    calls:
-      - [ setContainer, [ "@service_container" ] ]
-      - [ performAccessCheck, [ ] ]
+  Ibexa\Bundle\Behat\Controller\UnauthenticatedRedirectController: ~
 
   Ibexa\Bundle\Behat\Controller\CurrentUserDataController: ~

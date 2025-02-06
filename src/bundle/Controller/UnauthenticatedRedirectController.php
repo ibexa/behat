@@ -9,16 +9,14 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\Behat\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class UnauthenticatedRedirectController extends AbstractController
 {
-    public function performAccessCheck()
+    public function redirectAction(): RedirectResponse
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
-    }
 
-    public function redirectAction()
-    {
         return $this->redirectToRoute('ibexa.behat.current_user_data');
     }
 }
