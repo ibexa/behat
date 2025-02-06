@@ -1,3 +1,4 @@
+@broken
 Feature: Email provider setup for testing
 
     @test

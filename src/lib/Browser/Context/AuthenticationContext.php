@@ -12,8 +12,6 @@ use Behat\MinkExtension\Context\RawMinkContext;
 use Ibexa\Behat\API\ContentData\FieldTypeData\PasswordProvider;
 use Ibexa\Behat\Browser\Page\LoginPage;
 use Ibexa\Behat\Browser\Page\RedirectLoginPage;
-use Symfony\Component\Lock\LockFactory;
-use Symfony\Component\Lock\Store\FlockStore;
 
 class AuthenticationContext extends RawMinkContext
 {
