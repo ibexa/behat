@@ -42,16 +42,8 @@ class AuthenticationContext extends RawMinkContext
      */
     public function loggedAsAdmin()
     {
-        $store = new FlockStore(sys_get_temp_dir());
-        $factory = new LockFactory($store);
-
-        $lock = $factory->createLock('admin-login');
-
-        if ($lock->acquire(true)) {
-            $this->redirectLoginPage->open('admin');
-            $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
-            $lock->release();
-        }
+        $this->redirectLoginPage->open('admin');
+        $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
     }
 
     /**
