@@ -41,6 +41,7 @@ class AuthenticationContext extends RawMinkContext
     public function loggedAsAdmin()
     {
         $this->redirectLoginPage->open('admin');
+        $this->redirectLoginPage->verifyIsLoaded();
         $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
     }
 
