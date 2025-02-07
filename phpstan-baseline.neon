@@ -66,16 +66,6 @@ parameters:
 			path: src/bundle/Controller/RenderController.php
 
 		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Controller\\\\UnauthenticatedRedirectController\\:\\:performAccessCheck\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/Controller/UnauthenticatedRedirectController.php
-
-		-
-			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\Controller\\\\UnauthenticatedRedirectController\\:\\:redirectAction\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/bundle/Controller/UnauthenticatedRedirectController.php
-
-		-
 			message: "#^Method Ibexa\\\\Bundle\\\\Behat\\\\DependencyInjection\\\\IbexaBehatExtension\\:\\:load\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/bundle/DependencyInjection/IbexaBehatExtension.php

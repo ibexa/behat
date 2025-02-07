@@ -12,8 +12,6 @@ use Behat\MinkExtension\Context\RawMinkContext;
 use Ibexa\Behat\API\ContentData\FieldTypeData\PasswordProvider;
 use Ibexa\Behat\Browser\Page\LoginPage;
 use Ibexa\Behat\Browser\Page\RedirectLoginPage;
-use Symfony\Component\Lock\LockFactory;
-use Symfony\Component\Lock\Store\FlockStore;
 
 class AuthenticationContext extends RawMinkContext
 {
@@ -42,16 +40,9 @@ class AuthenticationContext extends RawMinkContext
      */
     public function loggedAsAdmin()
     {
-        $store = new FlockStore(sys_get_temp_dir());
-        $factory = new LockFactory($store);
-
-        $lock = $factory->createLock('admin-login');
-
-        if ($lock->acquire(true)) {
-            $this->redirectLoginPage->open('admin');
-            $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
-            $lock->release();
-        }
+        $this->redirectLoginPage->open('admin');
+        $this->redirectLoginPage->verifyIsLoaded();
+        $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
     }
 
     /**
