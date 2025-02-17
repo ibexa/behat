@@ -17,7 +17,7 @@ use Traversable;
 
 abstract class BaseElement implements BaseElementInterface
 {
-    protected int $timeout = 1;
+    protected int $timeout = 3;
 
     private ElementFactoryInterface $elementFactory;
 
