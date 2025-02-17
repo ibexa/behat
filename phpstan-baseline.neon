@@ -231,6 +231,11 @@ parameters:
 			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
 
 		-
+			message: "#^Call to an undefined method Behat\\\\Gherkin\\\\Node\\\\ScenarioLikeInterface\\:\\:hasTag\\(\\)\\.$#"
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
+
+		-
 			message: "#^Cannot call method isStarted\\(\\) on object\\|null\\.$#"
 			count: 1
 			path: src/bundle/Subscriber/StartScenarioSubscriber.php
