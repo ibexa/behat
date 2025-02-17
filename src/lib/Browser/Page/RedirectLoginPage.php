@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Browser\Page;
 
 use Exception;
+use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
 use PHPUnit\Framework\Assert;
-use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
 
 class RedirectLoginPage extends LoginPage
 {
@@ -27,12 +27,13 @@ class RedirectLoginPage extends LoginPage
 
     public function loginSuccessfully($username, $password): void
     {
-        for ($attempt = 0; $attempt < 3; $attempt++) {
+        for ($attempt = 0; $attempt < 3; ++$attempt) {
             try {
                 parent::loginSuccessfully($username, $password);
                 $this->getHTMLPage()
                     ->findAll(new CSSLocator('loginSuccess', '#login-success'))
                     ->assert()->hasElements();
+
                 return;
             } catch (Exception $e) {
                 // Retry on failure
