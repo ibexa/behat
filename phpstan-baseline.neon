@@ -231,6 +231,11 @@ parameters:
 			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
 
 		-
+			message: "#^Call to an undefined method Behat\\\\Gherkin\\\\Node\\\\ScenarioLikeInterface\\:\\:hasTag\\(\\)\\.$#"
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
+
+		-
 			message: "#^Cannot call method isStarted\\(\\) on object\\|null\\.$#"
 			count: 1
 			path: src/bundle/Subscriber/StartScenarioSubscriber.php
@@ -2366,16 +2371,6 @@ parameters:
 			path: src/lib/Core/Log/Failure/AnalysisResult.php
 
 		-
-			message: "#^Cannot call method getMessage\\(\\) on Exception\\|null\\.$#"
-			count: 1
-			path: src/lib/Core/Log/Failure/TestFailureData.php
-
-		-
-			message: "#^Cannot call method getTraceAsString\\(\\) on Exception\\|null\\.$#"
-			count: 1
-			path: src/lib/Core/Log/Failure/TestFailureData.php
-
-		-
 			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Log\\\\Failure\\\\TestFailureData\\:\\:__construct\\(\\) has parameter \\$applicationLogs with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/TestFailureData.php
@@ -2397,16 +2392,6 @@ parameters:
 
 		-
 			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Log\\\\Failure\\\\TestFailureData\\:\\:browserLogsContainFragment\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Log/Failure/TestFailureData.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Log\\\\Failure\\\\TestFailureData\\:\\:exceptionMessageContainsFragment\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/lib/Core/Log/Failure/TestFailureData.php
-
-		-
-			message: "#^Method Ibexa\\\\Behat\\\\Core\\\\Log\\\\Failure\\\\TestFailureData\\:\\:exceptionStackTraceContainsFragment\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/lib/Core/Log/Failure/TestFailureData.php
 
