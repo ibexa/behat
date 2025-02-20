@@ -55,7 +55,7 @@ class ElementTest extends BaseTestCase
         $element = $this->createElementWithMinkElement($minkElement);
 
         $this->expectException(TimeoutException::class);
-        $this->expectExceptionMessage("CSS selector 'invalid-id': 'invalid-selector' not found in 1 seconds.");
+        $this->expectExceptionMessage("CSS selector 'invalid-id': 'invalid-selector' not found in 3 seconds.");
         $element->find($this->invalidLocator);
     }
 
