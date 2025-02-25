@@ -4,7 +4,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('bundles/ibexaadminui/img/favicon.ico') }}" />
     <meta charset="utf-8">
     {% if content is defined and title is not defined %}
-        {% set title = ez_content_name( content ) %}
+        {% set title = ibexa_content_name( content ) %}
     {% endif %}
     <title>{{ title|default( 'Home' ) }}</title>
     <meta name="generator" content="eZ Platform"/>
@@ -28,7 +28,7 @@ Item with ESI:
 
 <div id="siteName">
 Site:
-{{ ibexa_render(ezplatform.rootLocation)}}
+{{ ibexa_render(ibexa.rootLocation)}}
 </div>
 
 </body>
