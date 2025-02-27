@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\Page;
 
+use Exception;
+use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
 use PHPUnit\Framework\Assert;
 
@@ -25,10 +27,19 @@ class RedirectLoginPage extends LoginPage
 
     public function loginSuccessfully($username, $password): void
     {
-        parent::loginSuccessfully($username, $password);
-        $this->getHTMLPage()
-            ->findAll(new CSSLocator('loginSuccess', '#login-success'))
-            ->assert()->hasElements();
+        for ($attempt = 0; $attempt < 3; ++$attempt) {
+            try {
+                parent::loginSuccessfully($username, $password);
+                $this->getHTMLPage()
+                    ->findAll(new CSSLocator('loginSuccess', '#login-success'))
+                    ->assert()->hasElements();
+
+                return;
+            } catch (Exception $e) {
+                // Retry on failure
+            }
+        }
+        throw new ElementNotFoundException('Login failed after multiple attempts.');
     }
 
     protected function getRoute(): string
