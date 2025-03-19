@@ -115,3 +115,4 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
+                - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext

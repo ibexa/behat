@@ -117,3 +117,4 @@ regression:
                 - Ibexa\Shipping\Behat\Context\ShippingMethodsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
+                - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
