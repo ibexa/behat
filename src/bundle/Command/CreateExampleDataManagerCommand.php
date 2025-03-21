@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\Behat\Command;
 
 use Ibexa\Behat\Event\InitialEvent;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
@@ -21,6 +22,7 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Component\Yaml\Yaml;
 
+#[AsCommand(name: 'ibexa:behat:generate-items')]
 class CreateExampleDataManagerCommand extends Command
 {
     private const BATCH_SIZE = 100;
@@ -42,7 +44,7 @@ class CreateExampleDataManagerCommand extends Command
 
     public function __construct(string $env, string $projectDir)
     {
-        parent::__construct('ibexa:behat:generate-items');
+        parent::__construct();
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];

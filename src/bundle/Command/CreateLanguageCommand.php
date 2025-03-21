@@ -11,12 +11,13 @@ namespace Ibexa\Bundle\Behat\Command;
 use Ibexa\Contracts\Core\Repository\LanguageService;
 use Ibexa\Contracts\Core\Repository\PermissionResolver;
 use Ibexa\Contracts\Core\Repository\UserService;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-#[\Symfony\Component\Console\Attribute\AsCommand(name: 'ibexa:behat:create-language', description: 'Create a Language')]
+#[AsCommand(name: 'ibexa:behat:create-language', description: 'Create a Language')]
 class CreateLanguageCommand extends Command
 {
     /** @var \Ibexa\Contracts\Core\Repository\LanguageService */
