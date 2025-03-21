@@ -12,6 +12,7 @@ use Ibexa\Behat\Event\Events;
 use Ibexa\Behat\Event\InitialEvent;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -22,10 +23,10 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[\Symfony\Component\Console\Attribute\AsCommand]
+#[AsCommand(name: self::NAME)]
 class CreateExampleDataCommand extends Command
 {
-    public const NAME = 'ibexa:behat:create-data';
+    public const string NAME = 'ibexa:behat:create-data';
 
     /** @var \Symfony\Contracts\EventDispatcher\EventDispatcherInterface */
     private $eventDispatcher;
@@ -41,7 +42,7 @@ class CreateExampleDataCommand extends Command
 
     public function __construct(EventDispatcherInterface $eventDispatcher, LoggerInterface $logger)
     {
-        parent::__construct(self::NAME);
+        parent::__construct();
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $this->serializer = new Serializer($normalizers, $encoders);

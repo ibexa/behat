@@ -10,10 +10,11 @@ namespace Ibexa\Behat\Core\Debug\Command;
 
 use Behat\Mink\Session;
 use Psy\Command\Command;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-#[\Symfony\Component\Console\Attribute\AsCommand(name: 'back', description: "Goes back one page in browser's history")]
+#[AsCommand(name: 'back', description: "Goes back one page in browser's history")]
 class GoBackCommand extends Command
 {
     /** @var \Behat\Mink\Session */
