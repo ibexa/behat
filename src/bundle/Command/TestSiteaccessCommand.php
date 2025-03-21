@@ -13,6 +13,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[\Symfony\Component\Console\Attribute\AsCommand(name: 'ibexa:behat:test-siteaccess', description: 'Outputs the name of the active siteaccess')]
 class TestSiteaccessCommand extends Command
 {
     /** @var \Ibexa\Core\MVC\Symfony\SiteAccess */
@@ -27,10 +28,6 @@ class TestSiteaccessCommand extends Command
 
     protected function configure()
     {
-        $this
-            ->setName('ibexa:behat:test-siteaccess')
-            ->setDescription('Outputs the name of the active siteaccess')
-        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int

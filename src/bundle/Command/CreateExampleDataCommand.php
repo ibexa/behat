@@ -22,6 +22,7 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
+#[\Symfony\Component\Console\Attribute\AsCommand]
 class CreateExampleDataCommand extends Command
 {
     public const NAME = 'ibexa:behat:create-data';

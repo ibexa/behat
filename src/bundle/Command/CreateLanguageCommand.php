@@ -16,6 +16,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[\Symfony\Component\Console\Attribute\AsCommand(name: 'ibexa:behat:create-language', description: 'Create a Language')]
 class CreateLanguageCommand extends Command
 {
     /** @var \Ibexa\Contracts\Core\Repository\LanguageService */
@@ -42,8 +43,6 @@ class CreateLanguageCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('ibexa:behat:create-language')
-            ->setDescription('Create a Language')
             ->addArgument('language-code', InputArgument::REQUIRED)
             ->addArgument('language-name', InputArgument::OPTIONAL, 'Language name', '')
             ->addArgument(
