@@ -16,6 +16,7 @@ use Psy\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[\Symfony\Component\Console\Attribute\AsCommand(name: 'screenshot', description: 'Takes a screenshot of the currently opened website')]
 class TakeScreenshotCommand extends Command
 {
     private const CLOUD_NAME_KEY = 'cloud_name';
@@ -35,9 +36,7 @@ class TakeScreenshotCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('screenshot')
             ->setDefinition([])
-            ->setDescription('Takes a screenshot of the currently opened website')
             ->setHelp('');
     }
 

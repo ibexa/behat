@@ -13,6 +13,7 @@ use Psy\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[\Symfony\Component\Console\Attribute\AsCommand(name: 'url', description: 'Displays the URL of the currently opened website')]
 class ShowURLCommand extends Command
 {
     /** @var \Behat\Mink\Session */
@@ -27,9 +28,7 @@ class ShowURLCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('url')
             ->setDefinition([])
-            ->setDescription('Displays the URL of the currently opened website')
             ->setHelp('');
     }
 

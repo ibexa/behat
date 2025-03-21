@@ -13,6 +13,7 @@ use Psy\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[\Symfony\Component\Console\Attribute\AsCommand(name: 'refresh', description: 'Refreshes the currently opened website')]
 class RefreshPageCommand extends Command
 {
     /** @var \Behat\Mink\Session */
@@ -27,9 +28,7 @@ class RefreshPageCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('refresh')
             ->setDefinition([])
-            ->setDescription('Refreshes the currently opened website')
             ->setHelp('');
     }
 
