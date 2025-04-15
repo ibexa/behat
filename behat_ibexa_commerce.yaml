@@ -20,6 +20,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/shipping/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/storefront/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/dashboard/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/connector-openai/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -116,3 +117,4 @@ regression:
                 - Ibexa\Shipping\Behat\Context\ShippingMethodsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
+                - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
