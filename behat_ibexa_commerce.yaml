@@ -3,6 +3,7 @@ imports:
     - vendor/ibexa/payment/behat_suites.yml
     - vendor/ibexa/shipping/behat_suites.yml
     - vendor/ibexa/storefront/behat_suites.yml
+    - vendor/ibexa/discounts/behat_suites.yaml
 
 regression:
     suites:
@@ -53,6 +54,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/shipping/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
+                - '%paths.base%/vendor/ibexa/discounts/features/browser'
             filters:
                 tags: "~@broken&&@IbexaCommerce"
             contexts: 
@@ -118,3 +120,4 @@ regression:
                 - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
+                - Ibexa\Discounts\Behat\Context\DiscountsContext
