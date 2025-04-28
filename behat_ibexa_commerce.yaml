@@ -3,7 +3,6 @@ imports:
     - vendor/ibexa/payment/behat_suites.yml
     - vendor/ibexa/shipping/behat_suites.yml
     - vendor/ibexa/storefront/behat_suites.yml
-    - vendor/ibexa/discounts/behat_suites.yaml
 
 regression:
     suites:
