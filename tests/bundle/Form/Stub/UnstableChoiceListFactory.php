@@ -71,7 +71,8 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
         ?callable $index = null,
         ?callable $groupBy = null,
         array|callable|null $attr = null,
-        array|callable $labelTranslationParameters = []/* , bool $duplicatePreferredChoices = true */
+        array|callable $labelTranslationParameters = [],
+        bool $duplicatePreferredChoices = true
     ): ChoiceListView {
         ++$this->createViewCounter;
         $this->failIfNeeded($this->createViewCounter);
