@@ -19,7 +19,7 @@
         "friends-of-behat/mink-extension": "^2.4",
         "friends-of-behat/symfony-extension": "^2.1",
         "fakerphp/faker": "^1.17",
-        "guzzlehttp/psr7": "^1.6.1",
+        "guzzlehttp/psr7": "^2.7",
         "liuggio/fastest": "^1.11",
         "php-http/client-common": "^2.1",
         "phpunit/phpunit": "^8.5 || ^9.0 || ^10.0",
