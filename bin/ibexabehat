@@ -27,6 +27,7 @@ STRICT='--strict'
 PROCESS=''
 GROUP_COUNT=1
 GROUP_OFFSET=0
+PHP_MEMORY_LIMIT=''
 
  # Help command output
 usage(){
@@ -40,6 +41,7 @@ Options:
 \t -p, --profile=PROFILE; Behat tests profile;
 \t -s, --suite=SUITE; Behat tests suite;
 \t -t, --tags=TAGS; Behat tags filter;
+\t -l, --memory-limit=PHP_MEMORY_LIMIT; PHP memory limit;
 \t --non-strict; Run Behat in non-strict mode;
 \t --process=N; Number of parallel processes, default: available CPUs;
 \t --group-count; Split the tests into multiple groups
@@ -82,6 +84,7 @@ case $i in
     -p=*|--profile=*)  PROFILE="--profile=${i#*=} "; ;;
     -s=*|--suite=*)    SUITE="--suite=${i#*=} ";;
     -t=*|--tags=*)     TAGS="--tags=${i#*=} ";;
+    -l=*|--memory-limit=*)     PHP_MEMORY_LIMIT="--memory-limit=${i#*=} ";;
     -c=*|--config=*)   CONFIG="--config=${i#*=}";;
     --non-strict)      STRICT='';;
     --process=*) PROCESS="--process=${i#*=}";;
