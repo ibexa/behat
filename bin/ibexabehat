@@ -84,7 +84,7 @@ case $i in
     -p=*|--profile=*)  PROFILE="--profile=${i#*=} "; ;;
     -s=*|--suite=*)    SUITE="--suite=${i#*=} ";;
     -t=*|--tags=*)     TAGS="--tags=${i#*=} ";;
-    -l=*|--memory-limit=*)     PHP_MEMORY_LIMIT="--memory-limit=${i#*=} ";;
+    -l=*|--memory-limit=*)     PHP_MEMORY_LIMIT="${i#*=}";;
     -c=*|--config=*)   CONFIG="--config=${i#*=}";;
     --non-strict)      STRICT='';;
     --process=*) PROCESS="--process=${i#*=}";;
