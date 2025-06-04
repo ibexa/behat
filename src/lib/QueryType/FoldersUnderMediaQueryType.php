@@ -19,7 +19,7 @@ class FoldersUnderMediaQueryType implements QueryType
         return new Query([
             'filter' => new Query\Criterion\LogicalAnd([
                 new Criterion\ContentTypeIdentifier($parameters['contentTypeId']),
-                new Criterion\ParentLocationId($parameters['locationId']),
+                new Criterion\ParentLocationId((int)$parameters['locationId']),
             ]),
             'sortClauses' => [new Query\SortClause\DatePublished()],
         ]);
