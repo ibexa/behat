@@ -121,3 +121,4 @@ regression:
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
                 - Ibexa\Discounts\Behat\Context\DiscountsContext
+                - Ibexa\Discounts\Behat\Context\DiscountsInStorefrontContext
