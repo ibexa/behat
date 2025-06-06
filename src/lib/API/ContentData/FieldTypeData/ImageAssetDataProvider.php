@@ -68,13 +68,13 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezimageasset' === $fieldTypeIdentifier;
+        return 'ibexa_image_asset' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
     {
         $this->setLanguage($language);
-        $mappings = $this->configResolver->getParameter('fieldtypes.ezimageasset.mappings');
+        $mappings = $this->configResolver->getParameter('fieldtypes.ibexa_image_asset.mappings');
 
         $imageAssetContentTypeIdentifier = $mappings['content_type_identifier'];
         $imageAssetFieldIdentifier = $this->assetMapper->getContentFieldIdentifier();

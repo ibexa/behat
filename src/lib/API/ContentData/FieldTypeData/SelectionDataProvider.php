@@ -22,7 +22,7 @@ class SelectionDataProvider implements FieldTypeDataProviderInterface
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezselection' === $fieldTypeIdentifier;
+        return 'ibexa_selection' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

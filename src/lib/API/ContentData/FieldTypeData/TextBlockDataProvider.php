@@ -12,7 +12,7 @@ class TextBlockDataProvider extends AbstractFieldTypeDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'eztext' === $fieldTypeIdentifier;
+        return 'ibexa_text' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string

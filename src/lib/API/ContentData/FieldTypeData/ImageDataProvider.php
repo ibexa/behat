@@ -36,7 +36,7 @@ class ImageDataProvider extends AbstractFieldTypeDataProvider
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezimage' === $fieldTypeIdentifier;
+        return 'ibexa_image' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

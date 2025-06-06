@@ -34,7 +34,7 @@ Feature: Example scenarios showing how to set custom tags configuration
                     default_value: left
                     choices: [left, center, right]
     """
-    And I "append" configuration to "default" siteaccess under "fieldtypes.ezrichtext.custom_tags" key
+    And I "append" configuration to "default" siteaccess under "fieldtypes.ibexa_richtext.custom_tags" key
     """
         ezyoutube_test
     """
@@ -79,7 +79,7 @@ Feature: Example scenarios showing how to set custom tags configuration
                     type: 'boolean'
                     default_value: true
     """
-    And I "append" configuration to "default" siteaccess under "fieldtypes.ezrichtext.custom_tags" key
+    And I "append" configuration to "default" siteaccess under "fieldtypes.ibexa_richtext.custom_tags" key
     """
         eztwitter_test
     """
@@ -99,7 +99,7 @@ Feature: Example scenarios showing how to set custom tags configuration
                 width:
                     type: 'number'
     """
-    And I "append" configuration to "default" siteaccess under "fieldtypes.ezrichtext.custom_tags" key
+    And I "append" configuration to "default" siteaccess under "fieldtypes.ibexa_richtext.custom_tags" key
     """
         ezfacebook_test
     """

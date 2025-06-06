@@ -8,7 +8,7 @@ Feature: Example scenarios showing how to set custom styles configuration
             template: '@ibexadesign/field_type/ibexa_fieldtype_richtext/custom_style/highlighted_block.html.twig'
             inline: false
     """
-    And I "append" configuration to "default" siteaccess under "fieldtypes.ezrichtext.custom_styles" key
+    And I "append" configuration to "default" siteaccess under "fieldtypes.ibexa_richtext.custom_styles" key
     """
         highlighted_block_test
     """
@@ -23,7 +23,7 @@ Feature: Example scenarios showing how to set custom styles configuration
             template: '@ibexadesign/field_type/ibexa_fieldtype_richtext/custom_style/highlighted_word.html.twig'
             inline: true
     """
-    And I "append" configuration to "default" siteaccess under "fieldtypes.ezrichtext.custom_styles" key
+    And I "append" configuration to "default" siteaccess under "fieldtypes.ibexa_richtext.custom_styles" key
     """
         highlighted_word_test
     """

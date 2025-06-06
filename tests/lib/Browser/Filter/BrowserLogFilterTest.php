@@ -30,7 +30,7 @@ class BrowserLogFilterTest extends TestCase
             'Another real JS error',
             'http://web.prod/admin/version-draft/has-no-conflict/124/eng-GB - Failed to load resource: the server responded with a status of 409 (Conflict)',
             'http://varnish.prod/admin/version-draft/has-no-conflict/1/pol-PL - Failed to load resource: the server responded with a status of 409 (Conflict)',
-            'webpack:///./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/fieldType/ezobjectrelationlist.js? 91:12 "EzObjectRelation fieldtype is deprecated. Please, use EzObjectRelationList fieldtype instead."',
+            'webpack:///./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/fieldType/ibexa_object_relation_list.js? 91:12 "EzObjectRelation fieldtype is deprecated. Please, use EzObjectRelationList fieldtype instead."',
         ];
 
         $filter = new BrowserLogFilter();

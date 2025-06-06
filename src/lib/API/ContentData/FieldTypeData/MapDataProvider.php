@@ -37,7 +37,7 @@ class MapDataProvider implements FieldTypeDataProviderInterface
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezgmaplocation' === $fieldTypeIdentifier;
+        return 'ibexa_gmap_location' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

@@ -27,7 +27,7 @@ class BinaryFileDataProvider implements FieldTypeDataProviderInterface
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezbinaryfile' === $fieldTypeIdentifier;
+        return 'ibexa_binaryfile' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
