@@ -37,7 +37,7 @@ class RichTextDataProvider extends AbstractFieldTypeDataProvider
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezrichtext' === $fieldTypeIdentifier;
+        return 'ibexa_richtext' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string

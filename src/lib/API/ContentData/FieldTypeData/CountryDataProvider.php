@@ -29,7 +29,7 @@ class CountryDataProvider implements FieldTypeDataProviderInterface
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezcountry' === $fieldTypeIdentifier;
+        return 'ibexa_country' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

@@ -24,7 +24,7 @@ class BooleanDataProvider extends AbstractFieldTypeDataProvider
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezboolean' === $fieldTypeIdentifier;
+        return 'ibexa_boolean' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

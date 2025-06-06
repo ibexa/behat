@@ -14,7 +14,7 @@ class ObjectRelationListDataProvider extends ObjectRelationDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezobjectrelationlist' === $fieldTypeIdentifier;
+        return 'ibexa_object_relation_list' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

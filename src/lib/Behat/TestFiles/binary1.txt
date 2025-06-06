@@ -21,28 +21,28 @@ Feature: Content fields setting and editing
 
     Examples:
       | fieldInternalName    | fieldName                    | label1    | value1                | label2     | value2                | label3  | value3   | contentItemName           |
-#      | ezselection          | Selection                    | value     | Test-value            |            |                       |         |          | Test-value                |
-#      | ezgmaplocation       | Map location                 | latitude  | 32                    | longitude  | 132                   | address | Acapulco | Acapulco                  |
-#      | ezauthor             | Authors                      | name      | Test Name             | email      | email@example.com     |         |          | Test Name                 |
-#      | ezboolean            | Checkbox                     | value     | true                  |            |                       |         |          | 1                         |
-#      | ezobjectrelation     | Content relation (single)    | value     | Media/Images          |            |                       |         |          | Images                    |
-#      | ezobjectrelationlist | Content relations (multiple) | firstItem | Media/Images          | secondItem | Media/Files           |         |          | Images Files              |
-#      | ezcountry            | Country                      | value     | Poland                |            |                       |         |          | Poland                    |
-#      | ezdate               | Date                         | value     | 11/23/2019            |            |                       |         |          | Saturday 23 November 2019 |
-#      | ezdatetime           | Date and time                | date      | 11/23/2019            | time       | 14:45                 |         |          | Sat 2019-23-11 14:45:00   |
-#      | ezemail              | E-mail address               | value     | email@example.com     |            |                       |         |          | email@example.com         |
-#      | ezfloat              | Float                        | value     | 11.11                 |            |                       |         |          | 11.11                     |
-#      | ezisbn               | ISBN                         | value     | 978-3-16-148410-0     |            |                       |         |          | 978-3-16-148410-0         |
-#      | ezinteger            | Integer                      | value     | 1111                  |            |                       |         |          | 1111                      |
-#      | ezkeyword            | Keywords                     | value     | first keyword, second |            |                       |         |          | first keyword, second     |
-#      | ezrichtext           | Rich text                    | value     | Lorem ipsum dolor sit |            |                       |         |          | Lorem ipsum dolor sit     |
-#      | eztext               | Text block                   | value     | Lorem ipsum dolor     |            |                       |         |          | Lorem ipsum dolor         |
-#      | ezstring             | Text line                    | value     | Lorem ipsum           |            |                       |         |          | Lorem ipsum               |
-#      | eztime               | Time                         | value     | 14:45                 |            |                       |         |          | 2:45:00 pm                |
-#      | ezurl                | URL                          | text      | Test URL              | url        | http://www.google.com |         |          | Test URL                  |
-#      | ezmedia              | Media                        | value     | ezplatform-admin-ui/src/bundle/Resources/public/img/login-background.jpg | | | || test                      |
-      | ezimage              | Image                        | value     | login-background.jpg | | | || test                      |
-#      | ezbinaryfile         | File                         | value     | ezplatform-admin-ui/src/bundle/Resources/public/img/login-background.jpg | | | || test                      |
+#      | ibexa_selection          | Selection                    | value     | Test-value            |            |                       |         |          | Test-value                |
+#      | ibexa_gmap_location       | Map location                 | latitude  | 32                    | longitude  | 132                   | address | Acapulco | Acapulco                  |
+#      | ibexa_author             | Authors                      | name      | Test Name             | email      | email@example.com     |         |          | Test Name                 |
+#      | ibexa_boolean            | Checkbox                     | value     | true                  |            |                       |         |          | 1                         |
+#      | ibexa_object_relation     | Content relation (single)    | value     | Media/Images          |            |                       |         |          | Images                    |
+#      | ibexa_object_relation_list | Content relations (multiple) | firstItem | Media/Images          | secondItem | Media/Files           |         |          | Images Files              |
+#      | ibexa_country            | Country                      | value     | Poland                |            |                       |         |          | Poland                    |
+#      | ibexa_date               | Date                         | value     | 11/23/2019            |            |                       |         |          | Saturday 23 November 2019 |
+#      | ibexa_datetime           | Date and time                | date      | 11/23/2019            | time       | 14:45                 |         |          | Sat 2019-23-11 14:45:00   |
+#      | ibexa_email              | E-mail address               | value     | email@example.com     |            |                       |         |          | email@example.com         |
+#      | ibexa_float              | Float                        | value     | 11.11                 |            |                       |         |          | 11.11                     |
+#      | ibexa_isbn               | ISBN                         | value     | 978-3-16-148410-0     |            |                       |         |          | 978-3-16-148410-0         |
+#      | ibexa_integer            | Integer                      | value     | 1111                  |            |                       |         |          | 1111                      |
+#      | ibexa_keyword            | Keywords                     | value     | first keyword, second |            |                       |         |          | first keyword, second     |
+#      | ibexa_richtext           | Rich text                    | value     | Lorem ipsum dolor sit |            |                       |         |          | Lorem ipsum dolor sit     |
+#      | ibexa_text               | Text block                   | value     | Lorem ipsum dolor     |            |                       |         |          | Lorem ipsum dolor         |
+#      | ibexa_string             | Text line                    | value     | Lorem ipsum           |            |                       |         |          | Lorem ipsum               |
+#      | ibexa_time               | Time                         | value     | 14:45                 |            |                       |         |          | 2:45:00 pm                |
+#      | ibexa_url                | URL                          | text      | Test URL              | url        | http://www.google.com |         |          | Test URL                  |
+#      | ibexa_media              | Media                        | value     | ezplatform-admin-ui/src/bundle/Resources/public/img/login-background.jpg | | | || test                      |
+      | ibexa_image              | Image                        | value     | login-background.jpg | | | || test                      |
+#      | ibexa_binaryfile         | File                         | value     | ezplatform-admin-ui/src/bundle/Resources/public/img/login-background.jpg | | | || test                      |
 
   @javascript @common @EZP-29291-excluded
   Scenario Outline: Edit content item with given field

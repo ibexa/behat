@@ -14,7 +14,7 @@ class TextLineDataProvider extends AbstractFieldTypeDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezstring' === $fieldTypeIdentifier;
+        return 'ibexa_string' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): Value

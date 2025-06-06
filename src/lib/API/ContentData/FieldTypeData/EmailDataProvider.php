@@ -12,7 +12,7 @@ class EmailDataProvider extends AbstractFieldTypeDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezemail' === $fieldTypeIdentifier || 'email' === $fieldTypeIdentifier;
+        return 'ibexa_email' === $fieldTypeIdentifier || 'email' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string

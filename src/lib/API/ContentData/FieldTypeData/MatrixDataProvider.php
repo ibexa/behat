@@ -27,7 +27,7 @@ class MatrixDataProvider extends AbstractFieldTypeDataProvider
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezmatrix' === $fieldTypeIdentifier;
+        return 'ibexa_matrix' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

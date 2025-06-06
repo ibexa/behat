@@ -77,13 +77,13 @@ class ContentTypeContext implements Context
     {
         $parsedSettings = [];
         switch ($fieldTypeIdentifier) {
-            case 'ezcontentquery':
+            case 'ibexa_content_query':
                 return $this->parseContentQuerySettings($settings);
 
-            case 'ezmatrix':
+            case 'ibexa_matrix':
                 return $this->parseMatrixSettings($settings);
 
-            case 'ezselection':
+            case 'ibexa_selection':
                 return $this->parseSelectionSettings($settings);
 
             case 'ibexa_taxonomy_entry_assignment':

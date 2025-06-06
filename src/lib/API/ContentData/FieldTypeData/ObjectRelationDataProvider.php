@@ -43,7 +43,7 @@ class ObjectRelationDataProvider implements FieldTypeDataProviderInterface
 
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezobjectrelation' === $fieldTypeIdentifier;
+        return 'ibexa_object_relation' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')

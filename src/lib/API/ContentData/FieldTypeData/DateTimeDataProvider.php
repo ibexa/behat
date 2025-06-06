@@ -15,7 +15,7 @@ class DateTimeDataProvider extends AbstractFieldTypeDataProvider
 {
     public function supports(string $fieldTypeIdentifier): bool
     {
-        return 'ezdatetime' === $fieldTypeIdentifier;
+        return 'ibexa_datetime' === $fieldTypeIdentifier;
     }
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
