@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Debug\Shell;
+namespace Ibexa\Behat\Core\Debug\Shell;
 
 use Exception;
-use EzSystems\Behat\Core\Debug\Matcher\ObjectFunctionCallChainMatcher;
-use EzSystems\Behat\Core\Debug\Matcher\ThisObjectMethodsMatcher;
+use Ibexa\Behat\Core\Debug\Matcher\ObjectFunctionCallChainMatcher;
+use Ibexa\Behat\Core\Debug\Matcher\ThisObjectMethodsMatcher;
 use Psy\Shell as BaseShell;
 use Psy\TabCompletion\Matcher\AbstractMatcher;
 use Psy\TabCompletion\Matcher\FunctionsMatcher;
@@ -40,9 +40,12 @@ class Shell extends BaseShell
             ++$level;
         }
         $dir = dirname(__DIR__, $level);
-        $classess = array_keys(require $dir . '/vendor/composer/autoload_classmap.php');
+        $classes = array_map(
+            'strval',
+            array_keys(require $dir . '/vendor/composer/autoload_classmap.php')
+        );
 
-        $baseImports = array_filter($classess, static function (string $classFcqn) {
+        $baseImports = array_filter($classes, static function (string $classFcqn): bool {
             return strpos($classFcqn, 'Ibexa\Behat\Browser\Element') === 0 ||
                 strpos($classFcqn, 'Ibexa\Behat\Browser\Locator') === 0;
         });
@@ -74,3 +77,5 @@ class Shell extends BaseShell
         $this->writeMessage('The error message is: ' . $e->getMessage());
     }
 }
+
+class_alias(Shell::class, 'EzSystems\Behat\Core\Debug\Shell\Shell');

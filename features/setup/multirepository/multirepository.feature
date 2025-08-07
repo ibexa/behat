@@ -1,6 +1,6 @@
 Feature: Multirepository setup for testing
 
-    @multirepository
+  @multirepository
   Scenario: Set up new repository and make the default one unaccessible
     Given I set configuration to "doctrine.dbal" in "config/packages/doctrine.yaml"
     """
@@ -11,14 +11,14 @@ Feature: Multirepository setup for testing
             second_connection:
                 url: '%env(resolve:DATABASE_URL)%'
     """
-    And I set configuration to "ezplatform.repositories.new_repository"
+      Given I copy the configuration from "ibexa.repositories.default" to "ibexa.repositories.new_repository"
+      And I append configuration to "ibexa.repositories.new_repository.storage"
         """
-                storage:
-                    engine: 'legacy'
-                    connection: second_connection
-                    config: {}
-                search:
-                    connection: second_connection
+                connection: second_connection
+        """
+      And I append configuration to "ibexa.repositories.new_repository.search"
+        """
+                connection: second_connection
         """
     And I set configuration to "admin_group" siteaccess
       | key                          | value          |

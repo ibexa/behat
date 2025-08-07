@@ -1,0 +1,3745 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Cache\\JsRoutingDirectoryCacheDirectoryCreator\:\:warmUp\(\) should return array\<string\> but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: src/bundle/Cache/JsRoutingDirectoryCacheDirectoryCreator.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Command/CreateExampleDataCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataManagerCommand\:\:createProcesses\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Command/CreateExampleDataManagerCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataManagerCommand\:\:createProcesses\(\) has parameter \$data with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Command/CreateExampleDataManagerCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataManagerCommand\:\:executeCommand\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Command/CreateExampleDataManagerCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataManagerCommand\:\:executeCommand\(\) has parameter \$cmd with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Command/CreateExampleDataManagerCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataManagerCommand\:\:getData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Command/CreateExampleDataManagerCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataManagerCommand\:\:parseData\(\) has parameter \$dataRow with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Command/CreateExampleDataManagerCommand.php
+
+		-
+			message: '#^Property Ibexa\\Bundle\\Behat\\Command\\CreateExampleDataManagerCommand\:\:\$processes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/bundle/Command/CreateExampleDataManagerCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\CreateLanguageCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Command/CreateLanguageCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Command\\TestSiteaccessCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Command/TestSiteaccessCommand.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Controller\\ExceptionController\:\:throwRepositoryUnauthorizedAction\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Controller/ExceptionController.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Controller\\ExceptionController\:\:throwRepositoryUnauthorizedAction\(\) has parameter \$function with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Controller/ExceptionController.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Controller\\ExceptionController\:\:throwRepositoryUnauthorizedAction\(\) has parameter \$module with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Controller/ExceptionController.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Controller\\ExceptionController\:\:throwRepositoryUnauthorizedAction\(\) has parameter \$properties with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Controller/ExceptionController.php
+
+		-
+			message: '#^Cannot access property \$destinationContentId on Ibexa\\Contracts\\Core\\FieldType\\Value\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/bundle/Controller/RenderController.php
+
+		-
+			message: '#^Property Ibexa\\Bundle\\Behat\\Controller\\RenderController\:\:\$contentService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/bundle/Controller/RenderController.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Controller\\UnauthenticatedRedirectController\:\:performAccessCheck\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Controller/UnauthenticatedRedirectController.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Controller\\UnauthenticatedRedirectController\:\:redirectAction\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/Controller/UnauthenticatedRedirectController.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\DependencyInjection\\Compiler\\ElementFactoryCompilerPass\:\:process\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/DependencyInjection/Compiler/ElementFactoryCompilerPass.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\DependencyInjection\\Compiler\\FieldTypeDataProviderPass\:\:process\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/DependencyInjection/Compiler/FieldTypeDataProviderPass.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\DependencyInjection\\Compiler\\LimitationParserPass\:\:process\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/DependencyInjection/Compiler/LimitationParserPass.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\DependencyInjection\\IbexaBehatExtension\:\:load\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\DependencyInjection\\IbexaBehatExtension\:\:prepend\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\DependencyInjection\\IbexaBehatExtension\:\:process\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\DependencyInjection\\IbexaBehatExtension\:\:shouldLoadDxpServices\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Form\\RetryChoiceListFactory\:\:createListFromChoices\(\) has parameter \$choices with no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Form\\RetryChoiceListFactory\:\:createListFromChoices\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Form\\RetryChoiceListFactory\:\:createListFromLoader\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Form\\RetryChoiceListFactory\:\:createView\(\) has parameter \$attr with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Form\\RetryChoiceListFactory\:\:createView\(\) has parameter \$groupBy with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Form\\RetryChoiceListFactory\:\:createView\(\) has parameter \$index with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\Form\\RetryChoiceListFactory\:\:createView\(\) has parameter \$preferredChoices with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Symfony\\Component\\Form\\ChoiceList\\Factory\\ChoiceListFactoryInterface\:\:createListFromChoices\(\) invoked with 3 parameters, 1\-2 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Symfony\\Component\\Form\\ChoiceList\\Factory\\ChoiceListFactoryInterface\:\:createListFromLoader\(\) invoked with 3 parameters, 1\-2 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Symfony\\Component\\Form\\ChoiceList\\Factory\\ChoiceListFactoryInterface\:\:createView\(\) invoked with 7 parameters, 1\-6 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/bundle/Form/RetryChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaBehatBundle\:\:build\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/IbexaBehatBundle.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/IbexaExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:initialize\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/IbexaExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:load\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/IbexaExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:loadStartScenarioSubscriber\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/IbexaExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:process\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/bundle/IbexaExtension.php
+
+		-
+			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:setMinkParameters\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/bundle/IbexaExtension.php
+
+		-
+			message: '#^Parameter \#2 \$defaultJavascriptSession of method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:setDefaultJavascriptSession\(\) expects string, array\|bool\|float\|int\|string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bundle/IbexaExtension.php
+
+		-
+			message: '#^Cannot call method dispatch\(\) on object\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
+
+		-
+			message: '#^Parameter \#1 \$name of class Ibexa\\Core\\MVC\\Symfony\\SiteAccess constructor expects string, array\|bool\|float\|int\|string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
+
+		-
+			message: '#^Cannot call method isStarted\(\) on object\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
+
+		-
+			message: '#^Cannot call method resizeWindow\(\) on object\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
+
+		-
+			message: '#^Cannot call method start\(\) on object\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:addFieldTypeDataProvider\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getFieldDataFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getFieldDataFromString\(\) has parameter \$fieldIdentifier with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getFieldDataFromString\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getFilledContentDataStruct\(\) has parameter \$contentItemData with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getFilledContentDataStruct\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getRandomContentData\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getRandomContentData\(\) should return Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\ContentCreateStruct but returns Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\ContentStruct\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getRandomContentUpdateData\(\) should return Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\ContentUpdateStruct but returns Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\ContentStruct\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getRandomFieldData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:getRandomFieldData\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:setContentTypeIdentifier\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:\$contentService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:\$contentTypeIdentifier has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:\$contentTypeService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:\$randomDataGenerator is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/lib/API/ContentData/ContentDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\AbstractFieldTypeDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/AbstractFieldTypeDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\AbstractFieldTypeDataProvider\:\:setLanguage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/AbstractFieldTypeDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\AbstractFieldTypeDataProvider\:\:setLanguage\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/AbstractFieldTypeDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\AbstractFieldTypeDataProvider\:\:\$randomDataGenerator has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/AbstractFieldTypeDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\BinaryFileDataProvider\:\:__construct\(\) has parameter \$projectDir with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/BinaryFileDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\BinaryFileDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/BinaryFileDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\BinaryFileDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/BinaryFileDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\BinaryFileDataProvider\:\:\$projectDir has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/BinaryFileDataProvider.php
+
+		-
+			message: '#^Cannot access property \$isRequired on Ibexa\\Contracts\\Core\\Repository\\Values\\ContentType\\FieldDefinition\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/BooleanDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\BooleanDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/BooleanDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\BooleanDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/BooleanDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\CountryDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/CountryDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\CountryDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/CountryDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\DateDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/DateDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\DateDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/DateDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\DateTimeDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/DateTimeDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\DateTimeDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/DateTimeDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\FieldTypeDataProviderInterface\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/FieldTypeDataProviderInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\FieldTypeDataProviderInterface\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/FieldTypeDataProviderInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\FloatDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/FloatDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\FloatDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/FloatDataProvider.php
+
+		-
+			message: '#^Access to an undefined property Faker\\Generator\:\:\$isbn13\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ISBNDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ISBNDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ISBNDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ImageAssetDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ImageAssetDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ImageAssetDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ImageAssetDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ImageDataProvider\:\:__construct\(\) has parameter \$projectDir with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ImageDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ImageDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ImageDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ImageDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ImageDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ImageDataProvider\:\:\$projectDir has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ImageDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\IntegerDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/IntegerDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\IntegerDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/IntegerDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MapDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MapDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MapDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MapDataProvider.php
+
+		-
+			message: '#^Instantiated class Ibexa\\FieldTypeMatrix\\FieldType\\Value not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: src/lib/API/ContentData/FieldTypeData/MatrixDataProvider.php
+
+		-
+			message: '#^Instantiated class Ibexa\\FieldTypeMatrix\\FieldType\\Value\\Row not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: src/lib/API/ContentData/FieldTypeData/MatrixDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MatrixDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MatrixDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MatrixDataProvider\:\:getRandomEntry\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MatrixDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MatrixDataProvider\:\:getRandomEntry\(\) has parameter \$columnIdentifiers with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MatrixDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MatrixDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MatrixDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MatrixDataProvider\:\:\$contentTypeService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MatrixDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MediaDataProvider\:\:__construct\(\) has parameter \$projectDir with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MediaDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MediaDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MediaDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MediaDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MediaDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\MediaDataProvider\:\:\$projectDir has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/MediaDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ObjectRelationDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ObjectRelationDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ObjectRelationDataProvider\:\:getContentID\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ObjectRelationDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ObjectRelationDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ObjectRelationDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ObjectRelationDataProvider\:\:\$contentService is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ObjectRelationDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ObjectRelationListDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ObjectRelationListDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\ObjectRelationListDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/ObjectRelationListDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\RichTextDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/RichTextDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\RichTextDataProvider\:\:\$searchFacade is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/RichTextDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\SelectionDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/SelectionDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\SelectionDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/SelectionDataProvider.php
+
+		-
+			message: '#^Parameter \#1 \$min \(1\) of function random_int expects lower number than parameter \#2 \$max \(int\<0, max\>\)\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/SelectionDataProvider.php
+
+		-
+			message: '#^Parameter \#1 \$selection of class Ibexa\\Core\\FieldType\\Selection\\Value constructor expects array\<int\>, list\<string\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/SelectionDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\SelectionDataProvider\:\:\$contentTypeService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/SelectionDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\TextBlockDataProvider\:\:generateData\(\) should return string but returns array\|string\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/TextBlockDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\TimeDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/TimeDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\TimeDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/TimeDataProvider.php
+
+		-
+			message: '#^Parameter \#1 \$dateTime of static method Ibexa\\Core\\FieldType\\Time\\Value\:\:fromDateTime\(\) expects DateTime, DateTime\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/TimeDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\URLDataProvider\:\:generateData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/URLDataProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\FieldTypeData\\URLDataProvider\:\:parseFromString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeData/URLDataProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\FieldTypeNameConverter\:\:\$FIELD_TYPE_MAPPING has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/FieldTypeNameConverter.php
+
+		-
+			message: '#^Unsafe access to private property Ibexa\\Behat\\API\\ContentData\\FieldTypeNameConverter\:\:\$FIELD_TYPE_MAPPING through static\:\:\.$#'
+			identifier: staticClassAccess.privateProperty
+			count: 2
+			path: src/lib/API/ContentData/FieldTypeNameConverter.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\RandomDataGenerator\:\:setLanguage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/ContentData/RandomDataGenerator.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\ContentData\\RandomDataGenerator\:\:setLanguage\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/ContentData/RandomDataGenerator.php
+
+		-
+			message: '#^Parameter \#1 \$locale of static method Faker\\Factory\:\:create\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/API/ContentData/RandomDataGenerator.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\RandomDataGenerator\:\:\$currentLanguage has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/RandomDataGenerator.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\RandomDataGenerator\:\:\$faker has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/RandomDataGenerator.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\ContentData\\RandomDataGenerator\:\:\$localeConverter has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/ContentData/RandomDataGenerator.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\ContentContext\:\:parseData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/ContentContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\ContentTypeContext\:\:parseContentQuerySettings\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\ContentTypeContext\:\:parseFieldDefinitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\ContentTypeContext\:\:parseFieldSettings\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\ContentTypeContext\:\:parseMatrixSettings\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\ContentTypeContext\:\:parseSelectionSettings\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\ContentTypeContext\:\:parseTaxonomySettings\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
+			message: '#^Parameter \#1 \$array \(list\<string\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LanguageContext\:\:createLanguageIfNotExists\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/LanguageContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\ContentTypeLimitationParser\:\:parseContentTypeValues\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/LimitationParser/ContentTypeLimitationParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\ContentTypeLimitationParser\:\:parseContentTypeValues\(\) has parameter \$limitationValues with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Context/LimitationParser/ContentTypeLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\ContentTypeLimitationParser\:\:\$contentTypService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/ContentTypeLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\ContentTypeLimitationParser\:\:\$contentTypeNameIdentifierMap has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/ContentTypeLimitationParser.php
+
+		-
+			message: '#^Instantiated class Ibexa\\Contracts\\Permissions\\Repository\\Values\\User\\Limitation\\FieldGroupLimitation not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/API/Context/LimitationParser/FieldGroupLimitationParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\FieldGroupLimitationParser\:\:parse\(\) should return Ibexa\\Contracts\\Core\\Repository\\Values\\User\\Limitation but returns Ibexa\\Contracts\\Permissions\\Repository\\Values\\User\\Limitation\\FieldGroupLimitation\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/API/Context/LimitationParser/FieldGroupLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\LocationLimitationParser\:\:\$argumentParser has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/LocationLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\LocationLimitationParser\:\:\$locationService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/LocationLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\LocationLimitationParser\:\:\$urlAliasService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/LocationLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\NewSectionLimitationParser\:\:\$sectionService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/NewSectionLimitationParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\NewStateLimitationParser\:\:parseObjectStateValues\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/LimitationParser/NewStateLimitationParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\NewStateLimitationParser\:\:parseObjectStateValues\(\) has parameter \$objectStates with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Context/LimitationParser/NewStateLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\NewStateLimitationParser\:\:\$objectStateService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/NewStateLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\SectionLimitationParser\:\:\$sectionService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/SectionLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\SubtreeLimitationParser\:\:\$locationService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/SubtreeLimitationParser.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\LimitationParser\\SubtreeLimitationParser\:\:\$urlAliasService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/LimitationParser/SubtreeLimitationParser.php
+
+		-
+			message: '#^Instantiated class Ibexa\\Workflow\\Value\\Limitation\\WorkflowStageLimitation not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/API/Context/LimitationParser/WorkflowStageLimitationParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\WorkflowStageLimitationParser\:\:parse\(\) should return Ibexa\\Contracts\\Core\\Repository\\Values\\User\\Limitation but returns Ibexa\\Workflow\\Value\\Limitation\\WorkflowStageLimitation\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/API/Context/LimitationParser/WorkflowStageLimitationParser.php
+
+		-
+			message: '#^Instantiated class Ibexa\\Workflow\\Value\\Limitation\\WorkflowTransitionLimitation not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/API/Context/LimitationParser/WorkflowTransitionLimitationParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\WorkflowTransitionLimitationParser\:\:parse\(\) should return Ibexa\\Contracts\\Core\\Repository\\Values\\User\\Limitation but returns Ibexa\\Workflow\\Value\\Limitation\\WorkflowTransitionLimitation\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/API/Context/LimitationParser/WorkflowTransitionLimitationParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\TestContext\:\:iAmLoggedAsApiUser\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/TestContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\TestContext\:\:loginAdminBeforeScenarioHook\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/TestContext.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\TestContext\:\:\$permissionResolver has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/TestContext.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\API\\Context\\TestContext\:\:\$userService has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/API/Context/TestContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Context\\TrashContext\:\:iSendToTheTrash\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Context/TrashContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContent\(\) has parameter \$contentItemData with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContent\(\) has parameter \$contentTypeIdentifier with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContent\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContent\(\) has parameter \$parentUrl with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContentDraft\(\) has parameter \$contentItemData with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContentDraft\(\) has parameter \$contentTypeIdentifier with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContentDraft\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContentDraft\(\) has parameter \$parentUrl with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContentIfNotExists\(\) has parameter \$contentItemData with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createDraftForExistingContent\(\) has parameter \$contentItemData with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createDraftForExistingContent\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createDraftForExistingContent\(\) has parameter \$locationURL with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:editContent\(\) has parameter \$contentItemData with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:editContent\(\) has parameter \$language with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:editContent\(\) has parameter \$locationURL with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:getContentByLocationURL\(\) has parameter \$locationURL with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:getLocationByLocationURL\(\) has parameter \$locationURL with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Parameter \#1 \$contentCreateStruct of method Ibexa\\Contracts\\Core\\Repository\\ContentService\:\:createContent\(\) expects Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\ContentCreateStruct, Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\ContentStruct given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/API/Facade/ContentFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentTypeFacade\:\:createContentType\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/ContentTypeFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentTypeFacade\:\:createContentType\(\) has parameter \$fieldDefinitions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Facade/ContentTypeFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentTypeFacade\:\:getNameSchema\(\) has parameter \$fieldDefinitions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/API/Facade/ContentTypeFacade.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, iterable\<Ibexa\\Contracts\\Core\\Repository\\Values\\ContentType\\ContentType\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/lib/API/Facade/ContentTypeFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\LanguageFacade\:\:createLanguage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/LanguageFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\LanguageFacade\:\:createLanguageIfNotExists\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/LanguageFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:addPolicyToRole\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:addPolicyToRole\(\) has parameter \$function with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:addPolicyToRole\(\) has parameter \$limitations with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:addPolicyToRole\(\) has parameter \$module with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:addPolicyToRole\(\) has parameter \$roleName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:createRole\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:createRole\(\) has parameter \$roleName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\RoleFacade\:\:roleExist\(\) has parameter \$roleName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/RoleFacade.php
+
+		-
+			message: '#^Access to an undefined property Ibexa\\Contracts\\Core\\Repository\\Values\\ValueObject\:\:\$contentInfo\.$#'
+			identifier: property.notFound
+			count: 2
+			path: src/lib/API/Facade/SearchFacade.php
+
+		-
+			message: '#^Argument of an invalid type array\<int, int\|string\>\|int\|string supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: src/lib/API/Facade/SearchFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\SearchFacade\:\:getRandomContentIds\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/SearchFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\SearchFacade\:\:getRandomLocationID\(\) should return int but returns int\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/API/Facade/SearchFacade.php
+
+		-
+			message: '#^Parameter \#1 \$location of method Ibexa\\Contracts\\Core\\Repository\\URLAliasService\:\:reverseLookup\(\) expects Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\Location, Ibexa\\Contracts\\Core\\Repository\\Values\\ValueObject given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/API/Facade/SearchFacade.php
+
+		-
+			message: '#^Parameter \#1 \$min \(0\) of function random_int expects lower number than parameter \#2 \$max \(int\<\-1, max\>\)\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/API/Facade/SearchFacade.php
+
+		-
+			message: '#^Possibly invalid array key type array\<int, int\|string\>\|int\|string\.$#'
+			identifier: offsetAccess.invalidOffset
+			count: 1
+			path: src/lib/API/Facade/SearchFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\TrashFacade\:\:trash\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/TrashFacade.php
+
+		-
+			message: '#^Access to an undefined property Ibexa\\Contracts\\Core\\Repository\\Values\\ValueObject\:\:\$contentInfo\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:assignUserGroupToRole\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:assignUserGroupToRole\(\) has parameter \$roleName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:assignUserGroupToRole\(\) has parameter \$userGroupName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:assignUserToRole\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:assignUserToRole\(\) has parameter \$roleName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:assignUserToRole\(\) has parameter \$userName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:createUser\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:createUser\(\) has parameter \$languageCode with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:createUser\(\) has parameter \$userEmail with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:createUser\(\) has parameter \$userGroupName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:createUser\(\) has parameter \$userLastName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:createUser\(\) has parameter \$userName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\API\\Facade\\UserFacade\:\:createUserGroup\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/API/Facade/UserFacade.php
+
+		-
+			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^Invalid type Exception\|null to throw\.$#'
+			identifier: throw.notThrowable
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\CollectionAssert\:\:setInteractiveBreakpoint\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\CollectionAssert\:\:startInteractiveSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\CollectionAssert\:\:startInteractiveSession\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\CollectionAssert\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^PHPDoc tag @var above a method has no effect\.$#'
+			identifier: varTag.misplaced
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^PHPDoc tag @var does not specify variable name\.$#'
+			identifier: varTag.noVariable
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 2
+			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
+
+		-
+			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Call to method hasClass\(\) on an unknown class Ibexa\\Behat\\Browseer\\Assert\\ElementAssertInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Call to method isVisible\(\) on an unknown class Ibexa\\Behat\\Browseer\\Assert\\ElementAssertInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Call to method textContains\(\) on an unknown class Ibexa\\Behat\\Browseer\\Assert\\ElementAssertInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Call to method textEquals\(\) on an unknown class Ibexa\\Behat\\Browseer\\Assert\\ElementAssertInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Invalid type Exception\|null to throw\.$#'
+			identifier: throw.notThrowable
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert\:\:setInteractiveBreakpoint\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert\:\:startInteractiveSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert\:\:startInteractiveSession\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^PHPDoc tag @var above a method has no effect\.$#'
+			identifier: varTag.misplaced
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^PHPDoc tag @var does not specify variable name\.$#'
+			identifier: varTag.noVariable
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 2
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert\:\:\$baseElementAssert \(Ibexa\\Behat\\Browseer\\Assert\\ElementAssertInterface\) does not accept Ibexa\\Behat\\Browser\\Assert\\ElementAssertInterface\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert\:\:\$baseElementAssert has unknown class Ibexa\\Behat\\Browseer\\Assert\\ElementAssertInterface as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:iAmViewingThePagesAsUserOnSiteaccess\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/AuthenticationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:iLogInIn\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/AuthenticationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:loggedAsAdmin\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/AuthenticationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:shouldPerformLoginAction\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/AuthenticationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\LoginPage\:\:logout\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/lib/Browser/Context/AuthenticationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\BrowserContext\:\:getHeaderValue\(\) has parameter \$header with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Context/BrowserContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\BrowserContext\:\:getHeaderValue\(\) has parameter \$responseHeaders with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Context/BrowserContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:formatForDisplay\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:formatForDisplay\(\) has parameter \$logEntries with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:getLogsAfterFailedStep\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logEndingScenario\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logEndingStep\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logStartingScenario\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logStartingStep\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Parameter \#1 \$failedStepResult of class Ibexa\\Behat\\Core\\Log\\Failure\\TestFailureData constructor expects Behat\\Testwork\\Tester\\Result\\ExceptionResult, Behat\\Testwork\\Tester\\Result\\TestResult given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/Browser/Context/DebuggingContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Action\\ChainAction\:\:__construct\(\) has parameter \$actions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Action/ChainAction.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\BaseElement\:\:internalFindAll\(\) return type has no value type specified in iterable type Traversable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/BaseElement.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Element\\Criterion\\ChildElementTextCriterion\:\:\$results type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Criterion/ChildElementTextCriterion.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Element\\Criterion\\ElementAttributeCriterion\:\:\$results type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Criterion/ElementAttributeCriterion.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Element\\Criterion\\ElementTextCriterion\:\:\$results type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Criterion/ElementTextCriterion.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Element\\Criterion\\ElementTextFragmentCriterion\:\:\$results type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Criterion/ElementTextFragmentCriterion.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Criterion\\LogicalOrCriterion\:\:__construct\(\) has parameter \$criterions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Criterion/LogicalOrCriterion.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Element\\Criterion\\LogicalOrCriterion\:\:\$results is unused\.$#'
+			identifier: property.unused
+			count: 1
+			path: src/lib/Browser/Element/Criterion/LogicalOrCriterion.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:assert\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:attachFile\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:clear\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:click\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:execute\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getAttribute\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getOuterHtml\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getText\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getValue\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getXPath\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:hasAttribute\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:hasClass\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:isValid\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:isVisible\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:mouseOver\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:scrollToBottom\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:selectOption\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:setValue\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Highlighting\\Element\:\:attachFile\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Highlighting\\Element\:\:getValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Highlighting\\Element\:\:setValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:dragAndDrop\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/RootElement.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:executeJavaScript\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Highlighting/RootElement.php
+
+		-
+			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^Invalid type Exception\|null to throw\.$#'
+			identifier: throw.notThrowable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\BaseElement\:\:setInteractiveBreakpoint\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\BaseElement\:\:startInteractiveSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\BaseElement\:\:startInteractiveSession\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\BaseElement\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^PHPDoc tag @var above a method has no effect\.$#'
+			identifier: varTag.misplaced
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^PHPDoc tag @var does not specify variable name\.$#'
+			identifier: varTag.noVariable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 2
+			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:assert\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:attachFile\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:clear\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:click\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:execute\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getAttribute\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getOuterHtml\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getText\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getValue\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:getXPath\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:hasAttribute\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:hasClass\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:isValid\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:isVisible\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:mouseOver\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:scrollToBottom\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:selectOption\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:setValue\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Invalid type Exception\|null to throw\.$#'
+			identifier: throw.notThrowable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element\:\:attachFile\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element\:\:getValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element\:\:setInteractiveBreakpoint\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element\:\:setValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element\:\:startInteractiveSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element\:\:startInteractiveSession\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^PHPDoc tag @var above a method has no effect\.$#'
+			identifier: varTag.misplaced
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^PHPDoc tag @var does not specify variable name\.$#'
+			identifier: varTag.noVariable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 2
+			path: src/lib/Browser/Element/Debug/Interactive/Element.php
+
+		-
+			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Invalid type Exception\|null to throw\.$#'
+			identifier: throw.notThrowable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\ElementCollection\:\:setInteractiveBreakpoint\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\ElementCollection\:\:startInteractiveSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\ElementCollection\:\:startInteractiveSession\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\ElementCollection\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^PHPDoc tag @var above a method has no effect\.$#'
+			identifier: varTag.misplaced
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^PHPDoc tag @var does not specify variable name\.$#'
+			identifier: varTag.noVariable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 2
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\ElementCollection\:\:\$baseElementCollection has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:dragAndDrop\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\BaseElementInterface\:\:executeJavaScript\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Invalid type Exception\|null to throw\.$#'
+			identifier: throw.notThrowable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\RootElement\:\:setInteractiveBreakpoint\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\RootElement\:\:startInteractiveSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\RootElement\:\:startInteractiveSession\(\) has parameter \$variables with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\RootElement\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^PHPDoc tag @var above a method has no effect\.$#'
+			identifier: varTag.misplaced
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^PHPDoc tag @var does not specify variable name\.$#'
+			identifier: varTag.noVariable
+			count: 1
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 2
+			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Element\:\:attachFile\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Element\:\:getValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Element\:\:setValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/Element.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\ElementCollection\:\:__construct\(\) has parameter \$elements with no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Element/ElementCollection.php
+
+		-
+			message: '#^Interface Ibexa\\Behat\\Browser\\Element\\ElementCollectionInterface extends generic interface IteratorAggregate but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/lib/Browser/Element/ElementCollectionInterface.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(callable Callable accepting a NodeElement parameter\)\: Unexpected token "Callable", expected variable at offset 27 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: src/lib/Browser/Element/ElementCollectionInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\ElementInterface\:\:attachFile\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/ElementInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\ElementInterface\:\:getValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Element/ElementInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Element\\ElementInterface\:\:setValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Element/ElementInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Environment\\ParameterProvider\:\:setParameter\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Environment/ParameterProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Environment\\ParameterProvider\:\:\$parameters type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Environment/ParameterProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Environment\\ParameterProviderInterface\:\:setParameter\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Environment/ParameterProviderInterface.php
+
+		-
+			message: '#^Call to an undefined method WebDriver\\Session\:\:file\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/FileUpload/FileUploadHelper.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\FileUpload\\FileUploadHelper\:\:getRemoteFileUploadPath\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/FileUpload/FileUploadHelper.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\FileUpload\\FileUploadHelper\:\:getRemoteFileUploadPath\(\) has parameter \$filename with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/FileUpload/FileUploadHelper.php
+
+		-
+			message: '#^Parameter \#1 \$string of function base64_encode expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/Browser/FileUpload/FileUploadHelper.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Filter\\BrowserLogFilter\:\:filter\(\) has parameter \$logEntries with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Filter/BrowserLogFilter.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Filter\\BrowserLogFilter\:\:filter\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Filter/BrowserLogFilter.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Filter\\BrowserLogFilter\:\:\$excludedPatterns has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/Browser/Filter/BrowserLogFilter.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Locator\\CSSLocatorBuilder\:\:combine\(\) has parameter \$locators with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Locator/CSSLocatorBuilder.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Locator\\CSSLocatorBuilder\:\:\$result has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/Browser/Locator/CSSLocatorBuilder.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Locator\\LocatorCollection\:\:__construct\(\) has parameter \$locators with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Locator/LocatorCollection.php
+
+		-
+			message: '#^Call to an undefined method Symfony\\Component\\CssSelector\\Node\\NodeInterface\:\:getSelector\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: src/lib/Browser/Locator/Validator/CssLocatorValidator.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Locator\\Validator\\CssLocatorValidator\:\:\$partiallySupportedPseudoClasses type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Locator/Validator/CssLocatorValidator.php
+
+		-
+			message: '#^Cannot call method isVisible\(\) on Ibexa\\Behat\\Browser\\Element\\ElementInterface\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/lib/Browser/Locator/VisibleCSSLocator.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\LoginPage\:\:loginSuccessfully\(\) has parameter \$password with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Page/LoginPage.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\LoginPage\:\:loginSuccessfully\(\) has parameter \$username with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Page/LoginPage.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\PageRegistry\:\:__construct\(\) has parameter \$pages with no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Page/PageRegistry.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Page\\PageRegistry\:\:\$pages \(array\<Ibexa\\Behat\\Browser\\Page\\PageInterface\>\) does not accept iterable\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/lib/Browser/Page/PageRegistry.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\Preview\\FolderPreview\:\:setExpectedPreviewData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Page/Preview/FolderPreview.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\Preview\\FolderPreview\:\:setExpectedPreviewData\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Page/Preview/FolderPreview.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\Preview\\FolderPreview\:\:verifyPreviewData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Page/Preview/FolderPreview.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\Preview\\PagePreviewInterface\:\:setExpectedPreviewData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Page/Preview/PagePreviewInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\Preview\\PagePreviewInterface\:\:setExpectedPreviewData\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Page/Preview/PagePreviewInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\Preview\\PagePreviewInterface\:\:verifyPreviewData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Browser/Page/Preview/PagePreviewInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\Preview\\PagePreviewRegistry\:\:__construct\(\) has parameter \$pagePreviews with no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Browser/Page/Preview/PagePreviewRegistry.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Browser\\Page\\Preview\\PagePreviewRegistry\:\:\$pagePreviews \(array\<Ibexa\\Behat\\Browser\\Page\\Preview\\PagePreviewInterface\>\) does not accept iterable\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/lib/Browser/Page/Preview/PagePreviewRegistry.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\RedirectLoginPage\:\:loginSuccessfully\(\) has parameter \$password with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Page/RedirectLoginPage.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Browser\\Page\\RedirectLoginPage\:\:loginSuccessfully\(\) has parameter \$username with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Browser/Page/RedirectLoginPage.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Core\\MVC\\Symfony\\SiteAccess\\Matcher\:\:reverseMatch\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/lib/Browser/Routing/Router.php
+
+		-
+			message: '#^Cannot access property \$matcher on Ibexa\\Core\\MVC\\Symfony\\SiteAccess\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/lib/Browser/Routing/Router.php
+
+		-
+			message: '#^Access to an undefined property Ibexa\\Behat\\Core\\Behat\\ArgumentParser\:\:\$roleFacade\.$#'
+			identifier: property.notFound
+			count: 2
+			path: src/lib/Core/Behat/ArgumentParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Behat\\ArgumentParser\:\:parseLimitations\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Behat/ArgumentParser.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Behat\\TableNodeExtension\:\:addColumn\(\) has parameter \$columnData with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Behat/TableNodeExtension.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:append\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:append\(\) has parameter \$value with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:copyKey\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:copyKey\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:get\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:get\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:getNewValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:getNewValue\(\) has parameter \$currentValue with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:getNewValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:modifyValue\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:modifyValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:saveConfigToFile\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:saveConfigToFile\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:set\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:set\(\) has parameter \$value with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Parameter \#1 \$input of static method Symfony\\Component\\Yaml\\Yaml\:\:parse\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:append\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:append\(\) has parameter \$value with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:copyKey\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:copyKey\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:get\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:get\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:saveConfigToFile\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:saveConfigToFile\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:set\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditorInterface\:\:set\(\) has parameter \$value with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Configuration/ConfigurationEditorInterface.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:append\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:append\(\) has parameter \$value with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:copyKey\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:copyKey\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:get\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:get\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:replaceSingleValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:resolveLocationReference\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:resolveLocationReference\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:saveConfigToFile\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:saveConfigToFile\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:set\(\) has parameter \$config with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditor\:\:set\(\) has parameter \$value with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iAddSiteaccessWithSettings\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iAppendOrSetConfigurationToSiteaccess\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iCopyTheConfigurationFromTo\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iModifyConfigurationForSiteaccessUnderKey\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iModifyConfigurationUnderKey\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iModifySiteaccessMatcherConfiguration\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:parseConfig\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:parseSetting\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:parseSetting\(\) has parameter \$setting with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:\$mainProjectConfigFilePath has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:\$projectDir has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/Core/Context/ConfigurationContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\FileContext\:\:__construct\(\) has parameter \$projectDirectory with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Context/FileContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\FileContext\:\:createDirectoryStructure\(\) has parameter \$destinationPath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Context/FileContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Context\\FileContext\:\:patchFile\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Context/FileContext.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Core\\Context\\TimeContext\:\:\$stopwatch has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/Core/Context/TimeContext.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Command\\GoBackCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Debug/Command/GoBackCommand.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Command\\RefreshPageCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Debug/Command/RefreshPageCommand.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Command\\ShowHTMLCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Debug/Command/ShowHTMLCommand.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Command\\ShowURLCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Debug/Command/ShowURLCommand.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Command\\TakeScreenshotCommand\:\:configure\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Debug/Command/TakeScreenshotCommand.php
+
+		-
+			message: '#^Cannot call method getName\(\) on ReflectionType\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getFunctionName\(\) has parameter \$tokenGroup with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getMatches\(\) has parameter \$info with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getMatches\(\) has parameter \$tokens with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getMatches\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getObjectClass\(\) has parameter \$tokenGroup with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getObjectClass\(\) should return string but returns class\-string\|false\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getTokenName\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:getTokenName\(\) has parameter \$token with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:isFunctionCall\(\) has parameter \$tokenGroup with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ObjectFunctionCallChainMatcher\:\:isObjectCall\(\) has parameter \$tokenGroup with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ObjectFunctionCallChainMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ThisObjectMethodsMatcher\:\:getMatches\(\) has parameter \$info with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ThisObjectMethodsMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ThisObjectMethodsMatcher\:\:getMatches\(\) has parameter \$tokens with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ThisObjectMethodsMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Matcher\\ThisObjectMethodsMatcher\:\:getMatches\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Debug/Matcher/ThisObjectMethodsMatcher.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Shell\\Shell\:\:displayExceptionMessage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Debug/Shell/Shell.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Debug\\Shell\\Shell\:\:getDefaultMatchers\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Debug/Shell/Shell.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\Failure\\AnalysisResult\:\:getJiraReference\(\) should return string but returns string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/lib/Core/Log/Failure/AnalysisResult.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\Failure\\TestFailureData\:\:__construct\(\) has parameter \$applicationLogs with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/Failure/TestFailureData.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\Failure\\TestFailureData\:\:__construct\(\) has parameter \$browserLogs with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/Failure/TestFailureData.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\Failure\\TestFailureData\:\:applicationLogContainsFragment\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Log/Failure/TestFailureData.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\Failure\\TestFailureData\:\:applicationLogContainsFragment\(\) has parameter \$logFragment with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Log/Failure/TestFailureData.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\Failure\\TestFailureData\:\:browserLogsContainFragment\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Core/Log/Failure/TestFailureData.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\KnownIssuesRegistry\:\:__construct\(\) has parameter \$knownIssues with no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/KnownIssuesRegistry.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Core\\Log\\KnownIssuesRegistry\:\:\$knownIssues \(array\<Ibexa\\Behat\\Core\\Log\\Failure\\KnownIssues\\KnownIssueInterface\>\) does not accept iterable\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/lib/Core/Log/KnownIssuesRegistry.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\LogFileReader\:\:getLastLines\(\) has parameter \$filePath with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Log/LogFileReader.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\LogFileReader\:\:getLastLines\(\) has parameter \$numberOfLines with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Core/Log/LogFileReader.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\LogFileReader\:\:getLastLines\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/LogFileReader.php
+
+		-
+			message: '#^Cannot call method execute\(\) on Facebook\\WebDriver\\Remote\\RemoteWebDriver\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:cacheLogs\(\) has parameter \$logs with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:getApplicationLogs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:getBrowserLogs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:getCachedLogs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:getSeleniumLog\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:parseBrowserLogs\(\) has parameter \$logEntries with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:parseBrowserLogs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:\$LOGS has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/lib/Core/Log/TestLogProvider.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Event\\InitialEvent\:\:__construct\(\) has parameter \$contentTypes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/InitialEvent.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Event\\InitialEvent\:\:__construct\(\) has parameter \$editors with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/InitialEvent.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Event\\InitialEvent\:\:__construct\(\) has parameter \$languages with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/InitialEvent.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Event\\InitialEvent\:\:\$contentTypes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/InitialEvent.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Event\\InitialEvent\:\:\$editors type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/InitialEvent.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Event\\InitialEvent\:\:\$languages type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/InitialEvent.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Event\\TransitionEvent\:\:__construct\(\) has parameter \$availableLanguages with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/TransitionEvent.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Event\\TransitionEvent\:\:__construct\(\) has parameter \$editors with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/TransitionEvent.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Event\\TransitionEvent\:\:\$availableLanguages type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/TransitionEvent.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Event\\TransitionEvent\:\:\$editors type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Event/TransitionEvent.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\QueryType\\FoldersUnderMediaQueryType\:\:getQuery\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/QueryType/FoldersUnderMediaQueryType.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\QueryType\\FoldersUnderMediaQueryType\:\:getSupportedParameters\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/QueryType/FoldersUnderMediaQueryType.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\AbstractProcessStage\:\:getRandomValue\(\) has parameter \$values with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/AbstractProcessStage.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\AbstractProcessStage\:\:getTransitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/AbstractProcessStage.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\AbstractProcessStage\:\:transitionToNextStage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/lib/Subscriber/AbstractProcessStage.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\AbstractProcessStage\:\:transitionToNextStage\(\) has parameter \$event with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Subscriber/AbstractProcessStage.php
+
+		-
+			message: '#^Parameter \#1 \$event of method Ibexa\\Behat\\Subscriber\\AbstractProcessStage\:\:doExecute\(\) expects Ibexa\\Behat\\Event\\TransitionEvent, Symfony\\Contracts\\EventDispatcher\\Event given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/Subscriber/AbstractProcessStage.php
+
+		-
+			message: '#^Parameter \#2 \$eventName of method Symfony\\Component\\EventDispatcher\\EventDispatcher\:\:dispatch\(\) expects string\|null, int\<min, \-1\>\|int\<1, max\>\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/Subscriber/AbstractProcessStage.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Subscriber\\AbstractProcessStage\:\:\$eventDispatcher \(Symfony\\Component\\EventDispatcher\\EventDispatcher\) does not accept Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/lib/Subscriber/AbstractProcessStage.php
+
+		-
+			message: '#^Call to method transition\(\) on an unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/CreateContentDraft.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\CreateContentDraft\:\:getTransitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/CreateContentDraft.php
+
+		-
+			message: '#^Parameter \$workflowFacade of method Ibexa\\Behat\\Subscriber\\CreateContentDraft\:\:__construct\(\) has invalid type Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/CreateContentDraft.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Subscriber\\CreateContentDraft\:\:\$workflowFacade has unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/CreateContentDraft.php
+
+		-
+			message: '#^Call to method transition\(\) on an unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/EditContent.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\EditContent\:\:getTransitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/EditContent.php
+
+		-
+			message: '#^Parameter \$workflowFacade of method Ibexa\\Behat\\Subscriber\\EditContent\:\:__construct\(\) has invalid type Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/EditContent.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Subscriber\\EditContent\:\:\$workflowFacade has unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/EditContent.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\InitialStage\:\:getContentType\(\) has parameter \$contentTypesData with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/lib/Subscriber/InitialStage.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\InitialStage\:\:getTransitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/InitialStage.php
+
+		-
+			message: '#^Call to method transition\(\) on an unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishDraft.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\PublishDraft\:\:getTransitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/PublishDraft.php
+
+		-
+			message: '#^Parameter \$workflowFacade of method Ibexa\\Behat\\Subscriber\\PublishDraft\:\:__construct\(\) has invalid type Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishDraft.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Subscriber\\PublishDraft\:\:\$workflowFacade has unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishDraft.php
+
+		-
+			message: '#^Call to method schedulePublish\(\) on an unknown class Ibexa\\Contracts\\Scheduler\\Repository\\DateBasedPublishServiceInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishInTheFuture.php
+
+		-
+			message: '#^Call to method transition\(\) on an unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishInTheFuture.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\PublishInTheFuture\:\:getTransitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/PublishInTheFuture.php
+
+		-
+			message: '#^Parameter \$dateBasedPublisherService of method Ibexa\\Behat\\Subscriber\\PublishInTheFuture\:\:__construct\(\) has invalid type Ibexa\\Contracts\\Scheduler\\Repository\\DateBasedPublishServiceInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishInTheFuture.php
+
+		-
+			message: '#^Parameter \$workflowFacade of method Ibexa\\Behat\\Subscriber\\PublishInTheFuture\:\:__construct\(\) has invalid type Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishInTheFuture.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Subscriber\\PublishInTheFuture\:\:\$dateBasedPublisherService has unknown class Ibexa\\Contracts\\Scheduler\\Repository\\DateBasedPublishServiceInterface as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishInTheFuture.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Subscriber\\PublishInTheFuture\:\:\$workflowFacade has unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/PublishInTheFuture.php
+
+		-
+			message: '#^Call to method transition\(\) on an unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/Review.php
+
+		-
+			message: '#^Method Ibexa\\Behat\\Subscriber\\Review\:\:getTransitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/lib/Subscriber/Review.php
+
+		-
+			message: '#^Parameter \$workflowFacade of method Ibexa\\Behat\\Subscriber\\Review\:\:__construct\(\) has invalid type Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/Review.php
+
+		-
+			message: '#^Property Ibexa\\Behat\\Subscriber\\Review\:\:\$workflowFacade has unknown class Ibexa\\Workflow\\Behat\\Facade\\WorkflowFacade as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/lib/Subscriber/Review.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Assert\\CollectionAssertTest\:\:createElementCollection\(\) has parameter \$elementTexts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Assert\\CollectionAssertTest\:\:provideForTestAssertionFails\(\) return type has no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Assert\\CollectionAssertTest\:\:provideForTestAssertionPasses\(\) return type has no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Assert\\CollectionAssertTest\:\:testAssertionFails\(\) has parameter \$actualElementTexts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Assert\\CollectionAssertTest\:\:testAssertionFails\(\) has parameter \$expectedElementTexts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Assert\\CollectionAssertTest\:\:testAssertionPasses\(\) has parameter \$actualElementTexts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Assert\\CollectionAssertTest\:\:testAssertionPasses\(\) has parameter \$expectedElementTexts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Element/Assert/CollectionAssertTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Locator\\Validator\\CssLocatorValidatorTest\:\:provideInvalidSelectors\(\) return type has no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Locator/Validator/CssLocatorValidatorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Locator\\Validator\\CssLocatorValidatorTest\:\:provideValidSelectors\(\) return type has no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Browser/Locator/Validator/CssLocatorValidatorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Bundle\\Behat\\Form\\Stub\\UnstableChoiceListFactory\:\:createListFromChoices\(\) has parameter \$choices with no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Bundle\\Behat\\Form\\Stub\\UnstableChoiceListFactory\:\:createView\(\) has parameter \$attr with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Bundle\\Behat\\Form\\Stub\\UnstableChoiceListFactory\:\:createView\(\) has parameter \$preferredChoices with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/bundle/Form/Stub/UnstableChoiceListFactory.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\BaseTestCase\:\:createCollection\(\) has parameter \$elementTexts with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/lib/Browser/Element/BaseTestCase.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\ElementInterface\:\:method\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/lib/Browser/Element/Condition/ElementExistsConditionTest.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\ElementInterface\:\:method\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/lib/Browser/Element/Condition/ElementNotExistsConditionTest.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\ElementInterface\:\:method\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/lib/Browser/Element/Condition/ElementsCountConditionTest.php
+
+		-
+			message: '#^Call to an undefined method Ibexa\\Behat\\Browser\\Element\\ElementInterface\:\:method\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/lib/Browser/Element/Condition/ElementsCountGreaterThanConditionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Criterion\\ChildElementTextCriterionTest\:\:dataProviderTestMatches\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/Criterion/ChildElementTextCriterionTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\MockObject\\Builder\\InvocationStubber\:\:with\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/lib/Browser/Element/Criterion/ElementAttributeCriterionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Criterion\\ElementAttributeCriterionTest\:\:createElementWithAttribute\(\) has parameter \$attribute with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/lib/Browser/Element/Criterion/ElementAttributeCriterionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Criterion\\ElementAttributeCriterionTest\:\:createElementWithAttribute\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/lib/Browser/Element/Criterion/ElementAttributeCriterionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Criterion\\ElementAttributeCriterionTest\:\:dataProviderTestMatches\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/Criterion/ElementAttributeCriterionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Criterion\\ElementTextCriterionTest\:\:dataProviderTestMatches\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/Criterion/ElementTextCriterionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\Criterion\\ElementTextFragmentCriterionTest\:\:dataProviderTestMatches\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/Criterion/ElementTextFragmentCriterionTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\Debug\\\\Interactive\\\\CollectionAssert'' and Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\CollectionAssert will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/lib/Browser/Element/Debug/Assert/Interactive/CollectionAssertTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''Ibexa\\\\Behat\\\\Browser\\\\Assert\\\\Debug\\\\Interactive\\\\ElementAssert'' and Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/lib/Browser/Element/Debug/Assert/Interactive/ElementAssertTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Highlighting\\\\Element'' and Ibexa\\Behat\\Browser\\Element\\Debug\\Highlighting\\Element will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/lib/Browser/Element/Debug/HighlightingElementTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''Ibexa\\\\Behat\\\\Browser\\\\Element\\\\Debug\\\\Interactive\\\\Element'' and Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\Element will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/lib/Browser/Element/Debug/InteractiveElementTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\ElementCollectionTest\:\:dataProviderTestAny\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/ElementCollectionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\ElementCollectionTest\:\:dataProviderTestEmpty\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/ElementCollectionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\ElementCollectionTest\:\:testAny\(\) has parameter \$elementNames with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/ElementCollectionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\ElementCollectionTest\:\:testEmpty\(\) has parameter \$elementNames with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/ElementCollectionTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\ElementTest\:\:createElementWithMinkElement\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Browser/Element/ElementTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\ElementTest\:\:dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFind\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/ElementTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Element\\ElementTest\:\:dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFindAll\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/lib/Browser/Element/ElementTest.php
+
+		-
+			message: '#^Property Ibexa\\Tests\\Behat\\Browser\\Element\\ElementTest\:\:\$session is unused\.$#'
+			identifier: property.unused
+			count: 1
+			path: tests/lib/Browser/Element/ElementTest.php
+
+		-
+			message: '#^Class Ibexa\\Tests\\Behat\\Browser\\Element\\Mapper\\TextMapperTestCase not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: tests/lib/Browser/Element/Mapper/ElementTextMapperTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Browser\\Filter\\BrowserLogFilterTest\:\:testFiltersOutExcludedPatterns\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Browser/Filter/BrowserLogFilterTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Behat\\ArgumentParserTest\:\:provideUrlData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Behat/ArgumentParserTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Behat\\ArgumentParserTest\:\:testParserGivenUrlCorrectly\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Behat/ArgumentParserTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Behat\\ExtendedTableNodeTest\:\:testCanAddNewColumnWithMultipleValues\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Behat/ExtendedTableNodeTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Behat\\ExtendedTableNodeTest\:\:testCanAddNewColumnWithSingleValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Behat/ExtendedTableNodeTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Behat\\ExtendedTableNodeTest\:\:testCanAddNewColumnsWithMultipleValues\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Behat/ExtendedTableNodeTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Behat\\ExtendedTableNodeTest\:\:testCanAddNewColumnsWithSingleValues\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Behat/ExtendedTableNodeTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Behat\\ExtendedTableNodeTest\:\:testCanRemoveColumn\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Behat/ExtendedTableNodeTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsArrayValueToConfigWhenCurrentValueIsArray\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsArrayValueToConfigWhenCurrentValueIsString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsArrayValueToConfigWhenKeyIsNested\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsValueToConfigWhenCurrentValueIsArray\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsValueToConfigWhenCurrentValueIsString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsValueToConfigWhenKeyDoesNotExistAndConfigIsEmpty\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsValueToConfigWhenKeyDoesNotExistAndConfigIsNotEmpty\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testAppendsValueToConfigWhenKeyIsNested\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testCanAddAnotherValueWithConfigurationEditor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testCanAddNestedValueWithConfigurationEditor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testCanAddToNestedValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testCanRemoveNestedValueWithConfigurationEditor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testCanSetAnotherValueWithConfigurationEditor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testCanSetNestedValueWithConfigurationEditor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testGetMultipleValues\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testGetSingleValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetIntegerValueWithConfigurationEditor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetStringValueWithConfigurationEditor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsArrayValueToConfigWhenCurrentValueIsArray\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsArrayValueToConfigWhenCurrentValueIsString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsArrayValueToConfigWhenKeyIsNested\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsValueToConfigWhenCurrentValueIsArray\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsValueToConfigWhenCurrentValueIsString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsValueToConfigWhenKeyDoesNotExistAndConfigIsEmpty\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsValueToConfigWhenKeyDoesNotExistAndConfigIsNotEmpty\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\ConfigurationEditorTest\:\:testSetsValueToConfigWhenKeyIsNested\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Parameter \#3 \$value of method Ibexa\\Behat\\Core\\Configuration\\ConfigurationEditor\:\:set\(\) expects array\|string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/lib/Core/Configuration/ConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditorTest\:\:testDoesNotFailOnNonStrings\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/LocationAwareConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditorTest\:\:testReplacesMultipleValues\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/LocationAwareConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditorTest\:\:testReplacesSingleValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/LocationAwareConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditorTest\:\:testReplacesValueWhenAppendIsUsed\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/LocationAwareConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditorTest\:\:testReplacesValueWhenSetIsUsed\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Configuration/LocationAwareConfigurationEditorTest.php
+
+		-
+			message: '#^Property Ibexa\\Tests\\Behat\\Core\\Configuration\\LocationAwareConfigurationEditorTest\:\:\$locationAwareConfigurationEditor has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/lib/Core/Configuration/LocationAwareConfigurationEditorTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Log\\LogFileReaderTest\:\:testReturnsCorrectArrayWhenThereIsLessLogsThanLimit\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Log/LogFileReaderTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Log\\LogFileReaderTest\:\:testReturnsCorrectArrayWhenThereIsMoreLogsThanLimit\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Log/LogFileReaderTest.php
+
+		-
+			message: '#^Method Ibexa\\Tests\\Behat\\Core\\Log\\LogFileReaderTest\:\:testReturnsEmptyArrayWhenThereAreNoLogs\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/lib/Core/Log/LogFileReaderTest.php

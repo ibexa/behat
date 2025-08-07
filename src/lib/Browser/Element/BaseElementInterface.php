@@ -23,5 +23,10 @@ interface BaseElementInterface
 
     public function waitUntilCondition(ConditionInterface $condition): BaseElementInterface;
 
+    /**
+     * @param callable(mixed): mixed $callback
+     *
+     * @return mixed
+     */
     public function waitUntil(callable $callback, string $errorMessage);
 }

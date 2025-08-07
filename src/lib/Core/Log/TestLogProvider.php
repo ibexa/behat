@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Log;
+namespace Ibexa\Behat\Core\Log;
 
-use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
+use Facebook\WebDriver\Remote\DriverCommand;
 use Ibexa\Behat\Browser\Filter\BrowserLogFilter;
-use WebDriver\LogType;
+use OAndreyev\Mink\Driver\WebDriver;
 
 final class TestLogProvider
 {
@@ -41,7 +41,7 @@ final class TestLogProvider
     {
         $driver = $this->session->getDriver();
 
-        if (!($driver instanceof Selenium2Driver) || !$this->session->isStarted()) {
+        if (!($driver instanceof WebDriver) || !$this->session->isStarted()) {
             return [];
         }
 
@@ -49,11 +49,15 @@ final class TestLogProvider
             return $this->getCachedLogs();
         }
 
-        $logs = $driver->getWebDriverSession()->log(LogType::BROWSER) ?? [];
-        $parsedLogs = $this->parseBrowserLogs($logs);
+        $parsedLogs = $this->parseBrowserLogs($this->getSeleniumLog($driver));
         $this->cacheLogs($parsedLogs);
 
         return $parsedLogs;
+    }
+
+    private function getSeleniumLog(WebDriver $driver): array
+    {
+        return $driver->getWebDriver()->execute(DriverCommand::GET_LOG, ['type' => 'browser']) ?? [];
     }
 
     public function getApplicationLogs(): array
@@ -104,3 +108,5 @@ final class TestLogProvider
         self::$LOGS = $logs;
     }
 }
+
+class_alias(TestLogProvider::class, 'EzSystems\Behat\Core\Log\TestLogProvider');

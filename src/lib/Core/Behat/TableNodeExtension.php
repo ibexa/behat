@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Behat;
+namespace Ibexa\Behat\Core\Behat;
 
 use Behat\Gherkin\Node\TableNode;
 
@@ -46,8 +46,8 @@ class TableNodeExtension extends TableNode
     public static function removeColumn(TableNode $table, string $columnName): TableNode
     {
         $newTable = [];
-        $columns = current($table->getTable());
 
+        $columns = current($table->getTable()) ?: [];
         if (!in_array($columnName, $columns, true)) {
             throw new \InvalidArgumentException(sprintf('Column: %s not found. Available columns are: %s', $columnName, implode(',', $columns)));
         }
@@ -62,3 +62,5 @@ class TableNodeExtension extends TableNode
         return new self($newTable);
     }
 }
+
+class_alias(TableNodeExtension::class, 'EzSystems\Behat\Core\Behat\TableNodeExtension');

@@ -6,18 +6,21 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\URLAliasService;
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\LocationLimitation;
-use EzSystems\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\URLAliasService;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\LocationLimitation;
 
 class LocationLimitationParser implements LimitationParserInterface
 {
     private $locationService;
+
     private $urlAliasService;
+
     private $argumentParser;
 
     public function __construct(URLAliasService $urlAliasService, LocationService $locationService, ArgumentParser $argumentParser)
@@ -38,8 +41,13 @@ class LocationLimitationParser implements LimitationParserInterface
 
         foreach (explode(',', $limitationValues) as $limitationValue) {
             $parsedUrl = $this->argumentParser->parseUrl($limitationValue);
-            $urlAlias = $this->urlAliasService->lookup($parsedUrl);
-            $location = $this->locationService->loadLocation($urlAlias->destination);
+            try {
+                $urlAlias = $this->urlAliasService->lookup($parsedUrl);
+                $location = $this->locationService->loadLocation($urlAlias->destination);
+            } catch (NotFoundException $exception) {
+                continue;
+            }
+
             $values[] = $location->id;
         }
 
@@ -48,3 +56,5 @@ class LocationLimitationParser implements LimitationParserInterface
         );
     }
 }
+
+class_alias(LocationLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\LocationLimitationParser');

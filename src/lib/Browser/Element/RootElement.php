@@ -15,8 +15,9 @@ use RuntimeException;
 
 final class RootElement extends BaseElement implements RootElementInterface
 {
-    /** @vat \Behat\Mink\Session */
-    private $session;
+    private Session $session;
+
+    private DocumentElement $decoratedElement;
 
     public function __construct(ElementFactoryInterface $elementFactory, Session $session, DocumentElement $baseElement)
     {
@@ -31,7 +32,7 @@ final class RootElement extends BaseElement implements RootElementInterface
             throw new RuntimeException('drag-mock library has to be added to the page in order to use this method. Refer to README in BehatBundle for more information.');
         }
 
-        $movingScript = sprintf('dragMock.dragStart(%s).dragOver(%s).delay(100).drop(%s);', $from, $hover, $to);
+        $movingScript = sprintf('{ const dragMockTmp = dragMock.dragStart(%s).delay(50).dragOver(%s).delay(50); setTimeout(() => dragMockTmp.drop(%s), 100); }', $from, $hover, $to);
         $this->session->getDriver()->executeScript($movingScript);
     }
 
@@ -42,6 +43,11 @@ final class RootElement extends BaseElement implements RootElementInterface
 
     public function executeJavaScript(string $script): string
     {
-        return (string) $this->session->evaluateScript($script) ?? '';
+        return $this->session->evaluateScript($script) ?? '';
+    }
+
+    protected function getDecoratedElement(): DocumentElement
+    {
+        return $this->decoratedElement;
     }
 }
