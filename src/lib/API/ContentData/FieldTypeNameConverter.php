@@ -51,7 +51,12 @@ class FieldTypeNameConverter
 
     public static function getFieldTypeIdentifierByName(string $fieldTypeName): string
     {
-        return array_search($fieldTypeName, static::$FIELD_TYPE_MAPPING);
+        $identifier = array_search($fieldTypeName, static::$FIELD_TYPE_MAPPING);
+        if ($identifier === false) {
+            throw new \InvalidArgumentException("Field type name '{$fieldTypeName}' not found.");
+        }
+
+        return (string)$identifier;
     }
 }
 
