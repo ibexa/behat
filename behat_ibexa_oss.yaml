@@ -48,7 +48,7 @@ default:
         Ibexa\Bundle\Behat\IbexaExtension:
             mink:
                 default_javascript_session: '%env(string:MINK_DEFAULT_SESSION)%'
-                width: 1440
+                width: 1920
                 height: 1080
 
         Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
