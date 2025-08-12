@@ -1,5 +1,6 @@
 imports:
     - behat_ibexa_oss.yaml
+    - vendor/ibexa/app-switcher/behat_suites.yml
     - vendor/ibexa/product-catalog/behat_suites.yml
     - vendor/ibexa/scheduler/behat_suites_headless.yml
     - vendor/ibexa/taxonomy/behat_suites_headless.yml
@@ -30,6 +31,7 @@ regression:
                 - Ibexa\Migration\Behat\Context\MigrationContext
         headless:
             paths:
+                - '%paths.base%/vendor/ibexa/app-switcher/features/browser'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
                 - '%paths.base%/vendor/ibexa/admin-ui/features/standard'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/browser'
@@ -42,8 +44,9 @@ regression:
                 - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
             filters:
                 tags: "~@broken&&@IbexaHeadless"
-            contexts: 
+            contexts:
                 - Behat\MinkExtension\Context\MinkContext
+                - Ibexa\AppSwitcher\Behat\Context\AppSwitcherContext
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
