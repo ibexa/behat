@@ -64,7 +64,7 @@ class ConfigurationContext implements Context
      *
      * @param mixed $siteaccessName
      */
-    public function iAppendOrSetConfigurationToSiteaccess(string $mode, $siteaccessName, TableNode $settings, string $configFilePath = null)
+    public function iAppendOrSetConfigurationToSiteaccess(string $mode, $siteaccessName, TableNode $settings, ?string $configFilePath = null)
     {
         $appendToExisting = $this->shouldAppendValue($mode);
 
@@ -92,7 +92,7 @@ class ConfigurationContext implements Context
      *
      * @param mixed $parentNode
      */
-    public function iModifyConfigurationUnderKey(string $mode, $parentNode, PyStringNode $configFragment, string $configFilePath = null)
+    public function iModifyConfigurationUnderKey(string $mode, $parentNode, PyStringNode $configFragment, ?string $configFilePath = null)
     {
         $appendToExisting = $this->shouldAppendValue($mode);
 
@@ -160,7 +160,7 @@ class ConfigurationContext implements Context
      * @Given I copy the configuration from :keyName to :newKeyName
      * @Given I copy the configuration from :keyName to :newKeyName in :configFilePath
      */
-    public function iCopyTheConfigurationFromTo(string $keyName, string $newKeyName, string $configFilePath = null)
+    public function iCopyTheConfigurationFromTo(string $keyName, string $newKeyName, ?string $configFilePath = null)
     {
         $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
         $config = $this->configurationEditor->getConfigFromFile($configFilePath);

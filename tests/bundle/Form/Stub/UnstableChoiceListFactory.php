@@ -35,7 +35,7 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
      *
      * @throws \ErrorException
      */
-    public function createListFromChoices(iterable $choices, callable $value = null, ?callable $filter = null): ChoiceListInterface
+    public function createListFromChoices(iterable $choices, ?callable $value = null, ?callable $filter = null): ChoiceListInterface
     {
         ++$this->createListFromChoicesCounter;
         $this->failIfNeeded($this->createListFromChoicesCounter);
@@ -48,7 +48,7 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
      */
     public function createListFromLoader(
         ChoiceLoaderInterface $loader,
-        callable $value = null,
+        ?callable $value = null,
         ?callable $filter = null
     ): ChoiceListInterface {
         ++$this->createListFromLoaderCounter;

@@ -42,7 +42,7 @@ class UserContext implements Context
      * @Given I create a user :userName with last name :userLastName with email :userEmail
      * @Given I create a user :userName with last name :userLastName in group :userGroupName with email :userEmail
      */
-    public function createUserInGroupWithEmail(string $userName, string $userLastName, string $userGroupName = null, string $userEmail = null): void
+    public function createUserInGroupWithEmail(string $userName, string $userLastName, ?string $userGroupName = null, ?string $userEmail = null): void
     {
         $this->userFacade->createUser($userName, $userLastName, $userGroupName, $userEmail);
     }
@@ -81,7 +81,7 @@ class UserContext implements Context
      * @Given I assign user group :groupName to role :roleName
      * @Given I assign user group :groupName to role :roleName with limitations:
      */
-    public function assignUserGroupToRole(string $userGroupName, string $roleName, TableNode $limitationData = null): void
+    public function assignUserGroupToRole(string $userGroupName, string $roleName, ?TableNode $limitationData = null): void
     {
         $parsedLimitations = null === $limitationData ? null : $this->argumentParser->parseLimitations($limitationData);
 
