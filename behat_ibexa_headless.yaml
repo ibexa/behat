@@ -93,4 +93,3 @@ regression:
                 - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
-                - Ibexa\ActivityLog\Behat\Context\ActivityLogContext
