@@ -10,6 +10,7 @@ imports:
     - vendor/ibexa/site-factory/behat_suites.yml
     - vendor/ibexa/taxonomy/behat_suites_experience.yml
     - vendor/ibexa/workflow/behat_suites_experience.yml
+    - vendor/ibexa/activity-log/behat_suites.yml
 
 regression:
     suites:
