@@ -8,6 +8,7 @@ Feature: Multirepository setup for testing
         connections:
             default:
                 url: 'mysql://INVALID:INVALID@127.0.0.1/INVALID'
+                server_version: '8.0'
             second_connection:
                 url: '%env(resolve:DATABASE_URL)%'
     """
