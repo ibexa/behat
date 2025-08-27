@@ -53,7 +53,10 @@ default:
 
         Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
 
-    suites: ~
+    suites:
+        default:
+            contexts:
+                - Ibexa\Behat\Subscriber\ScreenshotListener
 
 regression:
     suites:
