@@ -59,7 +59,9 @@ default:
                 height: 1080
 
         Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
-
+    formatters:
+        html:
+            output_path: %paths.base%/build/behat/html
     suites:
         default:
             contexts:
