@@ -8,8 +8,11 @@ Feature: Multirepository setup for testing
         connections:
             default:
                 url: 'mysql://INVALID:INVALID@127.0.0.1/INVALID'
+                server_version: '8.0'
+                use_savepoints: true
             second_connection:
                 url: '%env(resolve:DATABASE_URL)%'
+                use_savepoints: true
     """
       Given I copy the configuration from "ibexa.repositories.default" to "ibexa.repositories.new_repository"
       And I append configuration to "ibexa.repositories.new_repository.storage"
@@ -20,6 +23,9 @@ Feature: Multirepository setup for testing
         """
                 connection: second_connection
         """
+    And I set configuration to "default" siteaccess
+      | key                          | value          |
+      | repository                   | new_repository |
     And I set configuration to "admin_group" siteaccess
       | key                          | value          |
       | repository                   | new_repository |
