@@ -22,6 +22,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/dashboard/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/discounts/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/discounts-codes/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/activity-log/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
@@ -56,6 +57,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
                 - '%paths.base%/vendor/ibexa/discounts/features/browser'
+                - '%paths.base%/vendor/ibexa/discounts-codes/features/browser'
                 - '%paths.base%/vendor/ibexa/activity-log/features/browser'
             filters:
                 tags: "~@broken&&@IbexaCommerce"
