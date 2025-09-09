@@ -84,6 +84,16 @@ class DebuggingContext extends RawMinkContext
             return;
         }
 
+        #### screenshot test
+        $screenshotDir = 'behat/screenshots';
+        if (!is_dir($screenshotDir)) {
+            mkdir($screenshotDir, 0777, true);
+        }
+        $scenarioTitle = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $scope->getFeature()->getTitle() . '_' . $scope->getStep()->getText());
+        $filename = sprintf('%s/%s_%s.png', $screenshotDir, date('Ymd_His'), $scenarioTitle);
+        file_put_contents($filename, $this->getSession()->getScreenshot());
+        ####
+
         $testLogProvider = new TestLogProvider($this->getSession(), $this->logDir);
         $applicationsLogs = $testLogProvider->getApplicationLogs();
         $browserLogs = $testLogProvider->getBrowserLogs();
@@ -101,6 +111,9 @@ class DebuggingContext extends RawMinkContext
 
         $this->display($this->formatForDisplay($browserLogs, 'JS Console errors:'));
         $this->display($this->formatForDisplay($applicationsLogs, 'Application logs:'));
+        $this->display(sprintf("Screenshot saved to: %s\n\n", $filename));
+        $this->display(sprintf("Screenshot saved to: [%s](%s)\n\n", $filename, $filename));
+        $this->display(sprintf("Screenshot saved to: [View Screenshot](file://%s)\n\n", realpath($filename)));
     }
 
     private function formatForDisplay(array $logEntries, string $sectionName)
@@ -123,3 +136,4 @@ class DebuggingContext extends RawMinkContext
         echo $message;
     }
 }
+
