@@ -85,7 +85,7 @@ class DebuggingContext extends RawMinkContext
         }
 
         #### screenshot test
-        $screenshotDir = 'behat/screenshots';
+        $screenshotDir = 'behat-output/screenshots';
         if (!is_dir($screenshotDir)) {
             mkdir($screenshotDir, 0777, true);
         }
