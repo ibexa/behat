@@ -14,13 +14,6 @@ default:
     formatters:
         pretty: true
     extensions:
-#        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
-#            name: html
-#            renderer: Twig
-#            file_name: index
-#            print_args: true
-#            print_outp: true
-#            loop_break: true
         Behat\MinkExtension:
             files_path: '%paths.base%/vendor/ibexa/behat/src/lib/Behat/TestFiles/'
             base_url: '%env(string:WEB_HOST)%'
@@ -59,13 +52,6 @@ default:
                 height: 1080
 
         Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
-#    formatters:
-#        html:
-#            output_path: %paths.base%/build/behat/html
-#    suites:
-#        default:
-#            contexts:
-#                - Ibexa\Behat\Subscriber\ScreenshotListener
 
 regression:
     suites:
