@@ -85,7 +85,7 @@ class DebuggingContext extends RawMinkContext
         }
 
         #### screenshot test
-        $screenshotDir = 'behat-output/screenshots';
+        $screenshotDir = 'behat-output';
         if (!is_dir($screenshotDir)) {
             mkdir($screenshotDir, 0777, true);
         }
@@ -104,13 +104,16 @@ class DebuggingContext extends RawMinkContext
             $browserLogs
         );
 
+        //known failure check
         $failureAnalysisResult = $this->knownIssuesRegistry->isKnown($failureData);
         if ($failureAnalysisResult->isKnownFailure()) {
             $this->display(sprintf("Known failure detected! JIRA: %s\n\n", $failureAnalysisResult->getJiraReference()));
         }
+        //
 
         $this->display($this->formatForDisplay($browserLogs, 'JS Console errors:'));
         $this->display($this->formatForDisplay($applicationsLogs, 'Application logs:'));
+      //  $this->display($this->);
         $this->display(sprintf("Screenshot saved to: %s\n\n", $filename));
         $this->display(sprintf("Screenshot saved to: [%s](%s)\n\n", $filename, $filename));
         $this->display(sprintf("Screenshot saved to: [View Screenshot](file://%s)\n\n", realpath($filename)));
