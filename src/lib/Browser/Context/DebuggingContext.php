@@ -77,6 +77,8 @@ class DebuggingContext extends RawMinkContext
         $this->failedStepResult = $scope->getTestResult();
     }
 
+
+
     /** @AfterStep */
     public function getLogsAfterFailedStep(AfterStepScope $scope)
     {
@@ -84,6 +86,7 @@ class DebuggingContext extends RawMinkContext
             return;
         }
 
+        $filename = $this->takeScreenshot($scope);
         $testLogProvider = new TestLogProvider($this->getSession(), $this->logDir);
         $applicationsLogs = $testLogProvider->getApplicationLogs();
         $browserLogs = $testLogProvider->getBrowserLogs();
@@ -91,7 +94,8 @@ class DebuggingContext extends RawMinkContext
         $failureData = new TestFailureData(
             $this->failedStepResult,
             $applicationsLogs,
-            $browserLogs
+            $browserLogs,
+            $filename
         );
 
         $failureAnalysisResult = $this->knownIssuesRegistry->isKnown($failureData);
@@ -99,8 +103,23 @@ class DebuggingContext extends RawMinkContext
             $this->display(sprintf("Known failure detected! JIRA: %s\n\n", $failureAnalysisResult->getJiraReference()));
         }
 
+
         $this->display($this->formatForDisplay($browserLogs, 'JS Console errors:'));
         $this->display($this->formatForDisplay($applicationsLogs, 'Application logs:'));
+        $this->display($this->formatForDisplay($filename ? [$filename] : [], 'Screenshot:'));
+        $this->display($this->formatForDisplay($filename ? ['file://' . realpath($filename)] : [], 'Screenshot:'));
+    }
+
+    private function takeScreenshot(AfterStepScope $scope): string
+    {
+        $screenshotDir = 'behat-output';
+        if (!is_dir($screenshotDir)) {
+            mkdir($screenshotDir, 0777, true);
+        }
+        $scenarioTitle = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $scope->getFeature()->getTitle() . '_' . $scope->getStep()->getText());
+        $filename = sprintf('%s/%s_%s.png', $screenshotDir, date('Ymd_His'), $scenarioTitle);
+        file_put_contents($filename, $this->getSession()->getScreenshot());
+        return $filename;
     }
 
     private function formatForDisplay(array $logEntries, string $sectionName)
@@ -123,3 +142,4 @@ class DebuggingContext extends RawMinkContext
         echo $message;
     }
 }
+
