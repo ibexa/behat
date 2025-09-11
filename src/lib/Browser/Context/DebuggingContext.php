@@ -87,7 +87,6 @@ class DebuggingContext extends RawMinkContext
         }
 
         $filename = $this->takeScreenshot($scope);
-
         $testLogProvider = new TestLogProvider($this->getSession(), $this->logDir);
         $applicationsLogs = $testLogProvider->getApplicationLogs();
         $browserLogs = $testLogProvider->getBrowserLogs();
@@ -99,16 +98,16 @@ class DebuggingContext extends RawMinkContext
             $filename
         );
 
-        //known failure check
         $failureAnalysisResult = $this->knownIssuesRegistry->isKnown($failureData);
         if ($failureAnalysisResult->isKnownFailure()) {
             $this->display(sprintf("Known failure detected! JIRA: %s\n\n", $failureAnalysisResult->getJiraReference()));
         }
-        
+
 
         $this->display($this->formatForDisplay($browserLogs, 'JS Console errors:'));
         $this->display($this->formatForDisplay($applicationsLogs, 'Application logs:'));
         $this->display($this->formatForDisplay($filename ? [$filename] : [], 'Screenshot:'));
+        $this->display($this->formatForDisplay($filename ? ['file://' . realpath($filename)] : [], 'Screenshot:'));
     }
 
     private function takeScreenshot(AfterStepScope $scope): string
