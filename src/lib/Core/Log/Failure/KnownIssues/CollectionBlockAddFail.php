@@ -14,9 +14,9 @@ class ContentTypeCreatedInTheBackground implements KnownIssueInterface
 {
     public function matches(TestFailureData $testFailureData): bool
     {
-        return $testFailureData->applicationLogContainsFragment('DefaultChoiceListFactory') &&
-            ($testFailureData->applicationLogContainsFragment('Warning: Undefined array key') ||
-            $testFailureData->applicationLogContainsFragment('Notice: Undefined index'));
+        return $testFailureData->exceptionStackTraceContainsFragment('Ibexa\PageBuilder\Behat\Page\PageBuilderEditor->addBlock()') &&
+           $testFailureData->exceptionMessageContainsFragment("CSS locator 'blockAttribute': '[data-ibexa-block-id]' was not found.") &&
+           $testFailureData->browserLogsContainFragment("I start creating a new Landing Page \"Collection\"");
     }
 
     public function getJiraReference(): string
