@@ -113,6 +113,7 @@ class DebuggingContext extends RawMinkContext
     private function takeScreenshot(AfterStepScope $scope): string
     {
         $screenshotDir = getenv('GITHUB_WORKSPACE') ? getenv('GITHUB_WORKSPACE') . '/behat-output' : 'behat-output';
+        $this->logger->error(sprintf('Screenshot dir should be: %s', $screenshotDir));
         if (!is_dir($screenshotDir)) {
             mkdir($screenshotDir, 0777, true);
         }
