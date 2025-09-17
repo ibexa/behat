@@ -119,6 +119,7 @@ class DebuggingContext extends RawMinkContext
         $scenarioTitle = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $scope->getFeature()->getTitle() . '_' . $scope->getStep()->getText());
         $filename = sprintf('%s/%s_%s.png', $screenshotDir, date('Ymd_His'), $scenarioTitle);
         file_put_contents($filename, $this->getSession()->getScreenshot());
+        $this->logger->error(sprintf('Screenshot saved at: %s', realpath($filename)));
         return $filename;
     }
 
