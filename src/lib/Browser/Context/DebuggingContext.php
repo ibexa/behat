@@ -18,6 +18,7 @@ use Ibexa\Behat\Core\Log\Failure\TestFailureData;
 use Ibexa\Behat\Core\Log\KnownIssuesRegistry;
 use Ibexa\Behat\Core\Log\TestLogProvider;
 use Psr\Log\LoggerInterface;
+use function RectorPrefix202508\Symfony\Component\String\s;
 
 class DebuggingContext extends RawMinkContext
 {
@@ -113,7 +114,10 @@ class DebuggingContext extends RawMinkContext
     private function takeScreenshot(AfterStepScope $scope): string
     {
         $screenshotDir = getenv('GITHUB_WORKSPACE') ? getenv('GITHUB_WORKSPACE') . '/behat-output' : 'behat-output';
+        $workspace = getenv('GITHUB_WORKSPACE') ?: getcwd();
+        $this->logger->debug(printf('GITHUB_WORKSPACE: %s', $workspace));
         $this->logger->error(sprintf('Screenshot dir should be: %s', $screenshotDir));
+
         if (!is_dir($screenshotDir)) {
             mkdir($screenshotDir, 0777, true);
         }
