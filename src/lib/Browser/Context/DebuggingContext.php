@@ -115,7 +115,7 @@ class DebuggingContext extends RawMinkContext
     {
         $screenshotDir = getenv('GITHUB_WORKSPACE') ? getenv('GITHUB_WORKSPACE') . '/behat-output' : 'behat-output';
         $workspace = getenv('GITHUB_WORKSPACE') ?: getcwd();
-        $this->logger->debug(printf('GITHUB_WORKSPACE: %s', $workspace));
+        $this->logger->debug(sprintf('GITHUB_WORKSPACE: %s', $workspace));
         $this->logger->error(sprintf('Screenshot dir should be: %s', $screenshotDir));
 
         if (!is_dir($screenshotDir)) {
