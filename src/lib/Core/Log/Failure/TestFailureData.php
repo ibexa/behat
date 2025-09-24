@@ -20,12 +20,15 @@ class TestFailureData
 
     /** @var string[] */
     private $browserLogs;
+    
+    private $screenshotPath;
 
-    public function __construct(ExceptionResult $failedStepResult, array $applicationLogs, array $browserLogs)
+    public function __construct(ExceptionResult $failedStepResult, array $applicationLogs, array $browserLogs, $screenshotPath = null)
     {
         $this->failedStepResult = $failedStepResult;
         $this->applicationLogs = $applicationLogs;
         $this->browserLogs = $browserLogs;
+        $this->screenshotPath = $screenshotPath;
     }
 
     public function getFailedStepsResult(): ExceptionResult
@@ -47,6 +50,11 @@ class TestFailureData
     public function getBrowserLogs(): array
     {
         return $this->browserLogs;
+    }
+
+    public function getScreenshotPath()
+    {
+        return $this->screenshotPath;
     }
 
     public function applicationLogContainsFragment($logFragment)
