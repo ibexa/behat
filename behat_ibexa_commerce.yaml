@@ -24,6 +24,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/discounts/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/discounts-codes/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/activity-log/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/help_center.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -35,6 +36,7 @@ regression:
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
                 - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
+                - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
         commerce:
             paths:
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
