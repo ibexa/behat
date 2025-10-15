@@ -37,6 +37,9 @@ regression:
                 - Ibexa\Migration\Behat\Context\MigrationContext
                 - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
+                - Ibexa\Behat\Browser\Context\AuthenticationContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
         commerce:
             paths:
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'

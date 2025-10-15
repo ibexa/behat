@@ -18,6 +18,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/behat/features/setup/contentTranslation'
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/setup/setup.feature'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/help_center.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -28,6 +29,10 @@ regression:
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Behat\API\Context\LanguageContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
+                - Ibexa\AdminUi\Behat\BrowserContext\UserPreferencesContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
+                - Ibexa\Behat\Browser\Context\AuthenticationContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
         headless:
             paths:
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
