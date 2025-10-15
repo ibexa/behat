@@ -83,9 +83,8 @@ trait InteractiveDebuggerTrait
     {
         $trace = debug_backtrace();
         foreach ($trace as $traceLine) {
-            if (!array_key_exists('function', $traceLine) ||
-                    $traceLine['function'] === 'eval' ||
-                    !array_key_exists('object', $traceLine)
+            if ($traceLine['function'] === 'eval' ||
+                !array_key_exists('object', $traceLine)
             ) {
                 continue;
             }
@@ -106,7 +105,9 @@ trait InteractiveDebuggerTrait
         $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 5);
 
         foreach ($trace as $traceEntry) {
-            if ($traceEntry['function'] === 'eval' && strpos($traceEntry['file'], 'psy/psysh') !== 0) {
+            if ($traceEntry['function'] === 'eval' &&
+                array_key_exists('file', $traceEntry) &&
+                strpos($traceEntry['file'], 'psy/psysh') !== 0) {
                 return true;
             }
         }
