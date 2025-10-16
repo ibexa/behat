@@ -33,6 +33,7 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
         headless:
             paths:
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'

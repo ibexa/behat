@@ -94,3 +94,4 @@ setup:
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
