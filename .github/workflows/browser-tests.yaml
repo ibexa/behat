@@ -17,13 +17,11 @@ jobs:
             test-suite: "--mode=standard --profile=browser --suite=admin-ui-full --tags='~@broken&&~@IbexaDXP'"
             multirepository: true
             timeout: 40
-        secrets:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        secrets: inherit
     examples:
         name: "BehatBundle examples"
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
             project-edition: 'oss'
             test-suite:  '--mode=standard --profile=service --suite=examples'
-        secrets:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        secrets: inherit
