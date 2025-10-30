@@ -1195,12 +1195,6 @@ parameters:
 			path: src/lib/API/Facade/UserFacade.php
 
 		-
-			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
-			identifier: function.alreadyNarrowedType
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
 			message: '#^Invalid type Exception\|null to throw\.$#'
 			identifier: throw.notThrowable
 			count: 1
@@ -1231,12 +1225,6 @@ parameters:
 			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
 
 		-
-			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
 			message: '#^PHPDoc tag @var above a method has no effect\.$#'
 			identifier: varTag.misplaced
 			count: 1
@@ -1253,12 +1241,6 @@ parameters:
 			identifier: missingType.iterableValue
 			count: 2
 			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
-			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
-			identifier: function.alreadyNarrowedType
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
 
 		-
 			message: '#^Call to method hasClass\(\) on an unknown class Ibexa\\Behat\\Browseer\\Assert\\ElementAssertInterface\.$#'
@@ -1311,12 +1293,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Assert\\Debug\\Interactive\\ElementAssert\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
 			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
-
-		-
-			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
-			identifier: offsetAccess.notFound
 			count: 1
 			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
 
@@ -1627,12 +1603,6 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Highlighting/RootElement.php
 
 		-
-			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
-			identifier: function.alreadyNarrowedType
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
-
-		-
 			message: '#^Invalid type Exception\|null to throw\.$#'
 			identifier: throw.notThrowable
 			count: 1
@@ -1659,12 +1629,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\BaseElement\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
 			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
-
-		-
-			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
-			identifier: offsetAccess.notFound
 			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
 
@@ -1795,12 +1759,6 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/Element.php
 
 		-
-			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
-			identifier: function.alreadyNarrowedType
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/Element.php
-
-		-
 			message: '#^Invalid type Exception\|null to throw\.$#'
 			identifier: throw.notThrowable
 			count: 1
@@ -1849,12 +1807,6 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/Element.php
 
 		-
-			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/Element.php
-
-		-
 			message: '#^PHPDoc tag @var above a method has no effect\.$#'
 			identifier: varTag.misplaced
 			count: 1
@@ -1871,12 +1823,6 @@ parameters:
 			identifier: missingType.iterableValue
 			count: 2
 			path: src/lib/Browser/Element/Debug/Interactive/Element.php
-
-		-
-			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
-			identifier: function.alreadyNarrowedType
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
 
 		-
 			message: '#^Invalid type Exception\|null to throw\.$#'
@@ -1905,12 +1851,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\ElementCollection\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
 			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
-			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
-			identifier: offsetAccess.notFound
 			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
 
@@ -1951,12 +1891,6 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
 
 		-
-			message: '#^Call to function array_key_exists\(\) with ''function'' and array\{function\: string, line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\} will always evaluate to true\.$#'
-			identifier: function.alreadyNarrowedType
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
-
-		-
 			message: '#^Invalid type Exception\|null to throw\.$#'
 			identifier: throw.notThrowable
 			count: 1
@@ -1983,12 +1917,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Element\\Debug\\Interactive\\RootElement\:\:startInteractiveSessionOnException\(\) has no return type specified\.$#'
 			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
-
-		-
-			message: '#^Offset ''file'' might not exist on array\{function\: ''eval'', line\?\: int, file\?\: string, class\?\: class\-string, type\?\: ''\-\>''\|''\:\:'', args\?\: array\<mixed\>, object\?\: object\}\.$#'
-			identifier: offsetAccess.notFound
 			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
 
