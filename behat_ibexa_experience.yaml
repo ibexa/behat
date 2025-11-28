@@ -38,6 +38,12 @@ regression:
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
+                - Ibexa\Behat\Browser\Context\AuthenticationContext
+                - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\AdminUi\Behat\BrowserContext\UserNotificationContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
         experience:
             paths:
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
