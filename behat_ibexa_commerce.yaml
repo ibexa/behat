@@ -34,7 +34,14 @@ regression:
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
+                - Ibexa\Behat\Browser\Context\AuthenticationContext
                 - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
+                - Behat\MinkExtension\Context\MinkContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
         commerce:
             paths:
                 - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
