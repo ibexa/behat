@@ -34,11 +34,15 @@ regression:
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\Core\Context\FileContext
                 - Ibexa\Migration\Behat\Context\MigrationContext
-                - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
                 - Ibexa\Behat\Browser\Context\AuthenticationContext
+                - Ibexa\ProductCatalog\Behat\Context\CatalogsContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentActionsMenuContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
+                - Behat\MinkExtension\Context\MinkContext
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserNotificationContext
-                - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
         commerce:
