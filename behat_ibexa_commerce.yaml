@@ -41,6 +41,11 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NotificationContext
                 - Behat\MinkExtension\Context\MinkContext
+                - Ibexa\Behat\Browser\Context\AuthenticationContext
+                - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\AdminUi\Behat\BrowserContext\UserNotificationContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
         commerce:
             paths:

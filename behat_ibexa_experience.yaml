@@ -47,6 +47,11 @@ regression:
                 - Behat\MinkExtension\Context\MinkContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
 
+                - Ibexa\Workflow\Behat\Context\WorkflowContext
+                - Ibexa\AdminUi\Behat\BrowserContext\UserNotificationContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
+                - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
+                - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
         experience:
             paths:
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
