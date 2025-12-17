@@ -86,3 +86,8 @@ setup:
                 - Ibexa\Behat\Core\Context\ConfigurationContext
                 - Ibexa\Behat\API\Context\LanguageContext
                 - Ibexa\Behat\API\Context\TestContext
+        user-settings:
+            paths:
+                - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/helpIntegration.feature'
+            contexts:
+                - Ibexa\Behat\Core\Context\FileContext
