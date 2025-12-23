@@ -33,6 +33,7 @@ abstract class Page extends Component implements PageInterface
 
     public function tryToOpen(string $siteaccess): void
     {
+        $this->getSession()->getDriver()->reset();
         $url = $this->router->reverseMatchRoute($siteaccess, $this->getRoute());
 
         if (!$this->getSession()->isStarted()) {
