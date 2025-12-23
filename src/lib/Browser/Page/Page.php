@@ -40,7 +40,6 @@ abstract class Page extends Component implements PageInterface
         }
 
         $this->getSession()->visit($url);
-        $this->getSession()->getDriver()->reset();
     }
 
     abstract protected function getRoute(): string;
