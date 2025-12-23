@@ -38,6 +38,8 @@ abstract class Page extends Component implements PageInterface
         if (!$this->getSession()->isStarted()) {
             $this->getSession()->start();
         }
+
+        $this->getSession()->reset();
         $this->getSession()->visit($url);
     }
 
