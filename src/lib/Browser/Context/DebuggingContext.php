@@ -18,6 +18,7 @@ use Ibexa\Behat\Core\Log\Failure\TestFailureData;
 use Ibexa\Behat\Core\Log\KnownIssuesRegistry;
 use Ibexa\Behat\Core\Log\TestLogProvider;
 use Psr\Log\LoggerInterface;
+use function RectorPrefix202508\Symfony\Component\String\s;
 
 class DebuggingContext extends RawMinkContext
 {
@@ -77,6 +78,8 @@ class DebuggingContext extends RawMinkContext
         $this->failedStepResult = $scope->getTestResult();
     }
 
+
+
     /** @AfterStep */
     public function getLogsAfterFailedStep(AfterStepScope $scope)
     {
@@ -84,6 +87,7 @@ class DebuggingContext extends RawMinkContext
             return;
         }
 
+        $filename = $this->takeScreenshot($scope);
         $testLogProvider = new TestLogProvider($this->getSession(), $this->logDir);
         $applicationsLogs = $testLogProvider->getApplicationLogs();
         $browserLogs = $testLogProvider->getBrowserLogs();
@@ -91,7 +95,8 @@ class DebuggingContext extends RawMinkContext
         $failureData = new TestFailureData(
             $this->failedStepResult,
             $applicationsLogs,
-            $browserLogs
+            $browserLogs,
+            $filename
         );
 
         $failureAnalysisResult = $this->knownIssuesRegistry->isKnown($failureData);
@@ -99,8 +104,49 @@ class DebuggingContext extends RawMinkContext
             $this->display(sprintf("Known failure detected! JIRA: %s\n\n", $failureAnalysisResult->getJiraReference()));
         }
 
+
         $this->display($this->formatForDisplay($browserLogs, 'JS Console errors:'));
         $this->display($this->formatForDisplay($applicationsLogs, 'Application logs:'));
+        $this->display($this->formatForDisplay($filename ? [$filename] : [], 'Screenshot:'));
+        $this->display($this->formatForDisplay($filename ? ['file://' . realpath($filename)] : [], 'Screenshot:'));
+    }
+
+    private function takeScreenshot(AfterStepScope $scope): string
+    {
+        $screenshotDir = '/var/www/html/build/project/behat-output';
+       // $screenshotDir = getenv('GITHUB_WORKSPACE') ? getenv('GITHUB_WORKSPACE') . '/build/project/behat-output' : 'build/project/behat-output';        $workspace = getenv('GITHUB_WORKSPACE') ?: getcwd();
+      // $this->logger->error(sprintf('GITHUB_WORKSPACE: %s', $workspace));
+        //$this->logger->info(sprintf('GITHUB_WORKSPACE: %s', $workspace));
+        $this->logger->error(sprintf('Screenshot dir should be: %s', $screenshotDir));
+
+
+
+        if (!is_dir($screenshotDir)) {
+            $this->logger->error(sprintf('Screenshot directory does not exist, creating: %s', $screenshotDir));
+            if (!mkdir($screenshotDir, 0777, true) && !is_dir($screenshotDir)) {
+                $this->logger->error(sprintf('Failed to create screenshot directory: %s', $screenshotDir));
+                return '';
+            }
+            $this->logger->error(sprintf('Screenshot directory created: %s', $screenshotDir));
+        } else {
+            $this->logger->error(sprintf('Screenshot directory already exists: %s', $screenshotDir));
+        }
+
+//        $scenarioTitle = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $scope->getFeature()->getTitle() . '_' . $scope->getStep()->getText());
+//        $filename = sprintf('%s/%s_%s.png', $screenshotDir, date('Ymd_His'), $scenarioTitle);
+//        file_put_contents($filename, $this->getSession()->getScreenshot());
+//        $this->logger->error(sprintf('Screenshot saved at: %s', realpath($filename)));
+
+        $scenarioTitle = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $scope->getFeature()->getTitle() . '_' . $scope->getStep()->getText());
+        $filename = sprintf('%s/%s_%s.png', $screenshotDir, date('Ymd_His'), $scenarioTitle);
+
+        $result = file_put_contents($filename, $this->getSession()->getScreenshot());
+        if ($result === false) {
+            $this->logger->error(sprintf('Failed to save screenshot at: %s', $filename));
+            return '';
+        }
+        $this->logger->error(sprintf('Screenshot saved at: %s', realpath($filename)));
+        return $filename;
     }
 
     private function formatForDisplay(array $logEntries, string $sectionName)
@@ -123,3 +169,4 @@ class DebuggingContext extends RawMinkContext
         echo $message;
     }
 }
+
