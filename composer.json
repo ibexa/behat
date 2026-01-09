@@ -36,8 +36,7 @@
         "psy/psysh": "^0.10.8",
         "oleg-andreyev/mink-phpwebdriver": "^1.2.1",
         "oleg-andreyev/mink-phpwebdriver-extension": "^1.0",
-        "symfony/form": "^5.4",
-        "elasticsearch/elasticsearch": "^8"
+        "symfony/form": "^5.4"
     },
     "require-dev": {
         "ibexa/code-style": "^1.0",
