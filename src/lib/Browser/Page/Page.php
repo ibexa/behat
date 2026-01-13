@@ -36,7 +36,7 @@ abstract class Page extends Component implements PageInterface
                 $this->verifyIsLoaded();
                 break;
             } catch (\Exception $e) {
-                $attempt++;
+                ++$attempt;
                 if ($attempt >= $maxRetries) {
                     throw $e;
                 }
