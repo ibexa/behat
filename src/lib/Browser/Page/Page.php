@@ -27,8 +27,22 @@ abstract class Page extends Component implements PageInterface
 
     public function open(string $siteaccess): void
     {
-        $this->tryToOpen($siteaccess);
-        $this->verifyIsLoaded();
+        $maxRetries = 3;
+        $attempt = 0;
+
+        while ($attempt < $maxRetries) {
+            try {
+                $this->tryToOpen($siteaccess);
+                $this->verifyIsLoaded();
+                break;
+            } catch (\Exception $e) {
+                ++$attempt;
+                if ($attempt >= $maxRetries) {
+                    throw $e;
+                }
+                $this->getSession()->reset();
+            }
+        }
     }
 
     public function tryToOpen(string $siteaccess): void
@@ -38,6 +52,7 @@ abstract class Page extends Component implements PageInterface
         if (!$this->getSession()->isStarted()) {
             $this->getSession()->start();
         }
+
         $this->getSession()->visit($url);
     }
 
