@@ -277,6 +277,12 @@ parameters:
 			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
 
 		-
+			message: '#^Call to an undefined method Behat\\Gherkin\\Node\\ScenarioLikeInterface\:\:hasTag\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/bundle/Subscriber/StartScenarioSubscriber.php
+
+		-
 			message: '#^Cannot call method isStarted\(\) on object\|null\.$#'
 			identifier: method.nonObject
 			count: 1
@@ -1463,12 +1469,6 @@ parameters:
 			identifier: class.notFound
 			count: 1
 			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
-
-		-
-			message: '#^Parameter \#1 \$driver of class Facebook\\WebDriver\\Chrome\\ChromeDevToolsDriver constructor expects Facebook\\WebDriver\\Remote\\RemoteWebDriver, OAndreyev\\Mink\\Driver\\WebDriver given\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/lib/Browser/Component/Component.php
 
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:iAmViewingThePagesAsUserOnSiteaccess\(\) has no return type specified\.$#'
@@ -2839,8 +2839,8 @@ parameters:
 			path: src/lib/Core/Log/LogFileReader.php
 
 		-
-			message: '#^Call to an undefined method OAndreyev\\Mink\\Driver\\WebDriver\:\:execute\(\)\.$#'
-			identifier: method.notFound
+			message: '#^Cannot call method execute\(\) on Facebook\\WebDriver\\Remote\\RemoteWebDriver\|null\.$#'
+			identifier: method.nonObject
 			count: 1
 			path: src/lib/Core/Log/TestLogProvider.php
 
