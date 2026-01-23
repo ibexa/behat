@@ -277,12 +277,6 @@ parameters:
 			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
 
 		-
-			message: '#^Call to an undefined method Behat\\Gherkin\\Node\\ScenarioLikeInterface\:\:hasTag\(\)\.$#'
-			identifier: method.notFound
-			count: 1
-			path: src/bundle/Subscriber/StartScenarioSubscriber.php
-
-		-
 			message: '#^Cannot call method isStarted\(\) on object\|null\.$#'
 			identifier: method.nonObject
 			count: 1
@@ -865,12 +859,6 @@ parameters:
 			path: src/lib/API/Context/ContentTypeContext.php
 
 		-
-			message: '#^Parameter \#1 \$array \(list\<string\>\) of array_values is already a list, call has no effect\.$#'
-			identifier: arrayValues.list
-			count: 1
-			path: src/lib/API/Context/ContentTypeContext.php
-
-		-
 			message: '#^Method Ibexa\\Behat\\API\\Context\\LanguageContext\:\:createLanguageIfNotExists\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -1387,15 +1375,9 @@ parameters:
 			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
 
 		-
-			message: '#^PHPDoc tag @var does not specify variable name\.$#'
-			identifier: varTag.noVariable
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
-
-		-
 			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 2
+			count: 1
 			path: src/lib/Browser/Assert/Debug/Interactive/CollectionAssert.php
 
 		-
@@ -1459,15 +1441,9 @@ parameters:
 			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
 
 		-
-			message: '#^PHPDoc tag @var does not specify variable name\.$#'
-			identifier: varTag.noVariable
-			count: 1
-			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
-
-		-
 			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 2
+			count: 1
 			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
 
 		-
@@ -1481,6 +1457,12 @@ parameters:
 			identifier: class.notFound
 			count: 1
 			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
+
+		-
+			message: '#^Parameter \#1 \$driver of class Facebook\\WebDriver\\Chrome\\ChromeDevToolsDriver constructor expects Facebook\\WebDriver\\Remote\\RemoteWebDriver, OAndreyev\\Mink\\Driver\\WebDriver given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/lib/Browser/Component/Component.php
 
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:iAmViewingThePagesAsUserOnSiteaccess\(\) has no return type specified\.$#'
@@ -1795,15 +1777,9 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
 
 		-
-			message: '#^PHPDoc tag @var does not specify variable name\.$#'
-			identifier: varTag.noVariable
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
-
-		-
 			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 2
+			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/BaseElement.php
 
 		-
@@ -1969,15 +1945,9 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/Element.php
 
 		-
-			message: '#^PHPDoc tag @var does not specify variable name\.$#'
-			identifier: varTag.noVariable
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/Element.php
-
-		-
 			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 2
+			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/Element.php
 
 		-
@@ -2017,15 +1987,9 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
 
 		-
-			message: '#^PHPDoc tag @var does not specify variable name\.$#'
-			identifier: varTag.noVariable
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
-
-		-
 			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 2
+			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/ElementCollection.php
 
 		-
@@ -2083,15 +2047,9 @@ parameters:
 			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
 
 		-
-			message: '#^PHPDoc tag @var does not specify variable name\.$#'
-			identifier: varTag.noVariable
-			count: 1
-			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
-
-		-
 			message: '#^PHPDoc tag @var has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 2
+			count: 1
 			path: src/lib/Browser/Element/Debug/Interactive/RootElement.php
 
 		-
@@ -2185,7 +2143,7 @@ parameters:
 			path: src/lib/Browser/FileUpload/FileUploadHelper.php
 
 		-
-			message: '#^Parameter \#1 \$string of function base64_encode expects string, string\|false given\.$#'
+			message: '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/lib/Browser/FileUpload/FileUploadHelper.php
@@ -2875,8 +2833,8 @@ parameters:
 			path: src/lib/Core/Log/LogFileReader.php
 
 		-
-			message: '#^Cannot call method execute\(\) on Facebook\\WebDriver\\Remote\\RemoteWebDriver\|null\.$#'
-			identifier: method.nonObject
+			message: '#^Call to an undefined method OAndreyev\\Mink\\Driver\\WebDriver\:\:execute\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: src/lib/Core/Log/TestLogProvider.php
 
