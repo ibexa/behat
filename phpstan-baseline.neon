@@ -859,6 +859,12 @@ parameters:
 			path: src/lib/API/Context/ContentTypeContext.php
 
 		-
+			message: '#^Parameter \#1 \$array \(list\<string\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: src/lib/API/Context/ContentTypeContext.php
+
+		-
 			message: '#^Method Ibexa\\Behat\\API\\Context\\LanguageContext\:\:createLanguageIfNotExists\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -2143,7 +2149,7 @@ parameters:
 			path: src/lib/Browser/FileUpload/FileUploadHelper.php
 
 		-
-			message: '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#'
+			message: '#^Parameter \#1 \$string of function base64_encode expects string, string\|false given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/lib/Browser/FileUpload/FileUploadHelper.php
