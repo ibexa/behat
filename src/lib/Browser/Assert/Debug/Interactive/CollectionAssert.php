@@ -18,7 +18,7 @@ class CollectionAssert implements CollectionAssertInterface
     use InteractiveDebuggerTrait;
 
     /** @var \Ibexa\Behat\Browser\Assert\CollectionAssertInterface */
-    private $baseCollectionAssert;
+    private CollectionAssertInterface $baseCollectionAssert;
 
     public function __construct(CollectionAssertInterface $baseCollectionAssert)
     {
