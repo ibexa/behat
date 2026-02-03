@@ -16,13 +16,6 @@ use ReflectionMethod;
 
 class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
 {
-    /**
-     * @param array<mixed> $info
-     *
-     * @phpstan-param list<mixed> $tokens
-     *
-     * @return string[]
-     */
     public function getMatches(array $tokens, array $info = []): array
     {
         $input = $this->getInput($tokens);

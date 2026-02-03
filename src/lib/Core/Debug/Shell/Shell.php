@@ -17,6 +17,9 @@ use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 class Shell extends BaseShell
 {
+    /**
+     * @return array
+     */
     protected function getDefaultMatchers(): array
     {
         $matchers = array_filter(parent::getDefaultMatchers(), static function (AbstractMatcher $matcher) {
