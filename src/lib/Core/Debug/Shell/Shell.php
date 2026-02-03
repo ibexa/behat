@@ -20,7 +20,7 @@ class Shell extends BaseShell
     /**
      * @return array
      */
-    protected function getDefaultMatchers()
+    protected function getDefaultMatchers(): array
     {
         $matchers = array_filter(parent::getDefaultMatchers(), static function (AbstractMatcher $matcher) {
             // Remove FunctionsMatcher as it spams autocomplete too much

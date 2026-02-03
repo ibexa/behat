@@ -16,7 +16,7 @@ use ReflectionMethod;
 
 class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
 {
-    public function getMatches(array $tokens, array $info = [])
+    public function getMatches(array $tokens, array $info = []): array
     {
         $input = $this->getInput($tokens);
 
