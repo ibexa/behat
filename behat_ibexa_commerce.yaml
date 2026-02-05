@@ -71,6 +71,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/discounts/features/browser'
                 - '%paths.base%/vendor/ibexa/discounts-codes/features/browser'
                 - '%paths.base%/vendor/ibexa/activity-log/features/browser'
+                - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
             filters:
                 tags: "~@broken&&@IbexaCommerce"
             contexts: 
@@ -142,3 +143,4 @@ regression:
                 - Ibexa\Discounts\Behat\Context\DiscountsInStorefrontContext
                 - Ibexa\DiscountsCodes\Behat\Context\DiscountsCodesInStorefrontContext
                 - Ibexa\ActivityLog\Behat\Context\ActivityLogContext
+                - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext
