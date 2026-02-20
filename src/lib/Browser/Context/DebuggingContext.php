@@ -113,30 +113,22 @@ class DebuggingContext extends RawMinkContext
 
     private function takeScreenshot(AfterStepScope $scope): string
     {
-        //$screenshotDir = '/var/www/html/build/project/behat-output';
-        $screenshotDir = getenv('GITHUB_WORKSPACE') . '/build/project/behat-output';
-       // $screenshotDir = getenv('GITHUB_WORKSPACE') ? getenv('GITHUB_WORKSPACE') . '/build/project/behat-output' : 'build/project/behat-output';        $workspace = getenv('GITHUB_WORKSPACE') ?: getcwd();
-      // $this->logger->error(sprintf('GITHUB_WORKSPACE: %s', $workspace));
-        //$this->logger->info(sprintf('GITHUB_WORKSPACE: %s', $workspace));
+        // Use GITHUB_WORKSPACE if available, fallback to /tmp
+        $workspace = getenv('GITHUB_WORKSPACE');
+        $screenshotDir = $workspace ? $workspace . '/build/project/behat-output' : '/tmp/behat-output';
         $this->logger->error(sprintf('Screenshot dir should be: %s', $screenshotDir));
 
-
-
-        // if (!is_dir($screenshotDir)) {
-        //     $this->logger->error(sprintf('Screenshot directory does not exist, creating: %s', $screenshotDir));
-        //     if (!mkdir($screenshotDir, 0777, true) && !is_dir($screenshotDir)) {
-        //         $this->logger->error(sprintf('Failed to create screenshot directory: %s', $screenshotDir));
-        //         return '';
-        //     }
-        //     $this->logger->error(sprintf('Screenshot directory created: %s', $screenshotDir));
-        // } else {
-        //     $this->logger->error(sprintf('Screenshot directory already exists: %s', $screenshotDir));
-        // }
-
-//        $scenarioTitle = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $scope->getFeature()->getTitle() . '_' . $scope->getStep()->getText());
-//        $filename = sprintf('%s/%s_%s.png', $screenshotDir, date('Ymd_His'), $scenarioTitle);
-//        file_put_contents($filename, $this->getSession()->getScreenshot());
-//        $this->logger->error(sprintf('Screenshot saved at: %s', realpath($filename)));
+        // Ensure screenshot directory exists
+        if (!is_dir($screenshotDir)) {
+            $this->logger->error(sprintf('Screenshot directory does not exist, creating: %s', $screenshotDir));
+            if (!mkdir($screenshotDir, 0777, true) && !is_dir($screenshotDir)) {
+                $this->logger->error(sprintf('Failed to create screenshot directory: %s', $screenshotDir));
+                return '';
+            }
+            $this->logger->error(sprintf('Screenshot directory created: %s', $screenshotDir));
+        } else {
+            $this->logger->error(sprintf('Screenshot directory already exists: %s', $screenshotDir));
+        }
 
         $scenarioTitle = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $scope->getFeature()->getTitle() . '_' . $scope->getStep()->getText());
         $filename = sprintf('%s/%s_%s.png', $screenshotDir, date('Ymd_His'), $scenarioTitle);
@@ -170,4 +162,3 @@ class DebuggingContext extends RawMinkContext
         echo $message;
     }
 }
-
