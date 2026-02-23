@@ -114,8 +114,8 @@ class DebuggingContext extends RawMinkContext
     private function takeScreenshot(AfterStepScope $scope): string
     {
         // Use GITHUB_WORKSPACE if available, fallback to /tmp
-        $workspace = getenv('GITHUB_WORKSPACE');
-        $screenshotDir = $workspace ? $workspace . '/build/project/behat-output' : '/tmp/behat-output';
+        $workspace = getenv('GITHUB_WORKSPACE') ?: getcwd();
+        $screenshotDir = $workspace . '/build/project/behat-output';
         $this->logger->error(sprintf('Screenshot dir should be: %s', $screenshotDir));
 
         // Ensure screenshot directory exists
