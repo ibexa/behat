@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
-use EzSystems\Behat\API\Facade\ContentTypeFacade;
+use Ibexa\Behat\API\Facade\ContentTypeFacade;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
 
 class ContentTypeContext implements Context
 {
-    /** @var \EzSystems\Behat\API\Facade\ContentTypeFacade */
+    /** @var \Ibexa\Behat\API\Facade\ContentTypeFacade */
     private $contentTypeFacade;
 
     public function __construct(ContentTypeFacade $contentTypeFacade)
@@ -24,7 +24,7 @@ class ContentTypeContext implements Context
     }
 
     /**
-     * @Given I create a :contentTypeName Content Type in :contentTypeGroupName with :contentTypeIdentifier identifier
+     * @Given I create a :contentTypeName content type in :contentTypeGroupName with :contentTypeIdentifier identifier
      *
      * @param mixed $contentTypeName
      * @param mixed $contentTypeGroupName
@@ -76,7 +76,6 @@ class ContentTypeContext implements Context
     private function parseFieldSettings(string $fieldTypeIdentifier, string $settings)
     {
         $parsedSettings = [];
-        // TODO: Clean this up in the future if needed
         switch ($fieldTypeIdentifier) {
             case 'ezcontentquery':
                 return $this->parseContentQuerySettings($settings);
@@ -86,6 +85,9 @@ class ContentTypeContext implements Context
 
             case 'ezselection':
                 return $this->parseSelectionSettings($settings);
+
+            case 'ibexa_taxonomy_entry_assignment':
+                return $this->parseTaxonomySettings($settings);
 
             default:
                 return $parsedSettings;
@@ -141,4 +143,11 @@ class ContentTypeContext implements Context
 
         return $parsedSettings;
     }
+
+    private function parseTaxonomySettings(string $settings): array
+    {
+        return ['taxonomy' => $settings];
+    }
 }
+
+class_alias(ContentTypeContext::class, 'EzSystems\Behat\API\Context\ContentTypeContext');

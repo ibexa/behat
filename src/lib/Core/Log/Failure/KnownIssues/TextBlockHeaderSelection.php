@@ -14,7 +14,7 @@ class TextBlockHeaderSelection implements KnownIssueInterface
 {
     public function matches(TestFailureData $testFailureData): bool
     {
-        return $testFailureData->exceptionMessageContainsFragment("Could not find element named: 'Paragraph'. Found names")
+        return $testFailureData->exceptionMessageContainsFragment("Could not find element named: 'Paragraph'")
             && $testFailureData->exceptionStackTraceContainsFragment('RichText->changeStyle()');
     }
 

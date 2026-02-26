@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Browser\Element\Debug\Highlighting;
 
 use Behat\Mink\Session;
 use Ibexa\Behat\Browser\Assert\ElementAssertInterface;
+use Ibexa\Behat\Browser\Element\Action\ActionInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 
 final class Element extends BaseElement implements ElementInterface
@@ -104,5 +105,10 @@ final class Element extends BaseElement implements ElementInterface
     public function scrollToBottom(Session $session): void
     {
         $this->element->scrollToBottom($session);
+    }
+
+    public function execute(ActionInterface $action): void
+    {
+        $this->element->execute($action);
     }
 }

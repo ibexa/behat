@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\BehatBundle\Command;
+namespace Ibexa\Bundle\Behat\Command;
 
-use eZ\Bundle\EzPublishCoreBundle\Command\BackwardCompatibleCommand;
-use EzSystems\Behat\Event\Events;
-use EzSystems\Behat\Event\InitialEvent;
+use Ibexa\Behat\Event\Events;
+use Ibexa\Behat\Event\InitialEvent;
+use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Symfony\Component\Console\Command\Command;
@@ -95,3 +95,5 @@ class CreateExampleDataCommand extends Command implements BackwardCompatibleComm
         return ['ezplatform:tools:create-data'];
     }
 }
+
+class_alias(CreateExampleDataCommand::class, 'EzSystems\BehatBundle\Command\CreateExampleDataCommand');

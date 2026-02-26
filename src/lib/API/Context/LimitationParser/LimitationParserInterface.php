@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
 
 interface LimitationParserInterface
 {
-    public const SERVICE_TAG = 'ezplatform.behat.limitation_parser';
-
     public function supports(string $limitationType): bool;
 
     public function parse(string $limitationValues): Limitation;
 }
+
+class_alias(LimitationParserInterface::class, 'EzSystems\Behat\API\Context\LimitationParser\LimitationParserInterface');

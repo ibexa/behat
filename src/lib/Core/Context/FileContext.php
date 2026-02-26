@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Context;
+namespace Ibexa\Behat\Core\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
@@ -15,7 +15,8 @@ use Symfony\Component\Process\Process;
 
 class FileContext implements Context
 {
-    private const SOURCE_FILE_DIRECTORY = 'vendor/ezsystems/behatbundle/src/lib/Data';
+    private const SOURCE_FILE_DIRECTORY = 'vendor/ibexa/behat/src/lib/Data';
+
     /** @var string */
     private $projectDirectory;
 
@@ -82,3 +83,5 @@ class FileContext implements Context
         }
     }
 }
+
+class_alias(FileContext::class, 'EzSystems\Behat\Core\Context\FileContext');

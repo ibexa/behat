@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
 use DateTime;
-use eZ\Publish\Core\FieldType\Date\Value;
+use Ibexa\Core\FieldType\Date\Value;
 
 class DateDataProvider extends AbstractFieldTypeDataProvider
 {
@@ -28,3 +28,5 @@ class DateDataProvider extends AbstractFieldTypeDataProvider
         return DateTime::createFromFormat('Y-m-d', $value);
     }
 }
+
+class_alias(DateDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\DateDataProvider');

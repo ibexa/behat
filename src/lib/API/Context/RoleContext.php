@@ -6,19 +6,19 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use EzSystems\Behat\API\Facade\RoleFacade;
-use EzSystems\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Behat\API\Facade\RoleFacade;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
 
 class RoleContext implements Context
 {
-    /** @var \EzSystems\Behat\API\Facade\RoleFacade */
+    /** @var \Ibexa\Behat\API\Facade\RoleFacade */
     private $roleFacade;
 
-    /** @var \EzSystems\Behat\Core\Behat\ArgumentParser */
+    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
     private $argumentParser;
 
     public function __construct(RoleFacade $roleFacade, ArgumentParser $argumentParser)
@@ -78,3 +78,5 @@ class RoleContext implements Context
         $this->roleFacade->addPolicyToRole($roleName, $module, $function, $parsedLimitations);
     }
 }
+
+class_alias(RoleContext::class, 'EzSystems\Behat\API\Context\RoleContext');

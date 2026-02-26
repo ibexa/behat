@@ -56,7 +56,7 @@ class ElementTransitionHasEndedCondition implements ConditionInterface
             )
             :
             sprintf(
-                "Transition has not started at all for element with %s locator '%s': '%s'. Please make sure the condition is used on the correct element. Timeout value: %d seconds.",
+                "Transition has not started at all for element with %s locator '%s': '%s'. Please make sure that you have performed composer run post-install-cmd command before running tests locally and make sure that the condition is used on the correct element. Timeout value: %d seconds.",
                 strtoupper($this->elementLocator->getType()),
                 $this->elementLocator->getIdentifier(),
                 $this->elementLocator->getSelector(),

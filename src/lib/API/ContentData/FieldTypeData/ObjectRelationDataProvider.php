@@ -6,29 +6,30 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\URLAliasService;
-use eZ\Publish\Core\FieldType\Relation\Value;
-use EzSystems\Behat\API\Facade\SearchFacade;
-use EzSystems\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Behat\API\Facade\SearchFacade;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\URLAliasService;
+use Ibexa\Core\FieldType\Relation\Value;
 
 class ObjectRelationDataProvider implements FieldTypeDataProviderInterface
 {
-    /** @var \EzSystems\Behat\API\Facade\SearchFacade */
+    /** @var \Ibexa\Behat\API\Facade\SearchFacade */
     protected $searchFacade;
-    /** @var \eZ\Publish\API\Repository\ContentService */
+
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     private $locationService;
 
-    /** @var \eZ\Publish\API\Repository\URLAliasService */
+    /** @var \Ibexa\Contracts\Core\Repository\URLAliasService */
     private $urlAliasService;
 
-    /** @var \EzSystems\Behat\Core\Behat\ArgumentParser */
+    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
     private $argumentParser;
 
     public function __construct(SearchFacade $searchFacade, ContentService $contentService, LocationService $locationSerice, URLAliasService $urlAliasSerivce, ArgumentParser $argumentParser)
@@ -65,3 +66,5 @@ class ObjectRelationDataProvider implements FieldTypeDataProviderInterface
         return $location->getContentInfo()->id;
     }
 }
+
+class_alias(ObjectRelationDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ObjectRelationDataProvider');

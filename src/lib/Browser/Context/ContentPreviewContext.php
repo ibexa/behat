@@ -23,7 +23,7 @@ class ContentPreviewContext implements Context
     }
 
     /**
-     * @Given I see correct preview data for :contentTypeName Content Type
+     * @Given I see correct preview data for :contentTypeName content type
      */
     public function iSeeCorrectPreviewDataFor(string $contentType, TableNode $previewData): void
     {

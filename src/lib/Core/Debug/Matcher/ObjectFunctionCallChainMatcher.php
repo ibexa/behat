@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Debug\Matcher;
+namespace Ibexa\Behat\Core\Debug\Matcher;
 
 use Psy\TabCompletion\Matcher\AbstractMatcher;
 use Psy\TabCompletion\Matcher\ObjectMethodsMatcher;
 
 class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
 {
-    public function getMatches(array $tokens, array $info = [])
+    public function getMatches(array $tokens, array $info = []): array
     {
         $input = $this->getInput($tokens);
 
@@ -117,3 +117,5 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
         return get_class($object);
     }
 }
+
+class_alias(ObjectFunctionCallChainMatcher::class, 'EzSystems\Behat\Core\Debug\Matcher\ObjectFunctionCallChainMatcher');

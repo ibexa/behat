@@ -6,19 +6,20 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context;
+namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use EzSystems\Behat\API\Facade\UserFacade;
-use EzSystems\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Behat\API\Facade\UserFacade;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 
 class UserContext implements Context
 {
-    /** @var \EzSystems\Behat\API\Facade\UserFacade */
+    /** @var \Ibexa\Behat\API\Facade\UserFacade */
     private $userFacade;
 
-    /** @var \EzSystems\Behat\Core\Behat\ArgumentParser */
+    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
     private $argumentParser;
 
     public function __construct(UserFacade $userFacade, ArgumentParser $argumentParser)
@@ -41,7 +42,7 @@ class UserContext implements Context
      * @Given I create a user :userName with last name :userLastName with email :userEmail
      * @Given I create a user :userName with last name :userLastName in group :userGroupName with email :userEmail
      */
-    public function createUserInGroupWithEmail(string $userName, string $userLastName, string $userGroupName = null, string $userEmail = null): void
+    public function createUserInGroupWithEmail(string $userName, string $userLastName, ?string $userGroupName = null, ?string $userEmail = null): void
     {
         $this->userFacade->createUser($userName, $userLastName, $userGroupName, $userEmail);
     }
@@ -55,10 +56,32 @@ class UserContext implements Context
     }
 
     /**
+     * @Given I assign user :userName to role :roleIdentifier if possible
+     */
+    public function assignUserToRoleIfPossible(string $userName, string $roleIdentifier): void
+    {
+        try {
+            $this->assignUserToRole($userName, $roleIdentifier);
+        } catch (NotFoundException $e) {
+        }
+    }
+
+    /**
+     * @Given I assign user group :userGroupName to role :roleIdentifier if possible
+     */
+    public function assignUserGroupToRoleIfPossible(string $userGroupName, string $roleIdentifier): void
+    {
+        try {
+            $this->assignUserGroupToRole($userGroupName, $roleIdentifier);
+        } catch (NotFoundException $e) {
+        }
+    }
+
+    /**
      * @Given I assign user group :groupName to role :roleName
      * @Given I assign user group :groupName to role :roleName with limitations:
      */
-    public function assignUserGroupToRole(string $userGroupName, string $roleName, TableNode $limitationData = null): void
+    public function assignUserGroupToRole(string $userGroupName, string $roleName, ?TableNode $limitationData = null): void
     {
         $parsedLimitations = null === $limitationData ? null : $this->argumentParser->parseLimitations($limitationData);
 
@@ -71,3 +94,5 @@ class UserContext implements Context
         $this->userFacade->assignUserGroupToRole($userGroupName, $roleName, $roleLimitation);
     }
 }
+
+class_alias(UserContext::class, 'EzSystems\Behat\API\Context\UserContext');

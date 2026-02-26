@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Browser\Element;
 
 use Behat\Mink\Session;
 use Ibexa\Behat\Browser\Assert\ElementAssertInterface;
+use Ibexa\Behat\Browser\Element\Action\ActionInterface;
 
 interface ElementInterface extends BaseElementInterface
 {
@@ -46,4 +47,6 @@ interface ElementInterface extends BaseElementInterface
     public function getXPath(): string;
 
     public function scrollToBottom(Session $session): void;
+
+    public function execute(ActionInterface $action): void;
 }

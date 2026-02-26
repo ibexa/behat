@@ -6,17 +6,17 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\BehatBundle\Command;
+namespace Ibexa\Bundle\Behat\Command;
 
-use eZ\Bundle\EzPublishCoreBundle\Command\BackwardCompatibleCommand;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess;
+use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
+use Ibexa\Core\MVC\Symfony\SiteAccess;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class TestSiteaccessCommand extends Command implements BackwardCompatibleCommand
 {
-    /** @var \eZ\Publish\Core\MVC\Symfony\SiteAccess */
+    /** @var \Ibexa\Core\MVC\Symfony\SiteAccess */
     private $siteaccess;
 
     public function __construct(SiteAccess $siteaccess)
@@ -50,3 +50,5 @@ class TestSiteaccessCommand extends Command implements BackwardCompatibleCommand
         return 0;
     }
 }
+
+class_alias(TestSiteaccessCommand::class, 'EzSystems\BehatBundle\Command\TestSiteaccessCommand');

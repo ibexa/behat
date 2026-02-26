@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\Core\FieldType\Author\Author;
-use eZ\Publish\Core\FieldType\Author\Value;
+use Ibexa\Core\FieldType\Author\Author;
+use Ibexa\Core\FieldType\Author\Value;
 
 class AuthorDataProvider extends AbstractFieldTypeDataProvider
 {
@@ -45,3 +45,5 @@ class AuthorDataProvider extends AbstractFieldTypeDataProvider
         return $author;
     }
 }
+
+class_alias(AuthorDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\AuthorDataProvider');

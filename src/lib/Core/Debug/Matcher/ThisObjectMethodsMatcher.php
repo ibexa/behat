@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Debug\Matcher;
+namespace Ibexa\Behat\Core\Debug\Matcher;
 
 use InvalidArgumentException;
 use Psy\TabCompletion\Matcher\AbstractMatcher;
@@ -16,7 +16,7 @@ use ReflectionMethod;
 
 class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
 {
-    public function getMatches(array $tokens, array $info = [])
+    public function getMatches(array $tokens, array $info = []): array
     {
         $input = $this->getInput($tokens);
 
@@ -54,3 +54,5 @@ class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
         ));
     }
 }
+
+class_alias(ThisObjectMethodsMatcher::class, 'EzSystems\Behat\Core\Debug\Matcher\ThisObjectMethodsMatcher');

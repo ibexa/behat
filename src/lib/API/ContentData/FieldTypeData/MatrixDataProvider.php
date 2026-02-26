@@ -6,16 +6,17 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\API\Repository\ContentTypeService;
-use EzSystems\Behat\API\ContentData\RandomDataGenerator;
-use EzSystems\EzPlatformMatrixFieldtype\FieldType\Value;
-use EzSystems\EzPlatformMatrixFieldtype\FieldType\Value\Row;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\FieldTypeMatrix\FieldType\Value;
+use Ibexa\FieldTypeMatrix\FieldType\Value\Row;
 
 class MatrixDataProvider extends AbstractFieldTypeDataProvider
 {
     private const MAX_NUMBER_OF_ITEMS = 200;
+
     private $contentTypeService;
 
     public function __construct(RandomDataGenerator $randomDataGenerator, ContentTypeService $contentTypeService)
@@ -91,3 +92,5 @@ class MatrixDataProvider extends AbstractFieldTypeDataProvider
         return new Row($values);
     }
 }
+
+class_alias(MatrixDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\MatrixDataProvider');

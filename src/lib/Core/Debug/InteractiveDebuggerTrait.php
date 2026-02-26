@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Debug;
+namespace Ibexa\Behat\Core\Debug;
 
 use Exception;
-use EzSystems\Behat\Core\Debug\Command\GoBackCommand;
-use EzSystems\Behat\Core\Debug\Command\RefreshPageCommand;
-use EzSystems\Behat\Core\Debug\Command\ShowHTMLCommand;
-use EzSystems\Behat\Core\Debug\Command\ShowURLCommand;
-use EzSystems\Behat\Core\Debug\Command\TakeScreenshotCommand;
-use EzSystems\Behat\Core\Debug\Shell\Shell;
 use Ibexa\Behat\Browser\Component\Component;
+use Ibexa\Behat\Core\Debug\Command\GoBackCommand;
+use Ibexa\Behat\Core\Debug\Command\RefreshPageCommand;
+use Ibexa\Behat\Core\Debug\Command\ShowHTMLCommand;
+use Ibexa\Behat\Core\Debug\Command\ShowURLCommand;
+use Ibexa\Behat\Core\Debug\Command\TakeScreenshotCommand;
+use Ibexa\Behat\Core\Debug\Shell\Shell;
 use RuntimeException;
 
 trait InteractiveDebuggerTrait
@@ -83,10 +83,7 @@ trait InteractiveDebuggerTrait
     {
         $trace = debug_backtrace();
         foreach ($trace as $traceLine) {
-            if (!array_key_exists('function', $traceLine) ||
-                    $traceLine['function'] === 'eval' ||
-                    !array_key_exists('object', $traceLine)
-            ) {
+            if ($traceLine['function'] === 'eval' || !array_key_exists('object', $traceLine)) {
                 continue;
             }
 
@@ -106,7 +103,7 @@ trait InteractiveDebuggerTrait
         $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 5);
 
         foreach ($trace as $traceEntry) {
-            if ($traceEntry['function'] === 'eval' && strpos($traceEntry['file'], 'psy/psysh') !== 0) {
+            if ($traceEntry['function'] === 'eval' && !str_starts_with($traceEntry['file'] ?? '', 'psy/psysh')) {
                 return true;
             }
         }
@@ -131,3 +128,5 @@ trait InteractiveDebuggerTrait
         ]);
     }
 }
+
+class_alias(InteractiveDebuggerTrait::class, 'EzSystems\Behat\Core\Debug\InteractiveDebuggerTrait');

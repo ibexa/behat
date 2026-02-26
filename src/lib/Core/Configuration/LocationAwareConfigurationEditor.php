@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Configuration;
+namespace Ibexa\Behat\Core\Configuration;
 
-use EzSystems\Behat\API\Facade\ContentFacade;
+use Ibexa\Behat\API\Facade\ContentFacade;
 
 class LocationAwareConfigurationEditor implements ConfigurationEditorInterface
 {
-    /** @var \EzSystems\Behat\Core\Configuration\ConfigurationEditorInterface */
+    /** @var \Ibexa\Behat\Core\Configuration\ConfigurationEditorInterface */
     private $innerConfigurationEditor;
 
-    /** @var \EzSystems\Behat\API\Facade\ContentFacade */
+    /** @var \Ibexa\Behat\API\Facade\ContentFacade */
     private $contentFacade;
 
     public function __construct(ConfigurationEditorInterface $innerConfigurationEditor, ContentFacade $contentFacade)
@@ -75,4 +75,13 @@ class LocationAwareConfigurationEditor implements ConfigurationEditorInterface
             $value = $this->contentFacade->getLocationByLocationURL($matches[1])->id;
         }
     }
+
+    public function copyKey($config, string $keyName, string $newKeyName)
+    {
+        $config = $this->innerConfigurationEditor->copyKey($config, $keyName, $newKeyName);
+
+        return $this->resolveLocationReference($config);
+    }
 }
+
+class_alias(LocationAwareConfigurationEditor::class, 'EzSystems\Behat\Core\Configuration\LocationAwareConfigurationEditor');

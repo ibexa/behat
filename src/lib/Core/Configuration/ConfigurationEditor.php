@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\Core\Configuration;
+namespace Ibexa\Behat\Core\Configuration;
 
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Yaml\Yaml;
@@ -112,4 +112,18 @@ class ConfigurationEditor implements ConfigurationEditorInterface
 
         return array_merge($currentValue, $value);
     }
+
+    public function copyKey($config, string $keyName, string $newKeyName)
+    {
+        $propertyAccessor = PropertyAccess::createPropertyAccessor();
+
+        $key = $this->parseKey($keyName);
+        $newKey = $this->parseKey($newKeyName);
+        $currentValue = $propertyAccessor->getValue($config, $key);
+        $propertyAccessor->setValue($config, $newKey, $currentValue);
+
+        return $config;
+    }
 }
+
+class_alias(ConfigurationEditor::class, 'EzSystems\Behat\Core\Configuration\ConfigurationEditor');

@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
 interface FieldTypeDataProviderInterface
 {
-    public const SERVICE_TAG = 'ezplatform.behat.fieldtype_data_provider';
-
     public function supports(string $fieldTypeIdentifier): bool;
 
     public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB');
 
     public function parseFromString(string $value);
 }
+
+class_alias(FieldTypeDataProviderInterface::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface');

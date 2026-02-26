@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
 class LimitationParsersCollector
 {
-    /** @var \EzSystems\Behat\API\Context\LimitationParser\LimitationParserInterface[] */
+    /** @var \Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface[] */
     private $limitationParsers;
 
     /**
-     * @param \EzSystems\Behat\API\Context\LimitationParser\LimitationParserInterface[] $limitationParsers
+     * @param \Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface[] $limitationParsers
      */
     public function __construct(array $limitationParsers = [])
     {
@@ -27,10 +27,12 @@ class LimitationParsersCollector
     }
 
     /**
-     * @return \EzSystems\Behat\API\Context\LimitationParser\LimitationParserInterface[]
+     * @return \Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface[]
      */
     public function getLimitationParsers(): array
     {
         return $this->limitationParsers;
     }
 }
+
+class_alias(LimitationParsersCollector::class, 'EzSystems\Behat\API\Context\LimitationParser\LimitationParsersCollector');

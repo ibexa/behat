@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\ParentContentTypeLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\ParentContentTypeLimitation;
 
 class ParentContentTypeLimitationParser extends ContentTypeLimitationParser
 {
@@ -26,3 +26,5 @@ class ParentContentTypeLimitationParser extends ContentTypeLimitationParser
         );
     }
 }
+
+class_alias(ParentContentTypeLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ParentContentTypeLimitationParser');

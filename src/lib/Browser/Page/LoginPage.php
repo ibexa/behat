@@ -24,11 +24,12 @@ class LoginPage extends Page
 
     public function loginSuccessfully($username, $password): void
     {
-        $this->getHTMLPage()->find($this->getLocator('username'))->setValue($username);
-        $this->getHTMLPage()->find($this->getLocator('password'))->setValue($password);
-        $this->getHTMLPage()->findAll($this->getLocator('button'))
+        $this->find($this->getLocator('username'))->setValue($username);
+        $this->find($this->getLocator('password'))->setValue($password);
+        $this->findAll($this->getLocator('button'))
             ->filterBy(new LogicalOrCriterion([
                 new ElementTextCriterion('Login'),
+                new ElementTextCriterion('Log in'),
                 new ElementTextCriterion('Sign in'),
             ]))
             ->single()

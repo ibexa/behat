@@ -12,5 +12,6 @@ use Ibexa\Behat\Browser\Element\ElementInterface;
 
 interface MapperInterface
 {
+    /** @return mixed */
     public function map(ElementInterface $element);
 }

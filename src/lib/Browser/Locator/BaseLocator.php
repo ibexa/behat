@@ -12,9 +12,9 @@ use Ibexa\Behat\Browser\Element\ElementInterface;
 
 abstract class BaseLocator implements LocatorInterface
 {
-    protected $selector;
+    protected string $selector;
 
-    protected $identifier;
+    protected string $identifier;
 
     public function __construct(string $identifier, string $selector)
     {

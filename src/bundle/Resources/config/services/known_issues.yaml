@@ -11,3 +11,5 @@ services:
     Ibexa\Behat\Core\Log\Failure\KnownIssues\NewContentTypeCreation: ~
 
     Ibexa\Behat\Core\Log\Failure\KnownIssues\ContentTypeCreatedInTheBackground: ~
+
+    Ibexa\Behat\Core\Log\Failure\KnownIssues\FailedLogin: ~

@@ -6,42 +6,45 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\URLAliasService;
-use eZ\Publish\Core\FieldType\ImageAsset\AssetMapper;
-use eZ\Publish\Core\FieldType\ImageAsset\Value;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\Behat\API\ContentData\RandomDataGenerator;
-use EzSystems\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Behat\API\ContentData\RandomDataGenerator;
+use Ibexa\Behat\Core\Behat\ArgumentParser;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\URLAliasService;
+use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
+use Ibexa\Core\FieldType\ImageAsset\AssetMapper;
+use Ibexa\Core\FieldType\ImageAsset\Value;
 
 class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
 {
     /**
-     * @var \eZ\Publish\Core\FieldType\ImageAsset\AssetMapper
+     * @var \Ibexa\Core\FieldType\ImageAsset\AssetMapper
      */
     private $assetMapper;
+
     /**
      * @var ImageDataProvider
      */
     private $imageDataProvider;
 
     /**
-     * @var \EzSystems\Behat\Core\Behat\ArgumentParser
+     * @var \Ibexa\Behat\Core\Behat\ArgumentParser
      */
     private $argumentParser;
+
     /**
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     private $locationService;
+
     /**
-     * @var \eZ\Publish\API\Repository\URLAliasService
+     * @var \Ibexa\Contracts\Core\Repository\URLAliasService
      */
     private $urlAliasService;
 
     /**
-     * @var \eZ\Publish\Core\MVC\ConfigResolverInterface
+     * @var \Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface
      */
     private $configResolver;
 
@@ -96,3 +99,5 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
         return new Value($location->getContentInfo()->id, $this->getFaker()->realText(100));
     }
 }
+
+class_alias(ImageAssetDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\ImageAssetDataProvider');

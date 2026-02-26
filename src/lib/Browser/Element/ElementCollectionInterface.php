@@ -16,10 +16,13 @@ use Traversable;
 interface ElementCollectionInterface extends \Countable, \IteratorAggregate
 {
     /**
-     * @return \Ibexa\Behat\Browser\Element\ElementInterface[]
+     * @return Traversable<ElementInterface>
      */
     public function getIterator(): Traversable;
 
+    /**
+     * @param array<ElementInterface> $elements
+     */
     public function setElements(array $elements): void;
 
     public function getByCriterion(CriterionInterface $criterion): ElementInterface;
@@ -44,10 +47,19 @@ interface ElementCollectionInterface extends \Countable, \IteratorAggregate
 
     public function single(): ElementInterface;
 
+    /**
+     * @param callable(ElementInterface): mixed $callable
+     *
+     * @return array<mixed>
+     */
     public function map(callable $callable): array;
 
+    /** @return array<mixed> */
     public function mapBy(MapperInterface $mapper): array;
 
+    /**
+     * @param callable(ElementInterface): bool $callable
+     */
     public function filter(callable $callable): ElementCollectionInterface;
 
     public function filterBy(CriterionInterface $criterion): ElementCollectionInterface;

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\Core\FieldType\MapLocation\Value;
+use Ibexa\Core\FieldType\MapLocation\Value;
 
 class MapDataProvider implements FieldTypeDataProviderInterface
 {
@@ -50,3 +50,5 @@ class MapDataProvider implements FieldTypeDataProviderInterface
         return new Value(self::LOCATION_DATA[$value]);
     }
 }
+
+class_alias(MapDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\MapDataProvider');

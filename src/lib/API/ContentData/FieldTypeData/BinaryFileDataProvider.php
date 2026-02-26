@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData\FieldTypeData;
+namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 
-use eZ\Publish\Core\FieldType\BinaryFile\Value;
+use Ibexa\Core\FieldType\BinaryFile\Value;
 
 class BinaryFileDataProvider implements FieldTypeDataProviderInterface
 {
@@ -45,3 +45,5 @@ class BinaryFileDataProvider implements FieldTypeDataProviderInterface
         return new Value(['inputUri' => $filePath]);
     }
 }
+
+class_alias(BinaryFileDataProvider::class, 'EzSystems\Behat\API\ContentData\FieldTypeData\BinaryFileDataProvider');

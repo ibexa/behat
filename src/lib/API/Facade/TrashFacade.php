@@ -6,23 +6,23 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Facade;
+namespace Ibexa\Behat\API\Facade;
 
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\TrashService;
-use eZ\Publish\API\Repository\URLAliasService;
-use eZ\Publish\API\Repository\Values\Content\URLAlias;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\TrashService;
+use Ibexa\Contracts\Core\Repository\URLAliasService;
+use Ibexa\Contracts\Core\Repository\Values\Content\URLAlias;
 use PHPUnit\Framework\Assert;
 
 class TrashFacade
 {
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     private $locationService;
 
-    /** @var \eZ\Publish\API\Repository\URLAliasService */
+    /** @var \Ibexa\Contracts\Core\Repository\URLAliasService */
     private $urlAliasService;
 
-    /** @var \eZ\Publish\API\Repository\TrashService */
+    /** @var \Ibexa\Contracts\Core\Repository\TrashService */
     private $trashService;
 
     public function __construct(LocationService $locationService, URLAliasService $urlAliasService, TrashService $trashService)
@@ -42,3 +42,5 @@ class TrashFacade
         $this->trashService->trash($location);
     }
 }
+
+class_alias(TrashFacade::class, 'EzSystems\Behat\API\Facade\TrashFacade');

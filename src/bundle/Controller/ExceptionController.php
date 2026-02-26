@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\BehatBundle\Controller;
+namespace Ibexa\Bundle\Behat\Controller;
 
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
 
 class ExceptionController
 {
@@ -17,3 +17,5 @@ class ExceptionController
         throw new UnauthorizedException($module, $function, $properties);
     }
 }
+
+class_alias(ExceptionController::class, 'EzSystems\BehatBundle\Controller\ExceptionController');

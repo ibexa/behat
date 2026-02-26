@@ -23,7 +23,7 @@ class FolderPreview extends Component implements PagePreviewInterface
 
     public function verifyPreviewData()
     {
-        $this->getHTMLPage()->find($this->getLocator('title'))->assert()->textEquals($this->expectedPageTitle);
+        $this->find($this->getLocator('title'))->assert()->textEquals($this->expectedPageTitle);
     }
 
     public function supports(string $contentTypeIdentifier, string $viewType): bool

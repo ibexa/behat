@@ -6,12 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\BehatBundle\Command;
+namespace Ibexa\Bundle\Behat\Command;
 
-use eZ\Bundle\EzPublishCoreBundle\Command\BackwardCompatibleCommand;
-use EzSystems\Behat\Event\InitialEvent;
+use Ibexa\Behat\Event\InitialEvent;
+use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\PhpExecutableFinder;
 use Symfony\Component\Process\Process;
@@ -117,7 +118,7 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
 
     private function getData()
     {
-        $data = Yaml::parseFile(sprintf('%s/vendor/ezsystems/behatbundle/features/setup/volume/data.yaml', $this->projectDir));
+        $data = Yaml::parseFile(sprintf('%s/vendor/ibexa/behat/features/setup/volume/data.yaml', $this->projectDir));
 
         return $data['countries'];
     }
@@ -133,6 +134,11 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         while (count($this->processes)) {
             foreach ($this->processes as $i => $runningProcess) {
                 if (!$runningProcess->isRunning()) {
+                    if (!$runningProcess->isSuccessful()) {
+                        $stderr = $output instanceof ConsoleOutputInterface ? $output->getErrorOutput() : $output;
+                        $stderr->writeln($runningProcess->getErrorOutput());
+                    }
+
                     unset($this->processes[$i]);
                 }
                 sleep(1);
@@ -161,3 +167,5 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         return ['ezplatform:tools:generate-items'];
     }
 }
+
+class_alias(CreateExampleDataManagerCommand::class, 'EzSystems\BehatBundle\Command\CreateExampleDataManagerCommand');

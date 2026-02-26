@@ -6,15 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\Context\LimitationParser;
+namespace Ibexa\Behat\API\Context\LimitationParser;
 
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\ContentTypeLimitation;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\ContentTypeLimitation;
 
 class ContentTypeLimitationParser implements LimitationParserInterface
 {
     private $contentTypService;
+
     private $contentTypeNameIdentifierMap;
 
     public function __construct(ContentTypeService $contentTypeService)
@@ -56,10 +57,12 @@ class ContentTypeLimitationParser implements LimitationParserInterface
     {
         $contentTypeName = strtolower($contentTypeName);
 
-        if (\in_array($contentTypeName, $this->contentTypeNameIdentifierMap, true)) {
+        if (\array_key_exists($contentTypeName, $this->contentTypeNameIdentifierMap)) {
             return $this->contentTypeNameIdentifierMap[$contentTypeName];
         }
 
         return $contentTypeName;
     }
 }
+
+class_alias(ContentTypeLimitationParser::class, 'EzSystems\Behat\API\Context\LimitationParser\ContentTypeLimitationParser');

@@ -60,16 +60,18 @@ class TestFailureData
         return false;
     }
 
-    public function exceptionStackTraceContainsFragment(string $stackTraceFragment)
+    public function exceptionStackTraceContainsFragment(string $stackTraceFragment): bool
     {
-        return strpos($this->getFailedStepsResult()->getException()->getTraceAsString(), $stackTraceFragment) !== false;
+        $throwable = $this->getFailedStepsResult()->getException();
+
+        return $throwable !== null && strpos($throwable->getTraceAsString(), $stackTraceFragment) !== false;
     }
 
-    public function exceptionMessageContainsFragment(string $exceptionMessageFragment)
+    public function exceptionMessageContainsFragment(string $exceptionMessageFragment): bool
     {
-        $exceptionMessage = $this->getFailedStepsResult()->getException()->getMessage();
+        $throwable = $this->getFailedStepsResult()->getException();
 
-        return strpos($exceptionMessage, $exceptionMessageFragment) !== false;
+        return $throwable !== null && strpos($throwable->getMessage(), $exceptionMessageFragment) !== false;
     }
 
     public function browserLogsContainFragment(string $logFragment)

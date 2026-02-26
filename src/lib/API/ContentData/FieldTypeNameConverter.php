@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Behat\API\ContentData;
+namespace Ibexa\Behat\API\ContentData;
 
 class FieldTypeNameConverter
 {
@@ -41,6 +41,7 @@ class FieldTypeNameConverter
         'eztime' => 'Time',
         'ezurl' => 'URL',
         'ezuser' => 'User account',
+        'ibexa_taxonomy_entry_assignment' => 'Taxonomy Entry Assignment',
     ];
 
     public static function getFieldTypeNameByIdentifier(string $fieldTypeIdentifier): string
@@ -50,6 +51,13 @@ class FieldTypeNameConverter
 
     public static function getFieldTypeIdentifierByName(string $fieldTypeName): string
     {
-        return array_search($fieldTypeName, static::$FIELD_TYPE_MAPPING);
+        $identifier = array_search($fieldTypeName, static::$FIELD_TYPE_MAPPING);
+        if ($identifier === false) {
+            throw new \InvalidArgumentException("Field type name '{$fieldTypeName}' not found.");
+        }
+
+        return (string)$identifier;
     }
 }
+
+class_alias(FieldTypeNameConverter::class, 'EzSystems\Behat\API\ContentData\FieldTypeNameConverter');
