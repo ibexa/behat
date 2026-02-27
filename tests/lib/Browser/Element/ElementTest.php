@@ -178,7 +178,7 @@ class ElementTest extends BaseTestCase
         ];
     }
 
-    private function createElementWithMinkElement(NodeELement $nodeElement)
+    private function createElementWithMinkElement(NodeElement $nodeElement)
     {
         return new Element(new ElementFactory(), $this->irrelevantLocator, $nodeElement);
     }
