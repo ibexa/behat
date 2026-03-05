@@ -35,6 +35,9 @@ jobs:
       - name: Setup problem matchers for PHPUnit
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+      - name: Run PHPStan analysis
+        run: composer run-script phpstan
+
       - name: Run test suite
         run: composer run-script --timeout=600 test
 
@@ -57,6 +60,3 @@ jobs:
 
       - name: Run code style check
         run: composer run-script check-cs -- --format=checkstyle | cs2pr
-
-      - name: Run PHPStan analysis
-        run: composer run-script phpstan
