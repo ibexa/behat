@@ -19,6 +19,9 @@ class ArgumentParser
     /** @var \Ibexa\Behat\Browser\Environment\ParameterProviderInterface */
     private $parameterProvider;
 
+    /** @var \Ibexa\Behat\API\Facade\RoleFacade */
+    private $roleFacade;
+
     public function __construct(RoleFacade $roleFacade, ParameterProviderInterface $parameterProvider)
     {
         $this->roleFacade = $roleFacade;
