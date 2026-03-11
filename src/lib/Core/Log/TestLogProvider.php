@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Core\Log;
 
 use Behat\Mink\Session;
-use Facebook\WebDriver\Remote\DriverCommand;
 use Ibexa\Behat\Browser\Filter\BrowserLogFilter;
 use OAndreyev\Mink\Driver\WebDriver;
 
@@ -61,6 +60,7 @@ final class TestLogProvider
         if (is_object($webDriver) && method_exists($webDriver, 'getLog')) {
             return $webDriver->getLog('browser') ?? [];
         }
+
         // Log a warning or handle gracefully if getLog is not available
         // error_log('WebDriver does not support getLog method.');
         return [];
