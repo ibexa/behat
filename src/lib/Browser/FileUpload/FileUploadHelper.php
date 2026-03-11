@@ -12,7 +12,9 @@ use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
 use FriendsOfBehat\SymfonyExtension\Mink\MinkParameters;
 
-class FileReadException extends \RuntimeException {}
+class FileReadException extends \RuntimeException
+{
+}
 
 class FileUploadHelper
 {
