@@ -82,6 +82,10 @@ abstract class Component implements ComponentInterface
             throw new RuntimeException('Error happened when accessing the WebDriver');
         }
 
+        if (!($webDriver instanceof \Facebook\WebDriver\Remote\RemoteWebDriver)) {
+            throw new RuntimeException('Expected instance of Facebook\\WebDriver\\Remote\\RemoteWebDriver, got ' . (is_object($webDriver) ? get_class($webDriver) : gettype($webDriver)));
+        }
+
         return new ChromeDevToolsDriver($webDriver);
     }
 
