@@ -11,7 +11,6 @@ namespace Ibexa\Bundle\Behat\Subscriber;
 use Behat\Behat\EventDispatcher\Event\BeforeScenarioTested;
 use Behat\Behat\EventDispatcher\Event\ExampleTested;
 use Behat\Behat\EventDispatcher\Event\ScenarioTested;
-use Facebook\WebDriver\Exception\UnknownErrorException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class StartScenarioSubscriber implements EventSubscriberInterface
