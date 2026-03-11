@@ -21,9 +21,10 @@ use Ibexa\Behat\Browser\Locator\LocatorCollection;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
 use OAndreyev\Mink\Driver\WebDriver;
-use RuntimeException;
 
-class DevToolsDriverUnavailableException extends \RuntimeException {}
+class DevToolsDriverUnavailableException extends \RuntimeException
+{
+}
 
 abstract class Component implements ComponentInterface
 {
