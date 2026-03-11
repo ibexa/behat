@@ -2148,11 +2148,6 @@ parameters:
 			count: 1
 			path: src/lib/Browser/FileUpload/FileUploadHelper.php
 
-		-
-			message: '#^Parameter \#1 \$string of function base64_encode expects string, string\|false given\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/lib/Browser/FileUpload/FileUploadHelper.php
 
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Filter\\BrowserLogFilter\:\:filter\(\) has parameter \$logEntries with no value type specified in iterable type array\.$#'
