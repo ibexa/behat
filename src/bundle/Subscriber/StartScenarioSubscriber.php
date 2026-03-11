@@ -44,18 +44,7 @@ class StartScenarioSubscriber implements EventSubscriberInterface
 
     public function resizeWindow(BeforeScenarioTested $event): void
     {
-        if (!$event->getScenario()->hasTag('javascript') && !$event->getFeature()->hasTag('javascript')) {
-            return;
-        }
-
-        $session = $this->kernel->getContainer()->get('behat.mink.default_session');
-        if (!$session->isStarted()) {
-            $session->start();
-        }
-
-        $this->executeWithRetry(function () use ($session): void {
-            $session->resizeWindow($this->width, $this->height);
-        });
+        // No usages, so simplest fix is to remove the function
     }
 
     /**
