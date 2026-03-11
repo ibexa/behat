@@ -16,8 +16,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class StartScenarioSubscriber implements EventSubscriberInterface
 {
-    private const RETRY_LIMIT = 2;
-
     public const PRIORITY = -1000;
 
     public static function getSubscribedEvents()
