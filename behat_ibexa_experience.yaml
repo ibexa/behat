@@ -69,6 +69,7 @@ regression:
               - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
               - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
               - '%paths.base%/vendor/ibexa/activity-log/features/browser'
+              - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
@@ -133,3 +134,4 @@ regression:
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
                 - Ibexa\ActivityLog\Behat\Context\ActivityLogContext
+                - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext

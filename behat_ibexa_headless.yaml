@@ -5,6 +5,7 @@ imports:
     - vendor/ibexa/taxonomy/behat_suites_headless.yml
     - vendor/ibexa/version-comparison/behat_suites.yml
     - vendor/ibexa/workflow/behat_suites_headless.yml
+    - vendor/ibexa/integrated-help/behat_suites.yml
 
 regression:
     suites:
@@ -40,6 +41,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
+                - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
             filters:
                 tags: "~@broken&&@IbexaHeadless"
             contexts: 
@@ -94,3 +96,4 @@ regression:
                 - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
+                - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext
