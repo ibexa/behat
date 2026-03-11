@@ -57,7 +57,13 @@ final class TestLogProvider
 
     private function getSeleniumLog(WebDriver $driver): array
     {
-        return $driver->getWebDriver()->execute(DriverCommand::GET_LOG, ['type' => 'browser']) ?? [];
+        $webDriver = $driver->getWebDriver();
+        if (is_object($webDriver) && method_exists($webDriver, 'getLog')) {
+            return $webDriver->getLog('browser') ?? [];
+        }
+        // Log a warning or handle gracefully if getLog is not available
+        // error_log('WebDriver does not support getLog method.');
+        return [];
     }
 
     public function getApplicationLogs(): array
