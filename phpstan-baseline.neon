@@ -2838,11 +2838,6 @@ parameters:
 			count: 1
 			path: src/lib/Core/Log/LogFileReader.php
 
-		-
-			message: '#^Cannot call method execute\(\) on Facebook\\WebDriver\\Remote\\RemoteWebDriver\|null\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: src/lib/Core/Log/TestLogProvider.php
 
 		-
 			message: '#^Method Ibexa\\Behat\\Core\\Log\\TestLogProvider\:\:cacheLogs\(\) has parameter \$logs with no value type specified in iterable type array\.$#'
