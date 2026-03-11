@@ -277,24 +277,6 @@ parameters:
 			path: src/bundle/Initializer/BehatSiteAccessInitializer.php
 
 		-
-			message: '#^Cannot call method isStarted\(\) on object\|null\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: src/bundle/Subscriber/StartScenarioSubscriber.php
-
-		-
-			message: '#^Cannot call method resizeWindow\(\) on object\|null\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: src/bundle/Subscriber/StartScenarioSubscriber.php
-
-		-
-			message: '#^Cannot call method start\(\) on object\|null\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: src/bundle/Subscriber/StartScenarioSubscriber.php
-
-		-
 			message: '#^Method Ibexa\\Behat\\API\\ContentData\\ContentDataProvider\:\:addFieldTypeDataProvider\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
