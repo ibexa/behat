@@ -61,7 +61,7 @@ class ObjectRelationDataProvider implements FieldTypeDataProviderInterface
         $locationURL = $this->argumentParser->parseUrl($locationPath);
         $urlAlias = $this->urlAliasService->lookup($locationURL);
 
-        $location = $this->locationService->loadLocation($urlAlias->destination);
+        $location = $this->locationService->loadLocation((int) $urlAlias->destination);
 
         return $location->getContentInfo()->id;
     }

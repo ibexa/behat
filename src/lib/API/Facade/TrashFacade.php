@@ -37,7 +37,7 @@ class TrashFacade
         $urlAlias = $this->urlAliasService->lookup($locationURL);
         Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
 
-        $location = $this->locationService->loadLocation($urlAlias->destination);
+        $location = $this->locationService->loadLocation((int) $urlAlias->destination);
 
         $this->trashService->trash($location);
     }

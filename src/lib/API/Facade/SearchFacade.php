@@ -52,7 +52,7 @@ class SearchFacade
         $urlAlias = $this->urlAliasService->lookup($path);
         Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
 
-        $location = $this->locationService->loadLocation($urlAlias->destination);
+        $location = $this->locationService->loadLocation((int) $urlAlias->destination);
 
         $query = new LocationQuery();
         $query->performCount = false;

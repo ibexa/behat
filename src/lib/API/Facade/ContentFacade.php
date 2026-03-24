@@ -62,7 +62,7 @@ class ContentFacade
         Assert::assertEquals(URLAlias::LOCATION, $parentUrlAlias->type);
 
         $parentLocationId = $parentUrlAlias->destination;
-        $locationCreateStruct = $this->locationService->newLocationCreateStruct($parentLocationId);
+        $locationCreateStruct = $this->locationService->newLocationCreateStruct((int) $parentLocationId);
 
         $this->contentDataProvider->setContentTypeIdentifier($contentTypeIdentifier);
 
@@ -99,7 +99,7 @@ class ContentFacade
         $urlAlias = $this->urlAliasService->lookup($locationURL);
         Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
 
-        $location = $this->locationService->loadLocation($urlAlias->destination);
+        $location = $this->locationService->loadLocation((int) $urlAlias->destination);
         $contentDraft = $this->contentService->createContentDraft($location->getContentInfo());
         $contentUpdateStruct = $this->contentService->newContentUpdateStruct();
         $contentUpdateStruct->initialLanguageCode = $language;
@@ -121,7 +121,7 @@ class ContentFacade
         Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
 
         return $this->repository->sudo(function () use ($urlAlias) {
-            return $this->locationService->loadLocation($urlAlias->destination);
+            return $this->locationService->loadLocation((int) $urlAlias->destination);
         });
     }
 

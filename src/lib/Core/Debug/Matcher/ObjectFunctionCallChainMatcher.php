@@ -13,6 +13,12 @@ use Psy\TabCompletion\Matcher\ObjectMethodsMatcher;
 
 class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
 {
+    /**
+     * @param list<mixed> $tokens
+     * @param array<string, mixed> $info
+     *
+     * @return list<string>
+     */
     public function getMatches(array $tokens, array $info = []): array
     {
         $input = $this->getInput($tokens);
@@ -72,14 +78,14 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
         // 4) Provide autocomplete for the last return type found in the chain
         return array_map(static function (string $function) {
             return $function . '()';
-        }, \array_filter(
+        }, array_values(\array_filter(
             \get_class_methods($object),
             static function ($var) use ($input) {
                 return AbstractMatcher::startsWith($input, $var) &&
                     // also check that we do not suggest invoking a super method(__construct, __wakeup, …)
                     !AbstractMatcher::startsWith('__', $var);
             }
-        ));
+        )));
     }
 
     /**
