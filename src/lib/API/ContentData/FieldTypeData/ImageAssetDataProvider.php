@@ -94,7 +94,7 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
         $locationURL = $this->argumentParser->parseUrl($value);
         $urlAlias = $this->urlAliasService->lookup($locationURL);
 
-        $location = $this->locationService->loadLocation($urlAlias->destination);
+        $location = $this->locationService->loadLocation((int) $urlAlias->destination);
 
         return new Value($location->getContentInfo()->id, $this->getFaker()->realText(100));
     }
