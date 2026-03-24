@@ -18,7 +18,7 @@ use Psy\TabCompletion\Matcher\FunctionsMatcher;
 class Shell extends BaseShell
 {
     /**
-     * @return array
+     * @return AbstractMatcher[]
      */
     protected function getDefaultMatchers(): array
     {
