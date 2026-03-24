@@ -57,8 +57,7 @@
         }
     },
     "conflict": {
-        "instaclick/php-webdriver": "1.4.12",
-        "friends-of-behat/mink-browserkit-driver": "1.6.3"
+        "instaclick/php-webdriver": "1.4.12"
     },
     "autoload-dev": {
         "psr-4": {
