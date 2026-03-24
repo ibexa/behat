@@ -13,6 +13,11 @@ use Psy\TabCompletion\Matcher\ObjectMethodsMatcher;
 
 class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
 {
+    /**
+     * @param list<mixed> $tokens
+     * @param array<string, mixed> $info
+     * @return list<string>
+     */
     public function getMatches(array $tokens, array $info = []): array
     {
         $input = $this->getInput($tokens);
