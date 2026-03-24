@@ -19,6 +19,7 @@ class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
     /**
      * @param list<mixed> $tokens
      * @param array<string, mixed> $info
+     *
      * @return list<string>
      */
     public function getMatches(array $tokens, array $info = []): array
@@ -51,11 +52,11 @@ class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
 
         return array_map(static function (string $function) {
             return $function . '()';
-        }, \array_filter(
+        }, array_values(\array_filter(
             $methods,
             static function ($methodName) use ($input) {
                 return AbstractMatcher::startsWith($input, $methodName);
             }
-        ));
+        )));
     }
 }
