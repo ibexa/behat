@@ -21,7 +21,10 @@ use Ibexa\Behat\Browser\Locator\LocatorCollection;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
 use OAndreyev\Mink\Driver\WebDriver;
-use RuntimeException;
+
+class DevToolsDriverUnavailableException extends \RuntimeException
+{
+}
 
 abstract class Component implements ComponentInterface
 {
@@ -79,7 +82,11 @@ abstract class Component implements ComponentInterface
         $webDriver = $driver->getWebDriver();
 
         if (null === $webDriver) {
-            throw new RuntimeException('Error happened when accessing the WebDriver');
+            throw new DevToolsDriverUnavailableException('Error happened when accessing the WebDriver');
+        }
+
+        if (!($webDriver instanceof \Facebook\WebDriver\Remote\RemoteWebDriver)) {
+            throw new DevToolsDriverUnavailableException('Expected instance of Facebook\\WebDriver\\Remote\\RemoteWebDriver, got ' . (is_object($webDriver) ? get_class($webDriver) : gettype($webDriver)));
         }
 
         return new ChromeDevToolsDriver($webDriver);
