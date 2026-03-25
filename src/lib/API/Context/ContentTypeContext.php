@@ -114,7 +114,7 @@ class ContentTypeContext implements Context
         $fields = explode(',', $settings);
         $isMultiple = $this->parseBool(explode(':', $fields[0])[1]);
         $options = explode(':', $fields[1])[1];
-        $parsedOptions = array_values(explode('-', $options));
+        $parsedOptions = explode('-', $options);
         $parsedSettings['isMultiple'] = $isMultiple;
         $parsedSettings['options'] = $parsedOptions;
 

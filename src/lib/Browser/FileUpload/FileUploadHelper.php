@@ -12,6 +12,10 @@ use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
 use FriendsOfBehat\SymfonyExtension\Mink\MinkParameters;
 
+class FileReadException extends \RuntimeException
+{
+}
+
 class FileUploadHelper
 {
     /** @var \Behat\Mink\Session */
@@ -32,12 +36,17 @@ class FileUploadHelper
         $driver = $this->session->getDriver();
 
         if ($driver instanceof Selenium2Driver) {
-            if (!preg_match('#[\w\\\/\.]*\.zip$#', $filename)) {
+            if (!preg_match('#[\w/.]*\.zip$#', $filename)) {
                 throw new \InvalidArgumentException('Zip archive required to upload to remote browser machine.');
             }
 
+            $fileContents = file_get_contents($localFile);
+            if ($fileContents === false) {
+                throw new FileReadException("Failed to read file: $localFile");
+            }
+
             return $driver->getWebDriverSession()->file([
-                'file' => base64_encode(file_get_contents($localFile)),
+                'file' => base64_encode($fileContents),
             ]);
         }
 
