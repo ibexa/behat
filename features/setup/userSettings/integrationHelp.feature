@@ -5,6 +5,8 @@ Feature: Setup help integration configuration
     Given I create a file "config/packages/ibexa_integrated_help.yaml" with contents
     """
     ibexa_integrated_help:
-        enabled: false
-
+        help_center:
+            enabled: false
+        product_tour:
+            enabled: false
     """

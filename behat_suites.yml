@@ -88,6 +88,6 @@ setup:
                 - Ibexa\Behat\API\Context\TestContext
         user-settings:
             paths:
-                - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/helpIntegration.feature'
+                - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/integrationHelp.feature'
             contexts:
                 - Ibexa\Behat\Core\Context\FileContext
