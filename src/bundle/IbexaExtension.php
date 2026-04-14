@@ -34,7 +34,7 @@ class IbexaExtension implements Extension
         return 'ibexabehatextension';
     }
 
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if ($container->hasParameter(self::MINK_DEFAULT_JAVASCRIPT_SESSION_PARAMETER)) {
             $defaultJavascriptSession = $container->getParameter(self::MINK_DEFAULT_JAVASCRIPT_SESSION_PARAMETER);
