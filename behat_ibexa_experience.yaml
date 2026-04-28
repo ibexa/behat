@@ -29,6 +29,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/connector-openai/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/activity-log/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/integrationHelp.feature'
+                - '%paths.base%/vendor/ibexa/site-factory/features/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -53,6 +54,8 @@ regression:
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentUpdateContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
                 - Ibexa\AdminUi\Behat\BrowserContext\NavigationContext
+                - Ibexa\SiteFactory\Behat\Context\SiteFactoryContext
+
         experience:
             paths:
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
@@ -73,6 +76,7 @@ regression:
               - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
               - '%paths.base%/vendor/ibexa/activity-log/features/browser'
               - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
+              - '%paths.base%/vendor/ibexa/site-factory/features/SiteFactory.feature'
             filters:
                 tags: "~@broken&&@IbexaExperience"
             contexts: 
@@ -138,3 +142,5 @@ regression:
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
                 - Ibexa\ActivityLog\Behat\Context\ActivityLogContext
                 - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext
+                - Ibexa\SiteFactory\Behat\Context\SiteFactoryContext
+                - Ibexa\SiteFactory\Behat\Context\SiteFactoryFrontendContext
