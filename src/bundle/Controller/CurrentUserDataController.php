@@ -17,17 +17,19 @@ use Symfony\Component\HttpFoundation\Response;
 class CurrentUserDataController extends AbstractController
 {
     /**
-     * @var \Ibexa\Contracts\Core\Repository\PermissionResolver
+     * @var PermissionResolver
      */
     private $permissionResolver;
 
     /**
-     * @var \Ibexa\Contracts\Core\Repository\UserService
+     * @var UserService
      */
     private $userService;
 
-    public function __construct(PermissionResolver $permissionResolver, UserService $userService)
-    {
+    public function __construct(
+        PermissionResolver $permissionResolver,
+        UserService $userService
+    ) {
         $this->permissionResolver = $permissionResolver;
         $this->userService = $userService;
     }

@@ -21,10 +21,10 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 class CreateContentDraft extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \Ibexa\Behat\API\Facade\ContentFacade */
+    /** @var ContentFacade */
     private $contentFacade;
 
-    /** @var \Ibexa\Workflow\Behat\Facade\WorkflowFacade */
+    /** @var WorkflowFacade */
     private $workflowFacade;
 
     public static function getSubscribedEvents(): array

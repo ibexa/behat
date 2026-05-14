@@ -24,14 +24,17 @@ class ContentDataProvider
 
     private $contentService;
 
-    /** @var \Ibexa\Behat\API\ContentData\FieldTypeData\FieldTypeDataProviderInterface[] */
+    /** @var FieldTypeDataProviderInterface[] */
     private $fieldTypeDataProviders;
 
-    /** @var \Ibexa\Behat\API\ContentData\RandomDataGenerator */
+    /** @var RandomDataGenerator */
     private $randomDataGenerator;
 
-    public function __construct(ContentTypeService $contentTypeService, ContentService $contentService, RandomDataGenerator $randomDataGenerator)
-    {
+    public function __construct(
+        ContentTypeService $contentTypeService,
+        ContentService $contentService,
+        RandomDataGenerator $randomDataGenerator
+    ) {
         $this->contentTypeService = $contentTypeService;
         $this->contentService = $contentService;
         $this->randomDataGenerator = $randomDataGenerator;
@@ -55,8 +58,10 @@ class ContentDataProvider
         return $this->fillContentStructWithData($contentType, $language, $language, $contentCreateStruct);
     }
 
-    public function getRandomContentUpdateData(string $mainLanguage, string $language): ContentUpdateStruct
-    {
+    public function getRandomContentUpdateData(
+        string $mainLanguage,
+        string $language
+    ): ContentUpdateStruct {
         $contentType = $this->contentTypeService->loadContentTypeByIdentifier($this->contentTypeIdentifier);
         $contentUpdateStruct = $this->contentService->newContentUpdateStruct();
         $contentUpdateStruct->initialLanguageCode = $language;
@@ -64,8 +69,11 @@ class ContentDataProvider
         return $this->fillContentStructWithData($contentType, $mainLanguage, $language, $contentUpdateStruct);
     }
 
-    public function getFilledContentDataStruct(ContentStruct $contentStruct, $contentItemData, $language): ContentStruct
-    {
+    public function getFilledContentDataStruct(
+        ContentStruct $contentStruct,
+        $contentItemData,
+        $language
+    ): ContentStruct {
         $contentType = $this->contentTypeService->loadContentTypeByIdentifier($this->contentTypeIdentifier);
 
         foreach ($contentItemData as $fieldIdentifier => $value) {
@@ -82,8 +90,12 @@ class ContentDataProvider
         return $contentStruct;
     }
 
-    public function getRandomFieldData(string $contentTypeIdentifier, string $fieldIdentifier, string $fieldTypeIdentifier, $language = 'eng-GB')
-    {
+    public function getRandomFieldData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $fieldTypeIdentifier,
+        $language = 'eng-GB'
+    ) {
         foreach ($this->fieldTypeDataProviders as $provider) {
             if ($provider->supports($fieldTypeIdentifier)) {
                 return $provider->generateData($contentTypeIdentifier, $fieldIdentifier, $language);
@@ -91,8 +103,10 @@ class ContentDataProvider
         }
     }
 
-    public function getFieldDataFromString($fieldIdentifier, $value)
-    {
+    public function getFieldDataFromString(
+        $fieldIdentifier,
+        $value
+    ) {
         foreach ($this->fieldTypeDataProviders as $provider) {
             if ($provider->supports($fieldIdentifier)) {
                 return $provider->parseFromString($value);
@@ -100,8 +114,12 @@ class ContentDataProvider
         }
     }
 
-    private function fillContentStructWithData(ContentType $contentType, string $mainLanguage, string $language, ContentStruct $contentStruct): ContentStruct
-    {
+    private function fillContentStructWithData(
+        ContentType $contentType,
+        string $mainLanguage,
+        string $language,
+        ContentStruct $contentStruct
+    ): ContentStruct {
         $fieldDefinitions = $contentType->getFieldDefinitions()->toArray();
 
         foreach ($fieldDefinitions as $field) {

@@ -41,8 +41,10 @@ class CSSLocatorBuilder
         return $this;
     }
 
-    public static function combine(string $format, ...$locators): CSSLocator
-    {
+    public static function combine(
+        string $format,
+        ...$locators
+    ): CSSLocator {
         $joinedLocatorIDs = 'combined-' . implode('-', array_map(static function (CSSLocator $locator) {
             return $locator->getIdentifier();
         }, $locators));

@@ -19,8 +19,10 @@ class JsRoutingDirectoryCacheDirectoryCreator implements CacheWarmerInterface
         return true;
     }
 
-    public function warmUp(string $cacheDir, ?string $buildDir = null): array
-    {
+    public function warmUp(
+        string $cacheDir,
+        ?string $buildDir = null
+    ): array {
         // Workaround for https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/pull/434
         $cachePath = $cacheDir . \DIRECTORY_SEPARATOR . self::FOS_JS_ROUTING_CACHE_DIR;
         if (!file_exists($cachePath) && !mkdir($cachePath) && !is_dir($cachePath)) {

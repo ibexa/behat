@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Behat\Browser\Element;
 
 use Ibexa\Behat\Browser\Element\Criterion\ElementTextCriterion;
+use Ibexa\Behat\Browser\Element\ElementCollection;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Element\Mapper\ElementTextMapper;
 use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
@@ -18,7 +19,7 @@ use PHPUnit\Framework\Assert;
 
 class ElementCollectionTest extends BaseTestCase
 {
-    /** @var \Ibexa\Behat\Browser\Element\ElementCollection */
+    /** @var ElementCollection */
     private $collection;
 
     protected function setUp(): void
@@ -63,8 +64,11 @@ class ElementCollectionTest extends BaseTestCase
     /**
      * @dataProvider dataProviderTestAny
      */
-    public function testAny(LocatorInterface $locator, array $elementNames, bool $expectedAnyValue): void
-    {
+    public function testAny(
+        LocatorInterface $locator,
+        array $elementNames,
+        bool $expectedAnyValue
+    ): void {
         $collection = $this->createCollection($locator, ...$elementNames);
         Assert::assertEquals($expectedAnyValue, $collection->any());
     }
@@ -88,8 +92,11 @@ class ElementCollectionTest extends BaseTestCase
     /**
      * @dataProvider dataProviderTestEmpty
      */
-    public function testEmpty(LocatorInterface $locator, array $elementNames, bool $expectedEmptyValue): void
-    {
+    public function testEmpty(
+        LocatorInterface $locator,
+        array $elementNames,
+        bool $expectedEmptyValue
+    ): void {
         $collection = $this->createCollection($locator, ...$elementNames);
         Assert::assertEquals($expectedEmptyValue, $collection->empty());
     }
@@ -129,7 +136,9 @@ class ElementCollectionTest extends BaseTestCase
     {
         Assert::assertEquals(
             ['Element1', 'Element2', 'Element3'],
-            $this->collection->map(static function (ElementInterface $element) { return $element->getText(); })
+            $this->collection->map(static function (ElementInterface $element) {
+                return $element->getText();
+            })
         );
     }
 

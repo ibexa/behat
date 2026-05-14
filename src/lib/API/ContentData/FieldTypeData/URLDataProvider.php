@@ -17,8 +17,11 @@ class URLDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_url' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return new Value($this->getFaker()->url, $this->getFaker()->realText(80, 1));
     }
 

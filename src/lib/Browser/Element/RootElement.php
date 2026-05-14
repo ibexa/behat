@@ -19,15 +19,21 @@ final class RootElement extends BaseElement implements RootElementInterface
 
     private DocumentElement $decoratedElement;
 
-    public function __construct(ElementFactoryInterface $elementFactory, Session $session, DocumentElement $baseElement)
-    {
+    public function __construct(
+        ElementFactoryInterface $elementFactory,
+        Session $session,
+        DocumentElement $baseElement
+    ) {
         parent::__construct($elementFactory);
         $this->session = $session;
         $this->decoratedElement = $baseElement;
     }
 
-    public function dragAndDrop(string $from, string $hover, string $to): void
-    {
+    public function dragAndDrop(
+        string $from,
+        string $hover,
+        string $to
+    ): void {
         if (!$this->isDraggingLibraryLoaded()) {
             throw new RuntimeException('drag-mock library has to be added to the page in order to use this method. Refer to README in BehatBundle for more information.');
         }

@@ -19,8 +19,10 @@ class AuthenticationContext extends RawMinkContext
 
     private RedirectLoginPage $redirectLoginPage;
 
-    public function __construct(LoginPage $loginPage, RedirectLoginPage $redirectLoginPage)
-    {
+    public function __construct(
+        LoginPage $loginPage,
+        RedirectLoginPage $redirectLoginPage
+    ) {
         $this->loginPage = $loginPage;
         $this->redirectLoginPage = $redirectLoginPage;
     }
@@ -29,8 +31,10 @@ class AuthenticationContext extends RawMinkContext
      * @Given I log in as :username
      * @Given I log in as :username with password :password
      */
-    public function iLogInIn(string $username, ?string $password = null)
-    {
+    public function iLogInIn(
+        string $username,
+        ?string $password = null
+    ) {
         $password = $password ?? PasswordProvider::DEFAUlT_PASSWORD;
         $this->loginPage->loginSuccessfully($username, $password);
     }
@@ -50,8 +54,11 @@ class AuthenticationContext extends RawMinkContext
      * @Given I am viewing the pages on siteaccess :siteaccess as :username :password
      * @Given I am viewing the pages on siteaccess :siteaccess as :username with password :password
      */
-    public function iAmViewingThePagesAsUserOnSiteaccess(string $siteaccess, string $username, ?string $password = null)
-    {
+    public function iAmViewingThePagesAsUserOnSiteaccess(
+        string $siteaccess,
+        string $username,
+        ?string $password = null
+    ) {
         $this->loginPage->open($siteaccess);
         $this->loginPage->logout($siteaccess);
 

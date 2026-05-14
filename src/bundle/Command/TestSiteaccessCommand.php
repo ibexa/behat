@@ -17,7 +17,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(name: 'ibexa:behat:test-siteaccess', description: 'Outputs the name of the active siteaccess')]
 class TestSiteaccessCommand extends Command
 {
-    /** @var \Ibexa\Core\MVC\Symfony\SiteAccess */
+    /** @var SiteAccess */
     private $siteaccess;
 
     public function __construct(SiteAccess $siteaccess)
@@ -27,12 +27,12 @@ class TestSiteaccessCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
-    {
-    }
+    protected function configure() {}
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
-    {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ): int {
         $output->writeln($this->siteaccess->name);
 
         return self::SUCCESS;

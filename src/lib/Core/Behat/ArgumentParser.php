@@ -20,8 +20,10 @@ class ArgumentParser
 
     private RoleFacade $roleFacade;
 
-    public function __construct(RoleFacade $roleFacade, ParameterProviderInterface $parameterProvider)
-    {
+    public function __construct(
+        RoleFacade $roleFacade,
+        ParameterProviderInterface $parameterProvider
+    ) {
         $this->roleFacade = $roleFacade;
         $this->parameterProvider = $parameterProvider;
     }

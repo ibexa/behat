@@ -19,8 +19,10 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
      *
      * @return list<string>
      */
-    public function getMatches(array $tokens, array $info = []): array
-    {
+    public function getMatches(
+        array $tokens,
+        array $info = []
+    ): array {
         $input = $this->getInput($tokens);
 
         // 1) Split tokens into groups separated by -> - {group1}->{group2}->{group3}
@@ -91,7 +93,7 @@ class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
     /**
      * @phpstan-param list<mixed> $token
      */
-    protected function getTokenName(array|string $token): string
+    protected function getTokenName(array | string $token): string
     {
         if (!is_array($token)) {
             return $token;

@@ -16,8 +16,10 @@ abstract class BaseLocator implements LocatorInterface
 
     protected string $identifier;
 
-    public function __construct(string $identifier, string $selector)
-    {
+    public function __construct(
+        string $identifier,
+        string $selector
+    ) {
         $this->identifier = $identifier;
         $this->selector = $selector;
     }

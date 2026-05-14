@@ -25,8 +25,11 @@ class SelectionDataProvider implements FieldTypeDataProviderInterface
         return 'ibexa_selection' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         $fieldSettings = $this->contentTypeService->loadContentTypeByIdentifier($contentTypeIdentifier)->getFieldDefinition($fieldIdentifier)->getFieldSettings();
 
         $isMultiple = $fieldSettings['isMultiple'];

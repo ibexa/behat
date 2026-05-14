@@ -15,14 +15,16 @@ use Ibexa\Behat\Core\Behat\ArgumentParser;
 
 class ContentContext implements Context
 {
-    /** @var \Ibexa\Behat\API\Facade\ContentFacade */
+    /** @var ContentFacade */
     private $contentFacade;
 
-    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
+    /** @var ArgumentParser */
     private $argumentParser;
 
-    public function __construct(ContentFacade $contentFacade, ArgumentParser $argumentParser)
-    {
+    public function __construct(
+        ContentFacade $contentFacade,
+        ArgumentParser $argumentParser
+    ) {
         $this->contentFacade = $contentFacade;
         $this->argumentParser = $argumentParser;
     }
@@ -32,8 +34,12 @@ class ContentContext implements Context
      *
      * @param mixed $language
      */
-    public function createMultipleContentItems(string $numberOfItems, string $contentTypeIdentifier, string $parentUrl, $language): void
-    {
+    public function createMultipleContentItems(
+        string $numberOfItems,
+        string $contentTypeIdentifier,
+        string $parentUrl,
+        $language
+    ): void {
         $parentUrl = $this->argumentParser->parseUrl($parentUrl);
 
         for ($i = 0; $i < $numberOfItems; ++$i) {
@@ -44,8 +50,12 @@ class ContentContext implements Context
     /**
      * @Given a :contentTypeIdentifier Content item named :contentName exists in :parentUrl
      */
-    public function contentItemExists(string $contentTypeIdentifier, string $contentName, string $parentUrl, TableNode $contentItemData): void
-    {
+    public function contentItemExists(
+        string $contentTypeIdentifier,
+        string $contentName,
+        string $parentUrl,
+        TableNode $contentItemData
+    ): void {
         $parentUrl = $this->argumentParser->parseUrl($parentUrl);
         $contentUrl = sprintf('%s/%s', $parentUrl, $this->argumentParser->parseUrl($contentName));
         $contentData = $this->parseData($contentItemData)[0];
@@ -59,8 +69,12 @@ class ContentContext implements Context
      * @param mixed $parentUrl
      * @param mixed $language
      */
-    public function createContentItems($contentTypeIdentifier, $parentUrl, $language, TableNode $contentItemsData): void
-    {
+    public function createContentItems(
+        $contentTypeIdentifier,
+        $parentUrl,
+        $language,
+        TableNode $contentItemsData
+    ): void {
         $parentUrl = $this->argumentParser->parseUrl($parentUrl);
         $parsedContentItemData = $this->parseData($contentItemsData);
 
@@ -74,8 +88,10 @@ class ContentContext implements Context
      *
      * @param mixed $contentTypeIdentifier
      */
-    public function createContentItemsInDifferentLocations($contentTypeIdentifier, TableNode $contentItemsData): void
-    {
+    public function createContentItemsInDifferentLocations(
+        $contentTypeIdentifier,
+        TableNode $contentItemsData
+    ): void {
         $parsedContentItemData = $this->parseData($contentItemsData);
 
         foreach ($parsedContentItemData as $contentItemData) {
@@ -92,8 +108,10 @@ class ContentContext implements Context
      *
      * @param mixed $contentTypeIdentifier
      */
-    public function createContentDraftsInDifferentLocations($contentTypeIdentifier, TableNode $contentItemsData): void
-    {
+    public function createContentDraftsInDifferentLocations(
+        $contentTypeIdentifier,
+        TableNode $contentItemsData
+    ): void {
         $parsedContentItemData = $this->parseData($contentItemsData);
 
         foreach ($parsedContentItemData as $contentItemData) {
@@ -111,8 +129,11 @@ class ContentContext implements Context
      * @param mixed $locationURL
      * @param mixed $language
      */
-    public function editContentItem($locationURL, $language, TableNode $contentItemsData): void
-    {
+    public function editContentItem(
+        $locationURL,
+        $language,
+        TableNode $contentItemsData
+    ): void {
         $locationURL = $this->argumentParser->parseUrl($locationURL);
         $parsedContentItemData = $this->parseData($contentItemsData);
 
@@ -127,8 +148,11 @@ class ContentContext implements Context
      * @param mixed $locationURL
      * @param mixed $language
      */
-    public function createNewDraftForExistingItem($locationURL, $language, TableNode $contentItemsData): void
-    {
+    public function createNewDraftForExistingItem(
+        $locationURL,
+        $language,
+        TableNode $contentItemsData
+    ): void {
         $locationURL = $this->argumentParser->parseUrl($locationURL);
         $parsedContentItemData = $this->parseData($contentItemsData);
 

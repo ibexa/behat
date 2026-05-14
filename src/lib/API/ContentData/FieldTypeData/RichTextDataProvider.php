@@ -25,12 +25,14 @@ class RichTextDataProvider extends AbstractFieldTypeDataProvider
 </section>';
 
     /**
-     * @var \Ibexa\Behat\API\Facade\SearchFacade
+     * @var SearchFacade
      */
     private $searchFacade;
 
-    public function __construct(RandomDataGenerator $randomDataGenerator, SearchFacade $searchFacade)
-    {
+    public function __construct(
+        RandomDataGenerator $randomDataGenerator,
+        SearchFacade $searchFacade
+    ) {
         parent::__construct($randomDataGenerator);
         $this->searchFacade = $searchFacade;
     }
@@ -40,8 +42,11 @@ class RichTextDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_richtext' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ): string {
         $this->setLanguage($language);
 
         $randomNumber = $this->randomDataGenerator->getRandomProbability();

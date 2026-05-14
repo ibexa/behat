@@ -28,7 +28,7 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
     /**
      * @param iterable<string, mixed> $choices
      *
-     * @throws \ErrorException
+     * @throws ErrorException
      */
     public function createListFromChoices(
         iterable $choices,
@@ -41,7 +41,7 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
     }
 
     /**
-     * @throws \ErrorException
+     * @throws ErrorException
      */
     public function createListFromLoader(
         ChoiceLoaderInterface $loader,
@@ -58,7 +58,7 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
      * @param array<string, mixed>|callable|null $attr
      * @param array<string, mixed>|callable $labelTranslationParameters
      *
-     * @throws \ErrorException
+     * @throws ErrorException
      */
     public function createView(
         ChoiceListInterface $list,
@@ -92,7 +92,7 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
      *
      * @return T
      *
-     * @throws \ErrorException
+     * @throws ErrorException
      */
     private function executeWithRetry(callable $fn)
     {

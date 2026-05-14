@@ -37,7 +37,7 @@ interface ElementCollectionInterface extends \Countable, \IteratorAggregate
     public function last(): ElementInterface;
 
     /**
-     * @return \Ibexa\Behat\Browser\Element\ElementInterface[]
+     * @return ElementInterface[]
      */
     public function toArray(): array;
 

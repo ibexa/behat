@@ -22,8 +22,10 @@ class LoginPage extends Page
         $this->getSession()->visit($logoutUrl);
     }
 
-    public function loginSuccessfully($username, $password): void
-    {
+    public function loginSuccessfully(
+        $username,
+        $password
+    ): void {
         $this->find($this->getLocator('username'))->setValue($username);
         $this->find($this->getLocator('password'))->setValue($password);
         $this->findAll($this->getLocator('button'))

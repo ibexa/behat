@@ -15,8 +15,11 @@ class FloatDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_float' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return $this->getFaker()->randomFloat(4);
     }
 

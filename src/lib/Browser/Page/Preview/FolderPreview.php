@@ -26,8 +26,10 @@ class FolderPreview extends Component implements PagePreviewInterface
         $this->find($this->getLocator('title'))->assert()->textEquals($this->expectedPageTitle);
     }
 
-    public function supports(string $contentTypeIdentifier, string $viewType): bool
-    {
+    public function supports(
+        string $contentTypeIdentifier,
+        string $viewType
+    ): bool {
         $contentTypeIdentifier = strtolower($contentTypeIdentifier);
 
         return 'folder' === $contentTypeIdentifier || 'dedicatedfolder' === $contentTypeIdentifier;

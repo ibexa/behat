@@ -14,20 +14,24 @@ use Ibexa\Core\MVC\Symfony\SiteAccess\Router as CoreRouter;
 
 final class Router
 {
-    /** @var \Ibexa\Core\MVC\Symfony\SiteAccess\Router */
+    /** @var CoreRouter */
     private $router;
 
-    /** @var \FriendsOfBehat\SymfonyExtension\Mink\MinkParameters */
+    /** @var MinkParameters */
     private $minkParameters;
 
-    public function __construct(CoreRouter $router, MinkParameters $minkParameters)
-    {
+    public function __construct(
+        CoreRouter $router,
+        MinkParameters $minkParameters
+    ) {
         $this->router = $router;
         $this->minkParameters = $minkParameters;
     }
 
-    public function reverseMatchRoute(string $siteAccessName, string $route): string
-    {
+    public function reverseMatchRoute(
+        string $siteAccessName,
+        string $route
+    ): string {
         $route = strpos($route, '/') === 0 ? $route : sprintf('/%s', $route);
 
         $matcher = $this->router->matchByName($siteAccessName)->matcher;

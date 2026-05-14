@@ -19,8 +19,10 @@ class MatrixDataProvider extends AbstractFieldTypeDataProvider
 
     private $contentTypeService;
 
-    public function __construct(RandomDataGenerator $randomDataGenerator, ContentTypeService $contentTypeService)
-    {
+    public function __construct(
+        RandomDataGenerator $randomDataGenerator,
+        ContentTypeService $contentTypeService
+    ) {
         parent::__construct($randomDataGenerator);
         $this->contentTypeService = $contentTypeService;
     }
@@ -30,8 +32,11 @@ class MatrixDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_matrix' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         $this->setLanguage($language);
 
         $fieldDefinition = $this->contentTypeService->loadContentTypeByIdentifier($contentTypeIdentifier)->getFieldDefinition($fieldIdentifier);

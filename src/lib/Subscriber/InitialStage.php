@@ -21,7 +21,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class InitialStage extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \Ibexa\Behat\API\Facade\SearchFacade */
+    /** @var SearchFacade */
     private $searchFacade;
 
     protected function getTransitions(): array
@@ -82,7 +82,5 @@ class InitialStage extends AbstractProcessStage implements EventSubscriberInterf
         $this->transitionToNextStage($transitionEvent);
     }
 
-    protected function doExecute(TransitionEvent $event): void
-    {
-    }
+    protected function doExecute(TransitionEvent $event): void {}
 }

@@ -24,8 +24,11 @@ final class Element extends BaseElement implements ElementInterface
 
     private NodeElement $decoratedElement;
 
-    public function __construct(ElementFactoryInterface $elementFactory, LocatorInterface $locator, NodeElement $baseElement)
-    {
+    public function __construct(
+        ElementFactoryInterface $elementFactory,
+        LocatorInterface $locator,
+        NodeElement $baseElement
+    ) {
         parent::__construct($elementFactory);
         $this->decoratedElement = $baseElement;
         $this->locator = $locator;

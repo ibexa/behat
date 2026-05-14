@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Core\Behat;
 
+use Behat\Gherkin\Exception\NodeException;
 use Behat\Gherkin\Node\TableNode;
 
 class TableNodeExtension extends TableNode
@@ -15,10 +16,12 @@ class TableNodeExtension extends TableNode
     /**
      * Adds a column (in form: ['header' => [values]] or ['header' => 'value']) to a given table.
      *
-     * @throws \Behat\Gherkin\Exception\NodeException
+     * @throws NodeException
      */
-    public static function addColumn(TableNode $table, array $columnData): TableNode
-    {
+    public static function addColumn(
+        TableNode $table,
+        array $columnData
+    ): TableNode {
         $headers = array_keys($columnData);
 
         $newParameters = $table->getTable();
@@ -41,10 +44,12 @@ class TableNodeExtension extends TableNode
     /**
      * Removes a column from a Table.
      *
-     * @throws \Behat\Gherkin\Exception\NodeException
+     * @throws NodeException
      */
-    public static function removeColumn(TableNode $table, string $columnName): TableNode
-    {
+    public static function removeColumn(
+        TableNode $table,
+        string $columnName
+    ): TableNode {
         $newTable = [];
 
         $columns = current($table->getTable()) ?: [];

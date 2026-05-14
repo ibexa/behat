@@ -55,8 +55,10 @@ abstract class BaseElement implements BaseElementInterface
         throw new TimeoutException($condition->getErrorMessage($this));
     }
 
-    public function waitUntil(callable $callback, string $errorMessage)
-    {
+    public function waitUntil(
+        callable $callback,
+        string $errorMessage
+    ) {
         $start = time();
         $end = $start + $this->timeout;
         $caughtException = null;

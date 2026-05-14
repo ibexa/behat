@@ -18,8 +18,11 @@ class TimeDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_time' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return Value::fromDateTime($this->getFaker()->dateTimeThisCentury());
     }
 

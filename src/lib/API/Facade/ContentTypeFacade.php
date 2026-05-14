@@ -22,13 +22,13 @@ class ContentTypeFacade
 
     private const CONTENT_TYPE_LIST_BY_GROUP_IDENTIFIER = 'content_type_list_by_group';
 
-    /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
+    /** @var ContentTypeService */
     private $contentTypeService;
 
-    /** @var \Symfony\Component\Cache\Adapter\TagAwareAdapterInterface */
+    /** @var TagAwareAdapterInterface */
     private $cachePool;
 
-    /** @var \Ibexa\Core\Persistence\Cache\Identifier\CacheIdentifierGeneratorInterface */
+    /** @var CacheIdentifierGeneratorInterface */
     private $cacheIdentifierGenerator;
 
     public function __construct(
@@ -41,8 +41,14 @@ class ContentTypeFacade
         $this->cacheIdentifierGenerator = $cacheIdentifierGenerator;
     }
 
-    public function createContentType(string $contentTypeName, string $contentTypeIdentifier, string $contentTypeGroupName, string $mainLanguageCode, bool $isContainer, array $fieldDefinitions)
-    {
+    public function createContentType(
+        string $contentTypeName,
+        string $contentTypeIdentifier,
+        string $contentTypeGroupName,
+        string $mainLanguageCode,
+        bool $isContainer,
+        array $fieldDefinitions
+    ) {
         $contentTypeCreateStruct = $this->contentTypeService->newContentTypeCreateStruct($contentTypeIdentifier);
         $contentTypeCreateStruct->names = [$mainLanguageCode => $contentTypeName];
         $contentTypeCreateStruct->mainLanguageCode = $mainLanguageCode;
@@ -84,8 +90,10 @@ class ContentTypeFacade
         return sprintf('<%s>', implode('|', $fieldDefinitionIdentifiers));
     }
 
-    private function assertContentTypeExistsInGroup(string $contentTypeIdentifier, ContentTypeGroup $contentTypeGroup): void
-    {
+    private function assertContentTypeExistsInGroup(
+        string $contentTypeIdentifier,
+        ContentTypeGroup $contentTypeGroup
+    ): void {
         // Workaround for https://jira.ez.no/browse/EZP-32102: make sure the Content Type is loadable
         $contentTypeIdentifiersInGroup = array_map(static function (ContentType $contentType) {
             return $contentType->identifier;

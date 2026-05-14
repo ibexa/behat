@@ -32,8 +32,11 @@ class CountryDataProvider implements FieldTypeDataProviderInterface
         return 'ibexa_country' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         $randomCountry = array_rand(self::COUNTRY_DATA, 1);
 
         return new Value([$randomCountry => self::COUNTRY_DATA[$randomCountry]]);
