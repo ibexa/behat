@@ -10,6 +10,7 @@ namespace Ibexa\Tests\Behat\Browser\Locator\Validator;
 
 use Ibexa\Behat\Browser\Locator\CSSLocator;
 use Ibexa\Behat\Browser\Locator\Validator\CssLocatorValidator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\CssSelector\Exception\ParseException;
 
@@ -22,18 +23,14 @@ class CssLocatorValidatorTest extends TestCase
         $this->validator = new CssLocatorValidator();
     }
 
-    /**
-     * @dataProvider provideValidSelectors
-     */
+    #[DataProvider('provideValidSelectors')]
     public function testValidationPasses(string $selector): void
     {
         $this->validator->validate(new CSSLocator('test', $selector));
         $this->expectNotToPerformAssertions();
     }
 
-    /**
-     * @dataProvider provideInvalidSelectors
-     */
+    #[DataProvider('provideInvalidSelectors')]
     public function testValidationFails(string $selector): void
     {
         $this->expectException(ParseException::class);

@@ -12,6 +12,7 @@ use Ibexa\Behat\Browser\Assert\CollectionAssert;
 use Ibexa\Behat\Browser\Element\ElementCollection;
 use Ibexa\Behat\Browser\Locator\XPathLocator;
 use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\ExpectationFailedException;
 
 class CollectionAssertTest extends BaseTestCase
@@ -24,9 +25,7 @@ class CollectionAssertTest extends BaseTestCase
         $this->locator = new XPathLocator('locator', '//');
     }
 
-    /**
-     * @dataProvider provideForTestAssertionPasses
-     */
+    #[DataProvider('provideForTestAssertionPasses')]
     public function testAssertionPasses(
         array $expectedElementTexts,
         array $actualElementTexts
@@ -38,9 +37,7 @@ class CollectionAssertTest extends BaseTestCase
         self::assertSame($collection, $returnedCollection);
     }
 
-    /**
-     * @dataProvider provideForTestAssertionFails
-     */
+    #[DataProvider('provideForTestAssertionFails')]
     public function testAssertionFails(
         array $expectedElementTexts,
         array $actualElementTexts
