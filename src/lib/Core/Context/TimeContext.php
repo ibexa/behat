@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Core\Context;
 
 use Behat\Behat\Context\Context;
-use PHPUnit\Framework\Assert;
 use Symfony\Component\Stopwatch\Stopwatch;
+use Webmozart\Assert\Assert;
 
 class TimeContext implements Context
 {
@@ -47,7 +47,7 @@ class TimeContext implements Context
         $actualDuration = $this->stopwatch->getEvent('event')->getDuration() / 1000;
         $this->stopwatch->reset();
 
-        Assert::assertLessThanOrEqual($maxDuration, $actualDuration);
+        Assert::lessThanEq($actualDuration, $maxDuration);
     }
 
     /**
@@ -59,6 +59,6 @@ class TimeContext implements Context
         $actualDuration = $this->stopwatch->getEvent('event')->getDuration() / 1000;
         $this->stopwatch->reset();
 
-        Assert::assertGreaterThan($maxDuration, $actualDuration);
+        Assert::greaterThan($actualDuration, $maxDuration);
     }
 }

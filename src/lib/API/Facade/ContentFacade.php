@@ -18,7 +18,7 @@ use Ibexa\Contracts\Core\Repository\URLAliasService;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\Contracts\Core\Repository\Values\Content\URLAlias;
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class ContentFacade
 {
@@ -63,7 +63,7 @@ class ContentFacade
         $contentItemData = null
     ): Content {
         $parentUrlAlias = $this->urlAliasService->lookup($parentUrl);
-        Assert::assertEquals(URLAlias::LOCATION, $parentUrlAlias->type);
+        Assert::eq($parentUrlAlias->type, URLAlias::LOCATION);
 
         $parentLocationId = $parentUrlAlias->destination;
         $locationCreateStruct = $this->locationService->newLocationCreateStruct((int) $parentLocationId);
@@ -111,7 +111,7 @@ class ContentFacade
         $contentItemData
     ): Content {
         $urlAlias = $this->urlAliasService->lookup($locationURL);
-        Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
+        Assert::eq($urlAlias->type, URLAlias::LOCATION);
 
         $location = $this->locationService->loadLocation((int) $urlAlias->destination);
         $contentDraft = $this->contentService->createContentDraft($location->getContentInfo());
@@ -132,7 +132,7 @@ class ContentFacade
     public function getLocationByLocationURL($locationURL): Location
     {
         $urlAlias = $this->urlAliasService->lookup($locationURL);
-        Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
+        Assert::eq($urlAlias->type, URLAlias::LOCATION);
 
         return $this->repository->sudo(function () use ($urlAlias) {
             return $this->locationService->loadLocation((int) $urlAlias->destination);

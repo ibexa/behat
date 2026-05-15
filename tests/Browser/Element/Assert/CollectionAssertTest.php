@@ -13,7 +13,7 @@ use Ibexa\Behat\Browser\Element\ElementCollection;
 use Ibexa\Behat\Browser\Locator\XPathLocator;
 use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\ExpectationFailedException;
+use Webmozart\Assert\InvalidArgumentException;
 
 class CollectionAssertTest extends BaseTestCase
 {
@@ -42,7 +42,7 @@ class CollectionAssertTest extends BaseTestCase
         array $expectedElementTexts,
         array $actualElementTexts
     ): void {
-        $this->expectException(ExpectationFailedException::class);
+        $this->expectException(InvalidArgumentException::class);
         $collectionAssert = new CollectionAssert($this->locator, $this->createElementCollection($actualElementTexts));
         $collectionAssert->containsElementsWithText($expectedElementTexts);
     }

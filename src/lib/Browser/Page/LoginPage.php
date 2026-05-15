@@ -11,7 +11,7 @@ namespace Ibexa\Behat\Browser\Page;
 use Ibexa\Behat\Browser\Element\Criterion\ElementTextCriterion;
 use Ibexa\Behat\Browser\Element\Criterion\LogicalOrCriterion;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class LoginPage extends Page
 {
@@ -37,12 +37,12 @@ class LoginPage extends Page
             ->single()
             ->click();
 
-        Assert::assertNotEquals('/login', $this->getSession()->getCurrentUrl());
+        Assert::notEq($this->getSession()->getCurrentUrl(), '/login');
     }
 
     public function verifyIsLoaded(): void
     {
-        Assert::assertStringContainsString($this->getRoute(), $this->getSession()->getCurrentUrl());
+        Assert::contains($this->getSession()->getCurrentUrl(), $this->getRoute());
     }
 
     public function getName(): string

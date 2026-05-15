@@ -12,7 +12,7 @@ use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
 use DMore\ChromeDriver\ChromeDriver;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class BrowserContext extends RawMinkContext
 {
@@ -44,7 +44,7 @@ class BrowserContext extends RawMinkContext
         $responseHeaders = $this->getSession()->getDriver()->getResponseHeaders();
 
         foreach ($expectedHeadersData->getHash() as $row) {
-            Assert::assertEquals($row['Value'], $this->getHeaderValue($responseHeaders, $row['Header']));
+            Assert::eq($this->getHeaderValue($responseHeaders, $row['Header']), $row['Value']);
         }
     }
 
@@ -58,7 +58,7 @@ class BrowserContext extends RawMinkContext
         foreach ($expectedHeadersData->getHash() as $row) {
             $expectedValuePattern = $row['Pattern'];
             $actualValue = $this->getHeaderValue($responseHeaders, $row['Header']);
-            Assert::assertEquals(1, preg_match($expectedValuePattern, $actualValue));
+            Assert::eq(preg_match($expectedValuePattern, $actualValue), 1);
         }
     }
 

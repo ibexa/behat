@@ -12,7 +12,7 @@ use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\Contracts\Core\Repository\TrashService;
 use Ibexa\Contracts\Core\Repository\URLAliasService;
 use Ibexa\Contracts\Core\Repository\Values\Content\URLAlias;
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class TrashFacade
 {
@@ -38,7 +38,7 @@ class TrashFacade
     public function trash(string $locationURL)
     {
         $urlAlias = $this->urlAliasService->lookup($locationURL);
-        Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
+        Assert::eq($urlAlias->type, URLAlias::LOCATION);
 
         $location = $this->locationService->loadLocation((int) $urlAlias->destination);
 
