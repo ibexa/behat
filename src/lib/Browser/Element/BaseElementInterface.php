@@ -28,5 +28,8 @@ interface BaseElementInterface
      *
      * @return mixed
      */
-    public function waitUntil(callable $callback, string $errorMessage);
+    public function waitUntil(
+        callable $callback,
+        string $errorMessage
+    );
 }

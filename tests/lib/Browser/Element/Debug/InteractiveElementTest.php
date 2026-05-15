@@ -17,7 +17,7 @@ class InteractiveElementTest extends TestCase
 {
     public function testShouldBeInitializable(): void
     {
-        $element = new Element($this->createStub(ElementInterface::class));
+        $element = new Element(self::createStub(ElementInterface::class));
 
         Assert::assertInstanceOf(Element::class, $element);
     }

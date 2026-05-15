@@ -19,7 +19,7 @@ use Ibexa\Core\FieldType\ImageAsset\Value;
 class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
 {
     /**
-     * @var \Ibexa\Core\FieldType\ImageAsset\AssetMapper
+     * @var AssetMapper
      */
     private $assetMapper;
 
@@ -29,22 +29,22 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
     private $imageDataProvider;
 
     /**
-     * @var \Ibexa\Behat\Core\Behat\ArgumentParser
+     * @var ArgumentParser
      */
     private $argumentParser;
 
     /**
-     * @var \Ibexa\Contracts\Core\Repository\LocationService
+     * @var LocationService
      */
     private $locationService;
 
     /**
-     * @var \Ibexa\Contracts\Core\Repository\URLAliasService
+     * @var URLAliasService
      */
     private $urlAliasService;
 
     /**
-     * @var \Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface
+     * @var ConfigResolverInterface
      */
     private $configResolver;
 
@@ -71,8 +71,11 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_image_asset' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         $this->setLanguage($language);
         $mappings = $this->configResolver->getParameter('fieldtypes.ibexa_image_asset.mappings');
 

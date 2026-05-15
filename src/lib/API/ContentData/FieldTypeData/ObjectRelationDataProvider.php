@@ -17,23 +17,28 @@ use Ibexa\Core\FieldType\Relation\Value;
 
 class ObjectRelationDataProvider implements FieldTypeDataProviderInterface
 {
-    /** @var \Ibexa\Behat\API\Facade\SearchFacade */
+    /** @var SearchFacade */
     protected $searchFacade;
 
-    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
+    /** @var ContentService */
     private $contentService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
+    /** @var LocationService */
     private $locationService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\URLAliasService */
+    /** @var URLAliasService */
     private $urlAliasService;
 
-    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
+    /** @var ArgumentParser */
     private $argumentParser;
 
-    public function __construct(SearchFacade $searchFacade, ContentService $contentService, LocationService $locationSerice, URLAliasService $urlAliasSerivce, ArgumentParser $argumentParser)
-    {
+    public function __construct(
+        SearchFacade $searchFacade,
+        ContentService $contentService,
+        LocationService $locationSerice,
+        URLAliasService $urlAliasSerivce,
+        ArgumentParser $argumentParser
+    ) {
         $this->contentService = $contentService;
         $this->locationService = $locationSerice;
         $this->urlAliasService = $urlAliasSerivce;
@@ -46,8 +51,11 @@ class ObjectRelationDataProvider implements FieldTypeDataProviderInterface
         return 'ibexa_object_relation' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return new Value($this->searchFacade->getRandomContentIds(1));
     }
 

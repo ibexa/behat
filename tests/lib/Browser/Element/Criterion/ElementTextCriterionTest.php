@@ -18,8 +18,10 @@ class ElementTextCriterionTest extends BaseTestCase
     /**
      * @dataProvider dataProviderTestMatches
      */
-    public function testMatches(string $elementText, bool $shouldMatch): void
-    {
+    public function testMatches(
+        string $elementText,
+        bool $shouldMatch
+    ): void {
         $criterion = new ElementTextCriterion('expectedText');
         $element = $this->createElement($elementText);
 

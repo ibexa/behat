@@ -15,17 +15,19 @@ use PHPUnit\Framework\Assert;
 class ElementAssert implements ElementAssertInterface
 {
     /**
-     * @var \Ibexa\Behat\Browser\Locator\LocatorInterface
+     * @var LocatorInterface
      */
     private $locator;
 
     /**
-     * @var \Ibexa\Behat\Browser\Element\ElementInterface
+     * @var ElementInterface
      */
     private $element;
 
-    public function __construct(LocatorInterface $locator, ElementInterface $element)
-    {
+    public function __construct(
+        LocatorInterface $locator,
+        ElementInterface $element
+    ) {
         $this->locator = $locator;
         $this->element = $element;
     }

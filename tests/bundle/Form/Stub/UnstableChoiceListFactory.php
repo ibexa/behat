@@ -33,10 +33,13 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
     /**
      * @param iterable<string, mixed> $choices
      *
-     * @throws \ErrorException
+     * @throws ErrorException
      */
-    public function createListFromChoices(iterable $choices, ?callable $value = null, ?callable $filter = null): ChoiceListInterface
-    {
+    public function createListFromChoices(
+        iterable $choices,
+        ?callable $value = null,
+        ?callable $filter = null
+    ): ChoiceListInterface {
         ++$this->createListFromChoicesCounter;
         $this->failIfNeeded($this->createListFromChoicesCounter);
 
@@ -44,7 +47,7 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
     }
 
     /**
-     * @throws \ErrorException
+     * @throws ErrorException
      */
     public function createListFromLoader(
         ChoiceLoaderInterface $loader,
@@ -62,16 +65,16 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
      * @param array<string, mixed>|callable|null $attr
      * @param array<string, mixed>|callable $labelTranslationParameters
      *
-     * @throws \ErrorException
+     * @throws ErrorException
      */
     public function createView(
         ChoiceListInterface $list,
-        array|callable|null $preferredChoices = null,
-        callable|false|null $label = null,
+        array | callable | null $preferredChoices = null,
+        callable | false | null $label = null,
         ?callable $index = null,
         ?callable $groupBy = null,
-        array|callable|null $attr = null,
-        array|callable $labelTranslationParameters = [],
+        array | callable | null $attr = null,
+        array | callable $labelTranslationParameters = [],
         bool $duplicatePreferredChoices = true
     ): ChoiceListView {
         ++$this->createViewCounter;
@@ -81,7 +84,7 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
     }
 
     /**
-     * @throws \ErrorException
+     * @throws ErrorException
      */
     private function failIfNeeded(int $callNumber): void
     {

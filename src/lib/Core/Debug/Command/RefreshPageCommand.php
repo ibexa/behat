@@ -10,13 +10,14 @@ namespace Ibexa\Behat\Core\Debug\Command;
 
 use Behat\Mink\Session;
 use Psy\Command\Command;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-#[\Symfony\Component\Console\Attribute\AsCommand(name: 'refresh', description: 'Refreshes the currently opened website')]
+#[AsCommand(name: 'refresh', description: 'Refreshes the currently opened website')]
 class RefreshPageCommand extends Command
 {
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     protected $session;
 
     public function __construct(Session $session)
@@ -32,8 +33,10 @@ class RefreshPageCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
-    {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ): int {
         $this->session->reload();
 
         $output->writeln('Page has been refreshed.');

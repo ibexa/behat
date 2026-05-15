@@ -16,14 +16,16 @@ use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 
 class UserContext implements Context
 {
-    /** @var \Ibexa\Behat\API\Facade\UserFacade */
+    /** @var UserFacade */
     private $userFacade;
 
-    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
+    /** @var ArgumentParser */
     private $argumentParser;
 
-    public function __construct(UserFacade $userFacade, ArgumentParser $argumentParser)
-    {
+    public function __construct(
+        UserFacade $userFacade,
+        ArgumentParser $argumentParser
+    ) {
         $this->userFacade = $userFacade;
         $this->argumentParser = $argumentParser;
     }
@@ -42,24 +44,32 @@ class UserContext implements Context
      * @Given I create a user :userName with last name :userLastName with email :userEmail
      * @Given I create a user :userName with last name :userLastName in group :userGroupName with email :userEmail
      */
-    public function createUserInGroupWithEmail(string $userName, string $userLastName, ?string $userGroupName = null, ?string $userEmail = null): void
-    {
+    public function createUserInGroupWithEmail(
+        string $userName,
+        string $userLastName,
+        ?string $userGroupName = null,
+        ?string $userEmail = null
+    ): void {
         $this->userFacade->createUser($userName, $userLastName, $userGroupName, $userEmail);
     }
 
     /**
      * @Given I assign user :userName to role :roleName
      */
-    public function assignUserToRole(string $userName, string $roleName): void
-    {
+    public function assignUserToRole(
+        string $userName,
+        string $roleName
+    ): void {
         $this->userFacade->assignUserToRole($userName, $roleName);
     }
 
     /**
      * @Given I assign user :userName to role :roleIdentifier if possible
      */
-    public function assignUserToRoleIfPossible(string $userName, string $roleIdentifier): void
-    {
+    public function assignUserToRoleIfPossible(
+        string $userName,
+        string $roleIdentifier
+    ): void {
         try {
             $this->assignUserToRole($userName, $roleIdentifier);
         } catch (NotFoundException $e) {
@@ -69,8 +79,10 @@ class UserContext implements Context
     /**
      * @Given I assign user group :userGroupName to role :roleIdentifier if possible
      */
-    public function assignUserGroupToRoleIfPossible(string $userGroupName, string $roleIdentifier): void
-    {
+    public function assignUserGroupToRoleIfPossible(
+        string $userGroupName,
+        string $roleIdentifier
+    ): void {
         try {
             $this->assignUserGroupToRole($userGroupName, $roleIdentifier);
         } catch (NotFoundException $e) {
@@ -81,8 +93,11 @@ class UserContext implements Context
      * @Given I assign user group :groupName to role :roleName
      * @Given I assign user group :groupName to role :roleName with limitations:
      */
-    public function assignUserGroupToRole(string $userGroupName, string $roleName, ?TableNode $limitationData = null): void
-    {
+    public function assignUserGroupToRole(
+        string $userGroupName,
+        string $roleName,
+        ?TableNode $limitationData = null
+    ): void {
         $parsedLimitations = null === $limitationData ? null : $this->argumentParser->parseLimitations($limitationData);
 
         if (is_array($parsedLimitations) && count($parsedLimitations) > 1) {

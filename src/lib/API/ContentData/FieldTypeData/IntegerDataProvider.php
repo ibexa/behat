@@ -15,8 +15,11 @@ class IntegerDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_integer' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return (int) $this->getFaker()->numerify('########');
     }
 

@@ -42,9 +42,7 @@ class IbexaExtension implements Extension
         }
     }
 
-    public function initialize(ExtensionManager $extensionManager)
-    {
-    }
+    public function initialize(ExtensionManager $extensionManager) {}
 
     public function configure(ArrayNodeDefinition $builder)
     {
@@ -60,8 +58,10 @@ class IbexaExtension implements Extension
             ->end();
     }
 
-    public function load(ContainerBuilder $container, array $config)
-    {
+    public function load(
+        ContainerBuilder $container,
+        array $config
+    ) {
         $this->loadSiteAccessInitializer($container);
         $this->loadStartScenarioSubscriber($container);
         $this->setMinkParameters($container, $config);
@@ -80,8 +80,10 @@ class IbexaExtension implements Extension
         $container->setDefinition(BehatSiteAccessInitializer::class, $definition);
     }
 
-    private function setMinkParameters(ContainerBuilder $container, array $config): void
-    {
+    private function setMinkParameters(
+        ContainerBuilder $container,
+        array $config
+    ): void {
         if (!array_key_exists('mink', $config)) {
             return;
         }
@@ -101,8 +103,10 @@ class IbexaExtension implements Extension
         $container->setParameter(self::HEIGHT_PARAMETER, (int) $config['mink']['height']);
     }
 
-    private function setDefaultJavascriptSession(ContainerBuilder $container, string $defaultJavascriptSession): void
-    {
+    private function setDefaultJavascriptSession(
+        ContainerBuilder $container,
+        string $defaultJavascriptSession
+    ): void {
         $container->setParameter('mink.javascript_session', $defaultJavascriptSession);
     }
 

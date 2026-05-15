@@ -28,20 +28,22 @@ class CreateExampleDataCommand extends Command
 {
     public const string NAME = 'ibexa:behat:create-data';
 
-    /** @var \Symfony\Contracts\EventDispatcher\EventDispatcherInterface */
+    /** @var EventDispatcherInterface */
     private $eventDispatcher;
 
-    /** @var \Psr\Log\LoggerInterface */
+    /** @var LoggerInterface */
     private $logger;
 
-    /** @var \Symfony\Component\Serializer\Serializer */
+    /** @var Serializer */
     private $serializer;
 
-    /** @var \Symfony\Component\Stopwatch\Stopwatch */
+    /** @var Stopwatch */
     private $stopwatch;
 
-    public function __construct(EventDispatcherInterface $eventDispatcher, LoggerInterface $logger)
-    {
+    public function __construct(
+        EventDispatcherInterface $eventDispatcher,
+        LoggerInterface $logger
+    ) {
         parent::__construct();
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
@@ -58,8 +60,10 @@ class CreateExampleDataCommand extends Command
             ->addArgument('serializedTransitionData', InputArgument::REQUIRED);
     }
 
-    public function execute(InputInterface $input, OutputInterface $output): int
-    {
+    public function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ): int {
         $iterations = $input->getArgument('iterations');
         $initialData = $this->parseInputData($input->getArgument('serializedTransitionData'));
 

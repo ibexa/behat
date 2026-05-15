@@ -17,8 +17,11 @@ class PasswordProvider extends AbstractFieldTypeDataProvider
         return 'password' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ): string {
         return self::DEFAUlT_PASSWORD;
     }
 }

@@ -12,20 +12,20 @@ use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
 use FriendsOfBehat\SymfonyExtension\Mink\MinkParameters;
 
-class FileReadException extends \RuntimeException
-{
-}
+class FileReadException extends \RuntimeException {}
 
 class FileUploadHelper
 {
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     private $session;
 
-    /** @var \FriendsOfBehat\SymfonyExtension\Mink\MinkParameters */
+    /** @var MinkParameters */
     private $minkParameters;
 
-    public function __construct(Session $session, MinkParameters $minkParameters)
-    {
+    public function __construct(
+        Session $session,
+        MinkParameters $minkParameters
+    ) {
         $this->session = $session;
         $this->minkParameters = $minkParameters;
     }

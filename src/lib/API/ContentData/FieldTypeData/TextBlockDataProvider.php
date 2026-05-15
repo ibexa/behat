@@ -15,8 +15,11 @@ class TextBlockDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_text' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ): string {
         $this->setLanguage($language);
 
         return $this->getFaker()->paragraphs(5, true);

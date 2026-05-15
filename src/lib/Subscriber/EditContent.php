@@ -22,13 +22,13 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 class EditContent extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \Ibexa\Behat\API\ContentData\ContentDataProvider */
+    /** @var ContentDataProvider */
     private $contentDataProvider;
 
-    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
+    /** @var ContentService */
     private $contentService;
 
-    /** @var \Ibexa\Workflow\Behat\Facade\WorkflowFacade */
+    /** @var WorkflowFacade */
     private $workflowFacade;
 
     protected function getTransitions(): array
