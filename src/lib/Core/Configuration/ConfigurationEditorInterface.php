@@ -19,7 +19,11 @@ interface ConfigurationEditorInterface
      *
      * @return mixed YAML config
      */
-    public function append($config, string $key, $value);
+    public function append(
+        $config,
+        string $key,
+        $value
+    );
 
     /**
      * Sets given value under key. Existing settings are overwritten.
@@ -30,9 +34,16 @@ interface ConfigurationEditorInterface
      *
      * @return mixed YAML config
      */
-    public function set($config, string $key, $value);
+    public function set(
+        $config,
+        string $key,
+        $value
+    );
 
-    public function get($config, string $key);
+    public function get(
+        $config,
+        string $key
+    );
 
     /**
      * @return mixed YAML config
@@ -43,7 +54,14 @@ interface ConfigurationEditorInterface
      * @param $filePath
      * @param $config
      */
-    public function saveConfigToFile($filePath, $config): void;
+    public function saveConfigToFile(
+        $filePath,
+        $config
+    ): void;
 
-    public function copyKey($config, string $keyName, string $newKeyName);
+    public function copyKey(
+        $config,
+        string $keyName,
+        string $newKeyName
+    );
 }

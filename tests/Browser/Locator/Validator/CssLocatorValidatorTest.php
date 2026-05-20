@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace  Ibexa\Tests\Behat\Browser\Locator\Validator;
+namespace Ibexa\Tests\Behat\Browser\Locator\Validator;
 
 use Ibexa\Behat\Browser\Locator\CSSLocator;
 use Ibexa\Behat\Browser\Locator\Validator\CssLocatorValidator;

@@ -16,17 +16,20 @@ use PHPUnit\Framework\Assert;
 
 class TrashFacade
 {
-    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
+    /** @var LocationService */
     private $locationService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\URLAliasService */
+    /** @var URLAliasService */
     private $urlAliasService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\TrashService */
+    /** @var TrashService */
     private $trashService;
 
-    public function __construct(LocationService $locationService, URLAliasService $urlAliasService, TrashService $trashService)
-    {
+    public function __construct(
+        LocationService $locationService,
+        URLAliasService $urlAliasService,
+        TrashService $trashService
+    ) {
         $this->locationService = $locationService;
         $this->urlAliasService = $urlAliasService;
         $this->trashService = $trashService;

@@ -24,7 +24,7 @@ class ElementAttributeMapperTest extends BaseTestCase
 
     public function testMapsSingleElement(): void
     {
-        $element = $this->createStub(ElementInterface::class);
+        $element = self::createStub(ElementInterface::class);
         $element->method('getAttribute')->willReturn('AttributeValue');
 
         Assert::assertEquals('AttributeValue', $this->mapper->map($element));

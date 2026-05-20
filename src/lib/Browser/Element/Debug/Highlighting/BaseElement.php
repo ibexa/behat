@@ -18,10 +18,10 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 
 class BaseElement implements BaseElementInterface
 {
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     protected $session;
 
-    /** @var \Ibexa\Behat\Browser\Element\BaseElementInterface */
+    /** @var BaseElementInterface */
     protected $element;
 
     private const HIGHLIGHT_CLASS = 'ibexa-selenium-highlighted';
@@ -30,8 +30,10 @@ class BaseElement implements BaseElementInterface
 
     private const COLORS = ['fuchsia', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'yellow'];
 
-    public function __construct(Session $session, BaseElementInterface $element)
-    {
+    public function __construct(
+        Session $session,
+        BaseElementInterface $element
+    ) {
         $this->session = $session;
         $this->element = $element;
     }
@@ -76,19 +78,25 @@ class BaseElement implements BaseElementInterface
         return $this;
     }
 
-    public function waitUntil(callable $callback, string $errorMessage)
-    {
+    public function waitUntil(
+        callable $callback,
+        string $errorMessage
+    ) {
         return $this->element->waitUntil($callback, $errorMessage);
     }
 
-    private function highlight(ElementInterface $element, string $color): void
-    {
+    private function highlight(
+        ElementInterface $element,
+        string $color
+    ): void {
         $this->setAttribute($element, 'style', sprintf('--ibexa-selenium-color: %s', $color));
         $this->addClass($element, self::HIGHLIGHT_CLASS);
     }
 
-    private function addClass(ElementInterface $element, string $class): void
-    {
+    private function addClass(
+        ElementInterface $element,
+        string $class
+    ): void {
         $this->session->executeScript(
             sprintf(
                 "%s.classList.add('%s')",
@@ -103,8 +111,11 @@ class BaseElement implements BaseElementInterface
         $this->addClass($element, self::READ_CLASS);
     }
 
-    private function setAttribute(ElementInterface $element, string $attribute, string $value): void
-    {
+    private function setAttribute(
+        ElementInterface $element,
+        string $attribute,
+        string $value
+    ): void {
         $this->session->executeScript(
             sprintf(
                 "%s.setAttribute('%s', '%s')",

@@ -30,8 +30,14 @@ class InitialEvent extends Event
     /** @var string */
     public $mainLanguage;
 
-    public function __construct(string $country, string $mainLanguage, array $editors, string $subtreePath, array $languages, array $contentTypes)
-    {
+    public function __construct(
+        string $country,
+        string $mainLanguage,
+        array $editors,
+        string $subtreePath,
+        array $languages,
+        array $contentTypes
+    ) {
         $this->editors = $editors;
         $this->subtreePath = $subtreePath;
         $this->languages = $languages;

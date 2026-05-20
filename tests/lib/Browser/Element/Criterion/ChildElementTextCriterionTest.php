@@ -20,8 +20,11 @@ class ChildElementTextCriterionTest extends BaseTestCase
     /**
      * @dataProvider dataProviderTestMatches
      */
-    public function testMatches(LocatorInterface $locator, string $childElementText, bool $shouldMatch): void
-    {
+    public function testMatches(
+        LocatorInterface $locator,
+        string $childElementText,
+        bool $shouldMatch
+    ): void {
         $criterion = new ChildElementTextCriterion(new XPathLocator('id', 'selector'), 'expectedChildText');
         $element = $this->createElementWithChildElement('ignore', $locator, $this->createElement($childElementText));
 

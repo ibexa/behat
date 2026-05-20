@@ -24,8 +24,10 @@ class ElementCollection implements ElementCollectionInterface
 
     private LocatorInterface $locator;
 
-    public function __construct(LocatorInterface $locator, iterable $elements)
-    {
+    public function __construct(
+        LocatorInterface $locator,
+        iterable $elements
+    ) {
         $this->elements = $elements;
         $this->locator = $locator;
     }
@@ -110,7 +112,7 @@ class ElementCollection implements ElementCollectionInterface
     }
 
     /**
-     * @return \Ibexa\Behat\Browser\Element\ElementInterface[]
+     * @return ElementInterface[]
      */
     public function toArray(): array
     {

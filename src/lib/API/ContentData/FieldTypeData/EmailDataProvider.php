@@ -15,8 +15,11 @@ class EmailDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_email' === $fieldTypeIdentifier || 'email' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): string
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ): string {
         $this->setLanguage($language);
 
         return $this->getFaker()->companyEmail;

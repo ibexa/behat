@@ -10,6 +10,4 @@ namespace Ibexa\Behat\Browser\Exception;
 
 use Exception;
 
-class TimeoutException extends Exception
-{
-}
+class TimeoutException extends Exception {}

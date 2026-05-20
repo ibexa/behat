@@ -17,8 +17,11 @@ class TextLineDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_string' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): Value
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ): Value {
         $this->setLanguage($language);
 
         return new Value($this->getFaker()->realText(80, 1));

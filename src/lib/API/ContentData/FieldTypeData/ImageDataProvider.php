@@ -28,8 +28,10 @@ class ImageDataProvider extends AbstractFieldTypeDataProvider
 
     private $projectDir;
 
-    public function __construct(RandomDataGenerator $randomDataGenerator, $projectDir)
-    {
+    public function __construct(
+        RandomDataGenerator $randomDataGenerator,
+        $projectDir
+    ) {
         parent::__construct($randomDataGenerator);
         $this->projectDir = $projectDir;
     }
@@ -39,8 +41,11 @@ class ImageDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_image' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         $this->setLanguage($language);
 
         $filename = self::IMAGES[array_rand(self::IMAGES, 1)];

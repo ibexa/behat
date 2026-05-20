@@ -17,8 +17,11 @@ class ObjectRelationListDataProvider extends ObjectRelationDataProvider
         return 'ibexa_object_relation_list' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return new Value($this->searchFacade->getRandomContentIds(5));
     }
 

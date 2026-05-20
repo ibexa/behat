@@ -17,9 +17,11 @@ use PHPUnit\Framework\TestCase;
 
 class BaseTestCase extends TestCase
 {
-    protected function createValidMinkNodeElement(string $elementText, bool $isVisible = true): NodeElement
-    {
-        $elementStub = $this->createStub(NodeElement::class);
+    protected function createValidMinkNodeElement(
+        string $elementText,
+        bool $isVisible = true
+    ): NodeElement {
+        $elementStub = self::createStub(NodeElement::class);
 
         $elementStub->method('isValid')->willReturn(true);
         $elementStub->method('getText')->willReturn($elementText);
@@ -30,19 +32,22 @@ class BaseTestCase extends TestCase
 
     protected function createElement(string $elementText): ElementInterface
     {
-        $element = $this->createStub(ElementInterface::class);
+        $element = self::createStub(ElementInterface::class);
         $element->method('getText')->willReturn($elementText);
 
         return $element;
     }
 
-    protected function createElementWithChildElement(string $elementText, LocatorInterface $childLocator, ElementInterface $childElement): ElementInterface
-    {
+    protected function createElementWithChildElement(
+        string $elementText,
+        LocatorInterface $childLocator,
+        ElementInterface $childElement
+    ): ElementInterface {
         $element = $this->createMock(ElementInterface::class);
         $element->method('getText')->willReturn($elementText);
         $element->method('getTimeout')->willReturn(1);
         $element->method('find')->willReturnCallback(static function () use ($childLocator, $childElement) {
-            /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface $locator */
+            /** @var LocatorInterface $locator */
             $locator = func_get_args()[0];
             if ($locator == $childLocator) {
                 return $childElement;
@@ -52,7 +57,7 @@ class BaseTestCase extends TestCase
         });
 
         $element->method('findAll')->willReturnCallback(function () use ($childLocator, $childElement) {
-            /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface $locator */
+            /** @var LocatorInterface $locator */
             $locator = func_get_args()[0];
             if ($locator == $childLocator) {
                 return $this->createCollection($childLocator, $childElement->getText());
@@ -64,8 +69,10 @@ class BaseTestCase extends TestCase
         return $element;
     }
 
-    public function createCollection(LocatorInterface $locator, ...$elementTexts): ElementCollection
-    {
+    public function createCollection(
+        LocatorInterface $locator,
+        ...$elementTexts
+    ): ElementCollection {
         $elements = array_map(function (string $elementText) {
             return $this->createElement($elementText);
         }, $elementTexts);

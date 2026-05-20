@@ -26,7 +26,7 @@ class LocationAwareConfigurationEditorTest extends TestCase
 
     public function setUp(): void
     {
-        $contentFacadeStub = $this->createStub(ContentFacade::class);
+        $contentFacadeStub = self::createStub(ContentFacade::class);
         $contentFacadeStub
             ->method('getLocationByLocationURL')
             ->willReturnMap(

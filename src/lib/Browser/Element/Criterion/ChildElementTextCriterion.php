@@ -20,15 +20,17 @@ class ChildElementTextCriterion implements CriterionInterface
     private $expectedChildElementText;
 
     /**
-     * @var \Ibexa\Behat\Browser\Locator\LocatorInterface
+     * @var LocatorInterface
      */
     private $childLocator;
 
     /** @var array */
     private $results;
 
-    public function __construct(LocatorInterface $childLocator, string $expectedChildElementText)
-    {
+    public function __construct(
+        LocatorInterface $childLocator,
+        string $expectedChildElementText
+    ) {
         $this->expectedChildElementText = $expectedChildElementText;
         $this->childLocator = $childLocator;
         $this->results = [];

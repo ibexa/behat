@@ -31,8 +31,11 @@ class MediaDataProvider implements FieldTypeDataProviderInterface
         return 'ibexa_media' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         $filename = self::VIDEOS[array_rand(self::VIDEOS, 1)];
         $filePath = sprintf('%s/%s/%s', __DIR__, self::VIDEOS_PATH, $filename);
 

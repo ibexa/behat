@@ -15,7 +15,7 @@ use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStru
 
 class ContentTypeContext implements Context
 {
-    /** @var \Ibexa\Behat\API\Facade\ContentTypeFacade */
+    /** @var ContentTypeFacade */
     private $contentTypeFacade;
 
     public function __construct(ContentTypeFacade $contentTypeFacade)
@@ -30,8 +30,12 @@ class ContentTypeContext implements Context
      * @param mixed $contentTypeGroupName
      * @param mixed $contentTypeIdentifier
      */
-    public function iCreateAContentTypeWithIdentifier($contentTypeName, $contentTypeGroupName, $contentTypeIdentifier, TableNode $fieldDetails): void
-    {
+    public function iCreateAContentTypeWithIdentifier(
+        $contentTypeName,
+        $contentTypeGroupName,
+        $contentTypeIdentifier,
+        TableNode $fieldDetails
+    ): void {
         if ($this->contentTypeFacade->contentTypeExists($contentTypeIdentifier)) {
             return;
         }
@@ -73,8 +77,10 @@ class ContentTypeContext implements Context
         return 'yes' === $value || 'true' === $value;
     }
 
-    private function parseFieldSettings(string $fieldTypeIdentifier, string $settings)
-    {
+    private function parseFieldSettings(
+        string $fieldTypeIdentifier,
+        string $settings
+    ) {
         $parsedSettings = [];
         switch ($fieldTypeIdentifier) {
             case 'ibexa_content_query':

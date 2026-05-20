@@ -13,11 +13,13 @@ use Ibexa\Contracts\Core\Repository\ContentTypeService;
 
 class BooleanDataProvider extends AbstractFieldTypeDataProvider
 {
-    /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
+    /** @var ContentTypeService */
     private $contentTypeService;
 
-    public function __construct(RandomDataGenerator $randomDataGenerator, ContentTypeService $contentTypeService)
-    {
+    public function __construct(
+        RandomDataGenerator $randomDataGenerator,
+        ContentTypeService $contentTypeService
+    ) {
         parent::__construct($randomDataGenerator);
         $this->contentTypeService = $contentTypeService;
     }
@@ -27,8 +29,11 @@ class BooleanDataProvider extends AbstractFieldTypeDataProvider
         return 'ibexa_boolean' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         $contentType = $this->contentTypeService->loadContentTypeByIdentifier($contentTypeIdentifier);
         if ($contentType->getFieldDefinition($fieldIdentifier)->isRequired) {
             // if the field is required then the value has to be true.

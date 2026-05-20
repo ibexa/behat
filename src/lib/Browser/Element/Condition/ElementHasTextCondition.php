@@ -15,12 +15,12 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 class ElementHasTextCondition implements ConditionInterface
 {
     /**
-     * @var \Ibexa\Behat\Browser\Element\BaseElementInterface
+     * @var BaseElementInterface
      */
     private $searchedNode;
 
     /**
-     * @var \Ibexa\Behat\Browser\Locator\LocatorInterface
+     * @var LocatorInterface
      */
     private $elementLocator;
 
@@ -34,8 +34,11 @@ class ElementHasTextCondition implements ConditionInterface
      */
     private $foundElementsText;
 
-    public function __construct(BaseElementInterface $searchedNode, LocatorInterface $elementLocator, string $expectedText)
-    {
+    public function __construct(
+        BaseElementInterface $searchedNode,
+        LocatorInterface $elementLocator,
+        string $expectedText
+    ) {
         $this->searchedNode = $searchedNode;
         $this->elementLocator = $elementLocator;
         $this->expectedText = $expectedText;

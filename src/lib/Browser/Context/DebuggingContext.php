@@ -21,16 +21,16 @@ use Psr\Log\LoggerInterface;
 
 class DebuggingContext extends RawMinkContext
 {
-    /** @var \Psr\Log\LoggerInterface */
+    /** @var LoggerInterface */
     private $logger;
 
     /** @var string */
     private $logDir;
 
-    /** @var \Ibexa\Behat\Core\Log\KnownIssuesRegistry */
+    /** @var KnownIssuesRegistry */
     private $knownIssuesRegistry;
 
-    /** @var \Behat\Testwork\Tester\Result\TestResult */
+    /** @var TestResult */
     private $failedStepResult;
 
     public function __construct(
@@ -103,8 +103,10 @@ class DebuggingContext extends RawMinkContext
         $this->display($this->formatForDisplay($applicationsLogs, 'Application logs:'));
     }
 
-    private function formatForDisplay(array $logEntries, string $sectionName)
-    {
+    private function formatForDisplay(
+        array $logEntries,
+        string $sectionName
+    ) {
         $output = sprintf('%s' . PHP_EOL, $sectionName);
 
         if (empty($logEntries)) {

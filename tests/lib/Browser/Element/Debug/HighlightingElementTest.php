@@ -18,7 +18,7 @@ class HighlightingElementTest extends TestCase
 {
     public function testShouldBeInitializable(): void
     {
-        $element = new Element($this->createMock(Session::class), $this->createStub(ElementInterface::class));
+        $element = new Element($this->createMock(Session::class), self::createStub(ElementInterface::class));
 
         Assert::assertInstanceOf(Element::class, $element);
     }

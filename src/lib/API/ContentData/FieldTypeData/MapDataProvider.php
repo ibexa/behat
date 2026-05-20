@@ -40,8 +40,11 @@ class MapDataProvider implements FieldTypeDataProviderInterface
         return 'ibexa_gmap_location' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return new Value(self::LOCATION_DATA[array_rand(self::LOCATION_DATA, 1)]);
     }
 
