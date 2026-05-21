@@ -13,12 +13,11 @@ use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
 use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class ElementAttributeCriterionTest extends BaseTestCase
 {
-    /**
-     * @dataProvider dataProviderTestMatches
-     */
+    #[DataProvider('dataProviderTestMatches')]
     public function testMatches(
         string $attributeName,
         string $attributeValue,

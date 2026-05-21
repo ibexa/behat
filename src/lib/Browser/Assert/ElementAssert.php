@@ -10,7 +10,7 @@ namespace Ibexa\Behat\Browser\Assert;
 
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class ElementAssert implements ElementAssertInterface
 {
@@ -36,9 +36,9 @@ class ElementAssert implements ElementAssertInterface
     {
         $actualText = $this->element->getText();
 
-        Assert::assertEquals(
-            $expectedText,
+        Assert::eq(
             $actualText,
+            $expectedText,
             sprintf(
                 "Failed asserting that expected string '%s' is equal to actual '%s' for %s locator '%s': '%s'",
                 $expectedText,
@@ -56,9 +56,9 @@ class ElementAssert implements ElementAssertInterface
     {
         $actualText = $this->element->getText();
 
-        Assert::assertStringContainsString(
-            $expectedTextFragment,
+        Assert::contains(
             $actualText,
+            $expectedTextFragment,
             sprintf(
                 "Failed asserting that expected text '%s' is found in actual text '%s' for %s locator '%s': '%s'",
                 $expectedTextFragment,
@@ -74,7 +74,7 @@ class ElementAssert implements ElementAssertInterface
 
     public function isVisible(): ElementInterface
     {
-        Assert::assertTrue(
+        Assert::true(
             $this->element->isVisible(),
             sprintf(
                 "Failed asserting that %s locator '%s': '%s' is visible",
@@ -91,7 +91,7 @@ class ElementAssert implements ElementAssertInterface
     {
         $actualClass = $this->element->getAttribute('class');
 
-        Assert::assertTrue(
+        Assert::true(
             $this->element->hasClass($expectedClass),
             sprintf(
                 "Failed asserting that element with %s locator '%s': '%s' has '%s' class, instead class is '%s'",
