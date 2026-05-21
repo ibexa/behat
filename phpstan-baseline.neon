@@ -577,12 +577,6 @@ parameters:
 			path: src/lib/API/ContentData/FieldTypeData/SelectionDataProvider.php
 
 		-
-			message: '#^Parameter \#1 \$min \(1\) of function random_int expects lower number than parameter \#2 \$max \(int\<0, max\>\)\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/lib/API/ContentData/FieldTypeData/SelectionDataProvider.php
-
-		-
 			message: '#^Parameter \#1 \$selection of class Ibexa\\Core\\FieldType\\Selection\\Value constructor expects array\<int\>, list\<string\> given\.$#'
 			identifier: argument.type
 			count: 1
@@ -1083,12 +1077,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\API\\Facade\\SearchFacade\:\:getRandomLocationID\(\) should return int but returns int\|null\.$#'
 			identifier: return.type
-			count: 1
-			path: src/lib/API/Facade/SearchFacade.php
-
-		-
-			message: '#^Parameter \#1 \$min \(0\) of function random_int expects lower number than parameter \#2 \$max \(int\<\-1, max\>\)\.$#'
-			identifier: argument.type
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 
