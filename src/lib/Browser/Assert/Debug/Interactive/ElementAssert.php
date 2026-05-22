@@ -11,7 +11,7 @@ namespace Ibexa\Behat\Browser\Assert\Debug\Interactive;
 use Ibexa\Behat\Browser\Assert\ElementAssertInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
-use PHPUnit\Framework\ExpectationFailedException;
+use Webmozart\Assert\InvalidArgumentException;
 
 class ElementAssert implements ElementAssertInterface
 {
@@ -29,7 +29,7 @@ class ElementAssert implements ElementAssertInterface
     {
         try {
             return $this->baseElementAssert->textEquals($expectedText);
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }
@@ -38,7 +38,7 @@ class ElementAssert implements ElementAssertInterface
     {
         try {
             return $this->baseElementAssert->textContains($expectedTextFragment);
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }
@@ -47,7 +47,7 @@ class ElementAssert implements ElementAssertInterface
     {
         try {
             return $this->baseElementAssert->isVisible();
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }
@@ -56,7 +56,7 @@ class ElementAssert implements ElementAssertInterface
     {
         try {
             return $this->baseElementAssert->hasClass($expectedClass);
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }

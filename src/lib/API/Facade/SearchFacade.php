@@ -19,7 +19,7 @@ use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\LogicalAnd;
 use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\LogicalNot;
 use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Subtree;
 use Ibexa\Contracts\Core\Repository\Values\Content\URLAlias;
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class SearchFacade
 {
@@ -54,7 +54,7 @@ class SearchFacade
     public function getRandomChildFromPath(string $path): string
     {
         $urlAlias = $this->urlAliasService->lookup($path);
-        Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
+        Assert::eq($urlAlias->type, URLAlias::LOCATION);
 
         $location = $this->locationService->loadLocation((int) $urlAlias->destination);
 

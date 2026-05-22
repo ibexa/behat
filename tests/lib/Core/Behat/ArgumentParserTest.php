@@ -12,6 +12,7 @@ use Ibexa\Behat\API\Facade\RoleFacade;
 use Ibexa\Behat\Browser\Environment\ParameterProvider;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -21,9 +22,7 @@ use PHPUnit\Framework\TestCase;
  */
 class ArgumentParserTest extends TestCase
 {
-    /**
-     * @dataProvider provideUrlData
-     */
+    #[DataProvider('provideUrlData')]
     public function testParserGivenUrlCorrectly(
         string $valueToParse,
         string $expectedResult

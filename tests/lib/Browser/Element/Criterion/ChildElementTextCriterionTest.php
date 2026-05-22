@@ -14,12 +14,11 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Ibexa\Behat\Browser\Locator\XPathLocator;
 use Ibexa\Tests\Behat\Browser\Element\BaseTestCase;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class ChildElementTextCriterionTest extends BaseTestCase
 {
-    /**
-     * @dataProvider dataProviderTestMatches
-     */
+    #[DataProvider('dataProviderTestMatches')]
     public function testMatches(
         LocatorInterface $locator,
         string $childElementText,

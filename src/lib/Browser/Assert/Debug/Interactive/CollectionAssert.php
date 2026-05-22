@@ -11,7 +11,7 @@ namespace Ibexa\Behat\Browser\Assert\Debug\Interactive;
 use Ibexa\Behat\Browser\Assert\CollectionAssertInterface;
 use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
 use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
-use PHPUnit\Framework\ExpectationFailedException;
+use Webmozart\Assert\InvalidArgumentException;
 
 class CollectionAssert implements CollectionAssertInterface
 {
@@ -29,7 +29,7 @@ class CollectionAssert implements CollectionAssertInterface
     {
         try {
             return $this->baseCollectionAssert->isEmpty();
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }
@@ -38,7 +38,7 @@ class CollectionAssert implements CollectionAssertInterface
     {
         try {
             return $this->baseCollectionAssert->hasElements();
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }
@@ -47,7 +47,7 @@ class CollectionAssert implements CollectionAssertInterface
     {
         try {
             return $this->baseCollectionAssert->countEquals($expectedCount);
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }
@@ -56,7 +56,7 @@ class CollectionAssert implements CollectionAssertInterface
     {
         try {
             return $this->baseCollectionAssert->containsElementsWithText($expectedElementTexts);
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }

@@ -11,6 +11,7 @@ namespace Ibexa\Tests\Bundle\Behat\Form;
 use ErrorException;
 use Ibexa\Bundle\Behat\Form\RetryChoiceListFactory;
 use Ibexa\Tests\Bundle\Behat\Form\Stub\UnstableChoiceListFactory;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bridge\PhpUnit\ClockMock;
 use Symfony\Component\Form\ChoiceList\ChoiceListInterface;
@@ -29,27 +30,21 @@ final class RetryChoiceListFactoryTest extends TestCase
         ClockMock::withClockMock(false);
     }
 
-    /**
-     * @dataProvider provider
-     */
+    #[DataProvider('provider')]
     public function testCreateListFromChoicesSuccess(int $numberOfFails): void
     {
         $retryChoiceListFactory = new RetryChoiceListFactory(new UnstableChoiceListFactory($numberOfFails));
         self::assertEquals([], $retryChoiceListFactory->createListFromChoices([], null)->getChoices());
     }
 
-    /**
-     * @dataProvider provider
-     */
+    #[DataProvider('provider')]
     public function testCreateListFromLoaderSuccess(int $numberOfFails): void
     {
         $retryChoiceListFactory = new RetryChoiceListFactory(new UnstableChoiceListFactory($numberOfFails));
         self::assertEquals([], $retryChoiceListFactory->createListFromLoader($this->createMock(ChoiceLoaderInterface::class))->getChoices());
     }
 
-    /**
-     * @dataProvider provider
-     */
+    #[DataProvider('provider')]
     public function testCreateViewSuccess(int $numberOfFails): void
     {
         $retryChoiceListFactory = new RetryChoiceListFactory(new UnstableChoiceListFactory($numberOfFails));

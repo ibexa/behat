@@ -14,8 +14,8 @@ use Ibexa\Behat\Browser\Element\Criterion\CriterionInterface;
 use Ibexa\Behat\Browser\Element\Mapper\MapperInterface;
 use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
-use PHPUnit\Framework\Assert;
 use Traversable;
+use Webmozart\Assert\Assert;
 
 class ElementCollection implements ElementCollectionInterface
 {
@@ -146,9 +146,9 @@ class ElementCollection implements ElementCollectionInterface
         if (!is_array($this->elements)) {
             $this->elements = iterator_to_array($this->elements);
         }
-        Assert::assertCount(
-            1,
+        Assert::count(
             $this->elements,
+            1,
             sprintf(
                 "Failed asserting that collection created with %s locator '%s': '%s' has only one element",
                 $this->locator->getType(),

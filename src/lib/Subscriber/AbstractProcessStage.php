@@ -13,12 +13,12 @@ use Ibexa\Behat\Event\TransitionEvent;
 use Ibexa\Contracts\Core\Repository\PermissionResolver;
 use Ibexa\Contracts\Core\Repository\UserService;
 use Ibexa\Contracts\Core\Repository\Values\User\User;
-use PHPUnit\Framework\Assert;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Contracts\EventDispatcher\Event;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
+use Webmozart\Assert\Assert;
 
 abstract class AbstractProcessStage
 {
@@ -70,7 +70,7 @@ abstract class AbstractProcessStage
         }
 
         if (!$chosenEvent) {
-            Assert::fail('No event was chosen, possible error in transition logic.');
+            throw new \InvalidArgumentException('No event was chosen, possible error in transition logic.');
         }
 
         $this->eventDispatcher->dispatch($event, $chosenEvent);
@@ -96,7 +96,7 @@ abstract class AbstractProcessStage
             $sum += $probability;
         }
 
-        Assert::assertEquals(1, $sum, 'Sum of all probabilities must be equal to 1.');
+        Assert::eq($sum, 1, 'Sum of all probabilities must be equal to 1.');
     }
 
     protected function getRandomValue(array $values): string

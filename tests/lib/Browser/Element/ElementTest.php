@@ -18,6 +18,7 @@ use Ibexa\Behat\Browser\Locator\CSSLocator;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Ibexa\Behat\Browser\Locator\VisibleCSSLocator;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class ElementTest extends BaseTestCase
 {
@@ -132,9 +133,7 @@ class ElementTest extends BaseTestCase
         $element->waitUntilCondition(new ElementExistsCondition($searchedElement, $this->irrelevantLocator));
     }
 
-    /**
-     * @dataProvider dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFind
-     */
+    #[DataProvider('dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFind')]
     public function testAdditionalLocatorConditionsAreAppliedWhenUsingFind(
         LocatorInterface $locator,
         string $expectedElementText
@@ -158,9 +157,7 @@ class ElementTest extends BaseTestCase
         ];
     }
 
-    /**
-     * @dataProvider dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFindAll
-     */
+    #[DataProvider('dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFindAll')]
     public function testAdditionalLocatorConditionsAreAppliedWhenUsingFindAll(
         LocatorInterface $locator,
         int $expectedElementCount
