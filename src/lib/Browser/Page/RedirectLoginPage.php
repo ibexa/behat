@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\Page;
 
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class RedirectLoginPage extends LoginPage
 {
@@ -19,7 +19,7 @@ class RedirectLoginPage extends LoginPage
 
     public function verifyIsLoaded(): void
     {
-        Assert::assertStringContainsString('/login', $this->getSession()->getCurrentUrl());
+        Assert::contains($this->getSession()->getCurrentUrl(), '/login');
     }
 
     public function loginSuccessfully(

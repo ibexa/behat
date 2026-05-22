@@ -16,6 +16,7 @@ use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
 use Ibexa\Behat\Browser\Locator\CSSLocator;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class ElementCollectionTest extends BaseTestCase
 {
@@ -61,9 +62,7 @@ class ElementCollectionTest extends BaseTestCase
         Assert::assertEquals(3, $this->collection->count());
     }
 
-    /**
-     * @dataProvider dataProviderTestAny
-     */
+    #[DataProvider('dataProviderTestAny')]
     public function testAny(
         LocatorInterface $locator,
         array $elementNames,
@@ -89,9 +88,7 @@ class ElementCollectionTest extends BaseTestCase
         ];
     }
 
-    /**
-     * @dataProvider dataProviderTestEmpty
-     */
+    #[DataProvider('dataProviderTestEmpty')]
     public function testEmpty(
         LocatorInterface $locator,
         array $elementNames,

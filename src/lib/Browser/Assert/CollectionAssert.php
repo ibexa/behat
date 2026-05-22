@@ -11,7 +11,7 @@ namespace Ibexa\Behat\Browser\Assert;
 use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
 use Ibexa\Behat\Browser\Element\Mapper\ElementTextMapper;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
-use PHPUnit\Framework\Assert;
+use Webmozart\Assert\Assert;
 
 class CollectionAssert implements CollectionAssertInterface
 {
@@ -35,7 +35,7 @@ class CollectionAssert implements CollectionAssertInterface
 
     public function isEmpty(): ElementCollectionInterface
     {
-        Assert::assertTrue(
+        Assert::true(
             $this->elementCollection->empty(),
             sprintf(
                 "Failed asserting that Collection created with %s locator '%s': '%s' is empty",
@@ -53,7 +53,7 @@ class CollectionAssert implements CollectionAssertInterface
         $elements = $this->elementCollection->toArray();
         $this->elementCollection->setElements($elements);
 
-        Assert::assertNotEmpty(
+        Assert::notEmpty(
             $elements,
             sprintf(
                 "Failed asserting that Collection created with %s locator '%s': '%s' is not empty",
@@ -71,9 +71,9 @@ class CollectionAssert implements CollectionAssertInterface
         $elements = $this->elementCollection->toArray();
         $this->elementCollection->setElements($elements);
 
-        Assert::assertCount(
-            $expectedCount,
+        Assert::count(
             $elements,
+            $expectedCount,
             sprintf(
                 "Failed asserting that Collection created with %s locator '%s': '%s' has %d elements. Found %s instead.",
                 $this->locator->getType(),
@@ -95,7 +95,7 @@ class CollectionAssert implements CollectionAssertInterface
         $elementTexts = $this->elementCollection->mapBy(new ElementTextMapper());
 
         foreach ($expectedElementTexts as $expectedElementText) {
-            Assert::assertContains(
+            Assert::inArray(
                 $expectedElementText,
                 $elementTexts,
                 sprintf(

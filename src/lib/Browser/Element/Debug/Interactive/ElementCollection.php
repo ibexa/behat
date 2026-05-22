@@ -16,8 +16,8 @@ use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Element\Mapper\MapperInterface;
 use Ibexa\Behat\Browser\Exception\ElementNotFoundException;
 use Ibexa\Behat\Core\Debug\InteractiveDebuggerTrait;
-use PHPUnit\Framework\ExpectationFailedException;
 use Traversable;
+use Webmozart\Assert\InvalidArgumentException;
 
 class ElementCollection implements ElementCollectionInterface
 {
@@ -95,7 +95,7 @@ class ElementCollection implements ElementCollectionInterface
     {
         try {
             return $this->baseElementCollection->single();
-        } catch (ExpectationFailedException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return $this->startInteractiveSessionOnException($exception, true);
         }
     }
