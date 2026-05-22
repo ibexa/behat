@@ -19,6 +19,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/product-catalog/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/integrationHelp.feature'
+                - '%paths.base%/vendor/ibexa/product-catalog-date-time-attribute/features/setup/setup.feature'
             contexts:
                 - Ibexa\Behat\API\Context\ContentContext
                 - Ibexa\Behat\API\Context\ContentTypeContext
@@ -42,6 +43,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
                 - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
+                - '%paths.base%/vendor/ibexa/product-catalog-date-time-attribute/features/browser'
             filters:
                 tags: "~@broken&&@IbexaHeadless"
             contexts: 
@@ -97,3 +99,4 @@ regression:
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
                 - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext
+                - Ibexa\ProductCatalogDateTimeAttribute\Behat\Context\DateTimeAttributeContext
