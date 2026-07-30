@@ -53,7 +53,7 @@ class CreateExampleDataCommand extends Command
         $this->logger = $logger;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->addArgument('iterations', InputArgument::REQUIRED)

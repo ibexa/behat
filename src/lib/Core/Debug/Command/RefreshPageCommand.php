@@ -26,7 +26,7 @@ class RefreshPageCommand extends Command
         $this->session = $session;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDefinition([])

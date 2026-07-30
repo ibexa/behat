@@ -41,7 +41,7 @@ class CreateLanguageCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->addArgument('language-code', InputArgument::REQUIRED)
