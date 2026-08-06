@@ -10,8 +10,7 @@ The standard behat configuration file is [behat_ibexa_oss.yaml](https://github.c
   - set driver configuration (for example `wd_host` for Selenium Server)
   - see [MinkExtension documentation](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst) for more information
 - in the `Bex\Behat\ScreenshotExtension` section:
-  - set your Cloudinary account details (`cloud_name` and `preset` parameter) to specify where the screenshots are uploaded
-  - see [Cloudinary screenshot driver doc](https://github.com/ezsystems/behat-screenshot-image-driver-cloudinary/blob/master/README.md) for more details about the Cloudinary integration and [elvetemedve/behat-screenshot](https://github.com/elvetemedve/behat-screenshot) for other screenshots configuration options 
+  - see [elvetemedve/behat-screenshot](https://github.com/elvetemedve/behat-screenshot) for screenshot configuration options
 
 Behat profiles and suites are not defined in this file, but imported from files specified at the top.
 
