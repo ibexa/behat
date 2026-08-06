@@ -14,7 +14,6 @@ use Ibexa\Behat\Core\Debug\Command\GoBackCommand;
 use Ibexa\Behat\Core\Debug\Command\RefreshPageCommand;
 use Ibexa\Behat\Core\Debug\Command\ShowHTMLCommand;
 use Ibexa\Behat\Core\Debug\Command\ShowURLCommand;
-use Ibexa\Behat\Core\Debug\Command\TakeScreenshotCommand;
 use Ibexa\Behat\Core\Debug\Shell\Shell;
 use RuntimeException;
 
@@ -129,7 +128,6 @@ trait InteractiveDebuggerTrait
         $sh->addCommands([
             new ShowHTMLCommand($session),
             new ShowURLCommand($session),
-            new TakeScreenshotCommand($session),
             new RefreshPageCommand($session),
             new GoBackCommand($session),
         ]);
