@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\Behat\Command;
 
-use Ibexa\Core\MVC\Symfony\SiteAccess;
+use Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -17,12 +17,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(name: 'ibexa:behat:test-siteaccess', description: 'Outputs the name of the active siteaccess')]
 class TestSiteaccessCommand extends Command
 {
-    /** @var SiteAccess */
-    private $siteaccess;
+    private SiteAccessServiceInterface $siteAccessService;
 
-    public function __construct(SiteAccess $siteaccess)
+    public function __construct(SiteAccessServiceInterface $siteAccessService)
     {
-        $this->siteaccess = $siteaccess;
+        $this->siteAccessService = $siteAccessService;
 
         parent::__construct();
     }
@@ -31,7 +30,8 @@ class TestSiteaccessCommand extends Command
         InputInterface $input,
         OutputInterface $output
     ): int {
-        $output->writeln($this->siteaccess->name);
+        $siteAccess = $this->siteAccessService->getCurrent();
+        $output->writeln($siteAccess !== null ? $siteAccess->name : '');
 
         return self::SUCCESS;
     }
