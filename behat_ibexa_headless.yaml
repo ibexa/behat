@@ -41,6 +41,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/workflow/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
+                - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
                 - '%paths.base%/vendor/ibexa/product-catalog-date-time-attribute/features/browser'
             filters:
                 tags: "~@broken&&@IbexaHeadless"
@@ -95,5 +96,6 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\OpenAIContext
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
+                - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
                 - Ibexa\ProductCatalogDateTimeAttribute\Behat\Context\DateTimeAttributeContext
