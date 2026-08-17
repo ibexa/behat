@@ -28,7 +28,6 @@ regression:
                 - '%paths.base%/vendor/ibexa/dashboard/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/connector-openai/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/activity-log/features/setup/setup.feature'
-                - '%paths.base%/vendor/ibexa/behat/features/setup/userSettings/integrationHelp.feature'
                 - '%paths.base%/vendor/ibexa/product-catalog-date-time-attribute/features/setup/setup.feature'
                 - '%paths.base%/vendor/ibexa/site-factory/features/setup.feature'
             contexts:
@@ -73,7 +72,6 @@ regression:
               - '%paths.base%/vendor/ibexa/connector-ai/features/browser'
               - '%paths.base%/vendor/ibexa/connector-openai/features/browser'
               - '%paths.base%/vendor/ibexa/activity-log/features/browser'
-              - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
               - '%paths.base%/vendor/ibexa/product-catalog-date-time-attribute/features/browser'
               - '%paths.base%/vendor/ibexa/site-factory/features/SiteFactoryFrontend.feature'
             filters:
@@ -140,6 +138,5 @@ regression:
                 - Ibexa\ConnectorAi\Behat\Context\AIActionsContext
                 - Ibexa\ConnectorOpenAi\Behat\Context\AIAssistantContext
                 - Ibexa\ActivityLog\Behat\Context\ActivityLogContext
-                - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext
                 - Ibexa\ProductCatalogDateTimeAttribute\Behat\Context\DateTimeAttributeContext
                 - Ibexa\SiteFactory\Behat\Context\SiteFactoryFrontendContext
