@@ -73,6 +73,7 @@ regression:
                 - '%paths.base%/vendor/ibexa/discounts/features/browser'
                 - '%paths.base%/vendor/ibexa/discounts-codes/features/browser'
                 - '%paths.base%/vendor/ibexa/activity-log/features/browser'
+                - '%paths.base%/vendor/ibexa/integrated-help/features/browser'
                 - '%paths.base%/vendor/ibexa/product-catalog-date-time-attribute/features/browser'
                 - '%paths.base%/vendor/ibexa/site-factory/features/SiteFactoryFrontend.feature'
             filters:
@@ -146,5 +147,6 @@ regression:
                 - Ibexa\Discounts\Behat\Context\DiscountsInStorefrontContext
                 - Ibexa\DiscountsCodes\Behat\Context\DiscountsCodesInStorefrontContext
                 - Ibexa\ActivityLog\Behat\Context\ActivityLogContext
+                - Ibexa\IntegratedHelp\Behat\BrowserContext\IntegratedHelpContext
                 - Ibexa\ProductCatalogDateTimeAttribute\Behat\Context\DateTimeAttributeContext
                 - Ibexa\SiteFactory\Behat\Context\SiteFactoryFrontendContext
