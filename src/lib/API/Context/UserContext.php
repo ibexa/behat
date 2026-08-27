@@ -10,6 +10,7 @@ namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
 use Ibexa\Behat\API\Facade\UserFacade;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
@@ -30,20 +31,16 @@ class UserContext implements Context
         $this->argumentParser = $argumentParser;
     }
 
-    /**
-     * @Given I create a user group :userGroupName
-     */
+    #[Given('I create a user group :userGroupName')]
     public function createUseGroup(string $userGroupName): void
     {
         $this->userFacade->createUserGroup($userGroupName);
     }
 
-    /**
-     * @Given I create a user :userName with last name :userLastName
-     * @Given I create a user :userName with last name :userLastName in group :userGroupName
-     * @Given I create a user :userName with last name :userLastName with email :userEmail
-     * @Given I create a user :userName with last name :userLastName in group :userGroupName with email :userEmail
-     */
+    #[Given('I create a user :userName with last name :userLastName')]
+    #[Given('I create a user :userName with last name :userLastName in group :userGroupName')]
+    #[Given('I create a user :userName with last name :userLastName with email :userEmail')]
+    #[Given('I create a user :userName with last name :userLastName in group :userGroupName with email :userEmail')]
     public function createUserInGroupWithEmail(
         string $userName,
         string $userLastName,
@@ -53,9 +50,7 @@ class UserContext implements Context
         $this->userFacade->createUser($userName, $userLastName, $userGroupName, $userEmail);
     }
 
-    /**
-     * @Given I assign user :userName to role :roleName
-     */
+    #[Given('I assign user :userName to role :roleName')]
     public function assignUserToRole(
         string $userName,
         string $roleName
@@ -63,9 +58,7 @@ class UserContext implements Context
         $this->userFacade->assignUserToRole($userName, $roleName);
     }
 
-    /**
-     * @Given I assign user :userName to role :roleIdentifier if possible
-     */
+    #[Given('I assign user :userName to role :roleIdentifier if possible')]
     public function assignUserToRoleIfPossible(
         string $userName,
         string $roleIdentifier
@@ -76,9 +69,7 @@ class UserContext implements Context
         }
     }
 
-    /**
-     * @Given I assign user group :userGroupName to role :roleIdentifier if possible
-     */
+    #[Given('I assign user group :userGroupName to role :roleIdentifier if possible')]
     public function assignUserGroupToRoleIfPossible(
         string $userGroupName,
         string $roleIdentifier
@@ -89,10 +80,8 @@ class UserContext implements Context
         }
     }
 
-    /**
-     * @Given I assign user group :groupName to role :roleName
-     * @Given I assign user group :groupName to role :roleName with limitations:
-     */
+    #[Given('I assign user group :groupName to role :roleName')]
+    #[Given('I assign user group :groupName to role :roleName with limitations:')]
     public function assignUserGroupToRole(
         string $userGroupName,
         string $roleName,

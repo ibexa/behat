@@ -9,6 +9,8 @@ declare(strict_types=1);
 namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
+use Behat\Hook\BeforeScenario;
+use Behat\Step\Given;
 use Ibexa\Contracts\Core\Repository\PermissionResolver;
 use Ibexa\Contracts\Core\Repository\UserService;
 
@@ -26,19 +28,15 @@ class TestContext implements Context
         $this->permissionResolver = $permissionResolver;
     }
 
-    /**
-     * @Given I am using the API as :username
-     */
-    public function iAmLoggedAsApiUser(string $username)
+    #[Given('I am using the API as :username')]
+    public function iAmLoggedAsApiUser(string $username): void
     {
         $user = $this->userService->loadUserByLogin($username);
         $this->permissionResolver->setCurrentUserReference($user);
     }
 
-    /**
-     * @BeforeScenario
-     */
-    public function loginAdminBeforeScenarioHook()
+    #[BeforeScenario]
+    public function loginAdminBeforeScenarioHook(): void
     {
         $this->iAmLoggedAsApiUser('admin');
     }

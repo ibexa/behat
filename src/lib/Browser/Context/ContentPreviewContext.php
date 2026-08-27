@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Browser\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
 use Ibexa\Behat\Browser\Page\Preview\PagePreviewRegistry;
 
 class ContentPreviewContext implements Context
@@ -22,9 +23,7 @@ class ContentPreviewContext implements Context
         $this->pagePreviewRegistry = $pagePreviewRegistry;
     }
 
-    /**
-     * @Given I see correct preview data for :contentTypeName content type
-     */
+    #[Given('I see correct preview data for :contentTypeName content type')]
     public function iSeeCorrectPreviewDataFor(
         string $contentType,
         TableNode $previewData
