@@ -10,7 +10,7 @@ namespace Ibexa\Behat\Browser\Component;
 
 use Behat\Mink\Session;
 use Facebook\WebDriver\Chrome\ChromeDevToolsDriver;
-use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Ibexa\Behat\Browser\Driver\WebdriverClassicDriver;
 use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Element\Factory\Debug\Highlighting\ElementFactory as HighlightingDebugElementFactory;
@@ -21,7 +21,6 @@ use Ibexa\Behat\Browser\Element\RootElementInterface;
 use Ibexa\Behat\Browser\Locator\LocatorCollection;
 use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
-use OAndreyev\Mink\Driver\WebDriver;
 
 class DevToolsDriverUnavailableException extends \RuntimeException {}
 
@@ -74,18 +73,14 @@ abstract class Component implements ComponentInterface
     {
         $driver = $this->session->getDriver();
 
-        if (!($driver instanceof WebDriver)) {
+        if (!($driver instanceof WebdriverClassicDriver)) {
             throw new NotImplementedException('Chrome DevTools driver is not available for this driver');
         }
 
-        $webDriver = $driver->getWebDriver();
-
-        if (null === $webDriver) {
-            throw new DevToolsDriverUnavailableException('Error happened when accessing the WebDriver');
-        }
-
-        if (!($webDriver instanceof RemoteWebDriver)) {
-            throw new DevToolsDriverUnavailableException('Expected instance of Facebook\\WebDriver\\Remote\\RemoteWebDriver, got ' . (is_object($webDriver) ? get_class($webDriver) : gettype($webDriver)));
+        try {
+            $webDriver = $driver->getRemoteWebDriver();
+        } catch (\Throwable $e) {
+            throw new DevToolsDriverUnavailableException('Error happened when accessing the WebDriver', 0, $e);
         }
 
         return new ChromeDevToolsDriver($webDriver);

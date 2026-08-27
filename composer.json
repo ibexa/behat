@@ -8,33 +8,31 @@
     "require": {
         "php": ">=8.3",
         "ext-json": "*",
-        "behat/behat": "^3.13",
-        "behat/mink-selenium2-driver": "^1.4",
+        "behat/behat": "^3.32",
+        "behat/mink": "^1.13",
+        "behat/mink-browserkit-driver": "^2.0",
         "dmore/behat-chrome-extension": "^1.3",
         "dmore/chrome-mink-driver": "^2.7",
-        "ibexa/core": "~6.0.x-dev",
-        "friends-of-behat/mink": "^1.11",
-        "friends-of-behat/mink-browserkit-driver": "^1.4",
-        "friends-of-behat/mink-extension": "^2.4",
-        "friends-of-behat/symfony-extension": "^2.1",
         "fakerphp/faker": "^1.17",
+        "friends-of-behat/mink-extension": "^2.7.5",
+        "friends-of-behat/symfony-extension": "^2.7",
         "guzzlehttp/psr7": "^2.7",
-        "liuggio/fastest": "^1.11",
+        "ibexa/core": "~6.0.x-dev",
+        "liuggio/fastest": "^1.14",
+        "mink/webdriver-classic-driver": "^1.1",
         "php-http/client-common": "^2.1",
+        "psy/psysh": "^0.12.4",
         "symfony/config": "^7.3",
         "symfony/console": "^7.3",
         "symfony/dependency-injection": "^7.3",
-        "symfony/lock": "^7.3",
-        "symfony/stopwatch": "^7.3",
+        "symfony/form": "^7.3",
         "symfony/http-client": "^7.3",
         "symfony/http-kernel": "^7.3",
+        "symfony/lock": "^7.3",
         "symfony/process": "^7.3",
         "symfony/property-access": "^7.3",
+        "symfony/stopwatch": "^7.3",
         "symfony/yaml": "^7.3",
-        "psy/psysh": "^0.12.4",
-        "oleg-andreyev/mink-phpwebdriver": "<1.3.3",
-        "oleg-andreyev/mink-phpwebdriver-extension": "^1.0",
-        "symfony/form": "^7.3",
         "webmozart/assert": "^2.3"
     },
     "require-dev": {
@@ -54,9 +52,6 @@
             "Ibexa\\Bundle\\Behat\\": "src/bundle/",
             "Ibexa\\Contracts\\Behat\\": "src/contracts/"
         }
-    },
-    "conflict": {
-        "instaclick/php-webdriver": "1.4.12"
     },
     "autoload-dev": {
         "psr-4": {
