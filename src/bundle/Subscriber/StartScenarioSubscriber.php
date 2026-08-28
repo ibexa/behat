@@ -11,6 +11,7 @@ namespace Ibexa\Bundle\Behat\Subscriber;
 use Behat\Behat\EventDispatcher\Event\BeforeScenarioTested;
 use Behat\Behat\EventDispatcher\Event\ExampleTested;
 use Behat\Behat\EventDispatcher\Event\ScenarioTested;
+use Behat\Gherkin\Node\TaggedNodeInterface;
 use Facebook\WebDriver\Exception\UnknownErrorException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
@@ -47,7 +48,7 @@ class StartScenarioSubscriber implements EventSubscriberInterface
 
     public function resizeWindow(BeforeScenarioTested $event): void
     {
-        if (!$event->getScenario()->hasTag('javascript') && !$event->getFeature()->hasTag('javascript')) {
+        if (!$this->hasJavascriptTag($event->getScenario()) && !$this->hasJavascriptTag($event->getFeature())) {
             return;
         }
 
@@ -82,5 +83,13 @@ class StartScenarioSubscriber implements EventSubscriberInterface
                 usleep(100000 * 2 ** $counter);
             }
         }
+    }
+
+    /**
+     * Gherkin in legacy mode stores tags without the "@" prefix, the Gherkin 32 mode (Behat 4 default) keeps it.
+     */
+    private function hasJavascriptTag(TaggedNodeInterface $node): bool
+    {
+        return $node->hasTag('javascript') || $node->hasTag('@javascript');
     }
 }
