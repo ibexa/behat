@@ -11,6 +11,7 @@ namespace Ibexa\Bundle\Behat\Subscriber;
 use Behat\Behat\EventDispatcher\Event\BeforeScenarioTested;
 use Behat\Behat\EventDispatcher\Event\ExampleTested;
 use Behat\Behat\EventDispatcher\Event\ScenarioTested;
+use Behat\Gherkin\Node\NodeInterface;
 use Behat\Gherkin\Node\TaggedNodeInterface;
 use Facebook\WebDriver\Exception\UnknownErrorException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -88,8 +89,9 @@ class StartScenarioSubscriber implements EventSubscriberInterface
     /**
      * Gherkin in legacy mode stores tags without the "@" prefix, the Gherkin 32 mode (Behat 4 default) keeps it.
      */
-    private function hasJavascriptTag(TaggedNodeInterface $node): bool
+    private function hasJavascriptTag(NodeInterface $node): bool
     {
-        return $node->hasTag('javascript') || $node->hasTag('@javascript');
+        return $node instanceof TaggedNodeInterface
+            && ($node->hasTag('javascript') || $node->hasTag('@javascript'));
     }
 }
