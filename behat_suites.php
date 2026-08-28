@@ -19,6 +19,12 @@ use Ibexa\Behat\API\Context\UserContext;
 use Ibexa\Behat\Core\Context\ConfigurationContext;
 use Ibexa\Behat\Core\Context\FileContext;
 
+$setupContexts = [
+    LanguageContext::class,
+    TestContext::class,
+    ConfigurationContext::class,
+];
+
 return (new Config())
     ->withProfile((new Profile('service'))
         ->withSuite((new Suite('examples'))
@@ -63,32 +69,16 @@ return (new Config())
             )
             ->withPaths('%paths.base%/vendor/ibexa/behat/features/personas'))
         ->withSuite((new Suite('URIElement'))
-            ->withContexts(
-                LanguageContext::class,
-                TestContext::class,
-                ConfigurationContext::class
-            )
+            ->withContexts(...$setupContexts)
             ->withPaths('%paths.base%/vendor/ibexa/behat/features/setup/siteaccessMatcher/URIElement.feature'))
         ->withSuite((new Suite('MapHost'))
-            ->withContexts(
-                LanguageContext::class,
-                TestContext::class,
-                ConfigurationContext::class
-            )
+            ->withContexts(...$setupContexts)
             ->withPaths('%paths.base%/vendor/ibexa/behat/features/setup/siteaccessMatcher/MapHost.feature'))
         ->withSuite((new Suite('MapURI'))
-            ->withContexts(
-                LanguageContext::class,
-                TestContext::class,
-                ConfigurationContext::class
-            )
+            ->withContexts(...$setupContexts)
             ->withPaths('%paths.base%/vendor/ibexa/behat/features/setup/siteaccessMatcher/MapURI.feature'))
         ->withSuite((new Suite('CompoundMapURIMapHost'))
-            ->withContexts(
-                LanguageContext::class,
-                TestContext::class,
-                ConfigurationContext::class
-            )
+            ->withContexts(...$setupContexts)
             ->withPaths('%paths.base%/vendor/ibexa/behat/features/setup/siteaccessMatcher/CompoundMapURIMapHost.feature'))
         ->withSuite((new Suite('multirepository'))
             ->withContexts(ConfigurationContext::class)

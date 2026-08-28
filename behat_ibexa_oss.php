@@ -17,6 +17,7 @@ use Behat\Config\TesterOptions;
 use Behat\MinkExtension\Context\MinkContext;
 use Behat\MinkExtension\ServiceContainer\MinkExtension;
 use DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension;
+use Facebook\WebDriver\Remote\WebDriverBrowserType;
 use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
 use Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext;
 use Ibexa\AdminUi\Behat\BrowserContext\BookmarkContext;
@@ -77,7 +78,7 @@ return (new Config())
             'sessions' => [
                 'selenium' => [
                     'webdriver_classic' => [
-                        'browser' => 'chrome',
+                        'browser' => WebDriverBrowserType::CHROME,
                         'wd_host' => '%env(string:SELENIUM_HOST)%',
                         'capabilities' => [
                             'goog:chromeOptions' => [
