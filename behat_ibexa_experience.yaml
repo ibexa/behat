@@ -51,7 +51,8 @@ regression:
                 - Ibexa\Workflow\Behat\Context\WorkflowContext
                 - Ibexa\AdminUi\Behat\BrowserContext\UserNotificationContext
                 - Ibexa\AdminUi\Behat\BrowserContext\ContentViewContext
-    
+                - Ibexa\Behat\Core\Context\TimeContext
+
         experience:
             paths:
               - '%paths.base%/vendor/ibexa/admin-ui/features/personas'
