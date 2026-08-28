@@ -14,7 +14,6 @@ use Behat\Config\GherkinOptions;
 use Behat\Config\Profile;
 use Behat\Config\Suite;
 use Behat\Config\TesterOptions;
-use Behat\Gherkin\GherkinCompatibilityMode;
 use Behat\MinkExtension\Context\MinkContext;
 use Behat\MinkExtension\ServiceContainer\MinkExtension;
 use DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension;
@@ -67,8 +66,7 @@ return (new Config())
         'suites' => null,
     ]))
         ->withFormatter(new PrettyFormatter())
-        ->withGherkinOptions((new GherkinOptions(['cache' => false]))
-            ->withCompatibilityMode(GherkinCompatibilityMode::GHERKIN_32))
+        ->withGherkinOptions(new GherkinOptions(['cache' => false]))
         ->withTesterOptions((new TesterOptions())
             ->withErrorReporting(E_ALL & ~E_DEPRECATED))
         ->withExtension(new Extension(MinkExtension::class, [
