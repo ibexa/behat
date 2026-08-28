@@ -4,7 +4,7 @@
 
 In order to use ibexa/behat you need to use `behat` Symfony environment (which is defined in Ibexa by default). It is also recommended to run in enabled debug mode, which gives you more detailed browser screenshots in case of failure.
 
-The standard behat configuration file is [behat_ibexa_oss.yaml](https://github.com/ibexa/behat/blob/main/behat_ibexa_oss.yaml), located in ibexa/behat directory. There you can:
+The standard behat configuration file is [behat_ibexa_oss.php](https://github.com/ibexa/behat/blob/main/behat_ibexa_oss.php), located in ibexa/behat directory (a YAML twin, `behat_ibexa_oss.yaml`, is kept for the transition to Behat 4 and will be removed). There you can:
 - in the `Behat\MinkExtension` section:
   - set the URL of your website for browser testing (`base_url` parameter)
   - set driver configuration (for example `wd_host` for Selenium Server)
