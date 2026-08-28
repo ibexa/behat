@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Core\Log;
 
 use Behat\Mink\Session;
-use Ibexa\Behat\Browser\Driver\WebdriverClassicDriver;
+use Ibexa\Behat\Browser\Driver\WebDriverClassicDriver;
 use Ibexa\Behat\Browser\Filter\BrowserLogFilter;
 
 final class TestLogProvider
@@ -42,7 +42,7 @@ final class TestLogProvider
     {
         $driver = $this->session->getDriver();
 
-        if (!($driver instanceof WebdriverClassicDriver) || !$this->session->isStarted()) {
+        if (!($driver instanceof WebDriverClassicDriver) || !$this->session->isStarted()) {
             return [];
         }
 
@@ -56,7 +56,7 @@ final class TestLogProvider
         return $parsedLogs;
     }
 
-    private function getSeleniumLog(WebdriverClassicDriver $driver): array
+    private function getSeleniumLog(WebDriverClassicDriver $driver): array
     {
         try {
             return $driver->getRemoteWebDriver()->manage()->getLog('browser');

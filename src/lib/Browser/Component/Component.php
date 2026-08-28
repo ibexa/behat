@@ -10,7 +10,7 @@ namespace Ibexa\Behat\Browser\Component;
 
 use Behat\Mink\Session;
 use Facebook\WebDriver\Chrome\ChromeDevToolsDriver;
-use Ibexa\Behat\Browser\Driver\WebdriverClassicDriver;
+use Ibexa\Behat\Browser\Driver\WebDriverClassicDriver;
 use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Element\Factory\Debug\Highlighting\ElementFactory as HighlightingDebugElementFactory;
@@ -73,7 +73,7 @@ abstract class Component implements ComponentInterface
     {
         $driver = $this->session->getDriver();
 
-        if (!($driver instanceof WebdriverClassicDriver)) {
+        if (!($driver instanceof WebDriverClassicDriver)) {
             throw new NotImplementedException('Chrome DevTools driver is not available for this driver');
         }
 

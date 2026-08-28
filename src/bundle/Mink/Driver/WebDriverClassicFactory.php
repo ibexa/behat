@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\Behat\Mink\Driver;
 
 use Behat\MinkExtension\ServiceContainer\Driver\DriverFactory;
-use Ibexa\Behat\Browser\Driver\WebdriverClassicDriver;
+use Ibexa\Behat\Browser\Driver\WebDriverClassicDriver;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\Definition;
 
@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Definition;
  * underlying RemoteWebDriver stays reachable. Registered from IbexaExtension::initialize(),
  * which runs after MinkExtension registers its own factories, so this one takes precedence.
  */
-final class WebdriverClassicFactory implements DriverFactory
+final class WebDriverClassicFactory implements DriverFactory
 {
     public const DRIVER_NAME = 'webdriver_classic';
 
@@ -52,7 +52,7 @@ final class WebdriverClassicFactory implements DriverFactory
      */
     public function buildDriver(array $config): Definition
     {
-        return new Definition(WebdriverClassicDriver::class, [
+        return new Definition(WebDriverClassicDriver::class, [
             $config['browser'],
             is_array($config['capabilities'] ?? null) ? $config['capabilities'] : [],
             $config['wd_host'],

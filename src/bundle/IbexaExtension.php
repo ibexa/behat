@@ -14,7 +14,7 @@ use Behat\Testwork\ServiceContainer\Extension;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
 use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
 use Ibexa\Bundle\Behat\Initializer\BehatSiteAccessInitializer;
-use Ibexa\Bundle\Behat\Mink\Driver\WebdriverClassicFactory;
+use Ibexa\Bundle\Behat\Mink\Driver\WebDriverClassicFactory;
 use Ibexa\Bundle\Behat\Subscriber\StartScenarioSubscriber;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\FileLocator;
@@ -48,7 +48,7 @@ class IbexaExtension implements Extension
     {
         $minkExtension = $extensionManager->getExtension('mink');
         if ($minkExtension instanceof MinkExtension) {
-            $minkExtension->registerDriverFactory(new WebdriverClassicFactory());
+            $minkExtension->registerDriverFactory(new WebDriverClassicFactory());
         }
     }
 

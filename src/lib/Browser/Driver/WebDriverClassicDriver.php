@@ -27,7 +27,7 @@ use Mink\WebdriverClassicDriver\WebdriverClassicDriver as BaseWebdriverClassicDr
  *   WebDriver clear() + sendKeys(), which React-driven form controls in the Back Office do not react to,
  * - files are uploaded through LocalFileDetector so they reach a remote Selenium node.
  */
-final class WebdriverClassicDriver extends BaseWebdriverClassicDriver
+final class WebDriverClassicDriver extends BaseWebdriverClassicDriver
 {
     private const TEXT_INPUT_TYPES = ['', 'text', 'password', 'email', 'search', 'tel', 'url', 'number'];
 
