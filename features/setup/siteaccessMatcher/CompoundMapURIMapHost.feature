@@ -32,6 +32,6 @@ Feature: Set up basic Compound Map\URI nad Map\Host SiteAccess matching configur
             match: admin
     """
     And I append configuration to "admin_group" siteaccess
-      | key                          | value  |
-      | languages                    | pol-PL |
-      | page_builder.siteaccess_list | test   |
+      | key                          | value         |
+      | languages                    | eng-GB,pol-PL |
+      | page_builder.siteaccess_list | test          |

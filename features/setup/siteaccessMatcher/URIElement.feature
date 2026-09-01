@@ -12,6 +12,6 @@ Feature: Set up basic URIElement SiteAccess matching configuration
         1
     """
     And I append configuration to "admin_group" siteaccess
-      | key                          | value  |
-      | languages                    | pol-PL |
-      | page_builder.siteaccess_list | test   |
+      | key                          | value         |
+      | languages                    | eng-GB,pol-PL |
+      | page_builder.siteaccess_list | test          |
