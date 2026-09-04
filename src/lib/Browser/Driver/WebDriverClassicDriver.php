@@ -60,7 +60,7 @@ final class WebDriverClassicDriver extends BaseWebdriverClassicDriver
             return;
         }
 
-        if (is_string($value) && ($tagName === 'textarea' || ($tagName === 'input' && in_array($inputType, self::TEXT_INPUT_TYPES, true)))) {
+        if (is_string($value) && ($tagName === 'textarea' || ($tagName === 'input' && in_array($inputType, self::TEXT_INPUT_TYPES, true)) || $this->isContentEditable($element))) {
             $this->typeValue($element, $value);
 
             return;
@@ -101,6 +101,13 @@ final class WebDriverClassicDriver extends BaseWebdriverClassicDriver
         } catch (\Throwable $e) {
             throw new DriverException(sprintf('Cannot set text value: %s', $e->getMessage()), 0, $e);
         }
+    }
+
+    private function isContentEditable(RemoteWebElement $element): bool
+    {
+        // The DOM property, not the attribute: the attribute is null on children inheriting editability
+        // and CKEditor toggles the property in read-only mode.
+        return (bool)$this->getWebDriver()->executeScript('return arguments[0].isContentEditable;', [$element]);
     }
 
     private function findRemoteElement(string $xpath): RemoteWebElement
