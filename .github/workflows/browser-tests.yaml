@@ -10,9 +10,10 @@ on:
 jobs:
     admin-ui:
         name: "Admin UI tests"
-        uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
+        uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@behat-php-config
         with:
             project-edition: 'oss'
+            ci-scripts-branch: 'behat-php-config'
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
             test-suite: "--mode=standard --profile=browser --suite=admin-ui-full --tags='~@broken&&~@IbexaDXP'"
             multirepository: true
@@ -20,8 +21,10 @@ jobs:
         secrets: inherit
     examples:
         name: "BehatBundle examples"
-        uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
+        uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@behat-php-config
         with:
             project-edition: 'oss'
+            ci-scripts-branch: 'behat-php-config'
             test-suite:  '--mode=standard --profile=service --suite=examples'
         secrets: inherit
+

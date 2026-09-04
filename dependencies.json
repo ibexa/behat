@@ -1,0 +1,10 @@
+{
+    "recipesEndpoint": "https://api.github.com/repos/ibexa/recipes-dev/contents/index.json?ref=flex/pull-258",
+    "packages": [
+        {"requirement": "dev-IBX-12374-behat-attributes as 6.0.x-dev", "repositoryUrl": "https://github.com/ibexa/admin-ui", "package": "ibexa/admin-ui", "shouldBeAddedAsVCS": false},
+        {"requirement": "dev-IBX-12374-behat-attributes as 6.0.x-dev", "repositoryUrl": "https://github.com/ibexa/content-forms", "package": "ibexa/content-forms", "shouldBeAddedAsVCS": false},
+        {"requirement": "dev-IBX-12374-behat-attributes as 6.0.x-dev", "repositoryUrl": "https://github.com/ibexa/http-cache", "package": "ibexa/http-cache", "shouldBeAddedAsVCS": false},
+        {"requirement": "dev-IBX-12374-behat-attributes as 6.0.x-dev", "repositoryUrl": "https://github.com/ibexa/core", "package": "ibexa/core", "shouldBeAddedAsVCS": false},
+        {"requirement": "dev-IBX-12374-behat-attributes as 6.0.x-dev", "repositoryUrl": "https://github.com/ibexa/user", "package": "ibexa/user", "shouldBeAddedAsVCS": false}
+    ]
+}
