@@ -25,3 +25,13 @@ jobs:
             project-edition: 'oss'
             test-suite:  '--mode=standard --profile=service --suite=examples'
         secrets: inherit
+
+    page-builder:
+        name: "Page Builder tests"
+        uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
+        with:
+            project-edition: 'experience'
+            test-suite: '--profile=browser --suite=page-builder-full'
+            test-setup-phase-1: '--profile=setup --suite=personas --tags=@setup --mode=standard'
+            test-setup-phase-2: '--profile=setup --suite=page-builder --tags=@setup --mode=standard'
+        secrets: inherit
