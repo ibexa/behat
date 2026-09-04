@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Core\Context;
 
 use Behat\Behat\Context\Context;
+use Behat\Step\Given;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Webmozart\Assert\Assert;
 
@@ -21,26 +22,20 @@ class TimeContext implements Context
         $this->stopwatch = $stopwatch;
     }
 
-    /**
-     * @Given I wait :number seconds
-     */
+    #[Given('I wait :number seconds')]
     public function iWait(string $number): void
     {
         $number = (int) $number;
         sleep($number);
     }
 
-    /**
-     * @Given I start measuring time
-     */
+    #[Given('I start measuring time')]
     public function iStartMeasuingTime(): void
     {
         $this->stopwatch->start('event');
     }
 
-    /**
-     * @Given the action took no longer than :seconds seconds
-     */
+    #[Given('the action took no longer than :seconds seconds')]
     public function actionTookNoLongerThan(string $maxDuration): void
     {
         $this->stopwatch->stop('event');
@@ -50,9 +45,7 @@ class TimeContext implements Context
         Assert::lessThanEq($actualDuration, $maxDuration);
     }
 
-    /**
-     * @Given the action took longer than :seconds seconds
-     */
+    #[Given('the action took longer than :seconds seconds')]
     public function actionTookLongerThan(string $maxDuration): void
     {
         $this->stopwatch->stop('event');

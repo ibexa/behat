@@ -10,6 +10,7 @@ namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
 use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
 use Ibexa\Contracts\Core\Repository\ObjectStateService;
 
@@ -23,9 +24,7 @@ class ObjectStateContext implements Context
         $this->objectStateService = $objectStateService;
     }
 
-    /**
-     * @Given Object State Group :objectStateGroupName with identifier :objectStateGroupIdentifier exists
-     */
+    #[Given('Object State Group :objectStateGroupName with identifier :objectStateGroupIdentifier exists')]
     public function objectStateWithIdentifierExists(
         string $objectStateGroupName,
         string $objectStateGroupIdentifier,

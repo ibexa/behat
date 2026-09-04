@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Browser\Context;
 
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
+use Behat\Step\Given;
 use DMore\ChromeDriver\ChromeDriver;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 use Webmozart\Assert\Assert;
@@ -24,9 +25,7 @@ class BrowserContext extends RawMinkContext
         $this->argumentParser = $argumentParser;
     }
 
-    /**
-     * @Given I visit :url on siteaccess :siteaccess
-     */
+    #[Given('I visit :url on siteaccess :siteaccess')]
     public function iVisitItemOnSiteaccess(
         string $url,
         string $siteaccess
@@ -36,9 +35,7 @@ class BrowserContext extends RawMinkContext
         $this->getSession()->visit($this->locatePath($url));
     }
 
-    /**
-     * @Given response headers contain
-     */
+    #[Given('response headers contain')]
     public function responseHeadersContain(TableNode $expectedHeadersData): void
     {
         $responseHeaders = $this->getSession()->getDriver()->getResponseHeaders();
@@ -48,9 +45,7 @@ class BrowserContext extends RawMinkContext
         }
     }
 
-    /**
-     * @Given response headers match pattern
-     */
+    #[Given('response headers match pattern')]
     public function responseHeadersMatchPattern(TableNode $expectedHeadersData): void
     {
         $responseHeaders = $this->getSession()->getDriver()->getResponseHeaders();

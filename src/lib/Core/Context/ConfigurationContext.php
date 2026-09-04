@@ -11,6 +11,7 @@ namespace Ibexa\Behat\Core\Context;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
 use Exception;
 use Ibexa\Behat\Core\Configuration\ConfigurationEditorInterface;
 use Symfony\Component\Yaml\Yaml;
@@ -38,17 +39,12 @@ class ConfigurationContext implements Context
         $this->configurationEditor = $configurationEditor;
     }
 
-    /**
-     * @Given I add a siteaccess :siteaccessName to :siteaccessGroup with settings
-     *
-     * @param mixed $siteaccessName
-     * @param mixed $siteaccessGroup
-     */
+    #[Given('I add a siteaccess :siteaccessName to :siteaccessGroup with settings')]
     public function iAddSiteaccessWithSettings(
-        $siteaccessName,
-        $siteaccessGroup,
+        string $siteaccessName,
+        string $siteaccessGroup,
         TableNode $settings
-    ) {
+    ): void {
         $config = $this->configurationEditor->getConfigFromFile($this->mainProjectConfigFilePath);
 
         $config = $this->configurationEditor->append($config, 'ibexa.siteaccess.list', $siteaccessName);
@@ -63,18 +59,14 @@ class ConfigurationContext implements Context
         $this->configurationEditor->saveConfigToFile($this->mainProjectConfigFilePath, $config);
     }
 
-    /**
-     * @Given I :mode configuration to :siteaccessName siteaccess
-     * @Given I :mode configuration to :siteaccessName siteaccess in :configFilePath
-     *
-     * @param mixed $siteaccessName
-     */
+    #[Given('I :mode configuration to :siteaccessName siteaccess')]
+    #[Given('I :mode configuration to :siteaccessName siteaccess in :configFilePath')]
     public function iAppendOrSetConfigurationToSiteaccess(
         string $mode,
-        $siteaccessName,
+        string $siteaccessName,
         TableNode $settings,
         ?string $configFilePath = null
-    ) {
+    ): void {
         $appendToExisting = $this->shouldAppendValue($mode);
 
         $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
@@ -94,19 +86,16 @@ class ConfigurationContext implements Context
     }
 
     /**
-     * @Given I :mode configuration to :parentNode
-     * @Given I :mode configuration to :parentNode in :configFilePath
-     *
-     * string $mode Available: append|set - whether the new config will be appended (resulting in an array) or replace the current value if it exists
-     *
-     * @param mixed $parentNode
+     * string $mode Available: append|set - whether the new config will be appended (resulting in an array) or replace the current value if it exists.
      */
+    #[Given('I :mode configuration to :parentNode')]
+    #[Given('I :mode configuration to :parentNode in :configFilePath')]
     public function iModifyConfigurationUnderKey(
         string $mode,
-        $parentNode,
+        string $parentNode,
         PyStringNode $configFragment,
         ?string $configFilePath = null
-    ) {
+    ): void {
         $appendToExisting = $this->shouldAppendValue($mode);
 
         $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
@@ -120,29 +109,22 @@ class ConfigurationContext implements Context
         $this->configurationEditor->saveConfigToFile($configFilePath, $config);
     }
 
-    /**
-     * @Given I :mode configuration to :siteaccessName siteaccess under :keyName key
-     *
-     * @param mixed $siteaccessName
-     * @param mixed $keyName
-     */
+    #[Given('I :mode configuration to :siteaccessName siteaccess under :keyName key')]
     public function iModifyConfigurationForSiteaccessUnderKey(
         string $mode,
-        $siteaccessName,
-        $keyName,
+        string $siteaccessName,
+        string $keyName,
         PyStringNode $configFragment
-    ) {
+    ): void {
         $parentNode = sprintf(self::SITEACCESS_KEY_FORMAT, $siteaccessName, $keyName);
         $this->iModifyConfigurationUnderKey($mode, $parentNode, $configFragment);
     }
 
-    /**
-     * @Given I :mode siteaccess matcher configuration
-     */
+    #[Given('I :mode siteaccess matcher configuration')]
     public function iModifySiteaccessMatcherConfiguration(
         string $mode,
         PyStringNode $configFragment
-    ) {
+    ): void {
         $this->iModifyConfigurationUnderKey($mode, self::SITEACCESS_MATCHER_KEY, $configFragment);
     }
 
@@ -175,15 +157,13 @@ class ConfigurationContext implements Context
         return 'append' === $value;
     }
 
-    /**
-     * @Given I copy the configuration from :keyName to :newKeyName
-     * @Given I copy the configuration from :keyName to :newKeyName in :configFilePath
-     */
+    #[Given('I copy the configuration from :keyName to :newKeyName')]
+    #[Given('I copy the configuration from :keyName to :newKeyName in :configFilePath')]
     public function iCopyTheConfigurationFromTo(
         string $keyName,
         string $newKeyName,
         ?string $configFilePath = null
-    ) {
+    ): void {
         $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
         $config = $this->configurationEditor->getConfigFromFile($configFilePath);
         $config = $this->configurationEditor->copyKey($config, $keyName, $newKeyName);

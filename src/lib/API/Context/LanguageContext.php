@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
+use Behat\Step\Given;
 use Ibexa\Behat\API\Facade\LanguageFacade;
 
 class LanguageContext implements Context
@@ -23,13 +24,11 @@ class LanguageContext implements Context
         $this->languageFacade = $languageFacade;
     }
 
-    /**
-     * @Given Language :name with code :languageCode exists
-     */
+    #[Given('Language :name with code :languageCode exists')]
     public function createLanguageIfNotExists(
         string $name,
         string $languageCode
-    ) {
+    ): void {
         $this->languageFacade->createLanguageIfNotExists($name, $languageCode);
     }
 }

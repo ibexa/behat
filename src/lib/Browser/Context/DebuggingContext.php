@@ -12,6 +12,10 @@ use Behat\Behat\Hook\Scope\AfterScenarioScope;
 use Behat\Behat\Hook\Scope\AfterStepScope;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Behat\Hook\Scope\BeforeStepScope;
+use Behat\Hook\AfterScenario;
+use Behat\Hook\AfterStep;
+use Behat\Hook\BeforeScenario;
+use Behat\Hook\BeforeStep;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Testwork\Tester\Result\TestResult;
 use Ibexa\Behat\Core\Log\Failure\TestFailureData;
@@ -43,30 +47,26 @@ class DebuggingContext extends RawMinkContext
         $this->knownIssuesRegistry = $knownIssuesRegistry;
     }
 
-    /** @BeforeScenario
-     */
-    public function logStartingScenario(BeforeScenarioScope $scope)
+    #[BeforeScenario]
+    public function logStartingScenario(BeforeScenarioScope $scope): void
     {
         $this->logger->error(sprintf('Behat: Starting Scenario "%s"', $scope->getScenario()->getTitle()));
     }
 
-    /** @BeforeStep
-     */
-    public function logStartingStep(BeforeStepScope $scope)
+    #[BeforeStep]
+    public function logStartingStep(BeforeStepScope $scope): void
     {
         $this->logger->error(sprintf('Behat: Starting Step "%s"', $scope->getStep()->getText()));
     }
 
-    /** @AfterScenario
-     */
-    public function logEndingScenario(AfterScenarioScope $scope)
+    #[AfterScenario]
+    public function logEndingScenario(AfterScenarioScope $scope): void
     {
         $this->logger->error(sprintf('Behat: Ending Scenario "%s"', $scope->getScenario()->getTitle()));
     }
 
-    /** @AfterStep
-     */
-    public function logEndingStep(AfterStepScope $scope)
+    #[AfterStep]
+    public function logEndingStep(AfterStepScope $scope): void
     {
         $this->logger->error(sprintf('Behat: Ending Step "%s"', $scope->getStep()->getText()));
 
@@ -77,8 +77,8 @@ class DebuggingContext extends RawMinkContext
         $this->failedStepResult = $scope->getTestResult();
     }
 
-    /** @AfterStep */
-    public function getLogsAfterFailedStep(AfterStepScope $scope)
+    #[AfterStep]
+    public function getLogsAfterFailedStep(AfterStepScope $scope): void
     {
         if ($scope->getTestResult()->getResultCode() !== TestResult::FAILED) {
             return;
