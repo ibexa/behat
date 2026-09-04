@@ -50,6 +50,11 @@ final class WebDriverClassicDriver extends BaseWebdriverClassicDriver
         string $xpath,
         $value
     ): void {
+        if (is_int($value) || is_float($value)) {
+            // Steps pass numeric values for number inputs; the previous driver cast them implicitly.
+            $value = (string)$value;
+        }
+
         $element = $this->findRemoteElement($xpath);
         $tagName = strtolower($element->getTagName() ?? '');
         $inputType = $tagName === 'input' ? strtolower((string)$element->getAttribute('type')) : null;
@@ -67,6 +72,13 @@ final class WebDriverClassicDriver extends BaseWebdriverClassicDriver
         }
 
         parent::setValue($xpath, $value);
+    }
+
+    public function click(string $xpath): void
+    {
+        // The upstream driver scrolls the element fully into view first, which can move it under sticky UI
+        // and trigger ElementClickInterceptedException; WebDriver's own click already scrolls minimally.
+        $this->findRemoteElement($xpath)->click();
     }
 
     public function attachFile(
