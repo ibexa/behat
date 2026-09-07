@@ -81,6 +81,29 @@ final class WebDriverClassicDriver extends BaseWebdriverClassicDriver
         $this->findRemoteElement($xpath)->click();
     }
 
+    public function switchToIFrame(?string $name = null): void
+    {
+        if ($name === null) {
+            parent::switchToIFrame(null);
+
+            return;
+        }
+
+        // The upstream driver locates the frame with By::id, which builds the CSS selector "#<name>" —
+        // illegal for the dynamic, digit-leading iframe ids used in the Back Office. Match the frame
+        // by the name or id attribute instead, as the previous driver did.
+        $quoted = '"' . str_replace(['\\', '"'], ['\\\\', '\\"'], $name) . '"';
+        try {
+            $frame = $this->getWebDriver()->findElement(
+                WebDriverBy::cssSelector(sprintf('iframe[name=%1$s], iframe[id=%1$s], frame[name=%1$s], frame[id=%1$s]', $quoted))
+            );
+        } catch (NoSuchElementException $e) {
+            throw new DriverException(sprintf('Frame "%s" not found', $name), 0, $e);
+        }
+
+        $this->getWebDriver()->switchTo()->frame($frame);
+    }
+
     public function attachFile(
         string $xpath,
         string $path
