@@ -10,6 +10,7 @@ namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
 use Ibexa\Behat\API\Facade\ContentFacade;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 
@@ -29,16 +30,12 @@ class ContentContext implements Context
         $this->argumentParser = $argumentParser;
     }
 
-    /**
-     * @Given I create :number :contentTypeIdentifier Content items in :parentUrl in :language
-     *
-     * @param mixed $language
-     */
+    #[Given('I create :number :contentTypeIdentifier Content items in :parentUrl in :language')]
     public function createMultipleContentItems(
         string $numberOfItems,
         string $contentTypeIdentifier,
         string $parentUrl,
-        $language
+        string $language
     ): void {
         $parentUrl = $this->argumentParser->parseUrl($parentUrl);
 
@@ -47,9 +44,7 @@ class ContentContext implements Context
         }
     }
 
-    /**
-     * @Given a :contentTypeIdentifier Content item named :contentName exists in :parentUrl
-     */
+    #[Given('a :contentTypeIdentifier Content item named :contentName exists in :parentUrl')]
     public function contentItemExists(
         string $contentTypeIdentifier,
         string $contentName,
@@ -62,17 +57,11 @@ class ContentContext implements Context
         $this->contentFacade->createContentIfNotExists($contentTypeIdentifier, $contentUrl, $parentUrl, $contentData);
     }
 
-    /**
-     * @Given I create :contentTypeIdentifier Content items in :parentUrl in :language
-     *
-     * @param mixed $contentTypeIdentifier
-     * @param mixed $parentUrl
-     * @param mixed $language
-     */
+    #[Given('I create :contentTypeIdentifier Content items in :parentUrl in :language')]
     public function createContentItems(
-        $contentTypeIdentifier,
-        $parentUrl,
-        $language,
+        string $contentTypeIdentifier,
+        string $parentUrl,
+        string $language,
         TableNode $contentItemsData
     ): void {
         $parentUrl = $this->argumentParser->parseUrl($parentUrl);
@@ -83,13 +72,9 @@ class ContentContext implements Context
         }
     }
 
-    /**
-     * @Given I create :contentTypeIdentifier Content items
-     *
-     * @param mixed $contentTypeIdentifier
-     */
+    #[Given('I create :contentTypeIdentifier Content items')]
     public function createContentItemsInDifferentLocations(
-        $contentTypeIdentifier,
+        string $contentTypeIdentifier,
         TableNode $contentItemsData
     ): void {
         $parsedContentItemData = $this->parseData($contentItemsData);
@@ -103,13 +88,9 @@ class ContentContext implements Context
         }
     }
 
-    /**
-     * @Given I create :contentTypeIdentifier Content drafts
-     *
-     * @param mixed $contentTypeIdentifier
-     */
+    #[Given('I create :contentTypeIdentifier Content drafts')]
     public function createContentDraftsInDifferentLocations(
-        $contentTypeIdentifier,
+        string $contentTypeIdentifier,
         TableNode $contentItemsData
     ): void {
         $parsedContentItemData = $this->parseData($contentItemsData);
@@ -123,15 +104,10 @@ class ContentContext implements Context
         }
     }
 
-    /**
-     * @Given I edit :locationURL Content item in :language
-     *
-     * @param mixed $locationURL
-     * @param mixed $language
-     */
+    #[Given('I edit :locationURL Content item in :language')]
     public function editContentItem(
-        $locationURL,
-        $language,
+        string $locationURL,
+        string $language,
         TableNode $contentItemsData
     ): void {
         $locationURL = $this->argumentParser->parseUrl($locationURL);
@@ -142,15 +118,10 @@ class ContentContext implements Context
         }
     }
 
-    /**
-     * @Given I create a new Draft for :locationURL Content item in :language
-     *
-     * @param mixed $locationURL
-     * @param mixed $language
-     */
+    #[Given('I create a new Draft for :locationURL Content item in :language')]
     public function createNewDraftForExistingItem(
-        $locationURL,
-        $language,
+        string $locationURL,
+        string $language,
         TableNode $contentItemsData
     ): void {
         $locationURL = $this->argumentParser->parseUrl($locationURL);

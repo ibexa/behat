@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Browser\Element;
 
 use Behat\Mink\Element\NodeElement;
+use Behat\Mink\Exception\DriverException;
 use Behat\Mink\Session;
 use Facebook\WebDriver\Exception\NoSuchElementException;
 use Facebook\WebDriver\Exception\StaleElementReferenceException;
@@ -38,9 +39,9 @@ final class Element extends BaseElement implements ElementInterface
     {
         try {
             return $this->decoratedElement->isVisible();
-        } catch (NoSuchElementException $element) {
-            return false;
-        } catch (StaleElementReferenceException $e) {
+        } catch (DriverException | NoSuchElementException | StaleElementReferenceException) {
+            // The element vanished between being found and the visibility check; the driver wraps
+            // the underlying webdriver exception into a DriverException.
             return false;
         }
     }

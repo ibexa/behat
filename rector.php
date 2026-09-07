@@ -13,4 +13,5 @@ return (new IbexaRectorConfigFactory(
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ]
-))->createConfig();
+))->createConfig()
+    ->withAttributesSets(behat: true);

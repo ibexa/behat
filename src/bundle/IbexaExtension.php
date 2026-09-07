@@ -9,10 +9,12 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\Behat;
 
 use Behat\Behat\EventDispatcher\ServiceContainer\EventDispatcherExtension;
+use Behat\MinkExtension\ServiceContainer\MinkExtension;
 use Behat\Testwork\ServiceContainer\Extension;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
 use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
 use Ibexa\Bundle\Behat\Initializer\BehatSiteAccessInitializer;
+use Ibexa\Bundle\Behat\Mink\Driver\WebDriverClassicFactory;
 use Ibexa\Bundle\Behat\Subscriber\StartScenarioSubscriber;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\FileLocator;
@@ -29,7 +31,7 @@ class IbexaExtension implements Extension
 
     private const HEIGHT_PARAMETER = 'ibexa.behat.browser.height';
 
-    public function getConfigKey()
+    public function getConfigKey(): string
     {
         return 'ibexabehatextension';
     }
@@ -42,9 +44,15 @@ class IbexaExtension implements Extension
         }
     }
 
-    public function initialize(ExtensionManager $extensionManager) {}
+    public function initialize(ExtensionManager $extensionManager): void
+    {
+        $minkExtension = $extensionManager->getExtension('mink');
+        if ($minkExtension instanceof MinkExtension) {
+            $minkExtension->registerDriverFactory(new WebDriverClassicFactory());
+        }
+    }
 
-    public function configure(ArrayNodeDefinition $builder)
+    public function configure(ArrayNodeDefinition $builder): void
     {
         $builder
             ->children()
@@ -61,7 +69,7 @@ class IbexaExtension implements Extension
     public function load(
         ContainerBuilder $container,
         array $config
-    ) {
+    ): void {
         $this->loadSiteAccessInitializer($container);
         $this->loadStartScenarioSubscriber($container);
         $this->setMinkParameters($container, $config);
@@ -110,7 +118,7 @@ class IbexaExtension implements Extension
         $container->setParameter('mink.javascript_session', $defaultJavascriptSession);
     }
 
-    private function loadStartScenarioSubscriber(ContainerBuilder $container)
+    private function loadStartScenarioSubscriber(ContainerBuilder $container): void
     {
         $definition = new Definition(StartScenarioSubscriber::class);
         $definition->setArguments([

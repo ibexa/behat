@@ -8,9 +8,7 @@ The standard behat configuration file is [behat_ibexa_oss.yaml](https://github.c
 - in the `Behat\MinkExtension` section:
   - set the URL of your website for browser testing (`base_url` parameter)
   - set driver configuration (for example `wd_host` for Selenium Server)
-  - see [MinkExtension documentation](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst) for more information
-- in the `Bex\Behat\ScreenshotExtension` section:
-  - see [elvetemedve/behat-screenshot](https://github.com/elvetemedve/behat-screenshot) for screenshot configuration options
+  - see [MinkExtension documentation](https://github.com/FriendsOfBehat/MinkExtension/blob/master/doc/index.rst) for more information
 
 Behat profiles and suites are not defined in this file, but imported from files specified at the top.
 
@@ -30,7 +28,7 @@ Where:
 - 5900 is the port where the VNC client is accessible (to preview running tests) 
 - shm-size is related to Chrome containers requiring more memory (see [Selenium container configuration](https://github.com/ibexa/docker/blob/main/docker/selenium.yml#L19))
 
-After the container is set up correctly you need to adjust the configuration of `selenium2` driver in `behat_ibexa_oss.yaml` file
+After the container is set up correctly you need to adjust the configuration of the `webdriver_classic` driver (`sessions.selenium` in `behat_ibexa_oss.yaml`, `wd_host` set via `SELENIUM_HOST`)
 
 ## Running tests
 

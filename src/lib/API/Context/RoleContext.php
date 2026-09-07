@@ -10,6 +10,7 @@ namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
 use Ibexa\Behat\API\Facade\RoleFacade;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 
@@ -29,9 +30,7 @@ class RoleContext implements Context
         $this->argumentParser = $argumentParser;
     }
 
-    /**
-     * @Given I create a role :roleName
-     */
+    #[Given('I create a role :roleName')]
     public function createRole(string $roleName): void
     {
         if ($this->roleFacade->roleExist($roleName)) {
@@ -41,9 +40,7 @@ class RoleContext implements Context
         $this->roleFacade->createRole($roleName);
     }
 
-    /**
-     * @Given I create a role :roleName with policies
-     */
+    #[Given('I create a role :roleName with policies')]
     public function createRoleWithPolicies(
         string $roleName,
         TableNode $policies
@@ -59,13 +56,9 @@ class RoleContext implements Context
         }
     }
 
-    /**
-     * @Given I add policies to :roleName
-     *
-     * @param mixed $roleName
-     */
+    #[Given('I add policies to :roleName')]
     public function addPolicyToRole(
-        $roleName,
+        string $roleName,
         TableNode $policies
     ): void {
         foreach ($policies as $policy) {
@@ -73,15 +66,11 @@ class RoleContext implements Context
         }
     }
 
-    /**
-     * @Given I add policy :module :function to :roleName with limitations
-     *
-     * @param mixed $roleName
-     */
+    #[Given('I add policy :module :function to :roleName with limitations')]
     public function addPolicyToRoleWithLimitation(
         string $module,
         string $function,
-        $roleName,
+        string $roleName,
         TableNode $limitations
     ): void {
         $parsedLimitations = $this->argumentParser->parseLimitations($limitations);

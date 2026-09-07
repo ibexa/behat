@@ -85,30 +85,6 @@ parameters:
 			path: src/bundle/DependencyInjection/IbexaBehatExtension.php
 
 		-
-			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:configure\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/bundle/IbexaExtension.php
-
-		-
-			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:initialize\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/bundle/IbexaExtension.php
-
-		-
-			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:load\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/bundle/IbexaExtension.php
-
-		-
-			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:loadStartScenarioSubscriber\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/bundle/IbexaExtension.php
-
-		-
 			message: '#^Method Ibexa\\Bundle\\Behat\\IbexaExtension\:\:setMinkParameters\(\) has parameter \$config with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
@@ -715,12 +691,6 @@ parameters:
 			path: src/lib/API/Context/ContentTypeContext.php
 
 		-
-			message: '#^Method Ibexa\\Behat\\API\\Context\\LanguageContext\:\:createLanguageIfNotExists\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/API/Context/LanguageContext.php
-
-		-
 			message: '#^Method Ibexa\\Behat\\API\\Context\\LimitationParser\\ContentTypeLimitationParser\:\:parseContentTypeValues\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -841,18 +811,6 @@ parameters:
 			path: src/lib/API/Context/LimitationParser/WorkflowTransitionLimitationParser.php
 
 		-
-			message: '#^Method Ibexa\\Behat\\API\\Context\\TestContext\:\:iAmLoggedAsApiUser\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/API/Context/TestContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\API\\Context\\TestContext\:\:loginAdminBeforeScenarioHook\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/API/Context/TestContext.php
-
-		-
 			message: '#^Property Ibexa\\Behat\\API\\Context\\TestContext\:\:\$permissionResolver has no type specified\.$#'
 			identifier: missingType.property
 			count: 1
@@ -863,12 +821,6 @@ parameters:
 			identifier: missingType.property
 			count: 1
 			path: src/lib/API/Context/TestContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\API\\Context\\TrashContext\:\:iSendToTheTrash\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/API/Context/TrashContext.php
 
 		-
 			message: '#^Method Ibexa\\Behat\\API\\Facade\\ContentFacade\:\:createContent\(\) has parameter \$contentItemData with no type specified\.$#'
@@ -1291,24 +1243,6 @@ parameters:
 			path: src/lib/Browser/Assert/Debug/Interactive/ElementAssert.php
 
 		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:iAmViewingThePagesAsUserOnSiteaccess\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Context/AuthenticationContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:iLogInIn\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Context/AuthenticationContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:loggedAsAdmin\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Context/AuthenticationContext.php
-
-		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Context\\AuthenticationContext\:\:shouldPerformLoginAction\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -1341,36 +1275,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:formatForDisplay\(\) has parameter \$logEntries with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 1
-			path: src/lib/Browser/Context/DebuggingContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:getLogsAfterFailedStep\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Context/DebuggingContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logEndingScenario\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Context/DebuggingContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logEndingStep\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Context/DebuggingContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logStartingScenario\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Browser/Context/DebuggingContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Browser\\Context\\DebuggingContext\:\:logStartingStep\(\) has no return type specified\.$#'
-			identifier: missingType.return
 			count: 1
 			path: src/lib/Browser/Context/DebuggingContext.php
 
@@ -1951,12 +1855,6 @@ parameters:
 			path: src/lib/Browser/Environment/ParameterProviderInterface.php
 
 		-
-			message: '#^Call to an undefined method WebDriver\\Session\:\:file\(\)\.$#'
-			identifier: method.notFound
-			count: 1
-			path: src/lib/Browser/FileUpload/FileUploadHelper.php
-
-		-
 			message: '#^Method Ibexa\\Behat\\Browser\\FileUpload\\FileUploadHelper\:\:getRemoteFileUploadPath\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -2365,42 +2263,6 @@ parameters:
 			path: src/lib/Core/Configuration/LocationAwareConfigurationEditor.php
 
 		-
-			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iAddSiteaccessWithSettings\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Core/Context/ConfigurationContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iAppendOrSetConfigurationToSiteaccess\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Core/Context/ConfigurationContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iCopyTheConfigurationFromTo\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Core/Context/ConfigurationContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iModifyConfigurationForSiteaccessUnderKey\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Core/Context/ConfigurationContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iModifyConfigurationUnderKey\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Core/Context/ConfigurationContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:iModifySiteaccessMatcherConfiguration\(\) has no return type specified\.$#'
-			identifier: missingType.return
-			count: 1
-			path: src/lib/Core/Context/ConfigurationContext.php
-
-		-
 			message: '#^Method Ibexa\\Behat\\Core\\Context\\ConfigurationContext\:\:parseConfig\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -2439,12 +2301,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\Core\\Context\\FileContext\:\:createDirectoryStructure\(\) has parameter \$destinationPath with no type specified\.$#'
 			identifier: missingType.parameter
-			count: 1
-			path: src/lib/Core/Context/FileContext.php
-
-		-
-			message: '#^Method Ibexa\\Behat\\Core\\Context\\FileContext\:\:patchFile\(\) has no return type specified\.$#'
-			identifier: missingType.return
 			count: 1
 			path: src/lib/Core/Context/FileContext.php
 

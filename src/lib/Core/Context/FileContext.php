@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Core\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
+use Behat\Step\Given;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -25,15 +26,10 @@ class FileContext implements Context
         $this->projectDirectory = $projectDirectory;
     }
 
-    /**
-     * @Given I create a file :path with content from :sourceFile
-     *
-     * @param mixed $path
-     * @param mixed $sourceFile
-     */
+    #[Given('I create a file :path with content from :sourceFile')]
     public function createFileFromSourceFile(
-        $path,
-        $sourceFile
+        string $path,
+        string $sourceFile
     ): void {
         $content = file_get_contents(sprintf('%s/%s/%s', $this->projectDirectory, self::SOURCE_FILE_DIRECTORY, $sourceFile));
         $destinationPath = sprintf('%s/%s', $this->projectDirectory, $path);
@@ -41,23 +37,16 @@ class FileContext implements Context
         file_put_contents($destinationPath, $content);
     }
 
-    /**
-     * @Given I append to :file file :sourcePath
-     *
-     * @param mixed $file
-     * @param mixed $sourceFile
-     */
+    #[Given('I append to :file file :sourcePath')]
     public function appendToFile(
-        $file,
-        $sourceFile
+        string $file,
+        string $sourceFile
     ): void {
         $content = file_get_contents(sprintf('%s/%s/%s', $this->projectDirectory, self::SOURCE_FILE_DIRECTORY, $sourceFile));
         file_put_contents($file, $content, FILE_APPEND | LOCK_EX);
     }
 
-    /**
-     * @Given I create a file :path with contents
-     */
+    #[Given('I create a file :path with contents')]
     public function createFileFromContent(
         string $path,
         PyStringNode $fileContent
@@ -67,10 +56,8 @@ class FileContext implements Context
         file_put_contents($destinationPath, $fileContent->getRaw());
     }
 
-    /**
-     * @Given I apply the patch
-     */
-    public function patchFile(PyStringNode $patchContent)
+    #[Given('I apply the patch')]
+    public function patchFile(PyStringNode $patchContent): void
     {
         $this->createFileFromContent('patch.patch', $patchContent);
         $process = new Process(['patch', '-d', $this->projectDirectory, '-i', 'patch.patch', '-Np1']);

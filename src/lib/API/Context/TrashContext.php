@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
+use Behat\Step\Then;
 use Ibexa\Behat\API\Facade\TrashFacade;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 
@@ -28,12 +29,8 @@ class TrashContext implements Context
         $this->argumentParser = $argumentParser;
     }
 
-    /**
-     * @Then I send :locationURL to the Trash
-     *
-     * @param mixed $locationURL
-     */
-    public function iSendToTheTrash($locationURL)
+    #[Then('I send :locationURL to the Trash')]
+    public function iSendToTheTrash(string $locationURL): void
     {
         $locationURL = $this->argumentParser->parseUrl($locationURL);
         $this->trashFacade->trash($locationURL);

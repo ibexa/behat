@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Core\Log;
 
 use Behat\Mink\Session;
+use Ibexa\Behat\Browser\Driver\WebDriverClassicDriver;
 use Ibexa\Behat\Browser\Filter\BrowserLogFilter;
-use OAndreyev\Mink\Driver\WebDriver;
 
 final class TestLogProvider
 {
@@ -42,7 +42,7 @@ final class TestLogProvider
     {
         $driver = $this->session->getDriver();
 
-        if (!($driver instanceof WebDriver) || !$this->session->isStarted()) {
+        if (!($driver instanceof WebDriverClassicDriver) || !$this->session->isStarted()) {
             return [];
         }
 
@@ -56,16 +56,14 @@ final class TestLogProvider
         return $parsedLogs;
     }
 
-    private function getSeleniumLog(WebDriver $driver): array
+    private function getSeleniumLog(WebDriverClassicDriver $driver): array
     {
-        $webDriver = $driver->getWebDriver();
-        if (is_object($webDriver) && method_exists($webDriver, 'getLog')) {
-            return $webDriver->getLog('browser') ?? [];
+        try {
+            return $driver->getRemoteWebDriver()->manage()->getLog('browser');
+        } catch (\Throwable $e) {
+            // Log retrieval is not supported by every browser/driver combination
+            return [];
         }
-
-        // Log a warning or handle gracefully if getLog is not available
-        // error_log('WebDriver does not support getLog method.');
-        return [];
     }
 
     public function getApplicationLogs(): array

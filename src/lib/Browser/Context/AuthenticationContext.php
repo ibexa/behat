@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Browser\Context;
 
 use Behat\MinkExtension\Context\RawMinkContext;
+use Behat\Step\Given;
 use Ibexa\Behat\API\ContentData\FieldTypeData\PasswordProvider;
 use Ibexa\Behat\Browser\Page\LoginPage;
 use Ibexa\Behat\Browser\Page\RedirectLoginPage;
@@ -27,38 +28,32 @@ class AuthenticationContext extends RawMinkContext
         $this->redirectLoginPage = $redirectLoginPage;
     }
 
-    /**
-     * @Given I log in as :username
-     * @Given I log in as :username with password :password
-     */
+    #[Given('I log in as :username')]
+    #[Given('I log in as :username with password :password')]
     public function iLogInIn(
         string $username,
         ?string $password = null
-    ) {
+    ): void {
         $password = $password ?? PasswordProvider::DEFAUlT_PASSWORD;
         $this->loginPage->loginSuccessfully($username, $password);
     }
 
-    /**
-     * @Given I am logged as admin
-     */
-    public function loggedAsAdmin()
+    #[Given('I am logged as admin')]
+    public function loggedAsAdmin(): void
     {
         $this->redirectLoginPage->open('admin');
         $this->redirectLoginPage->verifyIsLoaded();
         $this->redirectLoginPage->loginSuccessfully('admin', 'publish');
     }
 
-    /**
-     * @Given I am viewing the pages on siteaccess :siteaccess as :username
-     * @Given I am viewing the pages on siteaccess :siteaccess as :username :password
-     * @Given I am viewing the pages on siteaccess :siteaccess as :username with password :password
-     */
+    #[Given('I am viewing the pages on siteaccess :siteaccess as :username')]
+    #[Given('I am viewing the pages on siteaccess :siteaccess as :username :password')]
+    #[Given('I am viewing the pages on siteaccess :siteaccess as :username with password :password')]
     public function iAmViewingThePagesAsUserOnSiteaccess(
         string $siteaccess,
         string $username,
         ?string $password = null
-    ) {
+    ): void {
         $this->loginPage->open($siteaccess);
         $this->loginPage->logout($siteaccess);
 

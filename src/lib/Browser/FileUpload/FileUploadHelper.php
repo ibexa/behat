@@ -8,47 +8,23 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Browser\FileUpload;
 
-use Behat\Mink\Driver\Selenium2Driver;
-use Behat\Mink\Session;
 use FriendsOfBehat\SymfonyExtension\Mink\MinkParameters;
 
 class FileReadException extends \RuntimeException {}
 
 class FileUploadHelper
 {
-    /** @var Session */
-    private $session;
-
     /** @var MinkParameters */
     private $minkParameters;
 
-    public function __construct(
-        Session $session,
-        MinkParameters $minkParameters
-    ) {
-        $this->session = $session;
+    public function __construct(MinkParameters $minkParameters)
+    {
         $this->minkParameters = $minkParameters;
     }
 
     public function getRemoteFileUploadPath($filename)
     {
         $localFile = sprintf('%s%s', $this->minkParameters['files_path'], $filename);
-        $driver = $this->session->getDriver();
-
-        if ($driver instanceof Selenium2Driver) {
-            if (!preg_match('#[\w/.]*\.zip$#', $filename)) {
-                throw new \InvalidArgumentException('Zip archive required to upload to remote browser machine.');
-            }
-
-            $fileContents = file_get_contents($localFile);
-            if ($fileContents === false) {
-                throw new FileReadException("Failed to read file: $localFile");
-            }
-
-            return $driver->getWebDriverSession()->file([
-                'file' => base64_encode($fileContents),
-            ]);
-        }
 
         return $localFile;
     }

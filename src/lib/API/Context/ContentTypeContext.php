@@ -10,6 +10,7 @@ namespace Ibexa\Behat\API\Context;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
 use Ibexa\Behat\API\Facade\ContentTypeFacade;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
 
@@ -23,17 +24,11 @@ class ContentTypeContext implements Context
         $this->contentTypeFacade = $contentTypeFacade;
     }
 
-    /**
-     * @Given I create a :contentTypeName content type in :contentTypeGroupName with :contentTypeIdentifier identifier
-     *
-     * @param mixed $contentTypeName
-     * @param mixed $contentTypeGroupName
-     * @param mixed $contentTypeIdentifier
-     */
+    #[Given('I create a :contentTypeName content type in :contentTypeGroupName with :contentTypeIdentifier identifier')]
     public function iCreateAContentTypeWithIdentifier(
-        $contentTypeName,
-        $contentTypeGroupName,
-        $contentTypeIdentifier,
+        string $contentTypeName,
+        string $contentTypeGroupName,
+        string $contentTypeIdentifier,
         TableNode $fieldDetails
     ): void {
         if ($this->contentTypeFacade->contentTypeExists($contentTypeIdentifier)) {
