@@ -11,12 +11,12 @@ use Behat\Config\Extension;
 use Behat\Config\Filter\TagFilter;
 use Behat\Config\Formatter\PrettyFormatter;
 use Behat\Config\GherkinOptions;
+use Behat\Gherkin\GherkinCompatibilityMode;
 use Behat\Config\Profile;
 use Behat\Config\Suite;
 use Behat\Config\TesterOptions;
 use Behat\MinkExtension\Context\MinkContext;
 use Behat\MinkExtension\ServiceContainer\MinkExtension;
-use DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension;
 use Facebook\WebDriver\Remote\WebDriverBrowserType;
 use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
 use Ibexa\AdminUi\Behat\BrowserContext\AdminUpdateContext;
@@ -54,7 +54,6 @@ use Ibexa\Behat\Core\Context\FileContext;
 use Ibexa\Bundle\Behat\IbexaExtension;
 use Ibexa\User\Behat\Context\UserSettingsContext;
 use Ibexa\User\Behat\Context\UserSetupContext;
-use Liuggio\Fastest\Behat\ListFeaturesExtension\Extension as ListFeaturesExtension;
 
 return (new Config())
     ->import('vendor/ibexa/behat/behat_suites.php')
@@ -67,7 +66,8 @@ return (new Config())
         'suites' => null,
     ]))
         ->withFormatter(new PrettyFormatter())
-        ->withGherkinOptions(new GherkinOptions(['cache' => false]))
+        ->withGherkinOptions((new GherkinOptions(['cache' => false]))
+            ->withCompatibilityMode(GherkinCompatibilityMode::GHERKIN_32))
         ->withTesterOptions((new TesterOptions())
             ->withErrorReporting(E_ALL & ~E_DEPRECATED))
         ->withExtension(new Extension(MinkExtension::class, [
@@ -93,14 +93,8 @@ return (new Config())
                         ],
                     ],
                 ],
-                'chrome' => [
-                    'chrome' => [
-                        'api_url' => '%env(string:CHROMIUM_HOST)%',
-                    ],
-                ],
             ],
         ]))
-        ->withExtension(new Extension(ChromeExtension::class))
         ->withExtension(new Extension(SymfonyExtension::class, [
             'bootstrap' => 'tests/bootstrap.php',
         ]))
@@ -110,8 +104,7 @@ return (new Config())
                 'width' => 1440,
                 'height' => 1080,
             ],
-        ]))
-        ->withExtension(new Extension(ListFeaturesExtension::class)))
+        ])))
     ->withProfile((new Profile('regression'))
         ->withSuite((new Suite('setup-oss'))
             ->withContexts(
