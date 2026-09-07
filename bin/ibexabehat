@@ -93,6 +93,13 @@ esac
 shift
 done
 
+# Default to the PHP Behat configuration when present and no --config was given,
+# so Behat's auto-discovery cannot pick a stray file like the behat.yml.dist
+# shipped by the friends-of-behat/symfony-extension recipe.
+if [ -z "$CONFIG" ] && [ -f behat.php ]; then
+    CONFIG='--config=behat.php'
+fi
+
 case "${MODE}" in
     behat|standard) behat;;
     fastest|parallel) fastest;;
