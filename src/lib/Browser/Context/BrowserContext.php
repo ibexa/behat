@@ -11,7 +11,6 @@ namespace Ibexa\Behat\Browser\Context;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Step\Given;
-use DMore\ChromeDriver\ChromeDriver;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 use Webmozart\Assert\Assert;
 
@@ -61,10 +60,6 @@ class BrowserContext extends RawMinkContext
         $responseHeaders,
         $header
     ): string {
-        if ($this->getSession()->getDriver() instanceof ChromeDriver) {
-            return $responseHeaders[$header];
-        }
-
         return $responseHeaders[$header][0];
     }
 }

@@ -62,7 +62,7 @@ fastest(){
     get_behat_features | "$COMPOSER_RUNTIME_BIN_DIR/fastest" $PROCESS --ansi -o -v "$COMPOSER_RUNTIME_BIN_DIR/behat {} ${CONFIG} ${PROFILE}${SUITE}${TAGS}--no-interaction --colors -vv ${STRICT} ${OTHER_OPTIONS}"
 }
 
-# Fastest option 'list-features' gives us the list of all features from given context in random order, which are later
+# Behat's native 'list-scenarios' gives us the list of all scenarios from the given context in random order, which are later
 # run in this order in few threads and dynamically distributed between these threads. That gives us different test build
 # times each build, often non optimal. To make this optimal we sort features by the number of scenarios in them
 # (descending) and run them in that order, to minimize final time gap between the threads.

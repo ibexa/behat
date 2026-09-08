@@ -33,11 +33,6 @@ default:
                                     - "--disable-renderer-backgrounding"
                                     - "--disable-background-timer-throttling"
                                     - "--disable-backgrounding-occluded-windows"
-                chrome:
-                    chrome:
-                        api_url: '%env(string:CHROMIUM_HOST)%'
-
-        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
 
         FriendsOfBehat\SymfonyExtension:
             bootstrap: 'tests/bootstrap.php'
@@ -48,7 +43,6 @@ default:
                 width: 1440
                 height: 1080
 
-        Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
 
     suites: ~
 
