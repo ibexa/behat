@@ -23,7 +23,9 @@ jobs:
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
             project-edition: 'oss'
-            # Deliberately parallel (the ibexabehat default): it exercises --list-scenarios and the fastest
-            # runner, which no other job covers — this path broke silently when every job ran --mode=standard.
-            test-suite:  '--profile=service --suite=examples'
+            # Deliberately parallel mode (the ibexabehat default) so --list-scenarios and the fastest
+            # runner are exercised — no other job covers that path. Pinned to a single process:
+            # configuration.feature rewrites the app's config files while the other features boot the
+            # same kernel, and the runner's CPU count must not decide how many do that at once.
+            test-suite:  '--profile=service --suite=examples --process=1'
         secrets: inherit
