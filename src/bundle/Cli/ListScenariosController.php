@@ -25,14 +25,14 @@ use Symfony\Component\Console\Output\OutputInterface;
  * option; up to Behat 3 it was provided by the liuggio/fastest ListFeaturesExtension, whose
  * untyped extension class cannot load on Behat 4.
  */
-final class ListScenariosController implements Controller
+final readonly class ListScenariosController implements Controller
 {
     /**
      * @param SpecificationLocator<FeatureNode> $specificationLocator
      */
     public function __construct(
-        private readonly SpecificationLocator $specificationLocator,
-        private readonly SuiteRepository $suiteRepository
+        private SpecificationLocator $specificationLocator,
+        private SuiteRepository $suiteRepository
     ) {}
 
     public function configure(SymfonyCommand $command): void
