@@ -10,9 +10,13 @@ namespace Ibexa\Bundle\Behat;
 
 use Behat\Behat\EventDispatcher\ServiceContainer\EventDispatcherExtension;
 use Behat\MinkExtension\ServiceContainer\MinkExtension;
+use Behat\Testwork\Cli\ServiceContainer\CliExtension;
 use Behat\Testwork\ServiceContainer\Extension;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
+use Behat\Testwork\Specification\ServiceContainer\SpecificationExtension;
+use Behat\Testwork\Suite\ServiceContainer\SuiteExtension;
 use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
+use Ibexa\Bundle\Behat\Cli\ListScenariosController;
 use Ibexa\Bundle\Behat\Initializer\BehatSiteAccessInitializer;
 use Ibexa\Bundle\Behat\Mink\Driver\WebDriverClassicFactory;
 use Ibexa\Bundle\Behat\Subscriber\StartScenarioSubscriber;
@@ -72,6 +76,7 @@ class IbexaExtension implements Extension
     ): void {
         $this->loadSiteAccessInitializer($container);
         $this->loadStartScenarioSubscriber($container);
+        $this->loadListScenariosController($container);
         $this->setMinkParameters($container, $config);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/Resources/config'));
@@ -128,6 +133,18 @@ class IbexaExtension implements Extension
         ]);
         $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, ['priority' => StartScenarioSubscriber::PRIORITY]);
         $container->setDefinition(StartScenarioSubscriber::class, $definition);
+    }
+
+    private function loadListScenariosController(ContainerBuilder $container): void
+    {
+        $definition = new Definition(ListScenariosController::class);
+        $definition->setArguments([
+            new Reference(SpecificationExtension::LOCATOR_TAG . '.filesystem_feature'),
+            new Reference(SuiteExtension::REGISTRY_ID),
+        ]);
+        // Above ExerciseController (priority 0), so listing bypasses test execution.
+        $definition->addTag(CliExtension::CONTROLLER_TAG, ['priority' => 255]);
+        $container->setDefinition(ListScenariosController::class, $definition);
     }
 
     private function getParameterReference(string $name): string

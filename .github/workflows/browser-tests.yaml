@@ -23,5 +23,7 @@ jobs:
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
             project-edition: 'oss'
-            test-suite:  '--mode=standard --profile=service --suite=examples'
+            # Deliberately parallel (the ibexabehat default): it exercises --list-scenarios and the fastest
+            # runner, which no other job covers — this path broke silently when every job ran --mode=standard.
+            test-suite:  '--profile=service --suite=examples'
         secrets: inherit
