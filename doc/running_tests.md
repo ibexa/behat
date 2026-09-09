@@ -4,7 +4,7 @@
 
 In order to use ibexa/behat you need to use `behat` Symfony environment (which is defined in Ibexa by default). It is also recommended to run in enabled debug mode, which gives you more detailed browser screenshots in case of failure.
 
-The standard behat configuration file is [behat_ibexa_oss.php](https://github.com/ibexa/behat/blob/6.0/behat_ibexa_oss.php), located in ibexa/behat directory (a YAML twin, `behat_ibexa_oss.yaml`, is kept for the transition to Behat 4 and will be removed). There you can:
+The standard behat configuration file is [behat_ibexa_oss.php](https://github.com/ibexa/behat/blob/6.0/behat_ibexa_oss.php), located in ibexa/behat directory. There you can:
 - in the `Behat\MinkExtension` section:
   - set the URL of your website for browser testing (`base_url` parameter)
   - set driver configuration (for example `wd_host` for Selenium Server)
@@ -28,7 +28,7 @@ Where:
 - 5900 is the port where the VNC client is accessible (to preview running tests) 
 - shm-size is related to Chrome containers requiring more memory (see [Selenium container configuration](https://github.com/ibexa/docker/blob/main/docker/selenium.yml#L19))
 
-After the container is set up correctly you need to adjust the configuration of the `webdriver_classic` driver (`sessions.selenium` in `behat_ibexa_oss.yaml`, `wd_host` set via `SELENIUM_HOST`)
+After the container is set up correctly you need to adjust the configuration of the `webdriver_classic` driver (the `selenium` session in `behat_ibexa_oss.php`, `wd_host` set via `SELENIUM_HOST`)
 
 ## Running tests
 
@@ -52,7 +52,7 @@ Running Behat feature files in parallel (on the available number of CPUs) is the
 
 ## Existing test profiles and suites
 
-By convention profiles and suites are defined in the `behat_suites.yml` file in each bundle, if they exist. See [Behat suites](../behat_suites.yml) and [AdminUI suites](https://github.com/ibexa/admin-ui/blob/main/behat_suites.yml) for examples.
+By convention profiles and suites are defined in the `behat_suites.php` file in each bundle, if they exist. See [Behat suites](../behat_suites.php) and [AdminUI suites](https://github.com/ibexa/admin-ui/blob/6.0/behat_suites.php) for examples.
 
 In order to run them, execute:
 - `bin/ibexabehat --profile=behat --suite=examples` (behat usage examples)
