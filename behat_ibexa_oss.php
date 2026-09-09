@@ -88,6 +88,10 @@ return (new Config())
                                     '--disable-renderer-backgrounding',
                                     '--disable-background-timer-throttling',
                                     '--disable-backgrounding-occluded-windows',
+                                    // CI serves the site over plain HTTP, which is not a secure context.
+                                    // Treat the CI origins as trustworthy so secure-only browser APIs
+                                    // (e.g. crypto.randomUUID) behave as in production over HTTPS.
+                                    '--unsafely-treat-insecure-origin-as-secure=http://web,http://varnish',
                                 ],
                             ],
                         ],
