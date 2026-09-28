@@ -9,10 +9,8 @@ Feature: Multirepository setup for testing
             default:
                 url: 'mysql://INVALID:INVALID@127.0.0.1/INVALID'
                 server_version: '8.0'
-                use_savepoints: true
             second_connection:
                 url: '%env(resolve:DATABASE_URL)%'
-                use_savepoints: true
     """
       Given I copy the configuration from "ibexa.repositories.default" to "ibexa.repositories.new_repository"
       And I append configuration to "ibexa.repositories.new_repository.storage"
