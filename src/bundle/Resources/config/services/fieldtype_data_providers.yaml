@@ -4,8 +4,6 @@ services:
         autoconfigure: true
         public: false
         
-    Ibexa\Behat\API\ContentData\FieldTypeData\RandomDataGenerator: ~
-
     Ibexa\Behat\API\ContentData\FieldTypeData\ObjectRelationDataProvider:
       arguments:
         - '@Ibexa\Behat\API\Facade\SearchFacade'
