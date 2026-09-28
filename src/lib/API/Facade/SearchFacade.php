@@ -86,16 +86,17 @@ class SearchFacade
 
         $results = $this->searchService->findContent($query)->searchHits;
 
-        $indices = array_rand($results, $number);
-
-        if ($number === 1) {
-            return $results[$indices]->valueObject->contentInfo->id;
-        }
+        // array_rand() returns a single key when asked for one
+        $indices = (array) array_rand($results, $number);
 
         $randomContentIDs = [];
 
         foreach ($indices as $i) {
             $randomContentIDs[] = $results[$i]->valueObject->contentInfo->id;
+        }
+
+        if ($number === 1) {
+            return $randomContentIDs[0];
         }
 
         return $randomContentIDs;
