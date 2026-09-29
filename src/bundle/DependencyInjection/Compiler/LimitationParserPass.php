@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class LimitationParserPass implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $parserCollector = $container->findDefinition(LimitationParsersCollector::class);
         $strategyServiceIds = array_keys($container->findTaggedServiceIds('ibexa.behat.limitation_parser'));

@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class FieldTypeDataProviderPass implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $contentDataDefinition = $container->findDefinition(ContentDataProvider::class);
         $strategyServiceIds = array_keys($container->findTaggedServiceIds('ibexa.behat.fieldtype_data_provider'));

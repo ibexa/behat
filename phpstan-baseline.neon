@@ -1009,12 +1009,6 @@ parameters:
 			path: src/lib/API/Facade/RoleFacade.php
 
 		-
-			message: '#^Argument of an invalid type array\<int, int\>\|int supplied for foreach, only iterables are supported\.$#'
-			identifier: foreach.nonIterable
-			count: 1
-			path: src/lib/API/Facade/SearchFacade.php
-
-		-
 			message: '#^Method Ibexa\\Behat\\API\\Facade\\SearchFacade\:\:getRandomContentIds\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -1023,12 +1017,6 @@ parameters:
 		-
 			message: '#^Method Ibexa\\Behat\\API\\Facade\\SearchFacade\:\:getRandomLocationID\(\) should return int but returns int\|null\.$#'
 			identifier: return.type
-			count: 1
-			path: src/lib/API/Facade/SearchFacade.php
-
-		-
-			message: '#^Possibly invalid array key type array\<int, int\>\|int\.$#'
-			identifier: offsetAccess.invalidOffset
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
 

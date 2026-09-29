@@ -29,7 +29,7 @@ class IbexaBehatExtension extends Extension implements PrependExtensionInterface
 
     public const BROWSER_DEBUG_INTERACTIVE_ENABLED = 'ibexa.behat.browser.debug.interactive.enabled';
 
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (!$container->getParameter(self::OVERRIDE_CONFIGURATION)) {
             return;
@@ -38,7 +38,7 @@ class IbexaBehatExtension extends Extension implements PrependExtensionInterface
         $container->setParameter('ibexa.site_access.config.admin_group.notifications.success.timeout', 30000);
     }
 
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
         $container->setParameter(self::OVERRIDE_CONFIGURATION, true);
         $container->setParameter(self::BROWSER_TESTING_ENABLED, true);
@@ -48,7 +48,7 @@ class IbexaBehatExtension extends Extension implements PrependExtensionInterface
     public function load(
         array $config,
         ContainerBuilder $container
-    ) {
+    ): void {
         $loader = new Loader\YamlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
