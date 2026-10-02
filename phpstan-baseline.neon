@@ -1063,7 +1063,7 @@ parameters:
 			path: src/lib/API/Facade/RoleFacade.php
 
 		-
-			message: '#^Argument of an invalid type array\<int, int\>\|int supplied for foreach, only iterables are supported\.$#'
+			message: '#^Argument of an invalid type int\<0, max\>\|list\<int\<0, max\>\> supplied for foreach, only iterables are supported\.$#'
 			identifier: foreach.nonIterable
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
@@ -1081,7 +1081,7 @@ parameters:
 			path: src/lib/API/Facade/SearchFacade.php
 
 		-
-			message: '#^Possibly invalid array key type array\<int, int\>\|int\.$#'
+			message: '#^Possibly invalid array key type int\<0, max\>\|list\<int\<0, max\>\>\.$#'
 			identifier: offsetAccess.invalidOffset
 			count: 1
 			path: src/lib/API/Facade/SearchFacade.php
