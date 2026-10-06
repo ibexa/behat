@@ -11,6 +11,7 @@ jobs:
         name: "Admin UI tests"
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
+            php-image: 'ghcr.io/ibexa/docker/php:8.5-node22'
             project-edition: 'oss'
             test-setup-phase-1: '--profile=regression --suite=setup-oss --mode=standard'
             test-suite: "--mode=standard --profile=browser --suite=admin-ui-full --tags='~@broken&&~@IbexaDXP'"
@@ -21,6 +22,7 @@ jobs:
         name: "BehatBundle examples"
         uses: ibexa/gh-workflows/.github/workflows/browser-tests.yml@main
         with:
+            php-image: 'ghcr.io/ibexa/docker/php:8.5-node22'
             project-edition: 'oss'
             # Deliberately parallel mode (the ibexabehat default) so --list-scenarios and the fastest
             # runner are exercised — no other job covers that path. Pinned to a single process:
