@@ -6,7 +6,7 @@
         "ezsystems/behatbundle": "*"
     },
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.5",
         "ext-json": "*",
         "behat/behat": "4.0.0-alpha1",
         "behat/mink": "^1.13",
