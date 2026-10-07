@@ -17,17 +17,19 @@ class ElementTransitionHasEndedCondition implements ConditionInterface
 
     private const TRANSITION_STARTED_CLASS = 'ibexa-selenium-transition-started';
 
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface */
+    /** @var LocatorInterface */
     private $elementLocator;
 
-    /** @var \Ibexa\Behat\Browser\Element\BaseElementInterface */
+    /** @var BaseElementInterface */
     private $searchedNode;
 
     /** @var bool */
     private $hasStartedTransitioning;
 
-    public function __construct(BaseElementInterface $searchedNode, LocatorInterface $elementLocator)
-    {
+    public function __construct(
+        BaseElementInterface $searchedNode,
+        LocatorInterface $elementLocator
+    ) {
         $this->elementLocator = $elementLocator;
         $this->searchedNode = $searchedNode;
     }

@@ -22,8 +22,10 @@ class ElementAttributeCriterion implements CriterionInterface
     /** @var string */
     private $attribute;
 
-    public function __construct(string $attribute, string $expectedAttributeValue)
-    {
+    public function __construct(
+        string $attribute,
+        string $expectedAttributeValue
+    ) {
         $this->attribute = $attribute;
         $this->expectedAttributeValue = $expectedAttributeValue;
         $this->results = [];

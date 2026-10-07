@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ShowURLCommand extends Command
 {
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     protected $session;
 
     public function __construct(Session $session)
@@ -33,8 +33,10 @@ class ShowURLCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
         $output->writeln($this->session->getCurrentUrl());
 
         return 0;

@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
 
 class ElementTextMapperTest extends BaseTestCase
 {
-    /** @var \Ibexa\Behat\Browser\Element\Mapper\ElementTextMapper */
+    /** @var ElementTextMapper */
     private $mapper;
 
     protected function setUp(): void

@@ -19,8 +19,11 @@ class ElementAttributeCriterionTest extends BaseTestCase
     /**
      * @dataProvider dataProviderTestMatches
      */
-    public function testMatches(string $attributeName, string $attributeValue, bool $shouldMatch): void
-    {
+    public function testMatches(
+        string $attributeName,
+        string $attributeValue,
+        bool $shouldMatch
+    ): void {
         $criterion = new ElementAttributeCriterion('expectedAttribute', 'expectedValue');
         $element = $this->createElementWithAttribute($attributeName, $attributeValue);
 
@@ -58,8 +61,10 @@ class ElementAttributeCriterionTest extends BaseTestCase
         );
     }
 
-    private function createElementWithAttribute($attribute, $value): ElementInterface
-    {
+    private function createElementWithAttribute(
+        $attribute,
+        $value
+    ): ElementInterface {
         $element = $this->createStub(ElementInterface::class);
         $element->method('getAttribute')->with($attribute)->willReturn($value);
 

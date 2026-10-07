@@ -28,13 +28,18 @@ trait InteractiveDebuggerTrait
         $this->startInteractiveSession(null, false, $variables);
     }
 
-    public function startInteractiveSessionOnException(Exception $exception, bool $expectsReturnValue)
-    {
+    public function startInteractiveSessionOnException(
+        Exception $exception,
+        bool $expectsReturnValue
+    ) {
         return $this->startInteractiveSession($exception, $expectsReturnValue, []);
     }
 
-    protected function startInteractiveSession(?Exception $exception, bool $isReturnValueExpected, array $variables)
-    {
+    protected function startInteractiveSession(
+        ?Exception $exception,
+        bool $isReturnValueExpected,
+        array $variables
+    ) {
         if ($this->isRunningInteractive()) {
             if ($exception !== null) {
                 throw $exception;
@@ -111,8 +116,10 @@ trait InteractiveDebuggerTrait
         return false;
     }
 
-    private function addCommands(Shell $sh, Component $component): void
-    {
+    private function addCommands(
+        Shell $sh,
+        Component $component
+    ): void {
         // This method should not be public to avoid incorrect usage in Context classess
         $r = new \ReflectionObject($component);
         $getSessionMethod = $r->getMethod('getSession');

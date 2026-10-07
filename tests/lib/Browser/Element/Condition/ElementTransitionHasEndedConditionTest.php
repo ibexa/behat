@@ -62,8 +62,10 @@ class ElementTransitionHasEndedConditionTest extends BaseTestCase
         );
     }
 
-    private function createChildElement(bool $hasStartedTransition, bool $hasEndedTransition): ElementInterface
-    {
+    private function createChildElement(
+        bool $hasStartedTransition,
+        bool $hasEndedTransition
+    ): ElementInterface {
         $childElement = $this->createStub(ElementInterface::class);
         $childElement->method('getText')->willReturn('ChildText');
         $childElement->method('hasClass')->will($this->returnValueMap(

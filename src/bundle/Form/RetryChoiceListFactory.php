@@ -26,8 +26,10 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
     }
 
     /** {@inheritDoc} */
-    public function createListFromChoices(iterable $choices, $value = null): ChoiceListInterface
-    {
+    public function createListFromChoices(
+        iterable $choices,
+        $value = null
+    ): ChoiceListInterface {
         $filter = \func_num_args() > 2 ? func_get_arg(2) : null;
 
         return $this->executeWithRetry(function () use ($choices, $value, $filter) {
@@ -36,8 +38,10 @@ final class RetryChoiceListFactory implements ChoiceListFactoryInterface
     }
 
     /** {@inheritDoc} */
-    public function createListFromLoader(ChoiceLoaderInterface $loader, $value = null): ChoiceListInterface
-    {
+    public function createListFromLoader(
+        ChoiceLoaderInterface $loader,
+        $value = null
+    ): ChoiceListInterface {
         $filter = \func_num_args() > 2 ? func_get_arg(2) : null;
 
         return $this->executeWithRetry(function () use ($loader, $value, $filter) {

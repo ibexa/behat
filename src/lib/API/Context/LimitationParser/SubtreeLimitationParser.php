@@ -19,8 +19,10 @@ class SubtreeLimitationParser implements LimitationParserInterface
 
     private $urlAliasService;
 
-    public function __construct(URLAliasService $urlAliasService, LocationService $locationService)
-    {
+    public function __construct(
+        URLAliasService $urlAliasService,
+        LocationService $locationService
+    ) {
         $this->urlAliasService = $urlAliasService;
         $this->locationService = $locationService;
     }

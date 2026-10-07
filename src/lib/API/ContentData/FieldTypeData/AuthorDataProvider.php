@@ -18,8 +18,11 @@ class AuthorDataProvider extends AbstractFieldTypeDataProvider
         return 'ezauthor' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB'): Value
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ): Value {
         return new Value([$this->getSingleAuthor($language), $this->getSingleAuthor($language)]);
     }
 

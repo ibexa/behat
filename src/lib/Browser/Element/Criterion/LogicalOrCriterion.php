@@ -13,7 +13,7 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 
 class LogicalOrCriterion implements CriterionInterface
 {
-    /** @var \Ibexa\Behat\Browser\Element\Criterion\CriterionInterface[] */
+    /** @var CriterionInterface[] */
     private $criterions;
 
     /** @var string[] */

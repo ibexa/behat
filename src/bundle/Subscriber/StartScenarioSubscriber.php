@@ -27,8 +27,11 @@ class StartScenarioSubscriber implements EventSubscriberInterface
 
     private int $height;
 
-    public function __construct(KernelInterface $kernel, int $width, int $height)
-    {
+    public function __construct(
+        KernelInterface $kernel,
+        int $width,
+        int $height
+    ) {
         $this->kernel = $kernel;
         $this->width = $width;
         $this->height = $height;

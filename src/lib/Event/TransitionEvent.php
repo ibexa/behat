@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\Event;
 
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class TransitionEvent extends Event
@@ -18,7 +19,7 @@ class TransitionEvent extends Event
     /** @var string */
     public $contentTypeIdentifier;
 
-    /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Content */
+    /** @var Content */
     public $content;
 
     /** @var array */
@@ -33,8 +34,13 @@ class TransitionEvent extends Event
     /** @var string */
     public $mainLanguage;
 
-    public function __construct(array $editors, string $contentTypeIdentifier, string $locationPath, array $availableLanguages, string $mainLanguage)
-    {
+    public function __construct(
+        array $editors,
+        string $contentTypeIdentifier,
+        string $locationPath,
+        array $availableLanguages,
+        string $mainLanguage
+    ) {
         $this->locationPath = $locationPath;
         $this->availableLanguages = $availableLanguages;
         $this->contentTypeIdentifier = $contentTypeIdentifier;

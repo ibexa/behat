@@ -9,11 +9,12 @@ declare(strict_types=1);
 namespace Ibexa\Behat\Core\Log;
 
 use Ibexa\Behat\Core\Log\Failure\AnalysisResult;
+use Ibexa\Behat\Core\Log\Failure\KnownIssues\KnownIssueInterface;
 use Ibexa\Behat\Core\Log\Failure\TestFailureData;
 
 final class KnownIssuesRegistry
 {
-    /** @var \Ibexa\Behat\Core\Log\Failure\KnownIssues\KnownIssueInterface[] */
+    /** @var KnownIssueInterface[] */
     private $knownIssues;
 
     public function __construct(iterable $knownIssues)

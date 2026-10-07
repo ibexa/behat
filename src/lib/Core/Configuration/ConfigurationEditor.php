@@ -22,8 +22,11 @@ class ConfigurationEditor implements ConfigurationEditorInterface
      *
      * @return mixed YAML config
      */
-    public function append($config, string $key, $value)
-    {
+    public function append(
+        $config,
+        string $key,
+        $value
+    ) {
         $this->modifyValue($config, $key, $value, true);
 
         return $config;
@@ -38,15 +41,20 @@ class ConfigurationEditor implements ConfigurationEditorInterface
      *
      * @return mixed YAML config
      */
-    public function set($config, string $key, $value)
-    {
+    public function set(
+        $config,
+        string $key,
+        $value
+    ) {
         $this->modifyValue($config, $key, $value, false);
 
         return $config;
     }
 
-    public function get($config, string $key)
-    {
+    public function get(
+        $config,
+        string $key
+    ) {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
         $key = $this->parseKey($key);
 
@@ -65,13 +73,19 @@ class ConfigurationEditor implements ConfigurationEditorInterface
      * @param $filePath
      * @param $config YAML config
      */
-    public function saveConfigToFile($filePath, $config): void
-    {
+    public function saveConfigToFile(
+        $filePath,
+        $config
+    ): void {
         file_put_contents($filePath, Yaml::dump($config, 8, 5));
     }
 
-    private function modifyValue(&$config, string $key, $value, bool $appendToExisting): void
-    {
+    private function modifyValue(
+        &$config,
+        string $key,
+        $value,
+        bool $appendToExisting
+    ): void {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
 
         $key = $this->parseKey($key);
@@ -92,8 +106,11 @@ class ConfigurationEditor implements ConfigurationEditorInterface
         return $parsed;
     }
 
-    private function getNewValue($currentValue, $value, bool $appendToExisting)
-    {
+    private function getNewValue(
+        $currentValue,
+        $value,
+        bool $appendToExisting
+    ) {
         if (!$appendToExisting) {
             return $value;
         }
@@ -113,8 +130,11 @@ class ConfigurationEditor implements ConfigurationEditorInterface
         return array_merge($currentValue, $value);
     }
 
-    public function copyKey($config, string $keyName, string $newKeyName)
-    {
+    public function copyKey(
+        $config,
+        string $keyName,
+        string $newKeyName
+    ) {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
 
         $key = $this->parseKey($keyName);

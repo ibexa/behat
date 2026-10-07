@@ -23,24 +23,28 @@ use PHPUnit\Framework\Assert;
 
 class SearchFacade
 {
-    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
+    /** @var LocationService */
     private $locationService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\URLAliasService */
+    /** @var URLAliasService */
     private $urlAliasService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\SearchService */
+    /** @var SearchService */
     private $searchService;
 
     /**
-     * @var \Ibexa\Contracts\Core\Repository\ContentService
+     * @var ContentService
      */
     private $contentService;
 
     private const ROOT_LOCATION_ID = 2;
 
-    public function __construct(URLAliasService $urlAliasService, LocationService $locationService, SearchService $searchService, ContentService $contentService)
-    {
+    public function __construct(
+        URLAliasService $urlAliasService,
+        LocationService $locationService,
+        SearchService $searchService,
+        ContentService $contentService
+    ) {
         $this->urlAliasService = $urlAliasService;
         $this->locationService = $locationService;
         $this->searchService = $searchService;

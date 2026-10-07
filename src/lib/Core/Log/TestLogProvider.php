@@ -21,7 +21,7 @@ final class TestLogProvider
     private static $LOGS;
 
     /**
-     * @var \Behat\Mink\Session
+     * @var Session
      */
     private $session;
 
@@ -30,8 +30,10 @@ final class TestLogProvider
      */
     private $logDirectory;
 
-    public function __construct(Session $session, string $logDirectory)
-    {
+    public function __construct(
+        Session $session,
+        string $logDirectory
+    ) {
         $this->session = $session;
         $this->logDirectory = $logDirectory;
     }

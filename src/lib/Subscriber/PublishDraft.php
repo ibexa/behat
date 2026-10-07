@@ -21,10 +21,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class PublishDraft extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
+    /** @var ContentService */
     private $contentService;
 
-    /** @var \Ibexa\Workflow\Behat\Facade\WorkflowFacade */
+    /** @var WorkflowFacade */
     private $workflowFacade;
 
     protected function getTransitions(): array

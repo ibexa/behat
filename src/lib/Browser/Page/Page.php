@@ -14,11 +14,13 @@ use Ibexa\Behat\Browser\Routing\Router;
 
 abstract class Page extends Component implements PageInterface
 {
-    /** @var \Ibexa\Behat\Browser\Routing\Router */
+    /** @var Router */
     private $router;
 
-    public function __construct(Session $session, Router $router)
-    {
+    public function __construct(
+        Session $session,
+        Router $router
+    ) {
         parent::__construct($session);
         $this->router = $router;
     }

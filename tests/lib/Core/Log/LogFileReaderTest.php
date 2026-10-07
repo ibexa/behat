@@ -10,6 +10,7 @@ namespace Ibexa\Tests\Behat\Core\Log;
 
 use Ibexa\Behat\Core\Log\LogFileReader;
 use org\bovigo\vfs\vfsStream;
+use org\bovigo\vfs\vfsStreamDirectory;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 
@@ -22,10 +23,10 @@ class LogFileReaderTest extends TestCase
 {
     private const FILENAME = 'application.logs';
 
-    /** @var \org\bovigo\vfs\vfsStreamDirectory */
+    /** @var vfsStreamDirectory */
     private $fileSystemRoot;
 
-    /** @var \Ibexa\Behat\Core\Log\LogFileReader */
+    /** @var LogFileReader */
     private $logReader;
 
     public function setUp(): void

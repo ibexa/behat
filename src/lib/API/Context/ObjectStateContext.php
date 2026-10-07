@@ -15,7 +15,7 @@ use Ibexa\Contracts\Core\Repository\ObjectStateService;
 
 class ObjectStateContext implements Context
 {
-    /** @var \Ibexa\Contracts\Core\Repository\ObjectStateService */
+    /** @var ObjectStateService */
     private $objectStateService;
 
     public function __construct(ObjectStateService $objectStateService)
@@ -26,8 +26,11 @@ class ObjectStateContext implements Context
     /**
      * @Given Object State Group :objectStateGroupName with identifier :objectStateGroupIdentifier exists
      */
-    public function objectStateWithIdentifierExists(string $objectStateGroupName, string $objectStateGroupIdentifier, TableNode $objectStates): void
-    {
+    public function objectStateWithIdentifierExists(
+        string $objectStateGroupName,
+        string $objectStateGroupIdentifier,
+        TableNode $objectStates
+    ): void {
         $objectStateGroupStruct = $this->objectStateService->newObjectStateGroupCreateStruct($objectStateGroupIdentifier);
         $objectStateGroupStruct->defaultLanguageCode = 'eng-GB';
         $objectStateGroupStruct->names = ['eng-GB' => $objectStateGroupName];
