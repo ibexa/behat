@@ -22,7 +22,7 @@
         "fakerphp/faker": "^1.17",
         "liuggio/fastest": "^1.11",
         "php-http/client-common": "^2.1",
-        "phpunit/phpunit": "^8.5 || ^9.0 || ^10.0",
+        "phpunit/phpunit": "^9.6",
         "symfony/config": "^5.0",
         "symfony/console": "^5.0",
         "symfony/dependency-injection": "^5.0",
