@@ -14,7 +14,7 @@ use Ibexa\Behat\API\Facade\LanguageFacade;
 class LanguageContext implements Context
 {
     /**
-     * @var \Ibexa\Behat\API\Facade\LanguageFacade
+     * @var LanguageFacade
      */
     private $languageFacade;
 
@@ -26,8 +26,10 @@ class LanguageContext implements Context
     /**
      * @Given Language :name with code :languageCode exists
      */
-    public function createLanguageIfNotExists(string $name, string $languageCode)
-    {
+    public function createLanguageIfNotExists(
+        string $name,
+        string $languageCode
+    ) {
         $this->languageFacade->createLanguageIfNotExists($name, $languageCode);
     }
 }

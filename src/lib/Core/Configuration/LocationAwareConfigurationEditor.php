@@ -12,34 +12,44 @@ use Ibexa\Behat\API\Facade\ContentFacade;
 
 class LocationAwareConfigurationEditor implements ConfigurationEditorInterface
 {
-    /** @var \Ibexa\Behat\Core\Configuration\ConfigurationEditorInterface */
+    /** @var ConfigurationEditorInterface */
     private $innerConfigurationEditor;
 
-    /** @var \Ibexa\Behat\API\Facade\ContentFacade */
+    /** @var ContentFacade */
     private $contentFacade;
 
-    public function __construct(ConfigurationEditorInterface $innerConfigurationEditor, ContentFacade $contentFacade)
-    {
+    public function __construct(
+        ConfigurationEditorInterface $innerConfigurationEditor,
+        ContentFacade $contentFacade
+    ) {
         $this->innerConfigurationEditor = $innerConfigurationEditor;
         $this->contentFacade = $contentFacade;
     }
 
-    public function append($config, string $key, $value)
-    {
+    public function append(
+        $config,
+        string $key,
+        $value
+    ) {
         $config = $this->innerConfigurationEditor->append($config, $key, $value);
 
         return $this->resolveLocationReference($config);
     }
 
-    public function set($config, string $key, $value)
-    {
+    public function set(
+        $config,
+        string $key,
+        $value
+    ) {
         $config = $this->innerConfigurationEditor->set($config, $key, $value);
 
         return $this->resolveLocationReference($config);
     }
 
-    public function get($config, string $key)
-    {
+    public function get(
+        $config,
+        string $key
+    ) {
         $config = $this->resolveLocationReference($config);
 
         return $this->innerConfigurationEditor->get($config, $key);
@@ -50,8 +60,10 @@ class LocationAwareConfigurationEditor implements ConfigurationEditorInterface
         return $this->innerConfigurationEditor->getConfigFromFile($filePath);
     }
 
-    public function saveConfigToFile($filePath, $config): void
-    {
+    public function saveConfigToFile(
+        $filePath,
+        $config
+    ): void {
         $this->innerConfigurationEditor->saveConfigToFile($filePath, $config);
     }
 
@@ -76,8 +88,11 @@ class LocationAwareConfigurationEditor implements ConfigurationEditorInterface
         }
     }
 
-    public function copyKey($config, string $keyName, string $newKeyName)
-    {
+    public function copyKey(
+        $config,
+        string $keyName,
+        string $newKeyName
+    ) {
         $config = $this->innerConfigurationEditor->copyKey($config, $keyName, $newKeyName);
 
         return $this->resolveLocationReference($config);

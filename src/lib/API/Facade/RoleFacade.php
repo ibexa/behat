@@ -8,20 +8,23 @@ declare(strict_types=1);
 
 namespace Ibexa\Behat\API\Facade;
 
+use Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface;
 use Ibexa\Behat\API\Context\LimitationParser\LimitationParsersCollector;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 use Ibexa\Contracts\Core\Repository\RoleService;
 
 class RoleFacade
 {
-    /** @var \Ibexa\Contracts\Core\Repository\RoleService */
+    /** @var RoleService */
     private $roleService;
 
-    /** @var \Ibexa\Behat\API\Context\LimitationParser\LimitationParsersCollector */
+    /** @var LimitationParsersCollector */
     private $limitationParsersCollector;
 
-    public function __construct(RoleService $roleService, LimitationParsersCollector $limitationParsersCollector)
-    {
+    public function __construct(
+        RoleService $roleService,
+        LimitationParsersCollector $limitationParsersCollector
+    ) {
         $this->roleService = $roleService;
         $this->limitationParsersCollector = $limitationParsersCollector;
     }
@@ -33,8 +36,12 @@ class RoleFacade
         $this->roleService->publishRoleDraft($roleDraft);
     }
 
-    public function addPolicyToRole($roleName, $module, $function, $limitations = null)
-    {
+    public function addPolicyToRole(
+        $roleName,
+        $module,
+        $function,
+        $limitations = null
+    ) {
         $role = $this->roleService->loadRoleByIdentifier($roleName);
         $roleDraft = $this->roleService->createRoleDraft($role);
         $policyCreateStruct = $this->roleService->newPolicyCreateStruct($module, $function);
@@ -62,7 +69,7 @@ class RoleFacade
     }
 
     /**
-     * @return \Ibexa\Behat\API\Context\LimitationParser\LimitationParserInterface[]
+     * @return LimitationParserInterface[]
      */
     public function getLimitationParsers(): array
     {

@@ -18,13 +18,18 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 
 final class ElementFactory implements ElementFactoryInterface
 {
-    public function createElement(ElementFactoryInterface $elementFactory, LocatorInterface $locator, NodeElement $nodeElement): ElementInterface
-    {
+    public function createElement(
+        ElementFactoryInterface $elementFactory,
+        LocatorInterface $locator,
+        NodeElement $nodeElement
+    ): ElementInterface {
         return new Element($elementFactory, $locator, $nodeElement);
     }
 
-    public function createRootElement(Session $session, ElementFactoryInterface $elementFactory): RootElementInterface
-    {
+    public function createRootElement(
+        Session $session,
+        ElementFactoryInterface $elementFactory
+    ): RootElementInterface {
         return new RootElement($elementFactory, $session, $session->getPage());
     }
 }

@@ -23,7 +23,7 @@ class TakeScreenshotCommand extends Command
     private const CLOUD_NAME = 'ezplatformtravis';
     private const PRESET = 'ezplatform';
 
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     private $session;
 
     public function __construct(Session $session)
@@ -41,8 +41,10 @@ class TakeScreenshotCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
         $image = $this->session->getScreenshot();
         $filePath = sys_get_temp_dir() . \DIRECTORY_SEPARATOR . uniqid('debug') . '.png';
 

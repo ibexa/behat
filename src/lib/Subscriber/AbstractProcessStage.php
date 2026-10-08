@@ -16,24 +16,25 @@ use Ibexa\Contracts\Core\Repository\Values\User\User;
 use PHPUnit\Framework\Assert;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Contracts\EventDispatcher\Event;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 abstract class AbstractProcessStage
 {
-    /** @var \Psr\Log\LoggerInterface */
+    /** @var LoggerInterface */
     protected $logger;
 
-    /** @var \Ibexa\Contracts\Core\Repository\UserService */
+    /** @var UserService */
     private $userService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver */
+    /** @var PermissionResolver */
     private $permissionResolver;
 
-    /** @var \Symfony\Component\EventDispatcher\EventDispatcher */
+    /** @var EventDispatcher */
     private $eventDispatcher;
 
-    /** @var \Ibexa\Behat\API\ContentData\RandomDataGenerator */
+    /** @var RandomDataGenerator */
     protected $randomDataGenerator;
 
     public function __construct(

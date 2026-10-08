@@ -12,5 +12,8 @@ interface ParameterProviderInterface
 {
     public function getParameter(string $parameterName): string;
 
-    public function setParameter(string $key, $value): void;
+    public function setParameter(
+        string $key,
+        $value
+    ): void;
 }

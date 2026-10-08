@@ -15,8 +15,10 @@ use Ibexa\Behat\Browser\Element\ElementInterface;
 
 final class Element extends BaseElement implements ElementInterface
 {
-    public function __construct(Session $session, ElementInterface $element)
-    {
+    public function __construct(
+        Session $session,
+        ElementInterface $element
+    ) {
         parent::__construct($session, $element);
     }
 

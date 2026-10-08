@@ -45,8 +45,10 @@ class IbexaBehatExtension extends Extension implements PrependExtensionInterface
         $container->setParameter(self::BROWSER_DEBUG_INTERACTIVE_ENABLED, false);
     }
 
-    public function load(array $config, ContainerBuilder $container)
-    {
+    public function load(
+        array $config,
+        ContainerBuilder $container
+    ) {
         $loader = new Loader\YamlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
