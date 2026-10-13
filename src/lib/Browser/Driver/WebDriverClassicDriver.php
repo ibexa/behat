@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Browser\Driver;
 
 use Behat\Mink\Exception\DriverException;
 use Facebook\WebDriver\Exception\NoSuchElementException;
+use Facebook\WebDriver\Exception\StaleElementReferenceException;
 use Facebook\WebDriver\Remote\LocalFileDetector;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\RemoteWebElement;
@@ -129,10 +130,15 @@ final class WebDriverClassicDriver extends BaseWebdriverClassicDriver
             $existingValueLength = strlen((string)$element->getAttribute('value'));
             // Browsers only fire "change" after leaving the field, so mimic a user replacing the value and then trigger it explicitly.
             $element->sendKeys(str_repeat(WebDriverKeys::BACKSPACE . WebDriverKeys::DELETE, $existingValueLength) . $value);
-            $this->getWebDriver()->executeScript(
-                'arguments[0].dispatchEvent(new Event("change", {bubbles: true, cancelable: false}));',
-                [$element]
-            );
+            try {
+                $this->getWebDriver()->executeScript(
+                    'arguments[0].dispatchEvent(new Event("change", {bubbles: true, cancelable: false}));',
+                    [$element]
+                );
+            } catch (StaleElementReferenceException $e) {
+                // The typed value submitted the form (e.g. it ended with "\n") and the page navigated away,
+                // so the element is gone and there is nothing left to notify about the change.
+            }
         } catch (\Throwable $e) {
             throw new DriverException(sprintf('Cannot set text value: %s', $e->getMessage()), 0, $e);
         }
