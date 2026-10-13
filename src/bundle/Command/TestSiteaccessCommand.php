@@ -16,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class TestSiteaccessCommand extends Command implements BackwardCompatibleCommand
 {
-    /** @var \Ibexa\Core\MVC\Symfony\SiteAccess */
+    /** @var SiteAccess */
     private $siteaccess;
 
     public function __construct(SiteAccess $siteaccess)
@@ -43,8 +43,10 @@ class TestSiteaccessCommand extends Command implements BackwardCompatibleCommand
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
-    {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ): int {
         $output->writeln($this->siteaccess->name);
 
         return 0;

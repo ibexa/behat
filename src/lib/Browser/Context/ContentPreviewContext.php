@@ -14,7 +14,7 @@ use Ibexa\Behat\Browser\Page\Preview\PagePreviewRegistry;
 
 class ContentPreviewContext implements Context
 {
-    /** @var \Ibexa\Behat\Browser\Page\Preview\PagePreviewRegistry */
+    /** @var PagePreviewRegistry */
     private $pagePreviewRegistry;
 
     public function __construct(PagePreviewRegistry $pagePreviewRegistry)
@@ -25,8 +25,10 @@ class ContentPreviewContext implements Context
     /**
      * @Given I see correct preview data for :contentTypeName content type
      */
-    public function iSeeCorrectPreviewDataFor(string $contentType, TableNode $previewData): void
-    {
+    public function iSeeCorrectPreviewDataFor(
+        string $contentType,
+        TableNode $previewData
+    ): void {
         $preview = $this->pagePreviewRegistry->getPreview($contentType);
         $preview->setExpectedPreviewData(['title' => $previewData->getHash()[0]['value']]);
         $preview->verifyPreviewData();

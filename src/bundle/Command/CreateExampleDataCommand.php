@@ -27,20 +27,22 @@ class CreateExampleDataCommand extends Command implements BackwardCompatibleComm
 {
     public const NAME = 'ibexa:behat:create-data';
 
-    /** @var \Symfony\Contracts\EventDispatcher\EventDispatcherInterface */
+    /** @var EventDispatcherInterface */
     private $eventDispatcher;
 
-    /** @var \Psr\Log\LoggerInterface */
+    /** @var LoggerInterface */
     private $logger;
 
-    /** @var \Symfony\Component\Serializer\Serializer */
+    /** @var Serializer */
     private $serializer;
 
-    /** @var \Symfony\Component\Stopwatch\Stopwatch */
+    /** @var Stopwatch */
     private $stopwatch;
 
-    public function __construct(EventDispatcherInterface $eventDispatcher, LoggerInterface $logger)
-    {
+    public function __construct(
+        EventDispatcherInterface $eventDispatcher,
+        LoggerInterface $logger
+    ) {
         parent::__construct(self::NAME);
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
@@ -58,8 +60,10 @@ class CreateExampleDataCommand extends Command implements BackwardCompatibleComm
             ->addArgument('serializedTransitionData', InputArgument::REQUIRED);
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
-    {
+    public function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
         $iterations = $input->getArgument('iterations');
         $initialData = $this->parseInputData($input->getArgument('serializedTransitionData'));
 

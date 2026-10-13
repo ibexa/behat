@@ -26,7 +26,7 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
 {
     private const BATCH_SIZE = 100;
 
-    /** @var \Symfony\Component\Stopwatch\Stopwatch */
+    /** @var Stopwatch */
     private $stopwatch;
 
     /** @var string */
@@ -38,11 +38,13 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
     /** @var array */
     private $processes;
 
-    /** @var \Symfony\Component\Serializer\Serializer */
+    /** @var Serializer */
     private $serializer;
 
-    public function __construct(string $env, string $projectDir)
-    {
+    public function __construct(
+        string $env,
+        string $projectDir
+    ) {
         parent::__construct('ibexa:behat:generate-items');
 
         $encoders = [new JsonEncoder()];
@@ -58,8 +60,10 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         $this->setAliases(['ezplatform:tools:generate-items']);
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
-    {
+    public function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
         $data = $this->getData();
         $this->stopwatch->start('timer');
 
@@ -71,8 +75,11 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         return 0;
     }
 
-    private function executeCommand(OutputInterface $output, $cmd, float $timeout = 1200)
-    {
+    private function executeCommand(
+        OutputInterface $output,
+        $cmd,
+        float $timeout = 1200
+    ) {
         $phpFinder = new PhpExecutableFinder();
         if (!$phpPath = $phpFinder->find(false)) {
             throw new \RuntimeException('The php executable could not be found. Add it to your PATH environment variable and try again');
@@ -123,8 +130,10 @@ class CreateExampleDataManagerCommand extends Command implements BackwardCompati
         return $data['countries'];
     }
 
-    private function createProcesses(OutputInterface $output, $data)
-    {
+    private function createProcesses(
+        OutputInterface $output,
+        $data
+    ) {
         foreach ($data as $row) {
             $eventData = $this->parseData($row);
             $command = sprintf('%s %d %s', CreateExampleDataCommand::NAME, self::BATCH_SIZE, $this->serialize($eventData));

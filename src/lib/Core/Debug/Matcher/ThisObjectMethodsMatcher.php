@@ -16,8 +16,10 @@ use ReflectionMethod;
 
 class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
 {
-    public function getMatches(array $tokens, array $info = []): array
-    {
+    public function getMatches(
+        array $tokens,
+        array $info = []
+    ): array {
         $input = $this->getInput($tokens);
 
         $firstToken = \array_pop($tokens);
@@ -42,7 +44,7 @@ class ThisObjectMethodsMatcher extends ObjectMethodsMatcher
         }
 
         $reflectionClass = new ReflectionClass(get_class($object));
-        $methods = array_column($reflectionClass->getMethods(\ReflectionMethod::IS_PROTECTED | ReflectionMethod::IS_PRIVATE), 'name');
+        $methods = array_column($reflectionClass->getMethods(ReflectionMethod::IS_PROTECTED | ReflectionMethod::IS_PRIVATE), 'name');
 
         return array_map(static function (string $function) {
             return $function . '()';

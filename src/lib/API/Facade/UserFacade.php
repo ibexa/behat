@@ -14,6 +14,7 @@ use Ibexa\Contracts\Core\Repository\ContentTypeService;
 use Ibexa\Contracts\Core\Repository\RoleService;
 use Ibexa\Contracts\Core\Repository\SearchService;
 use Ibexa\Contracts\Core\Repository\UserService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\Content\Query;
 use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion;
 use Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation;
@@ -26,25 +27,30 @@ class UserFacade
     public const USERGROUP_CONTENT_IDENTIFIER = 'user_group';
     public const ROOT_USERGROUP_CONTENT_ID = 4;
 
-    /** @var \Ibexa\Contracts\Core\Repository\UserService */
+    /** @var UserService */
     private $userService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
+    /** @var ContentTypeService */
     private $contentTypeService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\RoleService */
+    /** @var RoleService */
     private $roleService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\SearchService */
+    /** @var SearchService */
     private $searchService;
 
     /**
-     * @var \Ibexa\Behat\API\ContentData\RandomDataGenerator
+     * @var RandomDataGenerator
      */
     private $randomDataGenerator;
 
-    public function __construct(UserService $userService, ContentTypeService $contentTypeService, RoleService $roleService, SearchService $searchService, RandomDataGenerator $randomDataGenerator)
-    {
+    public function __construct(
+        UserService $userService,
+        ContentTypeService $contentTypeService,
+        RoleService $roleService,
+        SearchService $searchService,
+        RandomDataGenerator $randomDataGenerator
+    ) {
         $this->userService = $userService;
         $this->contentTypeService = $contentTypeService;
         $this->roleService = $roleService;
@@ -64,8 +70,13 @@ class UserFacade
         $this->userService->createUserGroup($userGroupStruct, $parentGroup);
     }
 
-    public function createUser($userName, $userLastName, $userGroupName = null, $userEmail = null, $languageCode = 'eng-GB')
-    {
+    public function createUser(
+        $userName,
+        $userLastName,
+        $userGroupName = null,
+        $userEmail = null,
+        $languageCode = 'eng-GB'
+    ) {
         $userEmail = $userEmail ?? $this->randomDataGenerator->getFaker()->email;
         $userCreateStruct = $this->userService->newUserCreateStruct(
             $userName,
@@ -85,16 +96,21 @@ class UserFacade
         $this->userService->createUser($userCreateStruct, [$parentGroup]);
     }
 
-    public function assignUserToRole($userName, $roleName)
-    {
+    public function assignUserToRole(
+        $userName,
+        $roleName
+    ) {
         $user = $this->userService->loadUserByLogin($userName);
         $role = $this->roleService->loadRoleByIdentifier($roleName);
 
         $this->roleService->assignRoleToUser($role, $user);
     }
 
-    public function assignUserGroupToRole($userGroupName, $roleName, ?RoleLimitation $roleLimitation = null)
-    {
+    public function assignUserGroupToRole(
+        $userGroupName,
+        $roleName,
+        ?RoleLimitation $roleLimitation = null
+    ) {
         $group = $this->loadUserGroupByName($userGroupName);
         $role = $this->roleService->loadRoleByIdentifier($roleName);
 
@@ -141,7 +157,7 @@ class UserFacade
             $result = $this->searchService->findContent($query);
 
             foreach ($result->searchHits as $searchHit) {
-                /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Content $content */
+                /** @var Content $content */
                 $content = $searchHit->valueObject;
 
                 if ($content->contentInfo->name === $userGroupName) {

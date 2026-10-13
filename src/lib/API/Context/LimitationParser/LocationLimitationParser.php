@@ -23,8 +23,11 @@ class LocationLimitationParser implements LimitationParserInterface
 
     private $argumentParser;
 
-    public function __construct(URLAliasService $urlAliasService, LocationService $locationService, ArgumentParser $argumentParser)
-    {
+    public function __construct(
+        URLAliasService $urlAliasService,
+        LocationService $locationService,
+        ArgumentParser $argumentParser
+    ) {
         $this->urlAliasService = $urlAliasService;
         $this->locationService = $locationService;
         $this->argumentParser = $argumentParser;

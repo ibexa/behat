@@ -10,7 +10,7 @@ namespace Ibexa\Behat\Browser\Page\Preview;
 
 class PagePreviewRegistry
 {
-    /** @var \Ibexa\Behat\Browser\Page\Preview\PagePreviewInterface[] */
+    /** @var PagePreviewInterface[] */
     private $pagePreviews;
 
     public function __construct(iterable $pagePreviews)
@@ -26,8 +26,10 @@ class PagePreviewRegistry
         $this->pagePreviews = $pagePreviews;
     }
 
-    public function getPreview(string $contentTypeIdentifier, string $viewType = 'full'): PagePreviewInterface
-    {
+    public function getPreview(
+        string $contentTypeIdentifier,
+        string $viewType = 'full'
+    ): PagePreviewInterface {
         foreach ($this->pagePreviews as $pagePreview) {
             if ($pagePreview->supports($contentTypeIdentifier, $viewType)) {
                 return $pagePreview;

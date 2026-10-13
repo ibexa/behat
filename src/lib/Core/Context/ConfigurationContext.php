@@ -25,12 +25,14 @@ class ConfigurationContext implements Context
     private $projectDir;
 
     /**
-     * @var \Ibexa\Behat\Core\Configuration\ConfigurationEditorInterface
+     * @var ConfigurationEditorInterface
      */
     private $configurationEditor;
 
-    public function __construct(string $projectDir, ConfigurationEditorInterface $configurationEditor)
-    {
+    public function __construct(
+        string $projectDir,
+        ConfigurationEditorInterface $configurationEditor
+    ) {
         $this->projectDir = $projectDir;
         $this->mainProjectConfigFilePath = sprintf('%s/config/packages/ibexa.yaml', $projectDir);
         $this->configurationEditor = $configurationEditor;
@@ -42,8 +44,11 @@ class ConfigurationContext implements Context
      * @param mixed $siteaccessName
      * @param mixed $siteaccessGroup
      */
-    public function iAddSiteaccessWithSettings($siteaccessName, $siteaccessGroup, TableNode $settings)
-    {
+    public function iAddSiteaccessWithSettings(
+        $siteaccessName,
+        $siteaccessGroup,
+        TableNode $settings
+    ) {
         $config = $this->configurationEditor->getConfigFromFile($this->mainProjectConfigFilePath);
 
         $config = $this->configurationEditor->append($config, 'ibexa.siteaccess.list', $siteaccessName);
@@ -64,8 +69,12 @@ class ConfigurationContext implements Context
      *
      * @param mixed $siteaccessName
      */
-    public function iAppendOrSetConfigurationToSiteaccess(string $mode, $siteaccessName, TableNode $settings, ?string $configFilePath = null)
-    {
+    public function iAppendOrSetConfigurationToSiteaccess(
+        string $mode,
+        $siteaccessName,
+        TableNode $settings,
+        ?string $configFilePath = null
+    ) {
         $appendToExisting = $this->shouldAppendValue($mode);
 
         $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
@@ -92,8 +101,12 @@ class ConfigurationContext implements Context
      *
      * @param mixed $parentNode
      */
-    public function iModifyConfigurationUnderKey(string $mode, $parentNode, PyStringNode $configFragment, ?string $configFilePath = null)
-    {
+    public function iModifyConfigurationUnderKey(
+        string $mode,
+        $parentNode,
+        PyStringNode $configFragment,
+        ?string $configFilePath = null
+    ) {
         $appendToExisting = $this->shouldAppendValue($mode);
 
         $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
@@ -113,8 +126,12 @@ class ConfigurationContext implements Context
      * @param mixed $siteaccessName
      * @param mixed $keyName
      */
-    public function iModifyConfigurationForSiteaccessUnderKey(string $mode, $siteaccessName, $keyName, PyStringNode $configFragment)
-    {
+    public function iModifyConfigurationForSiteaccessUnderKey(
+        string $mode,
+        $siteaccessName,
+        $keyName,
+        PyStringNode $configFragment
+    ) {
         $parentNode = sprintf(self::SITEACCESS_KEY_FORMAT, $siteaccessName, $keyName);
         $this->iModifyConfigurationUnderKey($mode, $parentNode, $configFragment);
     }
@@ -122,8 +139,10 @@ class ConfigurationContext implements Context
     /**
      * @Given I :mode siteaccess matcher configuration
      */
-    public function iModifySiteaccessMatcherConfiguration(string $mode, PyStringNode $configFragment)
-    {
+    public function iModifySiteaccessMatcherConfiguration(
+        string $mode,
+        PyStringNode $configFragment
+    ) {
         $this->iModifyConfigurationUnderKey($mode, self::SITEACCESS_MATCHER_KEY, $configFragment);
     }
 
@@ -160,8 +179,11 @@ class ConfigurationContext implements Context
      * @Given I copy the configuration from :keyName to :newKeyName
      * @Given I copy the configuration from :keyName to :newKeyName in :configFilePath
      */
-    public function iCopyTheConfigurationFromTo(string $keyName, string $newKeyName, ?string $configFilePath = null)
-    {
+    public function iCopyTheConfigurationFromTo(
+        string $keyName,
+        string $newKeyName,
+        ?string $configFilePath = null
+    ) {
         $configFilePath = $configFilePath ? sprintf('%s/%s', $this->projectDir, $configFilePath) : $this->mainProjectConfigFilePath;
         $config = $this->configurationEditor->getConfigFromFile($configFilePath);
         $config = $this->configurationEditor->copyKey($config, $keyName, $newKeyName);

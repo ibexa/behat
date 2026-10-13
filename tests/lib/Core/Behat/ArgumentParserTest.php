@@ -24,8 +24,10 @@ class ArgumentParserTest extends TestCase
     /**
      * @dataProvider provideUrlData
      */
-    public function testParserGivenUrlCorrectly(string $valueToParse, string $expectedResult)
-    {
+    public function testParserGivenUrlCorrectly(
+        string $valueToParse,
+        string $expectedResult
+    ) {
         $roleFacadeStub = $this->createMock(RoleFacade::class);
         $parameterProviderStub = $this->createMock(ParameterProvider::class);
 

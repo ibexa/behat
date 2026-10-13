@@ -21,8 +21,11 @@ final class RootElement extends BaseElement implements RootElementInterface
         parent::__construct($element);
     }
 
-    public function dragAndDrop(string $from, string $hover, string $to): void
-    {
+    public function dragAndDrop(
+        string $from,
+        string $hover,
+        string $to
+    ): void {
         $this->element->dragAndDrop($from, $hover, $to);
     }
 

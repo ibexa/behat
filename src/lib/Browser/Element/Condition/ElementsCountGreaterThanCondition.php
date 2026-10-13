@@ -13,10 +13,10 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 
 class ElementsCountGreaterThanCondition implements ConditionInterface
 {
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface */
+    /** @var LocatorInterface */
     private $elementsLocator;
 
-    /** @var \Ibexa\Behat\Browser\Element\BaseElementInterface */
+    /** @var BaseElementInterface */
     private $searchedNode;
 
     /** @var int */
@@ -25,8 +25,11 @@ class ElementsCountGreaterThanCondition implements ConditionInterface
     /** @var int */
     private $actualNumberOfItemsFound;
 
-    public function __construct(BaseElementInterface $searchedNode, LocatorInterface $elementsLocator, int $expectedElementsCount)
-    {
+    public function __construct(
+        BaseElementInterface $searchedNode,
+        LocatorInterface $elementsLocator,
+        int $expectedElementsCount
+    ) {
         $this->elementsLocator = $elementsLocator;
         $this->searchedNode = $searchedNode;
         $this->expectedElementsCount = $expectedElementsCount;

@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Behat\Browser\Element;
 
 use Behat\Mink\Element\NodeElement;
+use Behat\Mink\Session;
 use Ibexa\Behat\Browser\Element\Condition\ElementExistsCondition;
 use Ibexa\Behat\Browser\Element\Element;
 use Ibexa\Behat\Browser\Element\Factory\ElementFactory;
@@ -20,13 +21,13 @@ use PHPUnit\Framework\Assert;
 
 class ElementTest extends BaseTestCase
 {
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface */
+    /** @var LocatorInterface */
     private $irrelevantLocator;
 
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface */
+    /** @var LocatorInterface */
     private $invalidLocator;
 
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     private $session;
 
     public function setUp(): void
@@ -134,8 +135,10 @@ class ElementTest extends BaseTestCase
     /**
      * @dataProvider dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFind
      */
-    public function testAdditionalLocatorConditionsAreAppliedWhenUsingFind(LocatorInterface $locator, string $expectedElementText): void
-    {
+    public function testAdditionalLocatorConditionsAreAppliedWhenUsingFind(
+        LocatorInterface $locator,
+        string $expectedElementText
+    ): void {
         $invisbleMinkElement = $this->createValidMinkNodeElement('InvisibleElement', false);
         $visibleMinkElement = $this->createValidMinkNodeElement('VisibleElement', true);
 
@@ -158,8 +161,10 @@ class ElementTest extends BaseTestCase
     /**
      * @dataProvider dataProvidertestAdditionalLocatorConditionsAreAppliedWhenUsingFindAll
      */
-    public function testAdditionalLocatorConditionsAreAppliedWhenUsingFindAll(LocatorInterface $locator, int $expectedElementCount): void
-    {
+    public function testAdditionalLocatorConditionsAreAppliedWhenUsingFindAll(
+        LocatorInterface $locator,
+        int $expectedElementCount
+    ): void {
         $invisbleMinkElement = $this->createValidMinkNodeElement('InvisibleElement', false);
         $visibleMinkElement = $this->createValidMinkNodeElement('VisibleElement', true);
 

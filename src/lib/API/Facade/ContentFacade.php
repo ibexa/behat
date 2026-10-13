@@ -22,22 +22,22 @@ use PHPUnit\Framework\Assert;
 
 class ContentFacade
 {
-    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
+    /** @var ContentService */
     private $contentService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
+    /** @var LocationService */
     private $locationService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\URLAliasService */
+    /** @var URLAliasService */
     private $urlAliasService;
 
-    /** @var \Ibexa\Behat\API\ContentData\ContentDataProvider */
+    /** @var ContentDataProvider */
     private $contentDataProvider;
 
-    /** @var \FOS\HttpCacheBundle\CacheManager */
+    /** @var CacheManager */
     private $cacheManager;
 
-    /** @var \Ibexa\Contracts\Core\Repository\Repository */
+    /** @var Repository */
     private $repository;
 
     public function __construct(
@@ -56,8 +56,12 @@ class ContentFacade
         $this->repository = $repository;
     }
 
-    public function createContentDraft($contentTypeIdentifier, $parentUrl, $language, $contentItemData = null): Content
-    {
+    public function createContentDraft(
+        $contentTypeIdentifier,
+        $parentUrl,
+        $language,
+        $contentItemData = null
+    ): Content {
         $parentUrlAlias = $this->urlAliasService->lookup($parentUrl);
         Assert::assertEquals(URLAlias::LOCATION, $parentUrlAlias->type);
 
@@ -75,8 +79,12 @@ class ContentFacade
         return $this->contentService->createContent($contentCreateStruct, [$locationCreateStruct]);
     }
 
-    public function createContent($contentTypeIdentifier, $parentUrl, $language, $contentItemData = null): Content
-    {
+    public function createContent(
+        $contentTypeIdentifier,
+        $parentUrl,
+        $language,
+        $contentItemData = null
+    ): Content {
         $draft = $this->createContentDraft($contentTypeIdentifier, $parentUrl, $language, $contentItemData);
 
         $publishedContent = $this->contentService->publishVersion($draft->versionInfo);
@@ -85,8 +93,11 @@ class ContentFacade
         return $publishedContent;
     }
 
-    public function editContent($locationURL, $language, $contentItemData): Content
-    {
+    public function editContent(
+        $locationURL,
+        $language,
+        $contentItemData
+    ): Content {
         $updatedDraft = $this->createDraftForExistingContent($locationURL, $language, $contentItemData);
         $publishedContent = $this->contentService->publishVersion($updatedDraft->getVersionInfo());
         $this->flushHTTPcache();
@@ -94,8 +105,11 @@ class ContentFacade
         return $publishedContent;
     }
 
-    public function createDraftForExistingContent($locationURL, $language, $contentItemData): Content
-    {
+    public function createDraftForExistingContent(
+        $locationURL,
+        $language,
+        $contentItemData
+    ): Content {
         $urlAlias = $this->urlAliasService->lookup($locationURL);
         Assert::assertEquals(URLAlias::LOCATION, $urlAlias->type);
 
@@ -130,8 +144,13 @@ class ContentFacade
         $this->cacheManager->flush();
     }
 
-    public function createContentIfNotExists(string $contentTypeIdentifier, string $contentUrl, string $parentUrl, array $contentItemData, string $language = 'eng-GB'): void
-    {
+    public function createContentIfNotExists(
+        string $contentTypeIdentifier,
+        string $contentUrl,
+        string $parentUrl,
+        array $contentItemData,
+        string $language = 'eng-GB'
+    ): void {
         if ($this->contentExists($contentUrl)) {
             return;
         }

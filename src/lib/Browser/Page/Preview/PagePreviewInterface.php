@@ -14,5 +14,8 @@ interface PagePreviewInterface
 
     public function verifyPreviewData();
 
-    public function supports(string $contentTypeIdentifier, string $viewType): bool;
+    public function supports(
+        string $contentTypeIdentifier,
+        string $viewType
+    ): bool;
 }

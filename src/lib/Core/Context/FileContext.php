@@ -31,8 +31,10 @@ class FileContext implements Context
      * @param mixed $path
      * @param mixed $sourceFile
      */
-    public function createFileFromSourceFile($path, $sourceFile): void
-    {
+    public function createFileFromSourceFile(
+        $path,
+        $sourceFile
+    ): void {
         $content = file_get_contents(sprintf('%s/%s/%s', $this->projectDirectory, self::SOURCE_FILE_DIRECTORY, $sourceFile));
         $destinationPath = sprintf('%s/%s', $this->projectDirectory, $path);
         $this->createDirectoryStructure($destinationPath);
@@ -45,8 +47,10 @@ class FileContext implements Context
      * @param mixed $file
      * @param mixed $sourceFile
      */
-    public function appendToFile($file, $sourceFile): void
-    {
+    public function appendToFile(
+        $file,
+        $sourceFile
+    ): void {
         $content = file_get_contents(sprintf('%s/%s/%s', $this->projectDirectory, self::SOURCE_FILE_DIRECTORY, $sourceFile));
         file_put_contents($file, $content, FILE_APPEND | LOCK_EX);
     }
@@ -54,8 +58,10 @@ class FileContext implements Context
     /**
      * @Given I create a file :path with contents
      */
-    public function createFileFromContent(string $path, PyStringNode $fileContent): void
-    {
+    public function createFileFromContent(
+        string $path,
+        PyStringNode $fileContent
+    ): void {
         $destinationPath = sprintf('%s/%s', $this->projectDirectory, $path);
         $this->createDirectoryStructure($destinationPath);
         file_put_contents($destinationPath, $fileContent->getRaw());

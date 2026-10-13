@@ -10,8 +10,10 @@ namespace Ibexa\Behat\Core\Log;
 
 class LogFileReader
 {
-    public function getLastLines($filePath, $numberOfLines): array
-    {
+    public function getLastLines(
+        $filePath,
+        $numberOfLines
+    ): array {
         $logEntries = [];
         $counter = 0;
 

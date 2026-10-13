@@ -16,14 +16,16 @@ class ArgumentParser
 {
     private const ROOT_KEYWORD = 'root';
 
-    /** @var \Ibexa\Behat\Browser\Environment\ParameterProviderInterface */
+    /** @var ParameterProviderInterface */
     private $parameterProvider;
 
-    /** @var \Ibexa\Behat\API\Facade\RoleFacade */
+    /** @var RoleFacade */
     private $roleFacade;
 
-    public function __construct(RoleFacade $roleFacade, ParameterProviderInterface $parameterProvider)
-    {
+    public function __construct(
+        RoleFacade $roleFacade,
+        ParameterProviderInterface $parameterProvider
+    ) {
         $this->roleFacade = $roleFacade;
         $this->parameterProvider = $parameterProvider;
     }

@@ -12,7 +12,7 @@ use Behat\Testwork\Tester\Result\ExceptionResult;
 
 class TestFailureData
 {
-    /** @var \Behat\Testwork\Tester\Result\ExceptionResult */
+    /** @var ExceptionResult */
     private $failedStepResult;
 
     /** @var string[] */
@@ -21,8 +21,11 @@ class TestFailureData
     /** @var string[] */
     private $browserLogs;
 
-    public function __construct(ExceptionResult $failedStepResult, array $applicationLogs, array $browserLogs)
-    {
+    public function __construct(
+        ExceptionResult $failedStepResult,
+        array $applicationLogs,
+        array $browserLogs
+    ) {
         $this->failedStepResult = $failedStepResult;
         $this->applicationLogs = $applicationLogs;
         $this->browserLogs = $browserLogs;

@@ -30,24 +30,34 @@ final class UnstableChoiceListFactory implements ChoiceListFactoryInterface
         $this->successfulCallAfterNthTry = $successfulCallAfterNthTry;
     }
 
-    public function createListFromChoices(iterable $choices, ?callable $value = null)
-    {
+    public function createListFromChoices(
+        iterable $choices,
+        ?callable $value = null
+    ) {
         ++$this->createListFromChoicesCounter;
         $this->failIfNeeded($this->createListFromChoicesCounter);
 
         return new ArrayChoiceList([]);
     }
 
-    public function createListFromLoader(ChoiceLoaderInterface $loader, ?callable $value = null)
-    {
+    public function createListFromLoader(
+        ChoiceLoaderInterface $loader,
+        ?callable $value = null
+    ) {
         ++$this->createListFromLoaderCounter;
         $this->failIfNeeded($this->createListFromLoaderCounter);
 
         return new ArrayChoiceList([]);
     }
 
-    public function createView(ChoiceListInterface $list, $preferredChoices = null, $label = null, ?callable $index = null, ?callable $groupBy = null, $attr = null)
-    {
+    public function createView(
+        ChoiceListInterface $list,
+        $preferredChoices = null,
+        $label = null,
+        ?callable $index = null,
+        ?callable $groupBy = null,
+        $attr = null
+    ) {
         ++$this->createViewCounter;
         $this->failIfNeeded($this->createViewCounter);
 

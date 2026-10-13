@@ -18,8 +18,10 @@ class ElementTextFragmentCriterionTest extends BaseTestCase
     /**
      * @dataProvider dataProviderTestMatches
      */
-    public function testMatches(string $elementText, bool $shouldMatch): void
-    {
+    public function testMatches(
+        string $elementText,
+        bool $shouldMatch
+    ): void {
         $criterion = new ElementTextFragmentCriterion('text');
         $element = $this->createElement($elementText);
         Assert::assertEquals($shouldMatch, $criterion->matches($element));

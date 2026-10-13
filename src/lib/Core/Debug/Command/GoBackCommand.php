@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class GoBackCommand extends Command
 {
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     protected $session;
 
     public function __construct(Session $session)
@@ -33,8 +33,10 @@ class GoBackCommand extends Command
             ->setHelp('');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
         $this->session->back();
 
         $output->writeln("The last page from browser's history has been visited.");

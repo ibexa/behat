@@ -14,14 +14,16 @@ use Ibexa\Behat\Core\Behat\ArgumentParser;
 
 class TrashContext implements Context
 {
-    /** @var \Ibexa\Behat\API\Facade\TrashFacade */
+    /** @var TrashFacade */
     private $trashFacade;
 
-    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
+    /** @var ArgumentParser */
     private $argumentParser;
 
-    public function __construct(TrashFacade $trashFacade, ArgumentParser $argumentParser)
-    {
+    public function __construct(
+        TrashFacade $trashFacade,
+        ArgumentParser $argumentParser
+    ) {
         $this->trashFacade = $trashFacade;
         $this->argumentParser = $argumentParser;
     }

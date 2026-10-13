@@ -19,13 +19,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CreateLanguageCommand extends Command implements BackwardCompatibleCommand
 {
-    /** @var \Ibexa\Contracts\Core\Repository\LanguageService */
+    /** @var LanguageService */
     private $languageService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\UserService */
+    /** @var UserService */
     private $userService;
 
-    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver */
+    /** @var PermissionResolver */
     private $permissionResolver;
 
     public function __construct(
@@ -65,8 +65,10 @@ class CreateLanguageCommand extends Command implements BackwardCompatibleCommand
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
-    {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ): int {
         // set user with proper permissions to create language (content / translations)
         $this->permissionResolver->setCurrentUserReference(
             $this->userService->loadUserByLogin(

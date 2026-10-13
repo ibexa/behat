@@ -10,7 +10,7 @@ namespace Ibexa\Behat\Browser\Locator;
 
 class LocatorCollection
 {
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface[] */
+    /** @var LocatorInterface[] */
     private $locators;
 
     public function __construct(array $locators)

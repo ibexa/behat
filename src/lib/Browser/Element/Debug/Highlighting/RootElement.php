@@ -13,13 +13,18 @@ use Ibexa\Behat\Browser\Element\RootElementInterface;
 
 final class RootElement extends BaseElement implements RootElementInterface
 {
-    public function __construct(Session $session, RootElementInterface $element)
-    {
+    public function __construct(
+        Session $session,
+        RootElementInterface $element
+    ) {
         parent::__construct($session, $element);
     }
 
-    public function dragAndDrop(string $from, string $hover, string $to): void
-    {
+    public function dragAndDrop(
+        string $from,
+        string $hover,
+        string $to
+    ): void {
         $this->element->dragAndDrop($from, $hover, $to);
     }
 

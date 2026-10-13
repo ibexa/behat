@@ -16,17 +16,19 @@ use PHPUnit\Framework\Assert;
 class CollectionAssert implements CollectionAssertInterface
 {
     /**
-     * @var \Ibexa\Behat\Browser\Locator\LocatorInterface
+     * @var LocatorInterface
      */
     private $locator;
 
     /**
-     * @var \Ibexa\Behat\Browser\Element\ElementCollectionInterface
+     * @var ElementCollectionInterface
      */
     private $elementCollection;
 
-    public function __construct(LocatorInterface $locator, ElementCollectionInterface $elementCollection)
-    {
+    public function __construct(
+        LocatorInterface $locator,
+        ElementCollectionInterface $elementCollection
+    ) {
         $this->locator = $locator;
         $this->elementCollection = $elementCollection;
     }

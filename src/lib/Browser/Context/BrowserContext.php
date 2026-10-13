@@ -16,7 +16,7 @@ use PHPUnit\Framework\Assert;
 
 class BrowserContext extends RawMinkContext
 {
-    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
+    /** @var ArgumentParser */
     private $argumentParser;
 
     public function __construct(ArgumentParser $argumentParser)
@@ -27,8 +27,10 @@ class BrowserContext extends RawMinkContext
     /**
      * @Given I visit :url on siteaccess :siteaccess
      */
-    public function iVisitItemOnSiteaccess(string $url, string $siteaccess): void
-    {
+    public function iVisitItemOnSiteaccess(
+        string $url,
+        string $siteaccess
+    ): void {
         $url = $this->argumentParser->parseUrl($url);
         $url = sprintf('/%s%s', $siteaccess, $url);
         $this->getSession()->visit($this->locatePath($url));
@@ -60,8 +62,10 @@ class BrowserContext extends RawMinkContext
         }
     }
 
-    private function getHeaderValue($responseHeaders, $header): string
-    {
+    private function getHeaderValue(
+        $responseHeaders,
+        $header
+    ): string {
         if ($this->getSession()->getDriver() instanceof ChromeDriver) {
             return $responseHeaders[$header];
         }

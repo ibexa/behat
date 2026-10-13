@@ -25,8 +25,10 @@ class RedirectLoginPage extends LoginPage
         Assert::assertStringContainsString('/login', $this->getSession()->getCurrentUrl());
     }
 
-    public function loginSuccessfully($username, $password): void
-    {
+    public function loginSuccessfully(
+        $username,
+        $password
+    ): void {
         for ($attempt = 0; $attempt < 3; ++$attempt) {
             try {
                 parent::loginSuccessfully($username, $password);

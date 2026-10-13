@@ -15,14 +15,16 @@ use Ibexa\Behat\Core\Behat\ArgumentParser;
 
 class RoleContext implements Context
 {
-    /** @var \Ibexa\Behat\API\Facade\RoleFacade */
+    /** @var RoleFacade */
     private $roleFacade;
 
-    /** @var \Ibexa\Behat\Core\Behat\ArgumentParser */
+    /** @var ArgumentParser */
     private $argumentParser;
 
-    public function __construct(RoleFacade $roleFacade, ArgumentParser $argumentParser)
-    {
+    public function __construct(
+        RoleFacade $roleFacade,
+        ArgumentParser $argumentParser
+    ) {
         $this->roleFacade = $roleFacade;
         $this->argumentParser = $argumentParser;
     }
@@ -42,8 +44,10 @@ class RoleContext implements Context
     /**
      * @Given I create a role :roleName with policies
      */
-    public function createRoleWithPolicies(string $roleName, TableNode $policies): void
-    {
+    public function createRoleWithPolicies(
+        string $roleName,
+        TableNode $policies
+    ): void {
         if ($this->roleFacade->roleExist($roleName)) {
             return;
         }
@@ -60,8 +64,10 @@ class RoleContext implements Context
      *
      * @param mixed $roleName
      */
-    public function addPolicyToRole($roleName, TableNode $policies): void
-    {
+    public function addPolicyToRole(
+        $roleName,
+        TableNode $policies
+    ): void {
         foreach ($policies as $policy) {
             $this->roleFacade->addPolicyToRole($roleName, $policy['module'], $policy['function']);
         }
@@ -72,8 +78,12 @@ class RoleContext implements Context
      *
      * @param mixed $roleName
      */
-    public function addPolicyToRoleWithLimitation(string $module, string $function, $roleName, TableNode $limitations): void
-    {
+    public function addPolicyToRoleWithLimitation(
+        string $module,
+        string $function,
+        $roleName,
+        TableNode $limitations
+    ): void {
         $parsedLimitations = $this->argumentParser->parseLimitations($limitations);
         $this->roleFacade->addPolicyToRole($roleName, $module, $function, $parsedLimitations);
     }

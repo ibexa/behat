@@ -13,7 +13,7 @@ use Ibexa\Contracts\Core\Repository\LanguageService;
 
 class LanguageFacade
 {
-    /** @var \Ibexa\Contracts\Core\Repository\LanguageService */
+    /** @var LanguageService */
     private $languageService;
 
     public function __construct(LanguageService $languageService)
@@ -21,8 +21,10 @@ class LanguageFacade
         $this->languageService = $languageService;
     }
 
-    public function createLanguageIfNotExists(string $name, string $languageCode)
-    {
+    public function createLanguageIfNotExists(
+        string $name,
+        string $languageCode
+    ) {
         try {
             $this->languageService->loadLanguage($languageCode);
         } catch (NotFoundException $e) {
@@ -30,8 +32,10 @@ class LanguageFacade
         }
     }
 
-    public function createLanguage(string $name, string $languageCode)
-    {
+    public function createLanguage(
+        string $name,
+        string $languageCode
+    ) {
         $languageCreateStruct = $this->languageService->newLanguageCreateStruct();
         $languageCreateStruct->languageCode = $languageCode;
         $languageCreateStruct->name = $name;

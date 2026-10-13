@@ -21,10 +21,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class PublishInTheFuture extends AbstractProcessStage implements EventSubscriberInterface
 {
-    /** @var \Ibexa\Contracts\Scheduler\Repository\DateBasedPublishServiceInterface */
+    /** @var DateBasedPublishServiceInterface */
     private $dateBasedPublisherService;
 
-    /** @var \Ibexa\Workflow\Behat\Facade\WorkflowFacade */
+    /** @var WorkflowFacade */
     private $workflowFacade;
 
     public function __construct(

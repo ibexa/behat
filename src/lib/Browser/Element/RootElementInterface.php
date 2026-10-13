@@ -10,7 +10,11 @@ namespace Ibexa\Behat\Browser\Element;
 
 interface RootElementInterface extends BaseElementInterface
 {
-    public function dragAndDrop(string $from, string $hover, string $to): void;
+    public function dragAndDrop(
+        string $from,
+        string $hover,
+        string $to
+    ): void;
 
     public function executeJavaScript(string $script): string;
 }

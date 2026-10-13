@@ -15,8 +15,11 @@ class ISBNDataProvider extends AbstractFieldTypeDataProvider
         return 'ezisbn' === $fieldTypeIdentifier;
     }
 
-    public function generateData(string $contentTypeIdentifier, string $fieldIdentifier, string $language = 'eng-GB')
-    {
+    public function generateData(
+        string $contentTypeIdentifier,
+        string $fieldIdentifier,
+        string $language = 'eng-GB'
+    ) {
         return $this->getFaker()->isbn13;
     }
 }

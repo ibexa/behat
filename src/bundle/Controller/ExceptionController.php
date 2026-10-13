@@ -12,8 +12,11 @@ use Ibexa\Core\Base\Exceptions\UnauthorizedException;
 
 class ExceptionController
 {
-    public function throwRepositoryUnauthorizedAction($module = 'foo', $function = 'bar', $properties = [])
-    {
+    public function throwRepositoryUnauthorizedAction(
+        $module = 'foo',
+        $function = 'bar',
+        $properties = []
+    ) {
         throw new UnauthorizedException($module, $function, $properties);
     }
 }

@@ -20,7 +20,7 @@ class BaseElement implements BaseElementInterface
 {
     use InteractiveDebuggerTrait;
 
-    /** @var \Ibexa\Behat\Browser\Element\BaseElementInterface */
+    /** @var BaseElementInterface */
     protected $element;
 
     public function __construct(BaseElementInterface $element)
@@ -67,8 +67,10 @@ class BaseElement implements BaseElementInterface
         return $this;
     }
 
-    public function waitUntil(callable $callback, string $errorMessage)
-    {
+    public function waitUntil(
+        callable $callback,
+        string $errorMessage
+    ) {
         return $this->element->waitUntil($callback, $errorMessage);
     }
 }

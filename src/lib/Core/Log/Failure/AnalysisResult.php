@@ -16,8 +16,10 @@ final class AnalysisResult
     /** @var string|null */
     private $jiraReference;
 
-    public function __construct(bool $isKnownFailure, string $jiraReference = '')
-    {
+    public function __construct(
+        bool $isKnownFailure,
+        string $jiraReference = ''
+    ) {
         $this->isKnownFailure = $isKnownFailure;
         $this->jiraReference = $jiraReference;
     }

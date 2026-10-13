@@ -13,14 +13,16 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 
 class ElementNotExistsCondition implements ConditionInterface
 {
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorInterface */
+    /** @var LocatorInterface */
     private $elementLocator;
 
-    /** @var \Ibexa\Behat\Browser\Element\BaseElementInterface */
+    /** @var BaseElementInterface */
     private $searchedNode;
 
-    public function __construct(BaseElementInterface $searchedNode, LocatorInterface $elementLocator)
-    {
+    public function __construct(
+        BaseElementInterface $searchedNode,
+        LocatorInterface $elementLocator
+    ) {
         $this->elementLocator = $elementLocator;
         $this->searchedNode = $searchedNode;
     }

@@ -10,6 +10,7 @@ namespace Ibexa\Behat\Browser\Component;
 
 use Behat\Mink\Session;
 use Facebook\WebDriver\Chrome\ChromeDevToolsDriver;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Ibexa\Behat\Browser\Element\ElementCollectionInterface;
 use Ibexa\Behat\Browser\Element\ElementInterface;
 use Ibexa\Behat\Browser\Element\Factory\Debug\Highlighting\ElementFactory as HighlightingDebugElementFactory;
@@ -22,19 +23,17 @@ use Ibexa\Behat\Browser\Locator\LocatorInterface;
 use Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
 use OAndreyev\Mink\Driver\WebDriver;
 
-class DevToolsDriverUnavailableException extends \RuntimeException
-{
-}
+class DevToolsDriverUnavailableException extends \RuntimeException {}
 
 abstract class Component implements ComponentInterface
 {
-    /** @var \Ibexa\Behat\Browser\Locator\LocatorCollection */
+    /** @var LocatorCollection */
     protected $locators;
 
-    /** @var \Behat\Mink\Session */
+    /** @var Session */
     private $session;
 
-    /** @var \Ibexa\Behat\Browser\Element\Factory\ElementFactoryInterface */
+    /** @var ElementFactoryInterface */
     private $elementFactory;
 
     public function __construct(Session $session)
@@ -85,7 +84,7 @@ abstract class Component implements ComponentInterface
             throw new DevToolsDriverUnavailableException('Error happened when accessing the WebDriver');
         }
 
-        if (!($webDriver instanceof \Facebook\WebDriver\Remote\RemoteWebDriver)) {
+        if (!($webDriver instanceof RemoteWebDriver)) {
             throw new DevToolsDriverUnavailableException('Expected instance of Facebook\\WebDriver\\Remote\\RemoteWebDriver, got ' . (is_object($webDriver) ? get_class($webDriver) : gettype($webDriver)));
         }
 
@@ -93,7 +92,7 @@ abstract class Component implements ComponentInterface
     }
 
     /**
-     * @return \Ibexa\Behat\Browser\Locator\LocatorInterface[]
+     * @return LocatorInterface[]
      */
     abstract protected function specifyLocators(): array;
 
@@ -102,8 +101,10 @@ abstract class Component implements ComponentInterface
         return $this->locators->get($identifier);
     }
 
-    public function enableDebugging(bool $interactive = true, bool $highlighting = true): ElementFactoryInterface
-    {
+    public function enableDebugging(
+        bool $interactive = true,
+        bool $highlighting = true
+    ): ElementFactoryInterface {
         $oldFactory = $this->elementFactory;
 
         $factory = new ElementFactory();

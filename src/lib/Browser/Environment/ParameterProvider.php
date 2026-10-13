@@ -19,8 +19,10 @@ class ParameterProvider implements ParameterProviderInterface
         $this->setParameter('root_content_name', 'Ibexa Platform');
     }
 
-    public function setParameter(string $key, $value): void
-    {
+    public function setParameter(
+        string $key,
+        $value
+    ): void {
         $this->parameters[$key] = $value;
     }
 

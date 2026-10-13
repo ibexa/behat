@@ -10,7 +10,7 @@ namespace Ibexa\Behat\Browser\Page;
 
 class PageRegistry
 {
-    /** @var \Ibexa\Behat\Browser\Page\PageInterface[] */
+    /** @var PageInterface[] */
     private $pages;
 
     public function __construct(iterable $pages)

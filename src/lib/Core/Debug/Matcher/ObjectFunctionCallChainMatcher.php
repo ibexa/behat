@@ -13,8 +13,10 @@ use Psy\TabCompletion\Matcher\ObjectMethodsMatcher;
 
 class ObjectFunctionCallChainMatcher extends ObjectMethodsMatcher
 {
-    public function getMatches(array $tokens, array $info = []): array
-    {
+    public function getMatches(
+        array $tokens,
+        array $info = []
+    ): array {
         $input = $this->getInput($tokens);
 
         // 1) Split tokens into groups separated by -> - {group1}->{group2}->{group3}

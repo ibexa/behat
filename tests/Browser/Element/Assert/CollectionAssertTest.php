@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace  Ibexa\Tests\Behat\Browser\Element\Assert;
+namespace Ibexa\Tests\Behat\Browser\Element\Assert;
 
 use Ibexa\Behat\Browser\Assert\CollectionAssert;
 use Ibexa\Behat\Browser\Element\ElementCollection;
@@ -16,7 +16,7 @@ use PHPUnit\Framework\ExpectationFailedException;
 
 class CollectionAssertTest extends BaseTestCase
 {
-    /** @var \Ibexa\Behat\Browser\Locator\XPathLocator */
+    /** @var XPathLocator */
     private $locator;
 
     protected function setUp(): void
@@ -27,8 +27,10 @@ class CollectionAssertTest extends BaseTestCase
     /**
      * @dataProvider provideForTestAssertionPasses
      */
-    public function testAssertionPasses(array $expectedElementTexts, array $actualElementTexts): void
-    {
+    public function testAssertionPasses(
+        array $expectedElementTexts,
+        array $actualElementTexts
+    ): void {
         $collection = $this->createElementCollection($actualElementTexts);
         $collectionAssert = new CollectionAssert($this->locator, $collection);
         $returnedCollection = $collectionAssert->containsElementsWithText($expectedElementTexts);
@@ -39,8 +41,10 @@ class CollectionAssertTest extends BaseTestCase
     /**
      * @dataProvider provideForTestAssertionFails
      */
-    public function testAssertionFails(array $expectedElementTexts, array $actualElementTexts): void
-    {
+    public function testAssertionFails(
+        array $expectedElementTexts,
+        array $actualElementTexts
+    ): void {
         $this->expectException(ExpectationFailedException::class);
         $collectionAssert = new CollectionAssert($this->locator, $this->createElementCollection($actualElementTexts));
         $collectionAssert->containsElementsWithText($expectedElementTexts);
