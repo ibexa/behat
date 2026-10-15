@@ -35,7 +35,7 @@ final class Router
         $route = strpos($route, '/') === 0 ? $route : sprintf('/%s', $route);
 
         $matcher = $this->router->matchByName($siteAccessName)->matcher;
-        $matcher->setRequest(new SimplifiedRequest(['scheme' => 'http', 'host' => $this->minkParameters['base_url'], 'pathinfo' => $route]));
+        $matcher->setRequest(new SimplifiedRequest('http', $this->minkParameters['base_url'], null, $route));
         $request = $matcher->reverseMatch($siteAccessName)->getRequest();
 
         $explodedHost = explode('//', $request->host);
