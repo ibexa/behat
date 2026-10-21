@@ -61,6 +61,8 @@ $webHost = getenv('WEB_HOST') ?: 'http://web';
 if ($channel >= 1) {
     // Route web traffic to dedicated channel port (8081 for channel 1, 8082 for channel 2, etc.)
     $channelPort = 8080 + $channel;
+    // If webHost points to reverse proxies like varnish, route directly to web container
+    $webHost = preg_replace('#://varnish(?::\d+)?#', '://web', $webHost);
     if (preg_match('#^(https?://[^:/]+)(?::\d+)?(.*)$#', $webHost, $matches)) {
         $webHost = $matches[1] . ':' . $channelPort . $matches[2];
     } else {
