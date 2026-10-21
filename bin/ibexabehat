@@ -59,7 +59,7 @@ behat(){
 }
 
 fastest(){
-    get_behat_features | "$COMPOSER_RUNTIME_BIN_DIR/fastest" $PROCESS --ansi -o -v "$COMPOSER_RUNTIME_BIN_DIR/behat {} ${CONFIG} ${PROFILE}${SUITE}${TAGS}--no-interaction --colors -vv ${STRICT} ${OTHER_OPTIONS}"
+    get_behat_features | "$COMPOSER_RUNTIME_BIN_DIR/fastest" $PROCESS --ansi -o -v "ENV_TEST_CHANNEL_READABLE={p} $COMPOSER_RUNTIME_BIN_DIR/behat {} ${CONFIG} ${PROFILE}${SUITE}${TAGS}--no-interaction --colors -vv ${STRICT} ${OTHER_OPTIONS}"
 }
 
 # Behat's native 'list-scenarios' gives us the list of all scenarios from the given context in random order, which are later
