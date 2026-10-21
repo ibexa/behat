@@ -94,6 +94,12 @@ if ($channel >= 1) {
             $_SERVER['DATABASE_URL'] = $newUrl;
         }
     }
+
+    // Route cache namespace for Redis / Valkey SPI cache per channel
+    $channelCacheNs = 'channel_' . $channel;
+    putenv("CACHE_NAMESPACE=$channelCacheNs");
+    $_ENV['CACHE_NAMESPACE'] = $channelCacheNs;
+    $_SERVER['CACHE_NAMESPACE'] = $channelCacheNs;
 }
 
 return (new Config())
