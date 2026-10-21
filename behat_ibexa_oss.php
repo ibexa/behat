@@ -81,14 +81,9 @@ if ($channel >= 1) {
         $_ENV['DATABASE_NAME'] = $channelDbName;
         $_SERVER['DATABASE_NAME'] = $channelDbName;
 
-        if (isset($_ENV['DATABASE_URL'])) {
-            $newUrl = preg_replace('#/' . preg_quote($baseDbName, '#') . '(\?|$)#', '/' . $channelDbName . '$1', $_ENV['DATABASE_URL']);
-            putenv("DATABASE_URL=$newUrl");
-            $_ENV['DATABASE_URL'] = $newUrl;
-            $_SERVER['DATABASE_URL'] = $newUrl;
-        }
-        if (isset($_SERVER['DATABASE_URL'])) {
-            $newUrl = preg_replace('#/' . preg_quote($baseDbName, '#') . '(\?|$)#', '/' . $channelDbName . '$1', $_SERVER['DATABASE_URL']);
+        $currentUrl = $_ENV['DATABASE_URL'] ?? $_SERVER['DATABASE_URL'] ?? getenv('DATABASE_URL');
+        if ($currentUrl) {
+            $newUrl = preg_replace('#/' . preg_quote($baseDbName, '#') . '(\?|$)#', '/' . $channelDbName . '$1', $currentUrl);
             putenv("DATABASE_URL=$newUrl");
             $_ENV['DATABASE_URL'] = $newUrl;
             $_SERVER['DATABASE_URL'] = $newUrl;
