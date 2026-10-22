@@ -81,6 +81,48 @@ use Ibexa\VersionComparison\Behat\Context\VersionComparisonContext;
 use Ibexa\Workflow\Behat\Context\WorkflowAdminContext;
 use Ibexa\Workflow\Behat\Context\WorkflowContext;
 
+$channel = (int)(getenv('ENV_TEST_CHANNEL_READABLE') ?: getenv('ENV_TEST_CHANNEL') ?: 0);
+$webHost = getenv('WEB_HOST') ?: 'http://web';
+
+if ($channel >= 1) {
+    // Route web traffic to dedicated channel port (8081 for channel 1, 8082 for channel 2, etc.)
+    $channelPort = 8080 + $channel;
+    // If webHost points to reverse proxies like varnish, route directly to web container
+    $webHost = preg_replace('#://varnish(?::\d+)?#', '://web', $webHost);
+    if (preg_match('#^(https?://[^:/]+)(?::\d+)?(.*)$#', $webHost, $matches)) {
+        $webHost = $matches[1] . ':' . $channelPort . $matches[2];
+    } else {
+        $webHost = rtrim($webHost, '/') . ':' . $channelPort;
+    }
+    putenv("WEB_HOST=$webHost");
+    $_ENV['WEB_HOST'] = $webHost;
+    $_SERVER['WEB_HOST'] = $webHost;
+
+    // Route database connection for CLI Symfony / Doctrine
+    $baseDbName = getenv('DATABASE_NAME') ?: 'ezp';
+    $dbSuffix = '_' . $channel;
+    if (!str_ends_with($baseDbName, $dbSuffix)) {
+        $channelDbName = $baseDbName . $dbSuffix;
+        putenv("DATABASE_NAME=$channelDbName");
+        $_ENV['DATABASE_NAME'] = $channelDbName;
+        $_SERVER['DATABASE_NAME'] = $channelDbName;
+
+        $currentUrl = $_ENV['DATABASE_URL'] ?? $_SERVER['DATABASE_URL'] ?? getenv('DATABASE_URL');
+        if ($currentUrl) {
+            $newUrl = preg_replace('#/' . preg_quote($baseDbName, '#') . '(\?|$)#', '/' . $channelDbName . '$1', $currentUrl);
+            putenv("DATABASE_URL=$newUrl");
+            $_ENV['DATABASE_URL'] = $newUrl;
+            $_SERVER['DATABASE_URL'] = $newUrl;
+        }
+    }
+
+    // Route cache namespace for Redis / Valkey SPI cache per channel
+    $channelCacheNs = 'channel_' . $channel;
+    putenv("CACHE_NAMESPACE=$channelCacheNs");
+    $_ENV['CACHE_NAMESPACE'] = $channelCacheNs;
+    $_SERVER['CACHE_NAMESPACE'] = $channelCacheNs;
+}
+
 return (new Config())
     ->import('behat_ibexa_experience.php')
     ->import('vendor/ibexa/payment/behat_suites.php')
