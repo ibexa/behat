@@ -67,4 +67,10 @@ if ($channel >= 1 && $isMultiProcess) {
     putenv("CACHE_NAMESPACE=$channelCacheNs");
     $_ENV['CACHE_NAMESPACE'] = $channelCacheNs;
     $_SERVER['CACHE_NAMESPACE'] = $channelCacheNs;
+} else {
+    // Single process mode: ensure base CACHE_NAMESPACE is explicitly exported
+    $baseCacheNs = getenv('CACHE_NAMESPACE') ?: 'ezp';
+    putenv("CACHE_NAMESPACE=$baseCacheNs");
+    $_ENV['CACHE_NAMESPACE'] = $baseCacheNs;
+    $_SERVER['CACHE_NAMESPACE'] = $baseCacheNs;
 }
