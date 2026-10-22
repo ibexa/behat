@@ -10,9 +10,14 @@ declare(strict_types=1);
  */
 
 $channel = (int)(getenv('ENV_TEST_CHANNEL_READABLE') ?: getenv('ENV_TEST_CHANNEL') ?: 0);
+$channelsNumber = (int)(getenv('ENV_TEST_CHANNELS_NUMBER') ?: getenv('PROCESS_COUNT') ?: 0);
 $webHost = getenv('WEB_HOST') ?: 'http://web';
 
-if ($channel >= 1) {
+// When running with 1 process (or outside parallel fastest), do not rewrite to ezp_1 or port 8081;
+// use the base database (ezp) and standard web port.
+$isMultiProcess = ($channelsNumber > 1) || ($channel > 1) || ($channelsNumber === 0 && $channel > 0 && getenv('PROCESS_COUNT') !== '1');
+
+if ($channel >= 1 && $isMultiProcess) {
     // Route web traffic to dedicated channel port (8081 for channel 1, 8082 for channel 2, etc.)
     $channelPort = 8080 + $channel;
     // If webHost points to reverse proxies like varnish, route directly to web container

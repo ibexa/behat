@@ -61,6 +61,8 @@ if (file_exists(__DIR__ . '/bootstrap_channel.php')) {
     require_once __DIR__ . '/vendor/ibexa/behat/bootstrap_channel.php';
 }
 
+$webHost = $_ENV['WEB_HOST'] ?? $_SERVER['WEB_HOST'] ?? getenv('WEB_HOST') ?: 'http://web';
+
 return (new Config())
     ->import('vendor/ibexa/behat/behat_suites.php')
     ->import('vendor/ibexa/admin-ui/behat_suites.php')
