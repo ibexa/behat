@@ -11,7 +11,9 @@ namespace Ibexa\Behat\API\ContentData\FieldTypeData;
 use Ibexa\Behat\API\ContentData\RandomDataGenerator;
 use Ibexa\Behat\Core\Behat\ArgumentParser;
 use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\Repository;
 use Ibexa\Contracts\Core\Repository\URLAliasService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
 use Ibexa\Core\FieldType\ImageAsset\AssetMapper;
 use Ibexa\Core\FieldType\ImageAsset\Value;
@@ -48,6 +50,8 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
      */
     private $configResolver;
 
+    private readonly Repository $repository;
+
     public function __construct(
         RandomDataGenerator $randomDataGenerator,
         AssetMapper $assetMapper,
@@ -55,7 +59,8 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
         ArgumentParser $argumentParser,
         LocationService $locationService,
         URLAliasService $urlAliasService,
-        ConfigResolverInterface $configResolver
+        ConfigResolverInterface $configResolver,
+        Repository $repository
     ) {
         parent::__construct($randomDataGenerator);
         $this->assetMapper = $assetMapper;
@@ -64,6 +69,7 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
         $this->locationService = $locationService;
         $this->urlAliasService = $urlAliasService;
         $this->configResolver = $configResolver;
+        $this->repository = $repository;
     }
 
     public function supports(string $fieldTypeIdentifier): bool
@@ -85,7 +91,10 @@ class ImageAssetDataProvider extends AbstractFieldTypeDataProvider
         $imageAssetName = $this->getFaker()->realText(80, 1);
         $imageValue = $this->imageDataProvider->generateData($imageAssetContentTypeIdentifier, $imageAssetFieldIdentifier, $language);
 
-        $content = $this->assetMapper->createAsset($imageAssetName, $imageValue, $language);
+        // The asset is generated test data, so it must not depend on the permissions of the user the scenario runs as
+        $content = $this->repository->sudo(
+            fn (): Content => $this->assetMapper->createAsset($imageAssetName, $imageValue, $language)
+        );
 
         $altText = $this->getFaker()->sentence;
 
