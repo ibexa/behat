@@ -55,6 +55,14 @@ use Ibexa\Bundle\Behat\IbexaExtension;
 use Ibexa\User\Behat\Context\UserSettingsContext;
 use Ibexa\User\Behat\Context\UserSetupContext;
 
+if (file_exists(__DIR__ . '/bootstrap_channel.php')) {
+    require_once __DIR__ . '/bootstrap_channel.php';
+} elseif (file_exists(__DIR__ . '/vendor/ibexa/behat/bootstrap_channel.php')) {
+    require_once __DIR__ . '/vendor/ibexa/behat/bootstrap_channel.php';
+}
+
+$webHost = $_ENV['WEB_HOST'] ?? $_SERVER['WEB_HOST'] ?? getenv('WEB_HOST') ?: 'http://web';
+
 return (new Config())
     ->import('vendor/ibexa/behat/behat_suites.php')
     ->import('vendor/ibexa/admin-ui/behat_suites.php')
@@ -91,7 +99,7 @@ return (new Config())
                                     // CI serves the site over plain HTTP, which is not a secure context.
                                     // Treat the CI origins as trustworthy so secure-only browser APIs
                                     // (e.g. crypto.randomUUID) behave as in production over HTTPS.
-                                    '--unsafely-treat-insecure-origin-as-secure=http://web,http://varnish',
+                                    '--unsafely-treat-insecure-origin-as-secure=http://web,http://varnish,http://web:8081,http://web:8082,http://web:8083,http://web:8084' . ($webHost ? ',' . $webHost : ''),
                                 ],
                             ],
                         ],

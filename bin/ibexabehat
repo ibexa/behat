@@ -25,6 +25,7 @@ OTHER_OPTIONS=''
 MODE='parallel'
 STRICT='--strict'
 PROCESS=''
+PROCESS_NUM=''
 GROUP_COUNT=1
 GROUP_OFFSET=0
 
@@ -59,7 +60,13 @@ behat(){
 }
 
 fastest(){
-    get_behat_features | "$COMPOSER_RUNTIME_BIN_DIR/fastest" $PROCESS --ansi -o -v "$COMPOSER_RUNTIME_BIN_DIR/behat {} ${CONFIG} ${PROFILE}${SUITE}${TAGS}--no-interaction --colors -vv ${STRICT} ${OTHER_OPTIONS}"
+    local proc_env=""
+    if [ -n "$PROCESS_NUM" ]; then
+        proc_env="ENV_TEST_CHANNELS_NUMBER=$PROCESS_NUM PROCESS_COUNT=$PROCESS_NUM"
+    elif [ -n "$PROCESS_COUNT" ]; then
+        proc_env="ENV_TEST_CHANNELS_NUMBER=$PROCESS_COUNT PROCESS_COUNT=$PROCESS_COUNT"
+    fi
+    get_behat_features | "$COMPOSER_RUNTIME_BIN_DIR/fastest" $PROCESS --ansi -o -v "ENV_TEST_CHANNEL_READABLE={p} $proc_env $COMPOSER_RUNTIME_BIN_DIR/behat {} ${CONFIG} ${PROFILE}${SUITE}${TAGS}--no-interaction --colors -vv ${STRICT} ${OTHER_OPTIONS}"
 }
 
 # Behat's native 'list-scenarios' gives us the list of all scenarios from the given context in random order, which are later
@@ -84,7 +91,10 @@ case $i in
     -t=*|--tags=*)     TAGS="--tags=${i#*=} ";;
     -c=*|--config=*)   CONFIG="--config=${i#*=}";;
     --non-strict)      STRICT='';;
-    --process=*) PROCESS="--process=${i#*=}";;
+    --process=*)
+        PROCESS="--process=${i#*=}"
+        PROCESS_NUM="${i#*=}"
+        ;;
     --group-count=*)   GROUP_COUNT=${i#*=};;
     --group-offset=*)  GROUP_OFFSET=${i#*=};;
     -h|--help)         usage; exit 1;;

@@ -63,6 +63,12 @@ use Ibexa\VersionComparison\Behat\Context\VersionComparisonContext;
 use Ibexa\Workflow\Behat\Context\WorkflowAdminContext;
 use Ibexa\Workflow\Behat\Context\WorkflowContext;
 
+if (file_exists(__DIR__ . '/bootstrap_channel.php')) {
+    require_once __DIR__ . '/bootstrap_channel.php';
+} elseif (file_exists(__DIR__ . '/vendor/ibexa/behat/bootstrap_channel.php')) {
+    require_once __DIR__ . '/vendor/ibexa/behat/bootstrap_channel.php';
+}
+
 return (new Config())
     ->import('behat_ibexa_oss.php')
     ->import('vendor/ibexa/product-catalog/behat_suites.php')
